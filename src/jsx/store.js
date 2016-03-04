@@ -1,0 +1,139 @@
+var Redux = require('redux');
+
+const reducer = (state, action)=>{
+  switch (action.type) {
+    case 'TEST':
+      return state;
+    case 'NAV_INIT':
+      return {...state,
+        Nav: {...state.Nav,
+          desktopLogo: action.desktopLogo,
+          mobileLogo: action.mobileLogo
+        }
+      };
+    case 'NAV_AFFIX_TOGGLE':
+      return {...state,
+        Nav: {...state.Nav,
+          affix: !state.Nav.affix
+        }
+      };
+    case 'NAV_AFFIX_RESET':
+      return {...state,
+        Nav: {...state.Nav,
+          affix: false
+        }
+      };
+    case 'NAV_LOGO':
+      return {...state,
+        Nav: {...state.Nav,
+          logo: action.logo
+        }
+      };
+    case 'NAV_MENU':
+      return {...state,
+        Nav: {...state.Nav,
+          menuLogo: action.logo
+        }
+      };
+    case 'NAV_AFFIX_TOGGLE':
+      return {...state,
+        Nav: {...state.Nav,
+          affix: !state.Nav.affix
+        }
+      };
+    case 'MENU_TOGGLE':
+      return {...state,
+        Menu: {...state.Menu,
+          show: !state.Menu.show
+        }
+      };
+    case 'MENU_LIST':
+      return {...state,
+        Menu: {...state.Menu,
+          list: action.list.map((item)=>{
+            return {...item,
+              show: false
+            };
+          })
+        }
+      };
+    case 'MENU_LIST_TOGGLE':
+      return {...state,
+        Menu: {...state.Menu,
+          list: state.Menu.list.map((item, index)=>{
+            if( index == action.index )
+              return {...item, show: !item.show };
+            return item;
+          })
+        }
+      };
+    case 'FOOT_INIT':
+      return {...state,
+        Foot: {...state.Foot, ...action.data}
+      };
+    case 'HOME_INIT':
+      return {...state,
+        Home: {...state.Home, ...action.data}
+      };
+    case 'FeaturedProperties_INIT':
+      return {...state,
+        FeaturedProperties: {
+          saleType: action.saleType,
+          building: action.building,
+        }
+      };
+    case 'FeaturedProperties_SALETYPE':
+      return {...state,
+        FeaturedProperties: {...state.FeaturedProperties,
+          saleType: action.saleType
+        }
+      };
+    case 'FeaturedProperties_BUILDING':
+      return {...state,
+        FeaturedProperties: {...state.FeaturedProperties,
+          building: action.building
+        }
+      };
+    default:
+      return state;
+  }
+}
+
+const store = Redux.createStore(reducer, {
+  Nav: {
+    contactLogo: 'fa-paper-plane',
+    logo: '/img/loader.gif',
+    menuLogo: 'fa-bars',
+    affix: false,
+    desktopLogo: '/img/loader.gif',
+    mobileLogo: '/img/loader.gif'
+  },
+  Menu: {
+    show: false,
+    list: []
+  },
+  Foot: {
+    "footerLogo": "/img/loader.gif",
+    "berkshireLogo": "/img/loader.gif",
+    "email": "",
+    "facebook": "",
+    "twitter": "",
+    "instagram": "",
+    "copyright": "Loading ...",
+    "information": "Loading ...",
+    "dev": "Loading ..."
+  },
+  Home: {
+    "headline": "Loading ...",
+    "subheadline": "Loading ...",
+    "title": "Loading ...",
+    "subtitle": "Loading ...",
+    "links": []
+  },
+  FeaturedProperties :{
+    saleType: 'all',
+    building: 'properties'
+  }
+});
+
+module.exports = store;

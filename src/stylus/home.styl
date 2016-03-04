@@ -1,0 +1,392 @@
+.Home
+  .Top
+    background-color rgba(lightBlue, 0.70)
+    overflow hidden
+    position relative
+    +below(767px)
+      size 100% 470px
+    +above(768px)
+      size 100% 675px
+    .BGVideo
+      .video-background
+        z-index -10000
+        absolute top 50% left 50%
+        transform translate(-50%, -50%)
+        min-width: 100%
+        min-height: 100%
+        size auto auto
+    .BGContent
+      absolute top 50% left 50%
+      transform translate(-50%, -50%)
+      size 100% auto
+      .headline
+        text-align: center
+        font-family otherFont
+        color white
+        +below(767px)
+          font-size 35px
+        +above(768px)
+          font-size 90px
+      .bgBorder
+        border-bottom 1px solid white
+        display block
+        margin auto
+        +below(767px)
+          width 200px
+        +above(768px)
+          width 700px
+      .subheadline
+        text-align: center
+        color white
+        +below(767px)
+          font-size 25px
+        +above(768px)
+          font-size 40px
+  .Featured
+    wrap()
+    wrap('center')
+    size 1200px auto
+    max-width: 100%
+    margin auto
+    background: white
+    .Heading
+      wrap()
+      wrap('center')
+      .title
+        wrap()
+        wrap('center')
+        col()
+        col(1,1)
+        color darkBlue
+        font-family otherFont
+        font-weight 700
+        text-decoration none
+        hover-color(lightBlue, true)
+        +below(767px)
+          font-size 40px
+          margin 70px auto 20px
+        +above(768px)
+          font-size 60px
+          margin 95px auto 0px
+      .Row
+        wrap()
+        wrap("flexbox")
+        wrap("reverse")
+        .all
+          wrap()
+          wrap('center')
+          col()
+          col(1,3)
+          font-family otherFont
+          font-weight 700
+          font-size 16px
+          color darkBlue
+          text-decoration none
+          margin-top 20px
+          margin-bottom 20px
+          z-index 100
+          hover-color(lightBlue, true)
+    #featuredSlide
+      col()
+      col(1,1)
+      .owl-controls
+        absolute top -60px
+        size 100% auto
+        .owl-page
+          span
+            background darkBlue
+      .item
+        wrap()
+        wrap('center')
+        size 1140px auto
+        max-width: 100%
+        display block
+        margin auto
+        .img-wrapper
+          wrap()
+          wrap("flexbox")
+          wrap("bottom")
+          background-repeat: no-repeat
+          background-size: cover
+          background-position: center
+          +below(767px)
+            size 100% 215px
+          +above(768px)
+            size 1140px 475px
+            max-width: 100%
+          .specialText
+            wrap()
+            wrap('flexbox')
+            wrap('middle')
+            background-color rgba(darkBlue, 0.50)
+            size 100% 60px
+            color white
+            font-size 30px
+            font-family: mainFont
+            font-weight: 500
+            text-align: left
+            padding-left 40px
+            +below(767px)
+              padding 0px
+              text-align: center
+              display: block
+              padding-top 14px
+        .info
+          wrap()
+          wrap('center')
+          .name
+            col()
+            col(1,1)
+            color darkBlue
+            font-family: otherFont
+            font-weight: 700
+            +below(767px)
+              font-size: 18px
+              text-align: center
+              margin 15px auto 0px
+            +above(768px)
+              font-size: 20px
+              text-align: left
+              padding-left 40px
+              margin 20px auto 0px
+          .price
+            col()
+            col(1,1)
+            color darkBlue
+            +below(767px)
+              margin 15px auto 35px
+              font-size 16px
+              text-align: center
+            +above(768px)
+              margin 5px auto 75px
+              font-size 18px
+              text-align: left
+              padding-left 40px
+  .Ryan
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    .bgTint
+      background-color rgba(white, 0.5)
+    .wrap
+      wrap()
+      wrap('center')
+    .name
+      color darkBlue
+      font-family otherFont
+      font-weight 700
+    .subtitle
+      color darkBlue
+    .paragraph
+      color darkBlue
+    .Mobile
+      .name
+        col()
+        col(1,1)
+        margin 50px auto 25px
+        font-size 40px
+      .subtitle
+        col()
+        col(1,1)
+        margin 0px auto 20px
+        font-size 20px
+      .image
+        col()
+        col(1,1)
+        img
+          display: block
+          margin auto
+          size 170px auto
+      .info
+        col()
+        col(3,4)
+        overflow hidden
+        height 378px
+        color darkBlue
+        font-family: otherFont
+        h1
+        h2
+        h3
+        h4
+        h5
+        h6
+          text-align: center
+        p
+          font-size 14px
+          line-height: 25px
+          font-weight: 500
+          margin 16px auto 0px
+          text-align: center
+      .more
+        col()
+        col(1,1)
+    // above Tablet and Desktop
+    +above(768px)
+      .name
+        col()
+        col(1,1)
+        margin 80px auto 50px
+        font-size 55px
+      .Row
+        wrap()
+        wrap('center')
+        .image
+          +below(1024px)
+            col()
+            col(1,4)
+          +above(1025px)
+            col()
+            col(1,3)
+          img
+            size 100% auto
+            max-width: 250px
+            max-height: 380px
+        .info
+          color darkBlue
+          font-family: otherFont
+          +below(1024px)
+            col()
+            col(3,4)
+          +above(1025px)
+            col()
+            col(2,4)
+          h1
+            h1()
+            margin 0px auto
+            text-align: center
+          h2
+            h2()
+            margin 0px auto
+            text-align: center
+          h3
+            h3()
+            margin 0px auto
+            text-align: center
+          h4
+            h4()
+            margin 0px auto
+            text-align: center
+          h5
+            h5()
+            margin 0px auto
+            text-align: center
+          h6
+            h6()
+            margin 0px auto
+            text-align: center
+          p
+            font-size 16px
+            line-height: 25px
+            font-weight: 500
+            margin 0px auto
+            text-align: left
+        .socialMedia
+          col()
+          col(1,2)
+          margin-top 20px
+          margin-bottom 40px
+          a
+            margin auto 20px
+            i.fa
+              font-size 16px
+        .hidden
+          col()
+          col(1,2)
+          col('hidden')
+        .more
+          col()
+          col(1,2)
+          margin-top 20px
+          margin-bottom 40px
+          a
+            font-family: otherFont
+            font-weight: 700
+            font-size 16px
+  .Explore
+    background: white
+    +below(767px)
+      padding-bottom 60px
+    +above(768px)
+      padding-bottom 155px
+    .wrap
+      wrap()
+      wrap('center')
+      width 1200px auto
+      max-width: 100%
+      .title
+        col()
+        col(1,1)
+        color darkBlue
+        font-family otherFont
+        font-weight 700
+        +below(767px)
+          margin 50px auto 30px
+          font-size 40px
+        +above(768px)
+          font-size 60px
+          margin 135px auto 25px
+      .exploreBorder
+        display block
+        margin auto
+        size 340px auto
+        border 1px solid darkBlue
+        +below(767px)
+          display: none
+      .subtitle
+        col()
+        col(1,1)
+        color darkBlue
+        font-weight 500
+        margin 20px auto 50px
+        font-size 30px
+        +below(767px)
+          display: none
+      .links
+        wrap()
+        wrap('center')
+        +above(768px)
+          wrap('gutter', 40)
+          wrap('outside', 40)
+        .link-wrap
+          col()
+          +below(767px)
+            col(1,1)
+          +above(768px)
+            col(1,3)
+          &:hover
+          &:hover
+            opacity: 0.90
+          .link
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center
+            wrap()
+            wrap('flexbox')
+            wrap('middle')
+            +below(767px)
+              margin 20px auto
+              size 300px 175px
+            +above(768px)
+              size 100% 250px
+            .linkTitle
+              color white
+              text-align: center
+              font-family otherFont
+              font-weight 700
+              width 100%
+              +below(767px)
+                font-size 35px
+              +between(768px, 1200px)
+                font-size 40px
+              +above(1200px)
+                font-size 55px
+            .linkSubtitle
+              color white
+              text-align: center
+              width 100%
+              +below(767px)
+                font-size 25px
+              +between(768px, 1200px)
+                font-size 25px
+              +above(1200px)
+                font-size 30px

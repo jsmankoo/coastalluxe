@@ -1,0 +1,188 @@
+.Contact
+  .Top
+    // overflow hidden
+    // position relative
+    // +below(767px)
+    //   size 100% 470px
+    // +above(768px)
+    //   size 100% 525px
+    .BGVideo
+      overflow hidden
+      position relative
+      +below(767px)
+        size 100% 470px
+      +above(768px)
+        size 100% 525px
+      .video-background
+        z-index -10000
+        absolute top 50% left 50%
+        transform translate(-50%, -50%)
+        min-width: 100%
+        min-height: 100%
+        size auto auto
+    .BGContent
+      absolute top 50% left 50%
+      transform translate(-50%, -50%)
+      size 100% auto
+    .Mobile
+      .BGContent
+        .name
+          color white
+          font-family: otherFont
+          font-weight: 700
+          font-size: 40px
+          text-align: center
+          padding 70px 0px
+        .hidden
+          size 100% 120px
+        .info
+          wrap()
+          wrap('center')
+          background-color rgba(white, 0.50)
+          color darkBlue
+          text-align: center
+          font-family: otherFont
+          font-weight: 500;
+          font-size 20px
+          padding-top 20px
+          padding-bottom 20px
+          .wrapper
+            wrap()
+            wrap('left')
+            wrap('gutter', 20)
+            .icon
+              col()
+              col(2,10)
+              text-align: center
+              font-size 22px
+            .content
+              col()
+              col(8,10)
+    .Tablet
+      .BGContent
+        .name
+          color white
+          font-family: otherFont
+          font-weight: 700
+          font-size: 60px
+          text-align: center
+          padding 70px
+        .hidden
+          size 100% 120px
+        .info
+          wrap()
+          wrap('flexbox')
+          wrap('middle')
+          margin auto
+          background-color: rgba(white, 0.50)
+          size 1200px 150px
+          max-width: 100%
+          color darkBlue
+          text-align: center
+          font-family: otherFont
+          font-weight: 500;
+          font-size 30px
+          .wrapper
+            col()
+            col(1,3)
+            .icon
+              font-size: 30px
+              padding-bottom 10px
+            .content
+              text-align: center
+  .Ryan
+    .Mobile
+      padding 40px 0px 60px
+      .image
+        img
+          display: block
+          margin auto
+          size 170px auto
+      .content
+      .details
+        text-align: center
+        font-family: otherFont
+        color darkBlue
+        h1
+          margin-bottom 0px
+        p
+          font-size 14px
+          line-height: 25px
+          font-weight: 500
+          margin-bottom 0px
+    .Tablet
+      padding 90px 0px 160px
+      .wrap
+        wrap()
+        wrap('center')
+        size 1200px auto
+        max-width: 100%
+        .image
+          +below(1024px)
+            col()
+            col(1,4)
+          +above(1025px)
+            col()
+            col(1,3)
+          img
+            size 100% auto
+            max-width: 250px
+            max-height: 380px
+        .content
+          text-align: left
+          font-family: otherFont
+          color darkBlue
+          margin auto
+          +below(1024px)
+            col()
+            col(3,4)
+          +above(1025px)
+            col()
+            col(2,4)
+      .details
+        wrap()
+        wrap('center')
+        col()
+        col(4,5)
+        // size 1200px auto
+        // max-width: 100%
+        text-align: left
+        font-family: otherFont
+        color darkBlue
+        margin auto
+      h1
+        h1()
+        text-align: center
+        margin-bottom 0px
+        margin-top 0px
+      h2
+        h2()
+        text-align: center
+        margin-bottom 0px
+        margin-top 0px
+      h3
+        h3()
+        text-align: center
+        margin-bottom 0px
+        margin-top 0px
+      h4
+        h4()
+        text-align: center
+        margin-bottom 0px
+        margin-top 0px
+      h5
+        h5()
+        text-align: center
+        margin-bottom 0px
+        margin-top 0px
+      h6
+        h6()
+        text-align: center
+        margin-bottom 0px
+        margin-top 0px
+      p
+        font-size 16px
+        line-height: 25px
+        font-weight: 500
+        margin-bottom 0px
+        margin-top 0px

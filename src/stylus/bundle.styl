@@ -1,0 +1,30 @@
+@import 'axis'
+@import 'rupture'
+@import './imports/flexiblegs-stylus'
+@import './imports/variables'
+
+normalize-css()
+
+@import './imports/nav'
+@import './imports/menu'
+@import './imports/foot'
+
+@import './home'
+@import './contact'
+@import './featured'
+@import './property'
+
+a
+  color darkBlue
+  text-decoration: none
+  hover-color lightBlue true
+
+html #Main
+  // debug()
+  font-family: mainFont
+  .App
+    margin auto
+    +below(1024px)
+      padding-top 50px
+    +above(1025px)
+      padding-top 160px

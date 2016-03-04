@@ -1,0 +1,61 @@
+
+.Nav
+  fixed top 0px
+  width 100%
+  z-index 9000
+  background-color navbarColor
+  .wrap
+    wrap()
+    wrap 'table'
+    +above(1025px)
+      margin auto
+      &.false
+        size 1200px 160px
+        max-width: 100%
+        .col.logo a img
+          size 216px 109px
+      &.true
+        size 1200px 50px
+        max-width: 100%
+        .col.logo a img
+          size auto 40px
+    +below(1024px)
+      size 100% 50px
+    .col
+      col()
+      a
+        wrap()
+        wrap("center")
+        wrap("gutter", 10)
+        color darkBlue
+        text-decoration: none
+        font-size 20px
+        &:hover
+        &:focus
+          cursor pointer
+          color lightBlue
+      &.contact
+        col(1,4)
+      &.logo
+        a
+          wrap()
+          wrap("center")
+          &:hover
+          &:focus
+            opacity: 0.8
+        +below(767px)
+          col(3,4)
+          a img
+            size auto 30px
+        +between(768px, 1024px)
+          col(2,4)
+          a img
+            size auto 40px
+        +above(1025px)
+          col(2,4)
+      &.menu
+        +below(767px)
+          col(1,4)
+          a
+            font-size 25px
+        col(1,4)

@@ -1,0 +1,42 @@
+.Property
+  .Jumbotron
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    wrap()
+    wrap('flexbox')
+    wrap('middle')
+    size 100% 300px
+    .title
+      col()
+      col(1,1)
+      color darkBlue
+      font-family: otherFont
+      font-weight: 700
+      font-size 60px
+      text-align: center
+      +below(767px)
+        font-size 40px
+    .border
+      border 1px solid darkBlue
+      size 340px auto
+      +below(767px)
+        margin 10px auto
+      +above(768px)
+        margin 20px auto
+    .info
+      col()
+      col(1,1)
+      color darkBlue
+      text-align: center
+      font-family: otherFont
+      font-weight: 700
+      .address
+        font-size: 20px
+        line-height: 25px
+      i.fa
+        font-size 25px
+        +below(767px)
+          margin 20px auto
+        +above(768px)
+          margin 20px auto

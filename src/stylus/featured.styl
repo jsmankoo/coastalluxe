@@ -1,0 +1,140 @@
+.FeaturedProperties
+  .Jumbotron
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    wrap()
+    wrap('flexbox')
+    wrap('middle')
+    size 100% 300px
+    .title
+      col()
+      col(1,1)
+      color darkBlue
+      font-family: otherFont
+      font-weight: 700
+      font-size 60px
+      text-align: center
+      +below(767px)
+        font-size 40px
+    .select
+      col()
+      col(1,1)
+      .select-wrapper
+        wrap()
+        wrap('center')
+        .SaleType
+          col()
+          margin 10px 10px
+          select
+            background-color darkBlue
+            color white
+            font-family: otherFont
+            font-weight 700
+            font-size 16px
+            padding 0px 10px
+            option
+              background-color darkBlue
+              color white
+              font-family: otherFont
+        .Building
+          col()
+          margin 10px 10px
+          select
+            background-color darkBlue
+            color white
+            font-family: otherFont
+            font-weight 700
+            font-size 16px
+            padding 0px 10px
+            option
+              background-color darkBlue
+              color white
+              font-family: otherFont
+  .Properties
+    +below(767px)
+      padding 40px 0px 60px
+    +above(768px)
+      padding 90px 0px 160px
+    .wrap
+      wrap()
+      wrap('center')
+      size 1200px auto
+      max-width: 100%
+      display block
+      margin auto
+      .property
+        col()
+        +below(1024px)
+          col(1,1)
+        +above(1025px)
+          col(1,2)
+        .img-wrapper
+          wrap()
+          wrap("flexbox")
+          wrap("bottom")
+          background-repeat: no-repeat
+          background-size: cover
+          background-position: center
+          margin auto
+          +below(1024px)
+            size 530px 300px
+            max-width: 100%
+          +above(1025px)
+            size auto 300px
+            max-width: 530px
+          .specialText
+            wrap()
+            wrap('flexbox')
+            wrap('middle')
+            background-color rgba(darkBlue, 0.50)
+            size 100% 60px
+            color white
+            font-size 30px
+            font-family: mainFont
+            font-weight: 500
+            text-align: left
+            padding-left 40px
+            +below(767px)
+              padding 0px
+              text-align: center
+              display: block
+              padding-top 14px
+        .info
+          wrap()
+          wrap('center')
+          margin auto
+          +below(1024px)
+            size 530px auto
+            max-width: 100%
+          +above(1025px)
+            size auto auto
+            max-width: 530px
+          .name
+            col()
+            col(1,1)
+            color darkBlue
+            font-family: otherFont
+            font-weight: 700
+            +below(767px)
+              font-size: 18px
+              text-align: center
+              margin 15px auto 0px
+            +above(768px)
+              font-size: 20px
+              text-align: left
+              padding-left 40px
+              margin 20px auto 0px
+          .price
+            col()
+            col(1,1)
+            color darkBlue
+            +below(767px)
+              margin 15px auto 35px
+              font-size 16px
+              text-align: center
+            +above(768px)
+              margin 5px auto 75px
+              font-size 18px
+              text-align: left
+              padding-left 40px
