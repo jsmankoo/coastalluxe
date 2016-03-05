@@ -4201,63 +4201,7 @@ a:hover {
   color: #0067d4;
 }
 html #Main {
-  border: 1px solid MediumPurple;
   font-family: museo-sans;
-}
-html #Main > * {
-  border: 1px solid DarkKhaki;
-}
-html #Main > * > * {
-  border: 1px solid MediumTurquoise;
-}
-html #Main > * > * > * {
-  border: 1px solid LightSlateGray;
-}
-html #Main > * > * > * > * {
-  border: 1px solid LightBlue;
-}
-html #Main > * > * > * > * > * {
-  border: 1px solid MediumSlateBlue;
-}
-html #Main > * > * > * > * > * > * {
-  border: 1px solid DeepSkyBlue;
-}
-html #Main > * > * > * > * > * > * > * {
-  border: 1px solid DarkSeaGreen;
-}
-html #Main img {
-  border: 1px solid #f00;
-  -webkit-filter: hue-rotate(330deg) contrast(0.75) saturate(6);
-  filter: hue-rotate(330deg) contrast(0.75) saturate(6);
-}
-html #Main img[alt] {
-  border: 1px solid LimeGreen;
-  -webkit-filter: none;
-  filter: none;
-}
-html #Main img[alt=""] {
-  border: 1px solid #ffd700;
-  -webkit-filter: contrast(1) saturate(2);
-  filter: contrast(1) saturate(2);
-}
-html #Main a {
-  background: rgba(255,0,0,0.1);
-  border: 1px solid #f00;
-}
-html #Main a[title] {
-  background: none;
-  border-color: LimeGreen;
-}
-html #Main style {
-  border: block;
-}
-html #Main [style],
-html #Main style,
-html #Main [class=""],
-html #Main [id=""],
-html #Main a[href="#"] {
-  background: rgba(255,220,0,0.2);
-  border: 1px solid #ffd700;
 }
 html #Main .App {
   margin: auto;
