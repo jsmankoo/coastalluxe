@@ -7,25 +7,6 @@ var Foot = require('./components/Foot');
 
 const App = React.createClass({
   componentDidMount(){
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/5')
-      .then(({acf})=>{
-        store.dispatch({
-          type: 'NAV_INIT',
-          desktopLogo: acf.desktopLogo,
-          mobileLogo: acf.mobileLogo
-        });
-        store.dispatch({
-          type: 'MENU_LIST',
-          list: acf.menu
-        });
-      });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/38')
-      .then(({acf})=>{
-        store.dispatch({
-          type: 'FOOT_INIT',
-          data: acf
-        });
-      });
   },
   render(){
     return (

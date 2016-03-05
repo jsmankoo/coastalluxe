@@ -5,6 +5,9 @@ var Markdown = require('react-remarkable');
 var store = require('../store');
 
 const Foot = React.createClass({
+  componentDidMount(){
+
+  },
   render(){
     return (
       <div className="Foot">

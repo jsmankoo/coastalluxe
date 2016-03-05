@@ -613,8 +613,10 @@ th {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  width: 100%;
+  width: 1200px;
   height: auto;
+  max-width: 100%;
+  margin: auto;
 }
 .Foot .Tablet > * {
   display: inline-block;
@@ -699,7 +701,7 @@ th {
   margin: 0px auto;
 }
 .Home .Top {
-  background-color: rgba(0,103,212,0.7);
+  background-color: rgba(0,55,133,0.5);
   overflow: hidden;
   position: relative;
 }
@@ -1091,7 +1093,7 @@ th {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(0,55,133,0.5);
+  background-color: rgba(0,103,212,0.5);
   width: 100%;
   height: 60px;
   color: #fff;
@@ -1204,6 +1206,10 @@ th {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+  width: 1200px;
+  height: auto;
+  max-width: 100%;
+  margin: auto;
 }
 .Home .Ryan .wrap > * {
   display: inline-block;
@@ -1488,8 +1494,10 @@ th {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  width: 1200px auto;
+  width: 1200px;
+  height: auto;
   max-width: 100%;
+  margin: auto;
 }
 .Home .Explore .wrap > * {
   display: inline-block;
@@ -1940,6 +1948,25 @@ th {
 }
 .Contact .Ryan .Tablet {
   padding: 90px 0px 160px;
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 1200px;
+  height: auto;
+  max-width: 100%;
+  margin: auto;
+}
+.Contact .Ryan .Tablet > * {
+  display: inline-block;
 }
 .Contact .Ryan .Tablet .wrap {
   display: block;
@@ -1957,6 +1984,7 @@ th {
   width: 1200px;
   height: auto;
   max-width: 100%;
+  margin: auto;
 }
 .Contact .Ryan .Tablet .wrap > * {
   display: inline-block;
@@ -2213,19 +2241,34 @@ th {
   vertical-align: middle;
   box-sizing: border-box;
   margin: 10px 10px;
-}
-.FeaturedProperties .Jumbotron .select .select-wrapper .SaleType select {
-  background-color: #003785;
-  color: #fff;
+  width: 180px;
+  height: auto;
+  text-align: left;
   font-family: museo-slab;
   font-weight: 700;
-  font-size: 16px;
-  padding: 0px 10px;
 }
-.FeaturedProperties .Jumbotron .select .select-wrapper .SaleType select option {
+.FeaturedProperties .Jumbotron .select .select-wrapper .SaleType .Select-control {
+  border: none;
+  border-radius: 0px;
   background-color: #003785;
+}
+.FeaturedProperties .Jumbotron .select .select-wrapper .SaleType .Select-control .Select-value {
+  background-color: #003785;
+}
+.FeaturedProperties .Jumbotron .select .select-wrapper .SaleType .Select-control .Select-value .Select-value-label {
   color: #fff;
-  font-family: museo-slab;
+}
+.FeaturedProperties .Jumbotron .select .select-wrapper .SaleType .Select-control .Select-placeholder {
+  color: #fff;
+}
+.FeaturedProperties .Jumbotron .select .select-wrapper .SaleType .Select-control .Select-arrow {
+  border-color: #fff transparent transparent;
+}
+.FeaturedProperties .Jumbotron .select .select-wrapper .SaleType .Select-control .Select-clear-zone {
+  display: none;
+}
+.FeaturedProperties .Jumbotron .select .select-wrapper .SaleType .Select-menu-outer .Select-menu {
+  color: #003785;
 }
 .FeaturedProperties .Jumbotron .select .select-wrapper .Building {
   min-height: 1px;
@@ -2233,19 +2276,34 @@ th {
   vertical-align: middle;
   box-sizing: border-box;
   margin: 10px 10px;
-}
-.FeaturedProperties .Jumbotron .select .select-wrapper .Building select {
-  background-color: #003785;
-  color: #fff;
+  width: 250px;
+  height: auto;
+  text-align: left;
   font-family: museo-slab;
   font-weight: 700;
-  font-size: 16px;
-  padding: 0px 10px;
 }
-.FeaturedProperties .Jumbotron .select .select-wrapper .Building select option {
+.FeaturedProperties .Jumbotron .select .select-wrapper .Building .Select-control {
+  border: none;
+  border-radius: 0px;
   background-color: #003785;
+}
+.FeaturedProperties .Jumbotron .select .select-wrapper .Building .Select-control .Select-value {
+  background-color: #003785;
+}
+.FeaturedProperties .Jumbotron .select .select-wrapper .Building .Select-control .Select-value .Select-value-label {
   color: #fff;
-  font-family: museo-slab;
+}
+.FeaturedProperties .Jumbotron .select .select-wrapper .Building .Select-control .Select-placeholder {
+  color: #fff;
+}
+.FeaturedProperties .Jumbotron .select .select-wrapper .Building .Select-control .Select-arrow {
+  border-color: #fff transparent transparent;
+}
+.FeaturedProperties .Jumbotron .select .select-wrapper .Building .Select-control .Select-clear-zone {
+  display: none;
+}
+.FeaturedProperties .Jumbotron .select .select-wrapper .Building .Select-menu-outer .Select-menu {
+  color: #003785;
 }
 @media only screen and (max-width: 767px) {
   .FeaturedProperties .Properties {
@@ -2514,6 +2572,9 @@ th {
     padding-left: 40px;
   }
 }
+.Property .owl-theme .owl-controls .owl-page span {
+  background: #003785;
+}
 .Property .Jumbotron {
   background-repeat: no-repeat;
   background-size: cover;
@@ -2631,6 +2692,1507 @@ th {
     margin: 20px auto;
   }
 }
+.Property .Details .slideShow {
+  padding: 60px 0px 0px;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Details .slideShow {
+    padding: 30px 0px 0px;
+  }
+}
+.Property .Details .slideShow .item.img-wrapper {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 1200px;
+  height: 600px;
+  max-width: 100%;
+  margin: auto auto 40px;
+}
+.Property .Details .slideShow .item.img-wrapper > * {
+  display: inline-block;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Details .slideShow .item.img-wrapper {
+    width: 100%;
+    height: 300px;
+  }
+}
+.Property .Details .info {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  table-layout: auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1200px;
+  height: 175px;
+  max-width: 100%;
+  margin: auto;
+  margin: 40px auto 60px;
+  background-color: #f2f5f9;
+}
+.Property .Details .info > * {
+  display: inline-block;
+}
+.Property .Details .info > * {
+  display: inline-block;
+}
+.Property .Details .info > * {
+  vertical-align: middle;
+}
+.Property .Details .info .bed {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 25%;
+  color: #003785;
+  text-align: center;
+  font-weight: 700;
+  font-family: museo-slab;
+  font-size: 20px;
+  line-height: 50px;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Details .info .bed {
+    font-size: 16px;
+  }
+}
+.Property .Details .info .bath {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 25%;
+  color: #003785;
+  text-align: center;
+  font-weight: 700;
+  font-family: museo-slab;
+  font-size: 20px;
+  line-height: 50px;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Details .info .bath {
+    font-size: 16px;
+  }
+}
+.Property .Details .info .area {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 25%;
+  color: #003785;
+  text-align: center;
+  font-weight: 700;
+  font-family: museo-slab;
+  font-size: 20px;
+  line-height: 50px;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Details .info .area {
+    font-size: 16px;
+  }
+}
+.Property .Details .info .mls {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 25%;
+  color: #003785;
+  text-align: center;
+  font-weight: 700;
+  font-family: museo-slab;
+  font-size: 20px;
+  line-height: 50px;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Details .info .mls {
+    font-size: 16px;
+  }
+}
+.Property .Details .paragraph {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  display: block;
+  font-family: museo-slab;
+  width: 1200px;
+  height: auto;
+  max-width: 100%;
+  color: #003785;
+  margin: auto;
+  line-height: 25px;
+  text-align: center;
+}
+.Property .Details .paragraph > * {
+  display: inline-block;
+}
+.Property .Details .paragraph h1 {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  margin: auto;
+  line-height: 25px;
+}
+.Property .Details .paragraph h2 {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-size: 28.8px;
+  font-size: 1.8rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  margin: auto;
+  line-height: 25px;
+}
+.Property .Details .paragraph h3 {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-size: 24px;
+  font-size: 1.5rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  margin: auto;
+  line-height: 25px;
+}
+.Property .Details .paragraph h4 {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-size: 20.8px;
+  font-size: 1.3rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  margin: auto;
+  line-height: 25px;
+}
+.Property .Details .paragraph h5 {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-size: 1rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  margin: auto;
+  line-height: 25px;
+}
+.Property .Details .paragraph h6 {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-transform: uppercase;
+  margin: auto;
+  line-height: 25px;
+}
+.Property .Details .paragraph p {
+  font-weight: normal;
+  font-style: normal;
+  line-height: 25px;
+  font-size: 16px;
+  width: 80%;
+  margin: auto;
+}
+.Property .Facilities {
+  padding: 100px 0px;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Facilities {
+    padding: 50px 0px;
+  }
+}
+.Property .Facilities .title {
+  text-align: center;
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  color: #003785;
+  font-family: museo-slab;
+  font-weight: 700;
+}
+.Property .Facilities #facilitiesSlide {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 1200px;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+.Property .Facilities #facilitiesSlide > * {
+  display: inline-block;
+}
+.Property .Facilities #facilitiesSlide .owl-controls {
+  margin-top: 30px;
+}
+.Property .Facilities #facilitiesSlide .item {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.Property .Facilities #facilitiesSlide .item .img-wrapper {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  table-layout: auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
+  -webkit-align-items: flex-end;
+  -ms-align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+}
+.Property .Facilities #facilitiesSlide .item .img-wrapper > * {
+  display: inline-block;
+}
+.Property .Facilities #facilitiesSlide .item .img-wrapper > * {
+  display: inline-block;
+}
+.Property .Facilities #facilitiesSlide .item .img-wrapper > * {
+  vertical-align: bottom;
+}
+@media only screen and (max-width: 1024px) {
+  .Property .Facilities #facilitiesSlide .item .img-wrapper {
+    width: 100%;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .Property .Facilities #facilitiesSlide .item .img-wrapper {
+    width: 100%;
+    height: 430px;
+  }
+}
+.Property .Facilities #facilitiesSlide .item .img-wrapper .specialText {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  table-layout: auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0,103,212,0.5);
+  width: 100%;
+  height: 60px;
+  color: #fff;
+  font-size: 30px;
+  font-family: museo-sans;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+  padding-top: 14px;
+}
+.Property .Facilities #facilitiesSlide .item .img-wrapper .specialText > * {
+  display: inline-block;
+}
+.Property .Facilities #facilitiesSlide .item .img-wrapper .specialText > * {
+  display: inline-block;
+}
+.Property .Facilities #facilitiesSlide .item .img-wrapper .specialText > * {
+  vertical-align: middle;
+}
+.Property .Featured {
+  padding-bottom: 100px;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Featured {
+    padding-bottom: 50px;
+  }
+}
+.Property .Featured .title {
+  text-align: center;
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  color: #003785;
+  font-family: museo-slab;
+  font-weight: 700;
+}
+.Property .Featured #featuredSlide {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 1200px;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+.Property .Featured #featuredSlide > * {
+  display: inline-block;
+}
+.Property .Featured #featuredSlide .owl-controls {
+  margin-top: 30px;
+}
+.Property .Featured #featuredSlide .item {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.Property .Featured #featuredSlide .item .img-wrapper {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  table-layout: auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
+  -webkit-align-items: flex-end;
+  -ms-align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+}
+.Property .Featured #featuredSlide .item .img-wrapper > * {
+  display: inline-block;
+}
+.Property .Featured #featuredSlide .item .img-wrapper > * {
+  display: inline-block;
+}
+.Property .Featured #featuredSlide .item .img-wrapper > * {
+  vertical-align: bottom;
+}
+@media only screen and (max-width: 1024px) {
+  .Property .Featured #featuredSlide .item .img-wrapper {
+    width: 530px;
+    height: 300px;
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .Property .Featured #featuredSlide .item .img-wrapper {
+    width: auto;
+    height: 300px;
+    max-width: 530px;
+  }
+}
+.Property .Featured #featuredSlide .item .img-wrapper .specialText {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  table-layout: auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0,55,133,0.5);
+  width: 100%;
+  height: 60px;
+  color: #fff;
+  font-size: 30px;
+  font-family: museo-sans;
+  font-weight: 500;
+  text-align: left;
+  padding-left: 40px;
+}
+.Property .Featured #featuredSlide .item .img-wrapper .specialText > * {
+  display: inline-block;
+}
+.Property .Featured #featuredSlide .item .img-wrapper .specialText > * {
+  display: inline-block;
+}
+.Property .Featured #featuredSlide .item .img-wrapper .specialText > * {
+  vertical-align: middle;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Featured #featuredSlide .item .img-wrapper .specialText {
+    padding: 0px;
+    text-align: center;
+    display: block;
+    padding-top: 14px;
+  }
+}
+.Property .Featured #featuredSlide .item .info {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+.Property .Featured #featuredSlide .item .info > * {
+  display: inline-block;
+}
+@media only screen and (max-width: 1024px) {
+  .Property .Featured #featuredSlide .item .info {
+    width: 530px;
+    height: auto;
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .Property .Featured #featuredSlide .item .info {
+    width: auto;
+    height: auto;
+    max-width: 530px;
+  }
+}
+.Property .Featured #featuredSlide .item .info .name {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 100%;
+  color: #003785;
+  font-family: museo-slab;
+  font-weight: 700;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Featured #featuredSlide .item .info .name {
+    font-size: 18px;
+    text-align: center;
+    margin: 15px auto 0px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .Property .Featured #featuredSlide .item .info .name {
+    font-size: 20px;
+    text-align: left;
+    padding-left: 40px;
+    margin: 20px auto 0px;
+  }
+}
+.Property .Featured #featuredSlide .item .info .price {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 100%;
+  color: #003785;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Featured #featuredSlide .item .info .price {
+    margin: 15px auto 0px;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .Property .Featured #featuredSlide .item .info .price {
+    margin: 5px auto 0px;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 40px;
+  }
+}
+.Building .owl-theme .owl-controls .owl-page span {
+  background: #003785;
+}
+.Building .Jumbotron {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  table-layout: auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 300px;
+}
+.Building .Jumbotron > * {
+  display: inline-block;
+}
+.Building .Jumbotron > * {
+  display: inline-block;
+}
+.Building .Jumbotron > * {
+  vertical-align: middle;
+}
+.Building .Jumbotron .title {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 100%;
+  color: #003785;
+  font-family: museo-slab;
+  font-weight: 700;
+  font-size: 60px;
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Jumbotron .title {
+    font-size: 40px;
+  }
+}
+.Building .Jumbotron .Buttons {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.Building .Jumbotron .Buttons > * {
+  display: inline-block;
+}
+.Building .Jumbotron .Buttons .Button {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-color: #003785;
+  color: #fff;
+  font-weight: 700;
+  font-family: museo-slab;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px;
+  cursor: pointer;
+}
+.Building .Jumbotron .Buttons .forSale,
+.Building .Jumbotron .Buttons .forLease {
+  padding: 5px 10px;
+}
+.Building .Details {
+  margin: 90px auto 0px;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Details {
+    margin: 60px auto 0px;
+  }
+}
+.Building .Details .paragraph {
+  color: #003785;
+  font-family: museo-slab;
+  text-align: left;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Details .paragraph {
+    text-align: center;
+  }
+}
+.Building .Details .paragraph h1 {
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-align: center;
+  margin: 0px auto;
+}
+.Building .Details .paragraph h2 {
+  font-size: 28.8px;
+  font-size: 1.8rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-align: center;
+  margin: 0px auto;
+}
+.Building .Details .paragraph h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-align: center;
+  margin: 0px auto;
+}
+.Building .Details .paragraph h4 {
+  font-size: 20.8px;
+  font-size: 1.3rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-align: center;
+  margin: 0px auto;
+}
+.Building .Details .paragraph h5 {
+  font-size: 16px;
+  font-size: 1rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-align: center;
+  margin: 0px auto;
+}
+.Building .Details .paragraph h6 {
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0px auto;
+}
+.Building .Details .paragraph p {
+  margin: 0px auto;
+  font-weight: 500;
+  font-size: 14px;
+}
+.Building .Details .intro {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: calc(100% + 50px);
+  margin-left: -25px;
+  margin-right: -25px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 900px;
+  height: auto;
+  max-width: 100%;
+  margin: auto;
+}
+.Building .Details .intro > * {
+  display: inline-block;
+}
+.Building .Details .intro > * {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.Building .Details .intro .img-wrapper {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 28.571428571428573%;
+  height: 375px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Details .intro .img-wrapper {
+    width: 100%;
+  }
+}
+.Building .Details .intro .paragraph {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 71.42857142857143%;
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Details .intro .paragraph {
+    width: 100%;
+  }
+}
+.Building .Details .intro .paragraph i.fa {
+  font-size: 25px;
+}
+.Building .Details .rest {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: calc(100% + 50px);
+  margin-left: -25px;
+  margin-right: -25px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 900px;
+  height: auto;
+  max-width: 80%;
+  margin: auto;
+}
+.Building .Details .rest > * {
+  display: inline-block;
+}
+.Building .Details .rest > * {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.Building .Details .rest .paragraph {
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-transform: uppercase;
+}
+.Building .Facilities {
+  padding: 100px 0px;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Facilities {
+    padding: 50px 0px;
+  }
+}
+.Building .Facilities .title {
+  text-align: center;
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  color: #003785;
+  font-family: museo-slab;
+  font-weight: 700;
+}
+.Building .Facilities #facilitiesSlide {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 1200px;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+.Building .Facilities #facilitiesSlide > * {
+  display: inline-block;
+}
+.Building .Facilities #facilitiesSlide .owl-controls {
+  margin-top: 30px;
+}
+.Building .Facilities #facilitiesSlide .item {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.Building .Facilities #facilitiesSlide .item .img-wrapper {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  table-layout: auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
+  -webkit-align-items: flex-end;
+  -ms-align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+}
+.Building .Facilities #facilitiesSlide .item .img-wrapper > * {
+  display: inline-block;
+}
+.Building .Facilities #facilitiesSlide .item .img-wrapper > * {
+  display: inline-block;
+}
+.Building .Facilities #facilitiesSlide .item .img-wrapper > * {
+  vertical-align: bottom;
+}
+@media only screen and (max-width: 1024px) {
+  .Building .Facilities #facilitiesSlide .item .img-wrapper {
+    width: 100%;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .Building .Facilities #facilitiesSlide .item .img-wrapper {
+    width: 100%;
+    height: 430px;
+  }
+}
+.Building .Facilities #facilitiesSlide .item .img-wrapper .specialText {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  table-layout: auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0,103,212,0.5);
+  width: 100%;
+  height: 60px;
+  color: #fff;
+  font-size: 30px;
+  font-family: museo-sans;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+  padding-top: 14px;
+}
+.Building .Facilities #facilitiesSlide .item .img-wrapper .specialText > * {
+  display: inline-block;
+}
+.Building .Facilities #facilitiesSlide .item .img-wrapper .specialText > * {
+  display: inline-block;
+}
+.Building .Facilities #facilitiesSlide .item .img-wrapper .specialText > * {
+  vertical-align: middle;
+}
+.Building .Featured {
+  padding-bottom: 100px;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Featured {
+    padding-bottom: 50px;
+  }
+}
+.Building .Featured .title {
+  text-align: center;
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  color: #003785;
+  font-family: museo-slab;
+  font-weight: 700;
+}
+.Building .Featured #featuredSlide {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 1200px;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+.Building .Featured #featuredSlide > * {
+  display: inline-block;
+}
+.Building .Featured #featuredSlide .owl-controls {
+  margin-top: 30px;
+}
+.Building .Featured #featuredSlide .item {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.Building .Featured #featuredSlide .item .img-wrapper {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  table-layout: auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
+  -webkit-align-items: flex-end;
+  -ms-align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+}
+.Building .Featured #featuredSlide .item .img-wrapper > * {
+  display: inline-block;
+}
+.Building .Featured #featuredSlide .item .img-wrapper > * {
+  display: inline-block;
+}
+.Building .Featured #featuredSlide .item .img-wrapper > * {
+  vertical-align: bottom;
+}
+@media only screen and (max-width: 1024px) {
+  .Building .Featured #featuredSlide .item .img-wrapper {
+    width: 530px;
+    height: 300px;
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .Building .Featured #featuredSlide .item .img-wrapper {
+    width: auto;
+    height: 300px;
+    max-width: 530px;
+  }
+}
+.Building .Featured #featuredSlide .item .img-wrapper .specialText {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  table-layout: auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0,55,133,0.5);
+  width: 100%;
+  height: 60px;
+  color: #fff;
+  font-size: 30px;
+  font-family: museo-sans;
+  font-weight: 500;
+  text-align: left;
+  padding-left: 40px;
+}
+.Building .Featured #featuredSlide .item .img-wrapper .specialText > * {
+  display: inline-block;
+}
+.Building .Featured #featuredSlide .item .img-wrapper .specialText > * {
+  display: inline-block;
+}
+.Building .Featured #featuredSlide .item .img-wrapper .specialText > * {
+  vertical-align: middle;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Featured #featuredSlide .item .img-wrapper .specialText {
+    padding: 0px;
+    text-align: center;
+    display: block;
+    padding-top: 14px;
+  }
+}
+.Building .Featured #featuredSlide .item .info {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  letter-spacing: 0;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+.Building .Featured #featuredSlide .item .info > * {
+  display: inline-block;
+}
+@media only screen and (max-width: 1024px) {
+  .Building .Featured #featuredSlide .item .info {
+    width: 530px;
+    height: auto;
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .Building .Featured #featuredSlide .item .info {
+    width: auto;
+    height: auto;
+    max-width: 530px;
+  }
+}
+.Building .Featured #featuredSlide .item .info .name {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 100%;
+  color: #003785;
+  font-family: museo-slab;
+  font-weight: 700;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Featured #featuredSlide .item .info .name {
+    font-size: 18px;
+    text-align: center;
+    margin: 15px auto 0px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .Building .Featured #featuredSlide .item .info .name {
+    font-size: 20px;
+    text-align: left;
+    padding-left: 40px;
+    margin: 20px auto 0px;
+  }
+}
+.Building .Featured #featuredSlide .item .info .price {
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 100%;
+  color: #003785;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Featured #featuredSlide .item .info .price {
+    margin: 15px auto 0px;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .Building .Featured #featuredSlide .item .info .price {
+    margin: 5px auto 0px;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 40px;
+  }
+}
 a {
   color: #003785;
   text-decoration: none;
@@ -2639,7 +4201,63 @@ a:hover {
   color: #0067d4;
 }
 html #Main {
+  border: 1px solid MediumPurple;
   font-family: museo-sans;
+}
+html #Main > * {
+  border: 1px solid DarkKhaki;
+}
+html #Main > * > * {
+  border: 1px solid MediumTurquoise;
+}
+html #Main > * > * > * {
+  border: 1px solid LightSlateGray;
+}
+html #Main > * > * > * > * {
+  border: 1px solid LightBlue;
+}
+html #Main > * > * > * > * > * {
+  border: 1px solid MediumSlateBlue;
+}
+html #Main > * > * > * > * > * > * {
+  border: 1px solid DeepSkyBlue;
+}
+html #Main > * > * > * > * > * > * > * {
+  border: 1px solid DarkSeaGreen;
+}
+html #Main img {
+  border: 1px solid #f00;
+  -webkit-filter: hue-rotate(330deg) contrast(0.75) saturate(6);
+  filter: hue-rotate(330deg) contrast(0.75) saturate(6);
+}
+html #Main img[alt] {
+  border: 1px solid LimeGreen;
+  -webkit-filter: none;
+  filter: none;
+}
+html #Main img[alt=""] {
+  border: 1px solid #ffd700;
+  -webkit-filter: contrast(1) saturate(2);
+  filter: contrast(1) saturate(2);
+}
+html #Main a {
+  background: rgba(255,0,0,0.1);
+  border: 1px solid #f00;
+}
+html #Main a[title] {
+  background: none;
+  border-color: LimeGreen;
+}
+html #Main style {
+  border: block;
+}
+html #Main [style],
+html #Main style,
+html #Main [class=""],
+html #Main [id=""],
+html #Main a[href="#"] {
+  background: rgba(255,220,0,0.2);
+  border: 1px solid #ffd700;
 }
 html #Main .App {
   margin: auto;

@@ -1,6 +1,6 @@
 .Home
   .Top
-    background-color rgba(lightBlue, 0.70)
+    background-color rgba(darkBlue, 0.50)
     overflow hidden
     position relative
     +below(767px)
@@ -118,7 +118,7 @@
             wrap()
             wrap('flexbox')
             wrap('middle')
-            background-color rgba(darkBlue, 0.50)
+            background-color rgba(lightBlue, 0.50)
             size 100% 60px
             color white
             font-size 30px
@@ -171,6 +171,9 @@
     .wrap
       wrap()
       wrap('center')
+      size 1200px auto
+      max-width: 100%
+      margin auto
     .name
       color darkBlue
       font-family otherFont
@@ -311,8 +314,9 @@
     .wrap
       wrap()
       wrap('center')
-      width 1200px auto
+      size 1200px auto
       max-width: 100%
+      margin auto
       .title
         col()
         col(1,1)

@@ -1,6 +1,7 @@
 var React = require('react');
 var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
+var Select = require('react-select');
 
 var store = require('./store');
 
@@ -9,7 +10,7 @@ const FeaturedProperties = React.createClass({
     return {
       index: {
         "title": "Loading ...",
-        "image": ""
+        "jumbotron": ""
       },
       buildings: {
         properties: [],
@@ -31,8 +32,8 @@ const FeaturedProperties = React.createClass({
       });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured')
       .then((data)=>{
-        const list = data.map(({acf})=>{
-          return acf;
+        const list = data.map(({id, acf})=>{
+          return {...acf, id: id};
         });
         this.setState({...this.state,
           buildings: {...this.state.buildings,
@@ -43,8 +44,8 @@ const FeaturedProperties = React.createClass({
       });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr')
       .then((data)=>{
-        const list = data.map(({acf})=>{
-          return acf;
+        const list = data.map(({id, acf})=>{
+          return {...acf, id: id};
         });
         this.setState({...this.state,
           buildings: {...this.state.buildings,
@@ -54,8 +55,8 @@ const FeaturedProperties = React.createClass({
       });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr')
       .then((data)=>{
-        const list = data.map(({acf})=>{
-          return acf;
+        const list = data.map(({id, acf})=>{
+          return {...acf, id: id};
         });
         this.setState({...this.state,
           buildings: {...this.state.buildings,
@@ -65,8 +66,8 @@ const FeaturedProperties = React.createClass({
       });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr')
       .then((data)=>{
-        const list = data.map(({acf})=>{
-          return acf;
+        const list = data.map(({id, acf})=>{
+          return {...acf, id: id};
         });
         this.setState({...this.state,
           buildings: {...this.state.buildings,
@@ -94,54 +95,50 @@ const FeaturedProperties = React.createClass({
 });
 
 const Jumbotron = React.createClass({
-  saleOnChange(event){
+  saleOnChange({value}){
     store.dispatch({
       type: 'FeaturedProperties_SALETYPE',
-      saleType: event.target.value
+      saleType: value
     });
   },
-  buildingOnChange(event){
+  buildingOnChange({value}){
     store.dispatch({
       type: 'FeaturedProperties_BUILDING',
-      building: event.target.value
+      building: value
     });
   },
   render(){
     return (
-      <div className="Jumbotron" style={{backgroundImage: `url(${this.props.image})`}}>
+      <div className="Jumbotron" style={{backgroundImage: `url(${this.props.jumbotron})`}}>
         <div className="title">
           {this.props.title}
         </div>
         <div className="select">
           <div className="select-wrapper">
             <div className="SaleType">
-              <select value={this.props.saleType} onChange={this.saleOnChange}>
-                <option value={'all'}>
-                  For Sale & Lease
-                </option>
-                <option value={'sale'}>
-                  For Sale
-                </option>
-                <option value={'lease'}>
-                  For Lease
-                </option>
-              </select>
+              <Select
+                name="Sale Type"
+                value={this.props.saleType}
+                options={[
+                  { value: 'all', label: 'For Sale & Lease' },
+                  { value: 'sale', label: 'For Sale' },
+                  { value: 'lease', label: 'For Lease' }
+                ]}
+                onChange={this.saleOnChange}
+              />
             </div>
             <div className="Building">
-              <select value={this.props.building} onChange={this.buildingOnChange}>
-                <option value={'properties'}>
-                  Properties
-                </option>
-                <option value={'13700marinapointedr'}>
-                  13700 Marina Pointe Dr
-                </option>
-                <option value={'13750marinapointedr'}>
-                  13750 Marina Pointe Dr
-                </option>
-                <option value={'13800marinapointedr'}>
-                  13800 Marina Pointe Dr
-                </option>
-              </select>
+              <Select
+                name="Building"
+                value={this.props.building}
+                options={[
+                  { value: 'featured', label: 'Featured Properties' },
+                  { value: '13700marinapointedr', label: '13700 Marina Pointe Dr' },
+                  { value: '13750marinapointedr', label: '13750 Marina Pointe Dr' },
+                  { value: '13800marinapointedr', label: '13800 Marina Pointe Dr' },
+                ]}
+                onChange={this.buildingOnChange}
+              />
             </div>
           </div>
         </div>
@@ -153,7 +150,7 @@ const Jumbotron = React.createClass({
 const Properties = React.createClass({
   pickProperty(){
     switch (this.props.building) {
-      case 'properties':
+      case 'featured':
         return this.filterProperty(this.props.properties);
       case '13700marinapointedr':
         return this.filterProperty(this.props.building13700);
@@ -188,14 +185,14 @@ const Properties = React.createClass({
       <div className="Properties">
         <div className="wrap">
           {
-            this.pickProperty().map( ({name, image, forSale, lease, text}, index)=>{
+            this.pickProperty().map( ({id, name, image, forSale, lease, text}, index)=>{
               return (
                 <div className="property" key={index}>
-                  <div className="img-wrapper" style={{backgroundImage: `url(${image})`}}>
+                  <a href={`/#/featured/${this.props.building}/${name}/${id}`} className="img-wrapper" style={{backgroundImage: `url(${image})`}}>
                     <div className="specialText">
                       {text}
                     </div>
-                  </div>
+                  </a>
                   <div className="info">
                     <div className="name">
                       {name}

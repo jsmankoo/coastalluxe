@@ -89,6 +89,7 @@ const reducer = (state, action)=>{
         }
       };
     case 'FeaturedProperties_BUILDING':
+      console.log(`store: ${action.building}`);
       return {...state,
         FeaturedProperties: {...state.FeaturedProperties,
           building: action.building
@@ -132,8 +133,28 @@ const store = Redux.createStore(reducer, {
   },
   FeaturedProperties :{
     saleType: 'all',
-    building: 'properties'
+    building: 'featured'
   }
 });
+
+$.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/5')
+  .then(({acf})=>{
+    store.dispatch({
+      type: 'NAV_INIT',
+      desktopLogo: acf.desktopLogo,
+      mobileLogo: acf.mobileLogo
+    });
+    store.dispatch({
+      type: 'MENU_LIST',
+      list: acf.menu
+    });
+  });
+$.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/38')
+  .then(({acf})=>{
+    store.dispatch({
+      type: 'FOOT_INIT',
+      data: acf
+    });
+  });
 
 module.exports = store;

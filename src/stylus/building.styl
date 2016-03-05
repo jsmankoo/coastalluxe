@@ -1,4 +1,4 @@
-.Property
+.Building
   .owl-theme .owl-controls .owl-page span
     background: darkBlue
   .Jumbotron
@@ -19,145 +19,95 @@
       text-align: center
       +below(767px)
         font-size 40px
-    .border
-      border 1px solid darkBlue
-      size 340px auto
-      +below(767px)
-        margin 10px auto
-      +above(768px)
-        margin 20px auto
-    .info
+    .Buttons
+      wrap()
+      wrap 'center'
       col()
-      col(1,1)
-      color darkBlue
-      text-align: center
-      font-family: otherFont
-      font-weight: 700
-      .address
-        font-size: 20px
-        line-height: 25px
-      i.fa
-        font-size 25px
-        +below(767px)
-          margin 20px auto
-        +above(768px)
-          margin 20px auto
+      .Button
+        col()
+        background-color: darkBlue
+        color white
+        font-weight: 700
+        font-family: otherFont
+        font-size 18px
+        text-align: center
+        margin 20px
+        cursor: pointer;
+      .forSale
+      .forLease
+        padding 5px 10px
   .Details
-    .slideShow
-      padding 60px 0px 0px
+    margin 90px auto 0px
+    +below(767px)
+      margin 60px auto 0px
+    .paragraph
+      color darkBlue
+      font-family: otherFont
+      text-align: left;
       +below(767px)
-        padding 30px 0px 0px
-      .item.img-wrapper
-        wrap()
-        wrap('center')
+        text-align: center
+      h1
+        h1()
+        text-align: center
+        margin 0px auto
+      h2
+        h2()
+        text-align: center
+        margin 0px auto
+      h3
+        h3()
+        text-align: center
+        margin 0px auto
+      h4
+        h4()
+        text-align: center
+        margin 0px auto
+      h5
+        h5()
+        text-align: center
+        margin 0px auto
+      h6
+        h6()
+        text-align: center
+        margin 0px auto
+      p
+        margin: 0px auto
+        font-weight: 500
+        font-size 14px
+    .intro
+      wrap()
+      wrap 'center'
+      wrap 'gutter', 50
+      wrap 'outside', 50
+      size 900px auto
+      max-width: 100%
+      margin auto
+      .img-wrapper
+        col()
+        col(2,7)
+        height 375px
         background-repeat: no-repeat
         background-size: cover
         background-position: center
-        size 1200px 600px
-        max-width: 100%
-        margin auto auto 40px
         +below(767px)
-          size 100% 300px
-    .info
-      wrap()
-      wrap('flexbox')
-      wrap('middle')
-      size 1200px 175px
-      max-width: 100%
-      margin auto
-      margin 40px auto 60px
-      background-color: propInfoColor
-      .bed
+          col(1,1)
+      .paragraph
         col()
-        col(1,4)
-        color darkBlue
-        text-align: center
-        font-weight: 700
-        font-family otherFont
-        font-size 20px
-        line-height 50px
+        col(5,7)
+        h6()
         +below(767px)
-          font-size 16px
-      .bath
-        col()
-        col(1,4)
-        color darkBlue
-        text-align: center
-        font-weight: 700
-        font-family otherFont
-        font-size 20px
-        line-height 50px
-        +below(767px)
-          font-size 16px
-      .area
-        col()
-        col(1,4)
-        color darkBlue
-        text-align: center
-        font-weight: 700
-        font-family otherFont
-        font-size 20px
-        line-height 50px
-        +below(767px)
-          font-size 16px
-      .mls
-        col()
-        col(1,4)
-        color darkBlue
-        text-align: center
-        font-weight: 700
-        font-family otherFont
-        font-size 20px
-        line-height 50px
-        +below(767px)
-          font-size 16px
-    .paragraph
+          col(1,1)
+        i.fa
+          font-size 25px
+    .rest
       wrap()
       wrap 'center'
-      display: block
-      font-family: otherFont
-      size 1200px auto
-      max-width: 100%
-      color darkBlue
+      wrap 'gutter', 50
+      size 900px auto
+      max-width: 80%
       margin auto
-      line-height 25px
-      text-align: center
-      h1
-        col()
-        h1()
-        margin auto
-        line-height: 25px
-      h2
-        col()
-        h2()
-        margin auto
-        line-height: 25px
-      h3
-        col()
-        h3()
-        margin auto
-        line-height: 25px
-      h4
-        col()
-        h4()
-        margin auto
-        line-height: 25px
-      h5
-        col()
-        h5()
-        margin auto
-        line-height: 25px
-      h6
-        col()
+      .paragraph
         h6()
-        margin auto
-        line-height: 25px
-      p
-        normal()
-        line-height 25px
-        font-size 16px
-        width 80%
-        margin auto
   .Facilities
     padding 100px 0px
     +below(767px)

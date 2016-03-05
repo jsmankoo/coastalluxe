@@ -17,24 +17,6 @@ const Property = React.createClass({
         "jumbotron": "",
         "facilities": []
       },
-      property: {
-        "name": "Loading ...",
-        "number": "",
-        "streetname": "",
-        "city": "",
-        "zip": "",
-        "bed": "",
-        "bath": "",
-        "area": "",
-        "mls": "",
-        "title": "",
-        "paragraph": "",
-        "forSale": "",
-        "lease": "",
-        "text": "",
-        "image": "",
-        "slide_show": []
-      },
       featured: [],
       options : {
 				navigation : false, // Show next and prev buttons
@@ -50,12 +32,6 @@ const Property = React.createClass({
       type: 'NAV_AFFIX_RESET'
     });
     switch (this.props.params.building) {
-      case 'featured':
-        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81')
-          .then(({acf})=>{
-            this.setState({...this.state, building: acf});
-          });
-        break;
       case '13700marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137')
           .then(({acf})=>{
@@ -77,12 +53,6 @@ const Property = React.createClass({
       default:
         break;
     }
-    $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/${this.props.params.building}/${this.props.params.id}`)
-      .then(({acf})=>{
-        this.setState({...this.state,
-          property: acf
-        });
-      });
     $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/${this.props.params.building}`)
       .then((data)=>{
         this.setState({...this.state,
@@ -99,13 +69,17 @@ const Property = React.createClass({
   },
   render(){
     return (
-      <div className="Property">
+      <div className="Building">
         <MediaQuery minDeviceWidth={1024}>
           <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
         </MediaQuery>
-        <Jumbotron {...this.state} />
-        <Details {...this.state.property} options={this.state.options} />
-        <Facilities {...this.state.building} />
+        <Jumbotron {...this.state} url={this.props.params.building} />
+        <Details {...this.state.building} />
+        {
+          this.state.building.facilities.length === 0
+          ? <div />
+          : <Facilities {...this.state.building} />
+        }
         <Featured
           building={this.props.params.building}
           featured={this.state.featured}
@@ -133,15 +107,14 @@ const Jumbotron = React.createClass({
     return (
       <div className="Jumbotron" style={{backgroundImage: `url(${this.props.building.jumbotron})`}}>
         <div className="title">
-          {this.props.property.title}
+          {this.props.building.name}
         </div>
-        <div className="border"></div>
-        <div className="info">
-          <div className="address">
-            {`${this.props.property.number} ${this.props.property.streetname}`} <br /> {`${this.props.property.city}`}
-          </div>
-          <a href={`https://www.google.ca/maps/place/${this.props.property.number} ${this.props.property.streetname} ${this.props.property.city}`}>
-            <i className='fa fa-map-marker' />
+        <div className="Buttons">
+          <a href={`/#/forSale/${this.props.url}`} className="forSale Button">
+            {this.props.building.name} For Sale
+          </a>
+          <a href={`/#/lease/${this.props.url}`} className="forLease Button">
+            {this.props.building.name} For Lease
           </a>
         </div>
       </div>
@@ -150,40 +123,36 @@ const Jumbotron = React.createClass({
 });
 
 const Details = React.createClass({
+  getInitialState(){
+    return {
+      moreContentShow: false
+    };
+  },
+  showContent(){
+    this.setState({...this.state,
+      moreContentShow: !this.state.moreContentShow
+    });
+  },
   render(){
     return (
       <div className="Details">
-        <div className="slideShow">
-          <OwlCarousel id='slideShow' options={this.props.options}>
-            {
-              this.props.slide_show.map(({img}, index)=>{
-                return (
-                  <div key={index} className="item img-wrapper" style={{backgroundImage: `url(${img})`}}>
-                  </div>
-                );
-              })
-            }
-          </OwlCarousel>
-        </div>
-        <div className="info">
-          <div className="bed">
-            BED <br /> {this.props.bed}
+        <div className="intro">
+          <div className="img-wrapper" style={{backgroundImage: `url(${this.props.image})`}}>
           </div>
-          <div className="bath">
-            BATH <br /> {this.props.bath}
-          </div>
-          <div className="area">
-            SQ.FT. <br /> {this.props.area}
-          </div>
-          <div className="mls">
-            MLS# <br /> {this.props.mls}
+          <div className="paragraph">
+            <Markdown>{this.props.content}</Markdown>
+            <i className={`fa fa-chevron-${this.state.moreContentShow ? 'up' : 'down'}`} onClick={this.showContent}/>
           </div>
         </div>
-        <div className="paragraph">
-          <Markdown>
-            {this.props.paragraph}
-          </Markdown>
-        </div>
+        {
+          this.state.moreContentShow
+          ? <div className="rest">
+              <div className="paragraph">
+                <Markdown>{this.props.moreContent}</Markdown>
+              </div>
+            </div>
+          : <div />
+        }
       </div>
     );
   }

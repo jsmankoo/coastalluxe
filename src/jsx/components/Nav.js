@@ -5,6 +5,8 @@ var CSSTransition = require('react-addons-css-transition-group');
 var store = require('../store');
 
 const Nav = React.createClass({
+  componentDidMount(){
+  },
   render(){
     return (
       <div className="Nav">

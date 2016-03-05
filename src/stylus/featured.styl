@@ -26,31 +26,51 @@
         .SaleType
           col()
           margin 10px 10px
-          select
-            background-color darkBlue
-            color white
-            font-family: otherFont
-            font-weight 700
-            font-size 16px
-            padding 0px 10px
-            option
-              background-color darkBlue
+          size 180px auto
+          text-align: left;
+          font-family otherFont
+          font-weight 700
+          .Select-control
+            border none
+            border-radius 0px
+            background-color: darkBlue
+            .Select-value
+              background-color: darkBlue
+              .Select-value-label
+                color white
+            .Select-placeholder
               color white
-              font-family: otherFont
+            .Select-arrow
+              border-color white transparent transparent
+            .Select-clear-zone
+              display none
+          .Select-menu-outer
+            .Select-menu
+              color darkBlue
         .Building
           col()
           margin 10px 10px
-          select
-            background-color darkBlue
-            color white
-            font-family: otherFont
-            font-weight 700
-            font-size 16px
-            padding 0px 10px
-            option
-              background-color darkBlue
+          size 250px auto
+          text-align: left;
+          font-family otherFont
+          font-weight 700
+          .Select-control
+            border none
+            border-radius 0px
+            background-color: darkBlue
+            .Select-value
+              background-color: darkBlue
+              .Select-value-label
+                color white
+            .Select-placeholder
               color white
-              font-family: otherFont
+            .Select-arrow
+              border-color white transparent transparent
+            .Select-clear-zone
+              display none
+          .Select-menu-outer
+            .Select-menu
+              color darkBlue
   .Properties
     +below(767px)
       padding 40px 0px 60px
