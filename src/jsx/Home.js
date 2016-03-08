@@ -9,6 +9,7 @@ var store = require('./store');
 
 const Home = React.createClass({
   componentDidMount(){
+    window.scrollTo(0, 0);
     store.dispatch({
       type: 'NAV_AFFIX_RESET'
     });
@@ -28,7 +29,7 @@ const Home = React.createClass({
   render(){
     return (
       <div className="Home">
-        <MediaQuery minDeviceWidth={1024}>
+        <MediaQuery minDeviceWidth={1281}>
           <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
         </MediaQuery>
         <Top
@@ -99,10 +100,30 @@ const Featured = React.createClass({
     pullList.map((link)=>{
       $.get(link).then((properties)=>{
           this.setState({...this.state,
-            items: [...this.state.items, ...[properties[0], properties[1], properties[2]]]
+            items: [...this.state.items, ...[properties[0], properties[1]]]
           });
       });
     });
+  },
+  handleSale(item){
+    if (item.acf.forSale !== '' && item.acf.lease !== '')
+      return (
+        <div className="price">
+          For Sale: ${item.acf.forSale} / For Lease: ${item.acf.lease}
+        </div>
+      );
+    else if(item.acf.forSale !== '')
+      return (
+        <div className="price">
+          For Sale: ${item.acf.forSale}
+        </div>
+      );
+    else if(item.acf.lease !== '')
+      return (
+        <div className="price">
+          For Lease: ${item.acf.lease}
+        </div>
+      );
   },
   render(){
     return (
@@ -127,19 +148,19 @@ const Featured = React.createClass({
               return (
                 <div className="item" key={index}>
                   <div className="img-wrapper" style={{backgroundImage: `url(${item.acf.image})`}}>
-                    <div className="specialText">
-                      {item.acf.text}
-                    </div>
+                    {
+                      item.acf.text !== '' ?
+                      <div className="specialText">
+                        {item.acf.text}
+                      </div> :
+                      <div />
+                    }
                   </div>
                   <div className="info">
                     <div className="name">
                       {item.acf.name}
                     </div>
-                    <div className="price">
-                      {item.acf.forSale == '' ? '~' : `For Sale: $${item.acf.forSale}`}
-                      {`\t\t/\t\t`}
-                      {item.acf.lease == '' ? '~' : `For Sale: $${item.acf.lease}`}
-                    </div>
+                    {this.handleSale(item)}
                   </div>
                 </div>
               );
@@ -179,12 +200,12 @@ const Ryan = React.createClass({
             {this.Mobile()}
           </div>
         </MediaQuery>
-        <MediaQuery minDeviceWidth={768} maxDeviceWidth={1024}>
+        <MediaQuery minDeviceWidth={768} maxDeviceWidth={1280}>
           <div className="bgTint">
             {this.Tablet()}
           </div>
         </MediaQuery>
-        <MediaQuery minDeviceWidth={1024}>
+        <MediaQuery minDeviceWidth={1281}>
           <div className="bgTint">
             {this.Desktop()}
           </div>
@@ -207,7 +228,10 @@ const Ryan = React.createClass({
           </Markdown>
         </div>
         <a href='/#/contact' className="more">
-          More <i className='fa fa-chevron-right' />
+          <div className="linkName">
+            More
+          </div>
+          <i className='fa fa-chevron-right' />
         </a>
       </div>
     );
@@ -297,11 +321,13 @@ const Explore = React.createClass({
                     <a href={item.link} className="link" style={{
                       backgroundImage: `url(${item.Image})`
                     }}>
-                      <div className="linkTitle">
-                        {item.title}
-                      </div>
-                      <div className="linkSubtitle">
-                        {item.subtitle}
+                      <div className="titleWrapper">
+                        <div className="linkTitle">
+                          {item.title}
+                        </div>
+                        <div className="linkSubtitle">
+                          {item.subtitle}
+                        </div>
                       </div>
                     </a>
                   </div>

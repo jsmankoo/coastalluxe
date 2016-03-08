@@ -26,6 +26,7 @@ const Contact = React.createClass({
     };
   },
   componentDidMount(){
+    window.scrollTo(0, 0);
     store.dispatch({
       type: 'NAV_AFFIX_RESET'
     });
@@ -42,9 +43,6 @@ const Contact = React.createClass({
   render(){
     return (
       <div className="Contact">
-        <MediaQuery minDeviceWidth={1024}>
-          <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
-        </MediaQuery>
         <Top
           name={this.state.name}
           email={this.state.email}
@@ -52,6 +50,9 @@ const Contact = React.createClass({
           Office={this.state.Office}
           City={this.state.City}
           url={this.state.map}/>
+        <MediaQuery minDeviceWidth={1281}>
+          <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
+        </MediaQuery>
         <Ryan
           mobileimage={this.state.mobileimage}
           image={this.state.image}
@@ -96,28 +97,34 @@ const Top = React.createClass({
             <div className="hidden">
             </div>
             <div className="info">
-              <div className="mobile wrapper">
-                <div className="icon">
-                  <i className='fa fa-mobile' />
-                </div>
-                <div className="content">
-                  {this.props.Mobile}
+              <div className="mobile col">
+                <div className="wrapper">
+                            <div className="icon">
+                    <i className='fa fa-mobile' />
+                  </div>
+                  <div className="content">
+                    {this.props.Mobile}
+                  </div>
                 </div>
               </div>
-              <a href={this.props.url} className="office wrapper">
-                <div className="icon">
-                  <i className='fa fa-map-marker' />
-                </div>
-                <div className="content">
-                  {this.props.Office} <br/> {this.props.City}
+              <a href={this.props.url} className="office col">
+                <div className="wrapper">
+                            <div className="icon">
+                    <i className='fa fa-map-marker' />
+                  </div>
+                  <div className="content">
+                    {this.props.Office} <br/> {this.props.City}
+                  </div>
                 </div>
               </a>
-              <a href={`mailto:${this.props.email}`} className="email wrapper">
-                <div className="icon">
-                  <i className='fa fa-paper-plane' />
-                </div>
-                <div className="content">
-                  {this.props.email}
+              <a href={`mailto:${this.props.email}`} className="email col">
+                <div className="wrapper">
+                            <div className="icon">
+                    <i className='fa fa-paper-plane' />
+                  </div>
+                  <div className="content">
+                    {this.props.email}
+                  </div>
                 </div>
               </a>
             </div>

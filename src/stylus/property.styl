@@ -1,167 +1,154 @@
 .Property
   .owl-theme .owl-controls .owl-page span
+    size 8px 8px
     background: darkBlue
   .Jumbotron
     background-repeat: no-repeat
     background-size: cover
     background-position: center
-    wrap()
-    wrap('flexbox')
-    wrap('middle')
+    position relative
     size 100% 300px
-    .title
-      col()
-      col(1,1)
-      color darkBlue
-      font-family: otherFont
-      font-weight: 700
-      font-size 60px
-      text-align: center
-      +below(767px)
-        font-size 40px
-    .border
-      border 1px solid darkBlue
-      size 340px auto
-      +below(767px)
-        margin 10px auto
-      +above(768px)
-        margin 20px auto
-    .info
-      col()
-      col(1,1)
-      color darkBlue
-      text-align: center
-      font-family: otherFont
-      font-weight: 700
-      .address
-        font-size: 20px
-        line-height: 25px
-      i.fa
-        font-size 25px
-        +below(767px)
-          margin 20px auto
-        +above(768px)
-          margin 20px auto
+    .bgTint
+      background-color bgTintColor
+      size 100% 300px
+      .jumbotron-wrapper
+        align(b)
+        width 100%
+        .title
+          color darkBlue
+          font-family: otherFont
+          font-weight: 700
+          font-size 60px
+          text-align: center
+          +below(767px)
+            font-size 40px
+        .border
+          border 1px solid darkBlue
+          size 340px auto
+          +below(767px)
+            margin 10px auto
+          +above(768px)
+            margin 20px auto
+        .info
+          color darkBlue
+          text-align: center
+          font-family: otherFont
+          font-weight: 700
+          .address
+            font-size: 20px
+            line-height: 25px
+          i.fa
+            font-size 25px
+            +below(767px)
+              margin 20px auto 0px
+            +above(768px)
+              margin 20px auto 0px
   .Details
+    margin-bottom 120px
     .slideShow
       padding 60px 0px 0px
       +below(767px)
         padding 30px 0px 0px
       .item.img-wrapper
-        wrap()
-        wrap('center')
         background-repeat: no-repeat
         background-size: cover
         background-position: center
-        size 1200px 600px
+        size 1280px 600px
         max-width: 100%
         margin auto auto 40px
         +below(767px)
           size 100% 300px
     .info
-      wrap()
-      wrap('flexbox')
-      wrap('middle')
-      size 1200px 175px
+      size 1280px 175px
       max-width: 100%
       margin auto
       margin 40px auto 60px
       background-color: propInfoColor
-      .bed
-        col()
-        col(1,4)
-        color darkBlue
-        text-align: center
-        font-weight: 700
-        font-family otherFont
-        font-size 20px
-        line-height 50px
-        +below(767px)
-          font-size 16px
-      .bath
-        col()
-        col(1,4)
-        color darkBlue
-        text-align: center
-        font-weight: 700
-        font-family otherFont
-        font-size 20px
-        line-height 50px
-        +below(767px)
-          font-size 16px
-      .area
-        col()
-        col(1,4)
-        color darkBlue
-        text-align: center
-        font-weight: 700
-        font-family otherFont
-        font-size 20px
-        line-height 50px
-        +below(767px)
-          font-size 16px
-      .mls
-        col()
-        col(1,4)
-        color darkBlue
-        text-align: center
-        font-weight: 700
-        font-family otherFont
-        font-size 20px
-        line-height 50px
-        +below(767px)
-          font-size 16px
+      .info-wrapper
+        column(1/4)
+        height 100%
+        position: relative
+        .bed
+          align(b)
+          width 100%
+          color darkBlue
+          text-align: center
+          font-weight: 700
+          font-family otherFont
+          font-size 20px
+          line-height 50px
+          +below(767px)
+            font-size 16px
+        .bath
+          align(b)
+          width 100%
+          color darkBlue
+          text-align: center
+          font-weight: 700
+          font-family otherFont
+          font-size 20px
+          line-height 50px
+          +below(767px)
+            font-size 16px
+        .area
+          align(b)
+          width 100%
+          color darkBlue
+          text-align: center
+          font-weight: 700
+          font-family otherFont
+          font-size 20px
+          line-height 50px
+          +below(767px)
+            font-size 16px
+        .mls
+          align(b)
+          width 100%
+          color darkBlue
+          text-align: center
+          font-weight: 700
+          font-family otherFont
+          font-size 20px
+          line-height 50px
+          +below(767px)
+            font-size 16px
     .paragraph
-      wrap()
-      wrap 'center'
-      display: block
       font-family: otherFont
-      size 1200px auto
-      max-width: 100%
+      center(1100px)
       color darkBlue
-      margin auto
-      line-height 25px
       text-align: center
       h1
         col()
         h1()
-        margin auto
-        line-height: 25px
+        +above(768px)
+          font-size: 50px
       h2
         col()
         h2()
-        margin auto
-        line-height: 25px
       h3
         col()
         h3()
-        margin auto
-        line-height: 25px
       h4
         col()
         h4()
-        margin auto
-        line-height: 25px
       h5
         col()
         h5()
-        margin auto
-        line-height: 25px
       h6
         col()
         h6()
-        margin auto
-        line-height: 25px
       p
         normal()
-        line-height 25px
-        font-size 16px
-        width 80%
+        line-height 35px
         margin auto
+        +below(767px)
+          font-size 18px
+        +above(768px)
+          font-size 18px
   .Facilities
-    padding 100px 0px
+    padding 0px
     +below(767px)
-      padding 50px 0px
+      padding 0px
     .title
       text-align: center
       h1()
@@ -169,41 +156,35 @@
       font-family: otherFont
       font-weight: 700
     #facilitiesSlide
-      wrap()
-      wrap('center')
-      size 1200px auto
-      max-width: 100%
-      display block
-      margin auto
+      center(1280px)
       .owl-controls
         margin-top 30px
       .item
-        col()
         .img-wrapper
-          wrap()
-          wrap("flexbox")
-          wrap("bottom")
           background-repeat: no-repeat
           background-size: cover
           background-position: center
+          display: block
           margin auto
-          +below(1024px)
+          position: relative
+          +below(1280px)
             size 100% 300px
-          +above(1025px)
+          +above(1281px)
             size 100% 430px
           .specialText
-            wrap()
-            wrap('flexbox')
-            wrap('middle')
-            background-color rgba(lightBlue, 0.50)
-            size 100% 60px
+            background-color rgba(darkBlue, 0.50)
+            absolute bottom 0px
+            size 100% auto
             color white
             font-size 30px
             font-family: mainFont
             font-weight: 500
             text-align: center
+            padding 12px 0px
             display: block
-            padding-top 14px
+            +below(767px)
+              font-size 25px
+              padding 6px 0px
   .Featured
     padding-bottom 100px
     +below(767px)
@@ -215,60 +196,42 @@
       font-family: otherFont
       font-weight: 700
     #featuredSlide
-      wrap()
-      wrap('center')
-      size 1200px auto
-      max-width: 100%
-      display block
-      margin auto
+      center(1280px)
       .owl-controls
-        margin-top 30px
+        absolute bottom 30px
+        width 100%
       .item
-        col()
         .img-wrapper
-          wrap()
-          wrap("flexbox")
-          wrap("bottom")
           background-repeat: no-repeat
           background-size: cover
           background-position: center
+          display: block
           margin auto
-          +below(1024px)
-            size 530px 300px
-            max-width: 100%
-          +above(1025px)
-            size auto 300px
-            max-width: 530px
+          size 530px 300px
+          max-width: 100%
+          position relative
+          overflow hidden
           .specialText
-            wrap()
-            wrap('flexbox')
-            wrap('middle')
-            background-color rgba(darkBlue, 0.50)
-            size 100% 60px
+            absolute bottom 0px
+            background-color rgba(lightBlue, 0.50)
+            size 100% auto
             color white
             font-size 30px
             font-family: mainFont
             font-weight: 500
             text-align: left
-            padding-left 40px
+            padding 12px 40px
             +below(767px)
-              padding 0px
               text-align: center
               display: block
-              padding-top 14px
+              font-size 25px
+              padding 6px 0px
         .info
-          wrap()
-          wrap('center')
+          size 530px auto
+          max-width: 100%
+          display block
           margin auto
-          +below(1024px)
-            size 530px auto
-            max-width: 100%
-          +above(1025px)
-            size auto auto
-            max-width: 530px
           .name
-            col()
-            col(1,1)
             color darkBlue
             font-family: otherFont
             font-weight: 700
@@ -282,15 +245,13 @@
               padding-left 40px
               margin 20px auto 0px
           .price
-            col()
-            col(1,1)
             color darkBlue
             +below(767px)
-              margin 15px auto 0px
+              margin 15px auto 35px
               font-size 16px
               text-align: center
             +above(768px)
-              margin 5px auto 0px
+              margin 5px auto 75px
               font-size 18px
               text-align: left
               padding-left 40px

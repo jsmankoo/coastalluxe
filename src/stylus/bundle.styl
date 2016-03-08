@@ -1,5 +1,7 @@
 @import 'axis'
 @import 'rupture'
+@import 'jeet'
+
 @import './imports/flexiblegs-stylus'
 @import './imports/variables'
 
@@ -19,13 +21,14 @@ a
   color darkBlue
   text-decoration: none
   hover-color lightBlue true
+  cursor pointer
 
 html #Main
   // debug()
   font-family: mainFont
   .App
     margin auto
-    +below(1024px)
+    +below(1280px)
       padding-top 50px
-    +above(1025px)
+    +above(1281px)
       padding-top 160px

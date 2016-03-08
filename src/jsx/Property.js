@@ -46,6 +46,7 @@ const Property = React.createClass({
     };
   },
   componentDidMount(){
+    window.scrollTo(0, 0);
     store.dispatch({
       type: 'NAV_AFFIX_RESET'
     });
@@ -53,25 +54,25 @@ const Property = React.createClass({
       case 'featured':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81')
           .then(({acf})=>{
-            this.setState({...this.state, building: acf});
+            this.setState({...this.state, building: {...this.state.building, ...acf}});
           });
         break;
       case '13700marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137')
           .then(({acf})=>{
-            this.setState({...this.state, building: acf});
+            this.setState({...this.state, building: {...this.state.building, ...acf}});
           });
         break;
       case '13750marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/139')
           .then(({acf})=>{
-            this.setState({...this.state, building: acf});
+            this.setState({...this.state, building: {...this.state.building, ...acf}});
           });
         break;
       case '13800marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/140')
           .then(({acf})=>{
-            this.setState({...this.state, building: acf});
+            this.setState({...this.state, building: {...this.state.building, ...acf}});
           });
         break ;
       default:
@@ -100,17 +101,20 @@ const Property = React.createClass({
   render(){
     return (
       <div className="Property">
-        <MediaQuery minDeviceWidth={1024}>
+        <MediaQuery minDeviceWidth={1281}>
           <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
         </MediaQuery>
         <Jumbotron {...this.state} />
         <Details {...this.state.property} options={this.state.options} />
-        <Facilities {...this.state.building} />
+        {
+          this.state.building.facilities.length === 0 ?
+          <div /> :
+          <Facilities {...this.state.building} />
+        }
         <Featured
           building={this.props.params.building}
           featured={this.state.featured}
           options={this.state.options} />
-
       </div>
     );
   }
@@ -132,17 +136,21 @@ const Jumbotron = React.createClass({
   render(){
     return (
       <div className="Jumbotron" style={{backgroundImage: `url(${this.props.building.jumbotron})`}}>
-        <div className="title">
-          {this.props.property.title}
-        </div>
-        <div className="border"></div>
-        <div className="info">
-          <div className="address">
-            {`${this.props.property.number} ${this.props.property.streetname}`} <br /> {`${this.props.property.city}`}
+        <div className="bgTint">
+          <div className="jumbotron-wrapper">
+            <div className="title">
+              {this.props.property.name}
+            </div>
+            <div className="border"></div>
+            <div className="info">
+              <div className="address">
+                {`${this.props.property.number} ${this.props.property.streetname}`} <br /> {`${this.props.property.city}`}
+              </div>
+              <a href={`https://www.google.ca/maps/place/${this.props.property.number} ${this.props.property.streetname} ${this.props.property.city}`}>
+                <i className='fa fa-map-marker' />
+              </a>
+            </div>
           </div>
-          <a href={`https://www.google.ca/maps/place/${this.props.property.number} ${this.props.property.streetname} ${this.props.property.city}`}>
-            <i className='fa fa-map-marker' />
-          </a>
         </div>
       </div>
     );
@@ -166,17 +174,25 @@ const Details = React.createClass({
           </OwlCarousel>
         </div>
         <div className="info">
-          <div className="bed">
-            BED <br /> {this.props.bed}
+          <div className="info-wrapper">
+            <div className="bed">
+              BED <br /> {this.props.bed}
+            </div>
           </div>
-          <div className="bath">
-            BATH <br /> {this.props.bath}
+          <div className="info-wrapper">
+            <div className="bath">
+              BATH <br /> {this.props.bath}
+            </div>
           </div>
-          <div className="area">
-            SQ.FT. <br /> {this.props.area}
+          <div className="info-wrapper">
+            <div className="area">
+              SQ.FT. <br /> {this.props.area}
+            </div>
           </div>
-          <div className="mls">
-            MLS# <br /> {this.props.mls}
+          <div className="info-wrapper">
+            <div className="mls">
+              MLS# <br /> {this.props.mls}
+            </div>
           </div>
         </div>
         <div className="paragraph">
@@ -197,11 +213,31 @@ const Featured = React.createClass({
         slideSpeed : 300,
         paginationSpeed : 400,
         items : 2,
-        itemsDesktop : [1200,2],
+        itemsDesktop : [1280,2],
         itemsMobile : [767,1],
         autoPlay : true
       }
     };
+  },
+  handleSale(forSale, lease){
+    if (forSale !== '' && lease !== '')
+      return (
+        <div className="price">
+          For Sale: ${forSale} / For Lease: ${lease}
+        </div>
+      );
+    else if(forSale !== '')
+      return (
+        <div className="price">
+          For Sale: ${forSale}
+        </div>
+      );
+    else if(lease !== '')
+      return (
+        <div className="price">
+          For Lease: ${lease}
+        </div>
+      );
   },
   render(){
     return (
@@ -215,19 +251,19 @@ const Featured = React.createClass({
               return (
                 <div className="item" key={index}>
                   <a href={`/#/featured/${this.props.building}/${item.name}/${item.id}`} className="img-wrapper" style={{backgroundImage: `url(${item.image})`}}>
-                    <div className="specialText">
-                      {item.text}
-                    </div>
+                    {
+                      item.text !== '' ?
+                      <div className="specialText">
+                        {item.text}
+                      </div> :
+                      <div />
+                    }
                   </a>
                   <div className="info">
                     <div className="name">
                       {item.name}
                     </div>
-                    <div className="price">
-                      {item.forSale == '' ? '~' : `For Sale: $${item.forSale}`}
-                      {`\t\t/\t\t`}
-                      {item.lease == '' ? '~' : `For Sale: $${item.lease}`}
-                    </div>
+                    {this.handleSale(item.forSale, item.lease)}
                   </div>
                 </div>
               );
@@ -263,9 +299,13 @@ const Facilities = React.createClass({
               return (
                 <div className="item" key={index}>
                   <div className="img-wrapper" style={{backgroundImage: `url(${item.img})`}}>
-                    <div className="specialText">
-                      {item.text}
-                    </div>
+                    {
+                      item.text !== '' ?
+                      <div className="specialText">
+                        {item.text}
+                      </div> :
+                      <div />
+                    }
                   </div>
                 </div>
               );

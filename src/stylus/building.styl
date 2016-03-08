@@ -1,41 +1,60 @@
 .Building
   .owl-theme .owl-controls .owl-page span
     background: darkBlue
+    size 8px 8px
   .Jumbotron
     background-repeat: no-repeat
     background-size: cover
     background-position: center
-    wrap()
-    wrap('flexbox')
-    wrap('middle')
+    position relative
     size 100% 300px
-    .title
-      col()
-      col(1,1)
-      color darkBlue
-      font-family: otherFont
-      font-weight: 700
-      font-size 60px
-      text-align: center
-      +below(767px)
-        font-size 40px
-    .Buttons
-      wrap()
-      wrap 'center'
-      col()
-      .Button
-        col()
-        background-color: darkBlue
-        color white
-        font-weight: 700
-        font-family: otherFont
-        font-size 18px
-        text-align: center
-        margin 20px
-        cursor: pointer;
-      .forSale
-      .forLease
-        padding 5px 10px
+    .bgTint
+      background-color bgTintColor
+      size 100% 300px
+      .jumbotron-wrapper
+        align(b)
+        width 100%
+        .title
+          color darkBlue
+          font-family: otherFont
+          font-weight: 700
+          font-size 60px
+          text-align: center
+          +below(767px)
+            font-size 40px
+        .Buttons
+          margin auto
+          display: block
+          .Button
+            background-color: darkBlue
+            color white
+            font-weight: 700
+            font-family: otherFont
+            font-size 18px
+            text-align: center
+            margin 20px 0px
+            cursor: pointer;
+            padding 5px 10px
+          .forSale
+            +below(767px)
+              column(1)
+              a
+                display: block
+                margin 10px auto
+            +above(768px)
+              column(1/2)
+              a
+                float right
+          .forLease
+            +below(767px)
+              column(1)
+              a
+                display: block
+                margin 10px auto
+            +above(768px)
+              column(1/2)
+              a
+                float left
   .Details
     margin 90px auto 0px
     +below(767px)
@@ -75,39 +94,82 @@
         font-weight: 500
         font-size 14px
     .intro
-      wrap()
-      wrap 'center'
-      wrap 'gutter', 50
-      wrap 'outside', 50
-      size 900px auto
-      max-width: 100%
-      margin auto
+      center(900px)
       .img-wrapper
-        col()
-        col(2,7)
+        column(2/7)
         height 375px
         background-repeat: no-repeat
         background-size: cover
         background-position: center
+        display: block
         +below(767px)
-          col(1,1)
+          column(1)
       .paragraph
-        col()
-        col(5,7)
-        h6()
+        column(5/7)
+        font-family: otherFont
+        color darkBlue
+        text-align: left
         +below(767px)
-          col(1,1)
+          column(1)
+        h1
+          h1()
+          margin 0px auto
+        h2
+          h2()
+          margin 0px auto
+        h3
+          h3()
+          margin 0px auto
+        h4
+          h4()
+          margin 0px auto
+        h5
+          h5()
+          margin 0px auto
+        h6
+          h6()
+          margin 0px auto
+        p
+          normal()
+          line-height 35px
+          margin auto
+          +below(767px)
+            font-size 18px
+          +above(768px)
+            font-size 18px
         i.fa
           font-size 25px
     .rest
-      wrap()
-      wrap 'center'
-      wrap 'gutter', 50
-      size 900px auto
-      max-width: 80%
-      margin auto
-      .paragraph
+      center(900px)
+      font-family: otherFont
+      color darkBlue
+      text-align: left
+      h1
+        h1()
+        margin 0px auto
+      h2
+        h2()
+        margin 0px auto
+      h3
+        h3()
+        margin 0px auto
+      h4
+        h4()
+        margin 0px auto
+      h5
+        h5()
+        margin 0px auto
+      h6
         h6()
+        margin 0px auto
+      p
+        normal()
+        line-height 35px
+        margin auto
+        +below(767px)
+          font-size 18px
+        +above(768px)
+          font-size 18px
   .Facilities
     padding 100px 0px
     +below(767px)
@@ -119,41 +181,36 @@
       font-family: otherFont
       font-weight: 700
     #facilitiesSlide
-      wrap()
-      wrap('center')
-      size 1200px auto
-      max-width: 100%
-      display block
-      margin auto
+      center(1280px)
       .owl-controls
         margin-top 30px
       .item
-        col()
         .img-wrapper
-          wrap()
-          wrap("flexbox")
-          wrap("bottom")
           background-repeat: no-repeat
           background-size: cover
           background-position: center
+          display: block
           margin auto
+          position relative
           +below(1024px)
             size 100% 300px
           +above(1025px)
             size 100% 430px
           .specialText
-            wrap()
-            wrap('flexbox')
-            wrap('middle')
+            absolute bottom 0px
             background-color rgba(lightBlue, 0.50)
-            size 100% 60px
+            size 100% auto
             color white
             font-size 30px
             font-family: mainFont
             font-weight: 500
             text-align: center
-            display: block
-            padding-top 14px
+            padding 12px 0px
+            +below(767px)
+              text-align: center
+              display: block
+              font-size 25px
+              padding 6px 0px
   .Featured
     padding-bottom 100px
     +below(767px)
@@ -165,60 +222,40 @@
       font-family: otherFont
       font-weight: 700
     #featuredSlide
-      wrap()
-      wrap('center')
-      size 1200px auto
-      max-width: 100%
-      display block
-      margin auto
+      center(1280px)
       .owl-controls
         margin-top 30px
       .item
-        col()
         .img-wrapper
-          wrap()
-          wrap("flexbox")
-          wrap("bottom")
           background-repeat: no-repeat
           background-size: cover
           background-position: center
+          position: relative;
+          display: block
           margin auto
-          +below(1024px)
-            size 530px 300px
-            max-width: 100%
-          +above(1025px)
-            size auto 300px
-            max-width: 530px
+          size 530px 300px
+          max-width: 100%
+          overflow hidden
           .specialText
-            wrap()
-            wrap('flexbox')
-            wrap('middle')
-            background-color rgba(darkBlue, 0.50)
-            size 100% 60px
+            absolute bottom 0px
+            background-color rgba(lightBlue, 0.50)
+            size 100% auto
             color white
             font-size 30px
             font-family: mainFont
             font-weight: 500
             text-align: left
-            padding-left 40px
+            padding 12px 40px
             +below(767px)
-              padding 0px
               text-align: center
               display: block
-              padding-top 14px
+              font-size 25px
+              padding 6px 0px
         .info
-          wrap()
-          wrap('center')
           margin auto
-          +below(1024px)
-            size 530px auto
-            max-width: 100%
-          +above(1025px)
-            size auto auto
-            max-width: 530px
+          size 530px auto
+          max-width: 100%
           .name
-            col()
-            col(1,1)
             color darkBlue
             font-family: otherFont
             font-weight: 700
@@ -232,8 +269,6 @@
               padding-left 40px
               margin 20px auto 0px
           .price
-            col()
-            col(1,1)
             color darkBlue
             +below(767px)
               margin 15px auto 0px

@@ -38022,6 +38022,7 @@ var Property = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
+    window.scrollTo(0, 0);
     store.dispatch({
       type: 'NAV_AFFIX_RESET'
     });
@@ -38072,7 +38073,7 @@ var Property = React.createClass({
       { className: 'Building' },
       React.createElement(
         MediaQuery,
-        { minDeviceWidth: 1024 },
+        { minDeviceWidth: 1281 },
         React.createElement(Waypoint, { onEnter: this.handleWaypoint, onLeave: this.handleWaypoint })
       ),
       React.createElement(Jumbotron, _extends({}, this.state, { url: this.props.params.building })),
@@ -38106,23 +38107,39 @@ var Jumbotron = React.createClass({
       { className: 'Jumbotron', style: { backgroundImage: 'url(' + this.props.building.jumbotron + ')' } },
       React.createElement(
         'div',
-        { className: 'title' },
-        this.props.building.name
-      ),
-      React.createElement(
-        'div',
-        { className: 'Buttons' },
+        { className: 'bgTint' },
         React.createElement(
-          'a',
-          { href: '/#/forSale/' + this.props.url, className: 'forSale Button' },
-          this.props.building.name,
-          ' For Sale'
-        ),
-        React.createElement(
-          'a',
-          { href: '/#/lease/' + this.props.url, className: 'forLease Button' },
-          this.props.building.name,
-          ' For Lease'
+          'div',
+          { className: 'jumbotron-wrapper' },
+          React.createElement(
+            'div',
+            { className: 'title' },
+            this.props.building.name
+          ),
+          React.createElement(
+            'div',
+            { className: 'Buttons' },
+            React.createElement(
+              'div',
+              { className: 'forSale' },
+              React.createElement(
+                'a',
+                { href: '/#/forSale/' + this.props.url, className: 'Button' },
+                this.props.building.name,
+                ' For Sale'
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'forLease' },
+              React.createElement(
+                'a',
+                { href: '/#/lease/' + this.props.url, className: 'Button' },
+                this.props.building.name,
+                ' For Lease'
+              )
+            )
+          )
         )
       )
     );
@@ -38192,6 +38209,26 @@ var Featured = React.createClass({
       }
     };
   },
+  handleSale: function handleSale(forSale, lease) {
+    if (forSale !== '' && lease !== '') return React.createElement(
+      'div',
+      { className: 'price' },
+      'For Sale: $',
+      forSale,
+      ' / For Lease: $',
+      lease
+    );else if (forSale !== '') return React.createElement(
+      'div',
+      { className: 'price' },
+      'For Sale: $',
+      forSale
+    );else if (lease !== '') return React.createElement(
+      'div',
+      { className: 'price' },
+      'For Lease: $',
+      lease
+    );
+  },
   render: function render() {
     var _this2 = this;
 
@@ -38213,11 +38250,11 @@ var Featured = React.createClass({
             React.createElement(
               'a',
               { href: '/#/featured/' + _this2.props.building + '/' + item.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.image + ')' } },
-              React.createElement(
+              item.text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },
                 item.text
-              )
+              ) : React.createElement('div', null)
             ),
             React.createElement(
               'div',
@@ -38227,13 +38264,7 @@ var Featured = React.createClass({
                 { className: 'name' },
                 item.name
               ),
-              React.createElement(
-                'div',
-                { className: 'price' },
-                item.forSale == '' ? '~' : 'For Sale: $' + item.forSale,
-                '\t\t/\t\t',
-                item.lease == '' ? '~' : 'For Sale: $' + item.lease
-              )
+              _this2.handleSale(item.forSale, item.lease)
             )
           );
         })
@@ -38274,11 +38305,11 @@ var Facilities = React.createClass({
             React.createElement(
               'div',
               { className: 'img-wrapper', style: { backgroundImage: 'url(' + item.img + ')' } },
-              React.createElement(
+              item.text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },
                 item.text
-              )
+              ) : React.createElement('div', null)
             )
           );
         })
@@ -38323,6 +38354,7 @@ var Contact = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
+    window.scrollTo(0, 0);
     store.dispatch({
       type: 'NAV_AFFIX_RESET'
     });
@@ -38341,11 +38373,6 @@ var Contact = React.createClass({
     return React.createElement(
       'div',
       { className: 'Contact' },
-      React.createElement(
-        MediaQuery,
-        { minDeviceWidth: 1024 },
-        React.createElement(Waypoint, { onEnter: this.handleWaypoint, onLeave: this.handleWaypoint })
-      ),
       React.createElement(Top, {
         name: this.state.name,
         email: this.state.email,
@@ -38353,6 +38380,11 @@ var Contact = React.createClass({
         Office: this.state.Office,
         City: this.state.City,
         url: this.state.map }),
+      React.createElement(
+        MediaQuery,
+        { minDeviceWidth: 1281 },
+        React.createElement(Waypoint, { onEnter: this.handleWaypoint, onLeave: this.handleWaypoint })
+      ),
       React.createElement(Ryan, {
         mobileimage: this.state.mobileimage,
         image: this.state.image,
@@ -38411,48 +38443,60 @@ var Top = React.createClass({
             { className: 'info' },
             React.createElement(
               'div',
-              { className: 'mobile wrapper' },
+              { className: 'mobile col' },
               React.createElement(
                 'div',
-                { className: 'icon' },
-                React.createElement('i', { className: 'fa fa-mobile' })
-              ),
-              React.createElement(
-                'div',
-                { className: 'content' },
-                this.props.Mobile
+                { className: 'wrapper' },
+                React.createElement(
+                  'div',
+                  { className: 'icon' },
+                  React.createElement('i', { className: 'fa fa-mobile' })
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'content' },
+                  this.props.Mobile
+                )
               )
             ),
             React.createElement(
               'a',
-              { href: this.props.url, className: 'office wrapper' },
+              { href: this.props.url, className: 'office col' },
               React.createElement(
                 'div',
-                { className: 'icon' },
-                React.createElement('i', { className: 'fa fa-map-marker' })
-              ),
-              React.createElement(
-                'div',
-                { className: 'content' },
-                this.props.Office,
-                ' ',
-                React.createElement('br', null),
-                ' ',
-                this.props.City
+                { className: 'wrapper' },
+                React.createElement(
+                  'div',
+                  { className: 'icon' },
+                  React.createElement('i', { className: 'fa fa-map-marker' })
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'content' },
+                  this.props.Office,
+                  ' ',
+                  React.createElement('br', null),
+                  ' ',
+                  this.props.City
+                )
               )
             ),
             React.createElement(
               'a',
-              { href: 'mailto:' + this.props.email, className: 'email wrapper' },
+              { href: 'mailto:' + this.props.email, className: 'email col' },
               React.createElement(
                 'div',
-                { className: 'icon' },
-                React.createElement('i', { className: 'fa fa-paper-plane' })
-              ),
-              React.createElement(
-                'div',
-                { className: 'content' },
-                this.props.email
+                { className: 'wrapper' },
+                React.createElement(
+                  'div',
+                  { className: 'icon' },
+                  React.createElement('i', { className: 'fa fa-paper-plane' })
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'content' },
+                  this.props.email
+                )
               )
             )
           )
@@ -38657,6 +38701,7 @@ var FeaturedProperties = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
+    window.scrollTo(0, 0);
     store.dispatch({
       type: 'NAV_AFFIX_RESET'
     });
@@ -38731,7 +38776,7 @@ var FeaturedProperties = React.createClass({
       { className: 'FeaturedProperties' },
       React.createElement(
         MediaQuery,
-        { minDeviceWidth: 1024 },
+        { minDeviceWidth: 1281 },
         React.createElement(Waypoint, { onEnter: this.handleWaypoint, onLeave: this.handleWaypoint })
       ),
       React.createElement(Jumbotron, _extends({}, this.state.index, { saleType: this.props.saleType, building: this.props.building })),
@@ -38764,34 +38809,46 @@ var Jumbotron = React.createClass({
       { className: 'Jumbotron', style: { backgroundImage: 'url(' + this.props.jumbotron + ')' } },
       React.createElement(
         'div',
-        { className: 'title' },
-        this.props.title
-      ),
-      React.createElement(
-        'div',
-        { className: 'select' },
+        { className: 'bgTint' },
         React.createElement(
           'div',
-          { className: 'select-wrapper' },
+          { className: 'jumbotron-wrapper' },
           React.createElement(
             'div',
-            { className: 'SaleType' },
-            React.createElement(Select, {
-              name: 'Sale Type',
-              value: this.props.saleType,
-              options: [{ value: 'all', label: 'For Sale & Lease' }, { value: 'sale', label: 'For Sale' }, { value: 'lease', label: 'For Lease' }],
-              onChange: this.saleOnChange
-            })
+            { className: 'title' },
+            this.props.title
           ),
           React.createElement(
             'div',
-            { className: 'Building' },
-            React.createElement(Select, {
-              name: 'Building',
-              value: this.props.building,
-              options: [{ value: 'featured', label: 'Featured Properties' }, { value: '13700marinapointedr', label: '13700 Marina Pointe Dr' }, { value: '13750marinapointedr', label: '13750 Marina Pointe Dr' }, { value: '13800marinapointedr', label: '13800 Marina Pointe Dr' }],
-              onChange: this.buildingOnChange
-            })
+            { className: 'select' },
+            React.createElement(
+              'div',
+              { className: 'SaleType-wrapper' },
+              React.createElement(
+                'div',
+                { className: 'SaleType' },
+                React.createElement(Select, {
+                  name: 'Sale Type',
+                  value: this.props.saleType,
+                  options: [{ value: 'all', label: 'For Sale & Lease' }, { value: 'sale', label: 'For Sale' }, { value: 'lease', label: 'For Lease' }],
+                  onChange: this.saleOnChange
+                })
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'Building-wrapper' },
+              React.createElement(
+                'div',
+                { className: 'Building' },
+                React.createElement(Select, {
+                  name: 'Building',
+                  value: this.props.building,
+                  options: [{ value: 'featured', label: 'Featured Properties' }, { value: '13700marinapointedr', label: '13700 Marina Pointe Dr' }, { value: '13750marinapointedr', label: '13750 Marina Pointe Dr' }, { value: '13800marinapointedr', label: '13800 Marina Pointe Dr' }],
+                  onChange: this.buildingOnChange
+                })
+              )
+            )
           )
         )
       )
@@ -38822,7 +38879,7 @@ var Properties = React.createClass({
           var forSale = _ref8.forSale;
           var lease = _ref8.lease;
 
-          return forSale !== '' && lease !== '';
+          return forSale !== '' || lease !== '';
         });
       case 'sale':
         return list.filter(function (_ref9) {
@@ -38841,6 +38898,26 @@ var Properties = React.createClass({
       default:
         return list;
     }
+  },
+  handleSale: function handleSale(forSale, lease) {
+    if (forSale !== '' && lease !== '') return React.createElement(
+      'div',
+      { className: 'price' },
+      'For Sale: $',
+      forSale,
+      ' / For Lease: $',
+      lease
+    );else if (forSale !== '') return React.createElement(
+      'div',
+      { className: 'price' },
+      'For Sale: $',
+      forSale
+    );else if (lease !== '') return React.createElement(
+      'div',
+      { className: 'price' },
+      'For Lease: $',
+      lease
+    );
   },
   render: function render() {
     var _this2 = this;
@@ -38865,11 +38942,11 @@ var Properties = React.createClass({
             React.createElement(
               'a',
               { href: '/#/featured/' + _this2.props.building + '/' + name + '/' + id, className: 'img-wrapper', style: { backgroundImage: 'url(' + image + ')' } },
-              React.createElement(
+              text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },
                 text
-              )
+              ) : React.createElement('div', null)
             ),
             React.createElement(
               'div',
@@ -38879,13 +38956,7 @@ var Properties = React.createClass({
                 { className: 'name' },
                 name
               ),
-              React.createElement(
-                'div',
-                { className: 'price' },
-                forSale == '' ? '~' : 'For Sale: $' + forSale,
-                '\t\t/\t\t',
-                lease == '' ? '~' : 'For Sale: $' + lease
-              )
+              _this2.handleSale(forSale, lease)
             )
           );
         })
@@ -38915,6 +38986,7 @@ var store = require('./store');
 var Home = React.createClass({
   displayName: 'Home',
   componentDidMount: function componentDidMount() {
+    window.scrollTo(0, 0);
     store.dispatch({
       type: 'NAV_AFFIX_RESET'
     });
@@ -38938,7 +39010,7 @@ var Home = React.createClass({
       { className: 'Home' },
       React.createElement(
         MediaQuery,
-        { minDeviceWidth: 1024 },
+        { minDeviceWidth: 1281 },
         React.createElement(Waypoint, { onEnter: this.handleWaypoint, onLeave: this.handleWaypoint })
       ),
       React.createElement(Top, {
@@ -39014,12 +39086,34 @@ var Featured = React.createClass({
     pullList.map(function (link) {
       $.get(link).then(function (properties) {
         _this.setState(_extends({}, _this.state, {
-          items: [].concat(_toConsumableArray(_this.state.items), [properties[0], properties[1], properties[2]])
+          items: [].concat(_toConsumableArray(_this.state.items), [properties[0], properties[1]])
         }));
       });
     });
   },
+  handleSale: function handleSale(item) {
+    if (item.acf.forSale !== '' && item.acf.lease !== '') return React.createElement(
+      'div',
+      { className: 'price' },
+      'For Sale: $',
+      item.acf.forSale,
+      ' / For Lease: $',
+      item.acf.lease
+    );else if (item.acf.forSale !== '') return React.createElement(
+      'div',
+      { className: 'price' },
+      'For Sale: $',
+      item.acf.forSale
+    );else if (item.acf.lease !== '') return React.createElement(
+      'div',
+      { className: 'price' },
+      'For Lease: $',
+      item.acf.lease
+    );
+  },
   render: function render() {
+    var _this2 = this;
+
     return React.createElement(
       'div',
       { className: 'Featured' },
@@ -39064,11 +39158,11 @@ var Featured = React.createClass({
             React.createElement(
               'div',
               { className: 'img-wrapper', style: { backgroundImage: 'url(' + item.acf.image + ')' } },
-              React.createElement(
+              item.acf.text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },
                 item.acf.text
-              )
+              ) : React.createElement('div', null)
             ),
             React.createElement(
               'div',
@@ -39078,13 +39172,7 @@ var Featured = React.createClass({
                 { className: 'name' },
                 item.acf.name
               ),
-              React.createElement(
-                'div',
-                { className: 'price' },
-                item.acf.forSale == '' ? '~' : 'For Sale: $' + item.acf.forSale,
-                '\t\t/\t\t',
-                item.acf.lease == '' ? '~' : 'For Sale: $' + item.acf.lease
-              )
+              _this2.handleSale(item)
             )
           );
         })
@@ -39109,12 +39197,12 @@ var Ryan = React.createClass({
     };
   },
   componentDidMount: function componentDidMount() {
-    var _this2 = this;
+    var _this3 = this;
 
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/28').then(function (_ref2) {
       var acf = _ref2.acf;
 
-      _this2.setState(acf);
+      _this3.setState(acf);
     });
   },
   render: function render() {
@@ -39132,7 +39220,7 @@ var Ryan = React.createClass({
       ),
       React.createElement(
         MediaQuery,
-        { minDeviceWidth: 768, maxDeviceWidth: 1024 },
+        { minDeviceWidth: 768, maxDeviceWidth: 1280 },
         React.createElement(
           'div',
           { className: 'bgTint' },
@@ -39141,7 +39229,7 @@ var Ryan = React.createClass({
       ),
       React.createElement(
         MediaQuery,
-        { minDeviceWidth: 1024 },
+        { minDeviceWidth: 1281 },
         React.createElement(
           'div',
           { className: 'bgTint' },
@@ -39176,7 +39264,11 @@ var Ryan = React.createClass({
       React.createElement(
         'a',
         { href: '/#/contact', className: 'more' },
-        'More ',
+        React.createElement(
+          'div',
+          { className: 'linkName' },
+          'More'
+        ),
         React.createElement('i', { className: 'fa fa-chevron-right' })
       )
     );
@@ -39353,13 +39445,17 @@ var Explore = React.createClass({
                   } },
                 React.createElement(
                   'div',
-                  { className: 'linkTitle' },
-                  item.title
-                ),
-                React.createElement(
-                  'div',
-                  { className: 'linkSubtitle' },
-                  item.subtitle
+                  { className: 'titleWrapper' },
+                  React.createElement(
+                    'div',
+                    { className: 'linkTitle' },
+                    item.title
+                  ),
+                  React.createElement(
+                    'div',
+                    { className: 'linkSubtitle' },
+                    item.subtitle
+                  )
                 )
               )
             );
@@ -39453,7 +39549,7 @@ var ForLease = React.createClass({
 
 store.subscribe(renderDom);
 store.subscribe(function () {
-  return console.log(store.getState());
+  return console.log(store.getState().Nav.affix);
 });
 renderDom();
 
@@ -39513,6 +39609,7 @@ var Property = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
+    window.scrollTo(0, 0);
     store.dispatch({
       type: 'NAV_AFFIX_RESET'
     });
@@ -39521,28 +39618,28 @@ var Property = React.createClass({
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81').then(function (_ref) {
           var acf = _ref.acf;
 
-          _this.setState(_extends({}, _this.state, { building: acf }));
+          _this.setState(_extends({}, _this.state, { building: _extends({}, _this.state.building, acf) }));
         });
         break;
       case '13700marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137').then(function (_ref2) {
           var acf = _ref2.acf;
 
-          _this.setState(_extends({}, _this.state, { building: acf }));
+          _this.setState(_extends({}, _this.state, { building: _extends({}, _this.state.building, acf) }));
         });
         break;
       case '13750marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/139').then(function (_ref3) {
           var acf = _ref3.acf;
 
-          _this.setState(_extends({}, _this.state, { building: acf }));
+          _this.setState(_extends({}, _this.state, { building: _extends({}, _this.state.building, acf) }));
         });
         break;
       case '13800marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/140').then(function (_ref4) {
           var acf = _ref4.acf;
 
-          _this.setState(_extends({}, _this.state, { building: acf }));
+          _this.setState(_extends({}, _this.state, { building: _extends({}, _this.state.building, acf) }));
         });
         break;
       default:
@@ -39577,12 +39674,12 @@ var Property = React.createClass({
       { className: 'Property' },
       React.createElement(
         MediaQuery,
-        { minDeviceWidth: 1024 },
+        { minDeviceWidth: 1281 },
         React.createElement(Waypoint, { onEnter: this.handleWaypoint, onLeave: this.handleWaypoint })
       ),
       React.createElement(Jumbotron, this.state),
       React.createElement(Details, _extends({}, this.state.property, { options: this.state.options })),
-      React.createElement(Facilities, this.state.building),
+      this.state.building.facilities.length === 0 ? React.createElement('div', null) : React.createElement(Facilities, this.state.building),
       React.createElement(Featured, {
         building: this.props.params.building,
         featured: this.state.featured,
@@ -39611,26 +39708,34 @@ var Jumbotron = React.createClass({
       { className: 'Jumbotron', style: { backgroundImage: 'url(' + this.props.building.jumbotron + ')' } },
       React.createElement(
         'div',
-        { className: 'title' },
-        this.props.property.title
-      ),
-      React.createElement('div', { className: 'border' }),
-      React.createElement(
-        'div',
-        { className: 'info' },
+        { className: 'bgTint' },
         React.createElement(
           'div',
-          { className: 'address' },
-          this.props.property.number + ' ' + this.props.property.streetname,
-          ' ',
-          React.createElement('br', null),
-          ' ',
-          '' + this.props.property.city
-        ),
-        React.createElement(
-          'a',
-          { href: 'https://www.google.ca/maps/place/' + this.props.property.number + ' ' + this.props.property.streetname + ' ' + this.props.property.city },
-          React.createElement('i', { className: 'fa fa-map-marker' })
+          { className: 'jumbotron-wrapper' },
+          React.createElement(
+            'div',
+            { className: 'title' },
+            this.props.property.name
+          ),
+          React.createElement('div', { className: 'border' }),
+          React.createElement(
+            'div',
+            { className: 'info' },
+            React.createElement(
+              'div',
+              { className: 'address' },
+              this.props.property.number + ' ' + this.props.property.streetname,
+              ' ',
+              React.createElement('br', null),
+              ' ',
+              '' + this.props.property.city
+            ),
+            React.createElement(
+              'a',
+              { href: 'https://www.google.ca/maps/place/' + this.props.property.number + ' ' + this.props.property.streetname + ' ' + this.props.property.city },
+              React.createElement('i', { className: 'fa fa-map-marker' })
+            )
+          )
         )
       )
     );
@@ -39661,35 +39766,51 @@ var Details = React.createClass({
         { className: 'info' },
         React.createElement(
           'div',
-          { className: 'bed' },
-          'BED ',
-          React.createElement('br', null),
-          ' ',
-          this.props.bed
+          { className: 'info-wrapper' },
+          React.createElement(
+            'div',
+            { className: 'bed' },
+            'BED ',
+            React.createElement('br', null),
+            ' ',
+            this.props.bed
+          )
         ),
         React.createElement(
           'div',
-          { className: 'bath' },
-          'BATH ',
-          React.createElement('br', null),
-          ' ',
-          this.props.bath
+          { className: 'info-wrapper' },
+          React.createElement(
+            'div',
+            { className: 'bath' },
+            'BATH ',
+            React.createElement('br', null),
+            ' ',
+            this.props.bath
+          )
         ),
         React.createElement(
           'div',
-          { className: 'area' },
-          'SQ.FT. ',
-          React.createElement('br', null),
-          ' ',
-          this.props.area
+          { className: 'info-wrapper' },
+          React.createElement(
+            'div',
+            { className: 'area' },
+            'SQ.FT. ',
+            React.createElement('br', null),
+            ' ',
+            this.props.area
+          )
         ),
         React.createElement(
           'div',
-          { className: 'mls' },
-          'MLS# ',
-          React.createElement('br', null),
-          ' ',
-          this.props.mls
+          { className: 'info-wrapper' },
+          React.createElement(
+            'div',
+            { className: 'mls' },
+            'MLS# ',
+            React.createElement('br', null),
+            ' ',
+            this.props.mls
+          )
         )
       ),
       React.createElement(
@@ -39714,11 +39835,31 @@ var Featured = React.createClass({
         slideSpeed: 300,
         paginationSpeed: 400,
         items: 2,
-        itemsDesktop: [1200, 2],
+        itemsDesktop: [1280, 2],
         itemsMobile: [767, 1],
         autoPlay: true
       }
     };
+  },
+  handleSale: function handleSale(forSale, lease) {
+    if (forSale !== '' && lease !== '') return React.createElement(
+      'div',
+      { className: 'price' },
+      'For Sale: $',
+      forSale,
+      ' / For Lease: $',
+      lease
+    );else if (forSale !== '') return React.createElement(
+      'div',
+      { className: 'price' },
+      'For Sale: $',
+      forSale
+    );else if (lease !== '') return React.createElement(
+      'div',
+      { className: 'price' },
+      'For Lease: $',
+      lease
+    );
   },
   render: function render() {
     var _this2 = this;
@@ -39741,11 +39882,11 @@ var Featured = React.createClass({
             React.createElement(
               'a',
               { href: '/#/featured/' + _this2.props.building + '/' + item.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.image + ')' } },
-              React.createElement(
+              item.text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },
                 item.text
-              )
+              ) : React.createElement('div', null)
             ),
             React.createElement(
               'div',
@@ -39755,13 +39896,7 @@ var Featured = React.createClass({
                 { className: 'name' },
                 item.name
               ),
-              React.createElement(
-                'div',
-                { className: 'price' },
-                item.forSale == '' ? '~' : 'For Sale: $' + item.forSale,
-                '\t\t/\t\t',
-                item.lease == '' ? '~' : 'For Sale: $' + item.lease
-              )
+              _this2.handleSale(item.forSale, item.lease)
             )
           );
         })
@@ -39802,11 +39937,11 @@ var Facilities = React.createClass({
             React.createElement(
               'div',
               { className: 'img-wrapper', style: { backgroundImage: 'url(' + item.img + ')' } },
-              React.createElement(
+              item.text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },
                 item.text
-              )
+              ) : React.createElement('div', null)
             )
           );
         })
@@ -39855,71 +39990,95 @@ var Mobile = React.createClass({
       { className: 'Mobile View' },
       React.createElement(
         'div',
-        { className: 'col brandLogo' },
+        { className: 'col' },
         React.createElement(
-          'a',
-          { href: '/' },
-          React.createElement('img', { src: this.props.footerLogo })
+          'div',
+          { className: 'brandLogo' },
+          React.createElement(
+            'a',
+            { href: '/' },
+            React.createElement('img', { src: this.props.footerLogo })
+          )
         )
       ),
       React.createElement(
         'div',
-        { className: 'col socialMedia' },
+        { className: 'col' },
         React.createElement(
-          'a',
-          { href: this.props.email },
-          React.createElement('i', { className: 'fa fa-envelope' })
-        ),
-        React.createElement(
-          'a',
-          { href: this.props.facebook },
-          React.createElement('i', { className: 'fa fa-facebook-f' })
-        ),
-        React.createElement(
-          'a',
-          { href: this.props.twitter },
-          React.createElement('i', { className: 'fa fa-twitter' })
-        ),
-        React.createElement(
-          'a',
-          { href: this.props.instagram },
-          React.createElement('i', { className: 'fa fa-instagram' })
+          'div',
+          { className: 'socialMedia' },
+          React.createElement(
+            'a',
+            { href: this.props.email },
+            React.createElement('i', { className: 'fa fa-envelope' })
+          ),
+          React.createElement(
+            'a',
+            { href: this.props.facebook },
+            React.createElement('i', { className: 'fa fa-facebook-f' })
+          ),
+          React.createElement(
+            'a',
+            { href: this.props.twitter },
+            React.createElement('i', { className: 'fa fa-twitter' })
+          ),
+          React.createElement(
+            'a',
+            { href: this.props.instagram },
+            React.createElement('i', { className: 'fa fa-instagram' })
+          )
         )
       ),
       React.createElement(
         'div',
-        { className: 'col footer' },
+        { className: 'col' },
         React.createElement(
-          Markdown,
-          null,
-          this.props.copyright
+          'div',
+          { className: 'footer' },
+          React.createElement(
+            Markdown,
+            null,
+            this.props.copyright
+          )
         )
       ),
       React.createElement(
         'div',
-        { className: 'col bhhs' },
+        { className: 'col' },
         React.createElement(
-          'a',
-          { href: 'http://www.berkshirehathawayhs.com/', target: '_blank' },
-          React.createElement('img', { src: this.props.berkshireLogo })
+          'div',
+          { className: 'bhhs' },
+          React.createElement(
+            'a',
+            { href: 'http://www.berkshirehathawayhs.com/', target: '_blank' },
+            React.createElement('img', { src: this.props.berkshireLogo })
+          )
         )
       ),
       React.createElement(
         'div',
-        { className: 'col footer' },
+        { className: 'col' },
         React.createElement(
-          Markdown,
-          null,
-          this.props.information
+          'div',
+          { className: 'footer' },
+          React.createElement(
+            Markdown,
+            null,
+            this.props.information
+          )
         )
       ),
       React.createElement(
         'div',
-        { className: 'col dev' },
+        { className: 'col' },
         React.createElement(
-          Markdown,
-          null,
-          this.props.dev
+          'div',
+          { className: 'dev' },
+          React.createElement(
+            Markdown,
+            null,
+            this.props.dev
+          )
         )
       )
     );
@@ -40032,7 +40191,12 @@ var Menu = React.createClass({
 
 var Mobile = React.createClass({
   displayName: 'Mobile',
+  onClickHandler: function onClickHandler(event) {
+    store.dispatch({ type: 'MENU_TOGGLE' });
+  },
   render: function render() {
+    var _this = this;
+
     return React.createElement(
       'div',
       { className: 'View Mobile' },
@@ -40067,7 +40231,7 @@ var Mobile = React.createClass({
                 { className: 'submenu' },
                 React.createElement(
                   'a',
-                  { href: link },
+                  { href: link, onClick: _this.onClickHandler },
                   name
                 )
               );
@@ -40081,11 +40245,16 @@ var Mobile = React.createClass({
 
 var Tablet = React.createClass({
   displayName: 'Tablet',
+  onClickHandler: function onClickHandler(event) {
+    store.dispatch({ type: 'MENU_TOGGLE' });
+  },
   closeMenu: function closeMenu(event) {
     event.preventDefault();
     store.dispatch({ type: 'MENU_TOGGLE' });
   },
   render: function render() {
+    var _this2 = this;
+
     return React.createElement(
       'div',
       { className: 'View Tablet' },
@@ -40119,7 +40288,7 @@ var Tablet = React.createClass({
                 { className: 'submenu', key: index },
                 React.createElement(
                   'a',
-                  { href: link },
+                  { href: link, onClick: _this2.onClickHandler },
                   name
                 )
               );
@@ -40158,12 +40327,12 @@ var Nav = React.createClass({
       ),
       React.createElement(
         MediaQuery,
-        { minDeviceWidth: 768, maxDeviceWidth: 1024 },
+        { minDeviceWidth: 768, maxDeviceWidth: 1280 },
         React.createElement(Tablet, _extends({}, this.props, { logo: this.props.mobileLogo }))
       ),
       React.createElement(
         MediaQuery,
-        { minDeviceWidth: 1025 },
+        { minDeviceWidth: 1281 },
         React.createElement(Desktop, this.props)
       )
     );
@@ -40550,6 +40719,18 @@ var reducer = function reducer(state, action) {
       return _extends({}, state, {
         Nav: _extends({}, state.Nav, {
           affix: !state.Nav.affix
+        })
+      });
+    case 'NAV_AFFIX_TRUE':
+      return _extends({}, state, {
+        Nav: _extends({}, state.Nav, {
+          affix: true
+        })
+      });
+    case 'NAV_AFFIX_FALSE':
+      return _extends({}, state, {
+        Nav: _extends({}, state.Nav, {
+          affix: false
         })
       });
     case 'NAV_AFFIX_RESET':

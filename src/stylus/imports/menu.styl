@@ -1,18 +1,17 @@
 .Menu
   z-index 9999
   +below(767px)
-    absolute top 50px
+    fixed top 50px
+    size 100% auto
   +above(768px)
-    size 390px 100%
     fixed top 0px right 0px
+    size 390px 100%
   .Mobile
     .wrap
-      wrap()
-      wrap('left')
+      center(767px)
       background-color menuColor
       .category
-        col()
-        col(1,1)
+        column(1)
         .categoryName
           padding 15px 20px
           color white
@@ -20,8 +19,8 @@
           font-weight: 700
           font-family: otherFont
           i.fa
-            font-size 22px
-            float right
+            font-size: 22px
+            float: right
             color white
         .submenu
           padding 0px 40px 18px
@@ -30,52 +29,39 @@
             font-size 16px
             font-family: mainFont
             color white
-            text-decoration: none
-
       .menuBorder
-        border-top 1px solid white
+        border-top: 1px solid white
 
   .Tablet
-    size 390px 100%
+    height 100%
     .wrap
-      wrap()
-      wrap('left')
       background-color menuColor
       size 390px 100%
-      float right
       .menuClose
-        col()
-        col(1,1)
         padding 10px 20px
         i.fa
           cursor pointer
-          font-size 25px
+          font-size 30px
           color white
           float right
           margin auto
       .category
-        col()
-        col(1,1)
         padding-left 35px
         .menuBorder
           border-top 1px solid white
-          margin-bottom 25px
-          margin-top 15px
+          margin 15px auto 25px 0px
           width 160px
         .categoryName
           color white
           font-size 25px
           font-weight: 500
           font-family: otherFont
-          padding-top 0px
-          padding-bottom 10px
+          padding 0px 0px 10px
         .submenu
           margin-bottom 8px
           a
             padding 0px
             font-weight: 700
-            font-size 16px
+            font-size: 16px
             font-family: mainFont
             color white
-            text-decoration: none
-            hover-color: lightBlue true

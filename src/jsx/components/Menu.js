@@ -19,6 +19,9 @@ const Menu = React.createClass({
 });
 
 const Mobile = React.createClass({
+  onClickHandler(event){
+    store.dispatch({type:'MENU_TOGGLE'});
+  },
   render(){
     return (
       <div className="View Mobile">
@@ -39,7 +42,7 @@ const Mobile = React.createClass({
                       submenu.map(({link, name})=>{
                         return (
                           <div className="submenu">
-                            <a href={link}>{name}</a>
+                            <a href={link} onClick={this.onClickHandler}>{name}</a>
                           </div>
                         );
                       })
@@ -56,6 +59,9 @@ const Mobile = React.createClass({
 });
 
 const Tablet = React.createClass({
+  onClickHandler(event){
+    store.dispatch({type:'MENU_TOGGLE'});
+  },
   closeMenu(event){
     event.preventDefault();
     store.dispatch({type:'MENU_TOGGLE'});
@@ -77,7 +83,7 @@ const Tablet = React.createClass({
                     submenu.map(({link, name}, index)=>{
                       return (
                         <div className="submenu" key={index}>
-                          <a href={link}>{name}</a>
+                          <a href={link} onClick={this.onClickHandler} >{name}</a>
                         </div>
                       );
                     })

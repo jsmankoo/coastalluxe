@@ -13,10 +13,10 @@ const Nav = React.createClass({
         <MediaQuery maxDeviceWidth={767}>
           <Mobile {...this.props} logo={this.props.mobileLogo} />
         </MediaQuery>
-        <MediaQuery minDeviceWidth={768} maxDeviceWidth={1024}>
+        <MediaQuery minDeviceWidth={768} maxDeviceWidth={1280}>
           <Tablet {...this.props} logo={this.props.mobileLogo} />
         </MediaQuery>
-        <MediaQuery minDeviceWidth={1025}>
+        <MediaQuery minDeviceWidth={1281}>
           <Desktop {...this.props} />
         </MediaQuery>
       </div>

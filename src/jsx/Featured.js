@@ -21,6 +21,7 @@ const FeaturedProperties = React.createClass({
     };
   },
   componentDidMount(){
+    window.scrollTo(0, 0);
     store.dispatch({
       type: 'NAV_AFFIX_RESET'
     });
@@ -84,7 +85,7 @@ const FeaturedProperties = React.createClass({
   render(){
     return (
       <div className="FeaturedProperties">
-        <MediaQuery minDeviceWidth={1024}>
+        <MediaQuery minDeviceWidth={1281}>
           <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
         </MediaQuery>
         <Jumbotron {...this.state.index} saleType={this.props.saleType} building={this.props.building} />
@@ -110,35 +111,41 @@ const Jumbotron = React.createClass({
   render(){
     return (
       <div className="Jumbotron" style={{backgroundImage: `url(${this.props.jumbotron})`}}>
-        <div className="title">
-          {this.props.title}
-        </div>
-        <div className="select">
-          <div className="select-wrapper">
-            <div className="SaleType">
-              <Select
-                name="Sale Type"
-                value={this.props.saleType}
-                options={[
-                  { value: 'all', label: 'For Sale & Lease' },
-                  { value: 'sale', label: 'For Sale' },
-                  { value: 'lease', label: 'For Lease' }
-                ]}
-                onChange={this.saleOnChange}
-              />
+        <div className="bgTint">
+          <div className="jumbotron-wrapper">
+            <div className="title">
+              {this.props.title}
             </div>
-            <div className="Building">
-              <Select
-                name="Building"
-                value={this.props.building}
-                options={[
-                  { value: 'featured', label: 'Featured Properties' },
-                  { value: '13700marinapointedr', label: '13700 Marina Pointe Dr' },
-                  { value: '13750marinapointedr', label: '13750 Marina Pointe Dr' },
-                  { value: '13800marinapointedr', label: '13800 Marina Pointe Dr' },
-                ]}
-                onChange={this.buildingOnChange}
-              />
+            <div className="select">
+              <div className="SaleType-wrapper">
+                <div className="SaleType">
+                  <Select
+                    name="Sale Type"
+                    value={this.props.saleType}
+                    options={[
+                      { value: 'all', label: 'For Sale & Lease' },
+                      { value: 'sale', label: 'For Sale' },
+                      { value: 'lease', label: 'For Lease' }
+                    ]}
+                    onChange={this.saleOnChange}
+                  />
+                </div>
+              </div>
+              <div className="Building-wrapper">
+                <div className="Building">
+                  <Select
+                    name="Building"
+                    value={this.props.building}
+                    options={[
+                      { value: 'featured', label: 'Featured Properties' },
+                      { value: '13700marinapointedr', label: '13700 Marina Pointe Dr' },
+                      { value: '13750marinapointedr', label: '13750 Marina Pointe Dr' },
+                      { value: '13800marinapointedr', label: '13800 Marina Pointe Dr' },
+                    ]}
+                    onChange={this.buildingOnChange}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -166,7 +173,7 @@ const Properties = React.createClass({
     switch (this.props.saleType) {
       case 'all':
         return list.filter(({forSale, lease})=>{
-          return forSale !== '' && lease !== '';
+          return forSale !== '' || lease !== '';
         });
       case 'sale':
         return list.filter(({forSale, lease})=>{
@@ -180,6 +187,26 @@ const Properties = React.createClass({
         return list;
     }
   },
+  handleSale(forSale, lease){
+    if (forSale !== '' && lease !== '')
+      return (
+        <div className="price">
+          For Sale: ${forSale} / For Lease: ${lease}
+        </div>
+      );
+    else if(forSale !== '')
+      return (
+        <div className="price">
+          For Sale: ${forSale}
+        </div>
+      );
+    else if(lease !== '')
+      return (
+        <div className="price">
+          For Lease: ${lease}
+        </div>
+      );
+  },
   render(){
     return (
       <div className="Properties">
@@ -189,19 +216,19 @@ const Properties = React.createClass({
               return (
                 <div className="property" key={index}>
                   <a href={`/#/featured/${this.props.building}/${name}/${id}`} className="img-wrapper" style={{backgroundImage: `url(${image})`}}>
-                    <div className="specialText">
-                      {text}
-                    </div>
+                    {
+                      text !== '' ?
+                      <div className="specialText">
+                        {text}
+                      </div> :
+                      <div />
+                    }
                   </a>
                   <div className="info">
                     <div className="name">
                       {name}
                     </div>
-                    <div className="price">
-                      {forSale == '' ? '~' : `For Sale: $${forSale}`}
-                      {`\t\t/\t\t`}
-                      {lease == '' ? '~' : `For Sale: $${lease}`}
-                    </div>
+                    {this.handleSale(forSale, lease)}
                   </div>
                 </div>
               );

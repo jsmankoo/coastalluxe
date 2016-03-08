@@ -17,6 +17,18 @@ const reducer = (state, action)=>{
           affix: !state.Nav.affix
         }
       };
+    case 'NAV_AFFIX_TRUE':
+      return {...state,
+        Nav: {...state.Nav,
+          affix: true
+        }
+      };
+    case 'NAV_AFFIX_FALSE':
+      return {...state,
+        Nav: {...state.Nav,
+          affix: false
+        }
+      };
     case 'NAV_AFFIX_RESET':
       return {...state,
         Nav: {...state.Nav,

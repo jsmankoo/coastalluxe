@@ -1,62 +1,65 @@
 .Home
   .Top
-    background-color rgba(darkBlue, 0.50)
+    background-color rgba(darkBlue, 0.5)
     overflow hidden
     position relative
     +below(767px)
       size 100% 470px
-    +above(768px)
+    +between(768px, 1280px)
+      size 100% 570px
+    +above(1281px)
       size 100% 675px
     .BGVideo
       .video-background
         z-index -10000
-        absolute top 50% left 50%
-        transform translate(-50%, -50%)
+        align(both)
         min-width: 100%
         min-height: 100%
         size auto auto
     .BGContent
-      absolute top 50% left 50%
-      transform translate(-50%, -50%)
-      size 100% auto
+      align(both)
+      width 100%
+      +below(767px)
+        padding 0px 20px
+      +between(768px, 1280px)
+        padding 0px 100px
+      +above(1281px)
+        padding 0px 200px
       .headline
         text-align: center
-        font-family otherFont
+        font-family: otherFont
         color white
         +below(767px)
           font-size 35px
-        +above(768px)
+        +between(768px, 1280px)
+          font-size 62px
+        +above(1281px)
           font-size 90px
       .bgBorder
         border-bottom 1px solid white
-        display block
-        margin auto
+        display: block;
+        margin: auto;
         +below(767px)
           width 200px
-        +above(768px)
+        +between(768px, 1280px)
+          width 500px
+        +above(1281px)
           width 700px
       .subheadline
-        text-align: center
+        text-align: center;
         color white
         +below(767px)
           font-size 25px
-        +above(768px)
-          font-size 40px
+        +between(768px, 1280px)
+          font-size: 32px
+        +above(1281px)
+          font-size: 40px
   .Featured
-    wrap()
-    wrap('center')
-    size 1200px auto
-    max-width: 100%
-    margin auto
+    center(1280px)
     background: white
     .Heading
-      wrap()
-      wrap('center')
       .title
-        wrap()
-        wrap('center')
-        col()
-        col(1,1)
+        text-align: center
         color darkBlue
         font-family otherFont
         font-weight 700
@@ -69,14 +72,10 @@
           font-size 60px
           margin 95px auto 0px
       .Row
-        wrap()
-        wrap("flexbox")
-        wrap("reverse")
         .all
-          wrap()
-          wrap('center')
-          col()
-          col(1,3)
+          column(1/3)
+          float right
+          text-align: center
           font-family otherFont
           font-weight 700
           font-size 16px
@@ -84,59 +83,51 @@
           text-decoration none
           margin-top 20px
           margin-bottom 20px
-          z-index 100
           hover-color(lightBlue, true)
     #featuredSlide
-      col()
-      col(1,1)
+      center(1100px)
+      z-index 1000
+      margin-top 60px
       .owl-controls
-        absolute top -60px
-        size 100% auto
+        absolute top -50px
+        width 210px
+        align(h)
         .owl-page
           span
+            size 8px 8px
             background darkBlue
       .item
-        wrap()
-        wrap('center')
-        size 1140px auto
-        max-width: 100%
+        size 100% auto
         display block
         margin auto
+        z-index 9000
         .img-wrapper
-          wrap()
-          wrap("flexbox")
-          wrap("bottom")
           background-repeat: no-repeat
           background-size: cover
           background-position: center
+          position relative
           +below(767px)
             size 100% 215px
           +above(768px)
-            size 1140px 475px
-            max-width: 100%
+            size 100% 475px
           .specialText
-            wrap()
-            wrap('flexbox')
-            wrap('middle')
+            absolute bottom 0px
             background-color rgba(lightBlue, 0.50)
-            size 100% 60px
+            size 100% auto
             color white
             font-size 30px
             font-family: mainFont
             font-weight: 500
             text-align: left
-            padding-left 40px
+            padding 12px 40px
             +below(767px)
-              padding 0px
               text-align: center
               display: block
-              padding-top 14px
+              font-size 25px
+              padding 6px 0px
         .info
-          wrap()
-          wrap('center')
+          margin 30px auto 70px
           .name
-            col()
-            col(1,1)
             color darkBlue
             font-family: otherFont
             font-weight: 700
@@ -150,8 +141,6 @@
               padding-left 40px
               margin 20px auto 0px
           .price
-            col()
-            col(1,1)
             color darkBlue
             +below(767px)
               margin 15px auto 35px
@@ -167,42 +156,28 @@
     background-size: cover
     background-position: center
     .bgTint
-      background-color rgba(white, 0.5)
+      background-color bgTintColor
     .wrap
-      wrap()
-      wrap('center')
-      size 1200px auto
-      max-width: 100%
+      center(1280px)
       margin auto
     .name
+      text-align center
       color darkBlue
       font-family otherFont
       font-weight 700
-    .subtitle
-      color darkBlue
     .paragraph
+      text-align center
       color darkBlue
     .Mobile
       .name
-        col()
-        col(1,1)
         margin 50px auto 25px
         font-size 40px
-      .subtitle
-        col()
-        col(1,1)
-        margin 0px auto 20px
-        font-size 20px
       .image
-        col()
-        col(1,1)
         img
           display: block
           margin auto
           size 170px auto
       .info
-        col()
-        col(3,4)
         overflow hidden
         height 378px
         color darkBlue
@@ -221,25 +196,27 @@
           margin 16px auto 0px
           text-align: center
       .more
-        col()
-        col(1,1)
+        center(75px)
+        margin 40px auto 50px
+        .linkName
+          font-size 20px
+          margin auto
+          float left
+          font-family: otherFont
+        i.fa
+          font-size 18px
+          margin auto
+          float right
+          padding 7px 5px 0px
     // above Tablet and Desktop
     +above(768px)
       .name
-        col()
-        col(1,1)
         margin 80px auto 50px
         font-size 55px
       .Row
-        wrap()
-        wrap('center')
+        center(768px)
         .image
-          +below(1024px)
-            col()
-            col(1,4)
-          +above(1025px)
-            col()
-            col(1,3)
+          column(1/3)
           img
             size 100% auto
             max-width: 250px
@@ -247,12 +224,7 @@
         .info
           color darkBlue
           font-family: otherFont
-          +below(1024px)
-            col()
-            col(3,4)
-          +above(1025px)
-            col()
-            col(2,4)
+          column(2/3)
           h1
             h1()
             margin 0px auto
@@ -284,23 +256,19 @@
             margin 0px auto
             text-align: left
         .socialMedia
-          col()
-          col(1,2)
-          margin-top 20px
-          margin-bottom 40px
+          column(1/2)
+          margin 30px auto 90px
+          text-align: left
           a
             margin auto 20px
             i.fa
               font-size 16px
         .hidden
-          col()
-          col(1,2)
-          col('hidden')
+          size 0px 0px
         .more
-          col()
-          col(1,2)
-          margin-top 20px
-          margin-bottom 40px
+          column(1/2)
+          margin 30px auto 90px
+          text-align: right
           a
             font-family: otherFont
             font-weight: 700
@@ -312,14 +280,9 @@
     +above(768px)
       padding-bottom 155px
     .wrap
-      wrap()
-      wrap('center')
-      size 1200px auto
-      max-width: 100%
-      margin auto
+      center(1280px)
       .title
-        col()
-        col(1,1)
+        text-align center
         color darkBlue
         font-family otherFont
         font-weight 700
@@ -337,8 +300,7 @@
         +below(767px)
           display: none
       .subtitle
-        col()
-        col(1,1)
+        text-align center
         color darkBlue
         font-weight 500
         margin 20px auto 50px
@@ -364,33 +326,35 @@
             background-repeat: no-repeat
             background-size: cover
             background-position: center
-            wrap()
-            wrap('flexbox')
-            wrap('middle')
+            display: block
+            position relative
             +below(767px)
               margin 20px auto
               size 300px 175px
             +above(768px)
               size 100% 250px
-            .linkTitle
-              color white
-              text-align: center
-              font-family otherFont
-              font-weight 700
-              width 100%
-              +below(767px)
-                font-size 35px
-              +between(768px, 1200px)
-                font-size 40px
-              +above(1200px)
-                font-size 55px
-            .linkSubtitle
-              color white
-              text-align: center
-              width 100%
-              +below(767px)
-                font-size 25px
-              +between(768px, 1200px)
-                font-size 25px
-              +above(1200px)
-                font-size 30px
+            .titleWrapper
+              align(b)
+              size 100% auto
+              .linkTitle
+                color white
+                text-align: center
+                font-family otherFont
+                font-weight 700
+                width 100%
+                +below(767px)
+                  font-size 35px
+                +between(768px, 1280px)
+                  font-size 40px
+                +above(1281px)
+                  font-size 55px
+              .linkSubtitle
+                color white
+                text-align: center
+                width 100%
+                +below(767px)
+                  font-size 25px
+                +between(768px, 1280px)
+                  font-size 25px
+                +above(1281px)
+                  font-size 30px

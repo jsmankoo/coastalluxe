@@ -3,136 +3,133 @@
     background-repeat: no-repeat
     background-size: cover
     background-position: center
-    wrap()
-    wrap('flexbox')
-    wrap('middle')
     size 100% 300px
-    .title
-      col()
-      col(1,1)
-      color darkBlue
-      font-family: otherFont
-      font-weight: 700
-      font-size 60px
-      text-align: center
-      +below(767px)
-        font-size 40px
-    .select
-      col()
-      col(1,1)
-      .select-wrapper
-        wrap()
-        wrap('center')
-        .SaleType
-          col()
-          margin 10px 10px
-          size 180px auto
-          text-align: left;
-          font-family otherFont
-          font-weight 700
-          .Select-control
-            border none
-            border-radius 0px
-            background-color: darkBlue
-            .Select-value
-              background-color: darkBlue
-              .Select-value-label
-                color white
-            .Select-placeholder
-              color white
-            .Select-arrow
-              border-color white transparent transparent
-            .Select-clear-zone
-              display none
-          .Select-menu-outer
-            .Select-menu
-              color darkBlue
-        .Building
-          col()
-          margin 10px 10px
-          size 250px auto
-          text-align: left;
-          font-family otherFont
-          font-weight 700
-          .Select-control
-            border none
-            border-radius 0px
-            background-color: darkBlue
-            .Select-value
-              background-color: darkBlue
-              .Select-value-label
-                color white
-            .Select-placeholder
-              color white
-            .Select-arrow
-              border-color white transparent transparent
-            .Select-clear-zone
-              display none
-          .Select-menu-outer
-            .Select-menu
-              color darkBlue
+    position: relative
+    .bgTint
+      background-color bgTintColor
+      size 100% 300px
+      .jumbotron-wrapper
+        align(b)
+        width: 100%
+        .title
+          color darkBlue
+          font-family: otherFont
+          font-weight: 700
+          font-size 60px
+          text-align: center
+          width: 100%
+          +below(767px)
+            font-size 40px
+        .select
+          .SaleType-wrapper
+            +below(767px)
+              column(1)
+              margin 8px auto
+            +above(768px)
+              column(1/2)
+            .SaleType
+              +below(767px)
+                display block
+                margin auto
+              +above(768px)
+                float right
+              margin 10px 10px
+              size 180px auto
+              text-align: left;
+              font-family otherFont
+              font-weight 700
+              .Select-control
+                border none
+                border-radius 0px
+                background-color: darkBlue
+                .Select-value
+                  background-color: darkBlue
+                  .Select-value-label
+                    color white
+                .Select-placeholder
+                  color white
+                .Select-arrow
+                  border-color white transparent transparent
+                .Select-clear-zone
+                  display none
+              .Select-menu-outer
+                .Select-menu
+                  color darkBlue
+          .Building-wrapper
+            +below(767px)
+              column(1)
+              margin 8px auto
+            +above(768px)
+              column(1/2)
+            .Building
+              +below(767px)
+                display block
+                margin auto
+              +above(768px)
+                float left
+              margin 10px 10px
+              size 250px auto
+              text-align: left;
+              font-family otherFont
+              font-weight 700
+              .Select-control
+                border none
+                border-radius 0px
+                background-color: darkBlue
+                .Select-value
+                  background-color: darkBlue
+                  .Select-value-label
+                    color white
+                .Select-placeholder
+                  color white
+                .Select-arrow
+                  border-color white transparent transparent
+                .Select-clear-zone
+                  display none
+              .Select-menu-outer
+                .Select-menu
+                  color darkBlue
   .Properties
     +below(767px)
       padding 40px 0px 60px
     +above(768px)
       padding 90px 0px 160px
     .wrap
-      wrap()
-      wrap('center')
-      size 1200px auto
-      max-width: 100%
-      display block
-      margin auto
+      center(1280px)
       .property
-        col()
-        +below(1024px)
-          col(1,1)
-        +above(1025px)
-          col(1,2)
+        +below(767px)
+          column(1)
+        +above(768px)
+          column(1/2, cycle: 2)
         .img-wrapper
-          wrap()
-          wrap("flexbox")
-          wrap("bottom")
           background-repeat: no-repeat
           background-size: cover
           background-position: center
+          display: block
           margin auto
-          +below(1024px)
-            size 530px 300px
-            max-width: 100%
-          +above(1025px)
-            size auto 300px
-            max-width: 530px
+          overflow: hidden
+          size 530px 300px
+          max-width: 100%
+          position relative
           .specialText
-            wrap()
-            wrap('flexbox')
-            wrap('middle')
             background-color rgba(darkBlue, 0.50)
-            size 100% 60px
+            absolute bottom 0px
+            size 100% auto
             color white
             font-size 30px
             font-family: mainFont
             font-weight: 500
             text-align: left
-            padding-left 40px
+            padding 12px 40px
             +below(767px)
-              padding 0px
               text-align: center
               display: block
-              padding-top 14px
+              font-size 25px
+              padding 6px 0px
         .info
-          wrap()
-          wrap('center')
-          margin auto
-          +below(1024px)
-            size 530px auto
-            max-width: 100%
-          +above(1025px)
-            size auto auto
-            max-width: 530px
+          size 530px auto
+          max-width: 100%
           .name
-            col()
-            col(1,1)
             color darkBlue
             font-family: otherFont
             font-weight: 700
@@ -146,8 +143,6 @@
               padding-left 40px
               margin 20px auto 0px
           .price
-            col()
-            col(1,1)
             color darkBlue
             +below(767px)
               margin 15px auto 35px

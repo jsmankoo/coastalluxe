@@ -1,73 +1,81 @@
 .Foot
   background-color footerColor
   .Mobile
-    wrap()
-    wrap 'center'
+    center()
     size 100% 475px
     .col
-      col()
-      col(1,1)
-    .brandLogo
-      wrap()
-      wrap('center')
-      margin 35px auto
-      img
-        size auto 75px
-    .socialMedia
-      wrap()
-      wrap('center')
-      i.fa
-        font-size 20px
-        color darkBlue
-        hover-color: lightBlue true
-        margin auto 10px
-    .footer
-      font-size 12px
-      color darkBlue
-    .bhhs
-      wrap()
-      wrap('center')
-      img
-        size auto 60px
-    .dev
-      color darkBlue
-      font-size 12px
-  .Tablet
-    wrap()
-    wrap('center')
-    size 1200px auto
-    max-width: 100%
-    margin auto
-    .brandLogo
-      col()
-      col(3,12)
-      a
-        wrap()
-        wrap('center')
-      img
-        size auto 75px
-    .bhhs
-      col()
-      col(3,12)
-      a
-        wrap()
-        wrap('center')
-      img
-        size auto 55px
-    .midContent
-      col()
-      col(6,12)
+      center()
+      .brandLogo
+        margin 35px auto
+        a
+          display: block
+          margin auto
+          size 150px 75px
+          img
+            size auto 75px
       .socialMedia
+        display: block
+        margin auto
+        size 148px auto
+        i.fa
+          text-align center
+          font-size 20px
+          color darkBlue
+          hover-color lightBlue true
+          margin auto 10px
+      .footer
+        text-align center
+        font-size 12px
+        color darkBlue
+      .bhhs
+        a
+          display: block;
+          margin auto
+          size 112px 55px
+          img
+            size auto 55px
+      .dev
+        text-align center
+        color darkBlue
+        font-size 12px
+        margin 10px auto 20px
+  .Tablet
+    center(1280px)
+    cf()
+    size 100% 140px
+    .brandLogo
+      column(1/4)
+      height 100%
+      position relative
+      a
+        align('both')
+        img
+          size auto 75px
+    .bhhs
+      column(1/4)
+      height 100%
+      position relative
+      a
+        align('both')
+        img
+          size auto 55px
+    .midContent
+      column(1/2)
+      .socialMedia
+        text-align: center
         i.fa
           margin 35px 10px 20px
       .footer
+        text-align: center
         p
           font-size 10px
           font-family: mainFont
           color darkBlue
           margin 0px auto
       .dev
+        text-align: center
         font-size 10px
         font-family: mainFont
+        margin 20px auto 40px
         p
           margin 0px auto
