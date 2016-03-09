@@ -38846,7 +38846,7 @@ var Jumbotron = React.createClass({
                 React.createElement(Select, {
                   name: 'Building',
                   value: this.props.building,
-                  options: [{ value: 'featured', label: 'Featured Properties' }, { value: '13700marinapointedr', label: '13700 Marina Pointe Dr' }, { value: '13750marinapointedr', label: '13750 Marina Pointe Dr' }, { value: '13800marinapointedr', label: '13800 Marina Pointe Dr' }],
+                  options: [{ value: 'featured', label: 'Featured Properties' }, { value: '13700marinapointedr', label: 'Azzurra' }, { value: '13750marinapointedr', label: 'Regatta' }, { value: '13800marinapointedr', label: 'Cove' }],
                   onChange: this.buildingOnChange
                 })
               )
