@@ -46,7 +46,7 @@ const Mobile = React.createClass({
   },
   render(){
     return (
-      <div className="wrap">
+      <div className="Mobile wrap">
         <i onClick={this.clickHandler} className={`fa ${this.props.menuLogo} menuScroll`} />
         <div className="col logo">
           <a href='/' >
@@ -85,7 +85,7 @@ const Tablet = React.createClass({
   },
   render(){
     return (
-      <div className="wrap">
+      <div className="Tablet wrap">
         { !this.props.MenuShow ?
           <i onClick={this.clickHandler} className={`fa ${this.props.menuLogo} menuScroll`} /> :
           <div>{this.props.MenuShow}</div>
@@ -138,7 +138,7 @@ const Desktop = React.createClass({
   },
   render(){
     return (
-      <div className={`wrap`}>
+      <div className={`Desktop wrap`}>
         { !this.props.MenuShow ?
           <i onClick={this.clickHandler} className={`fa ${this.props.menuLogo} menuScroll`} /> :
           <div>{this.props.MenuShow}</div>

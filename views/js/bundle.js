@@ -40355,7 +40355,7 @@ var Mobile = React.createClass({
   render: function render() {
     return React.createElement(
       'div',
-      { className: 'wrap' },
+      { className: 'Mobile wrap' },
       React.createElement('i', { onClick: this.clickHandler, className: 'fa ' + this.props.menuLogo + ' menuScroll' }),
       React.createElement(
         'div',
@@ -40394,7 +40394,7 @@ var Tablet = React.createClass({
   render: function render() {
     return React.createElement(
       'div',
-      { className: 'wrap' },
+      { className: 'Tablet wrap' },
       !this.props.MenuShow ? React.createElement('i', { onClick: this.clickHandler, className: 'fa ' + this.props.menuLogo + ' menuScroll' }) : React.createElement(
         'div',
         null,
@@ -40437,7 +40437,7 @@ var Desktop = React.createClass({
   render: function render() {
     return React.createElement(
       'div',
-      { className: 'wrap' },
+      { className: 'Desktop wrap' },
       !this.props.MenuShow ? React.createElement('i', { onClick: this.clickHandler, className: 'fa ' + this.props.menuLogo + ' menuScroll' }) : React.createElement(
         'div',
         null,
