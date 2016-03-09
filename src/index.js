@@ -14,4 +14,8 @@ app.get('/', (req, res)=>{
   res.render('index');
 });
 
+app.get('/ihome', (req, res)=>{
+  res.render('iHomefinder');
+});
+
 app.listen(app.get('port'), ()=>console.log(`Coastal Luxe running on port: ${app.get('port')}`));

@@ -23,6 +23,10 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
+app.get('/ihome', function (req, res) {
+  res.render('iHomefinder');
+});
+
 app.listen(app.get('port'), function () {
   return console.log("Coastal Luxe running on port: " + app.get('port'));
 });
