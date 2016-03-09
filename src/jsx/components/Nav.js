@@ -49,7 +49,7 @@ const Mobile = React.createClass({
       <div className="Mobile wrap">
         <i onClick={this.clickHandler} className={`fa ${this.props.menuLogo} menuScroll`} />
         <div className="col logo">
-          <a href='/' >
+          <a href='http://luxe.uptowncreativeinc.com:8000/' >
             <img src={this.props.logo} />
           </a>
         </div>
@@ -99,7 +99,7 @@ const Tablet = React.createClass({
           </a>
         </div>*/}
         <div className="col logo">
-          <a href='/' >
+          <a href='http://luxe.uptowncreativeinc.com:8000/' >
             <img src={this.props.logo} />
           </a>
         </div>
@@ -152,7 +152,7 @@ const Desktop = React.createClass({
           </a>
         </div>*/}
         <div className="col logo">
-          <a href='/' >
+          <a href='http://luxe.uptowncreativeinc.com:8000/' >
             <img src={this.props.desktopLogo}/>
           </a>
         </div>

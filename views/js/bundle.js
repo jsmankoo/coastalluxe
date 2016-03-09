@@ -40362,7 +40362,7 @@ var Mobile = React.createClass({
         { className: 'col logo' },
         React.createElement(
           'a',
-          { href: '/' },
+          { href: 'http://luxe.uptowncreativeinc.com:8000/' },
           React.createElement('img', { src: this.props.logo })
         )
       )
@@ -40405,7 +40405,7 @@ var Tablet = React.createClass({
         { className: 'col logo' },
         React.createElement(
           'a',
-          { href: '/' },
+          { href: 'http://luxe.uptowncreativeinc.com:8000/' },
           React.createElement('img', { src: this.props.logo })
         )
       )
@@ -40448,7 +40448,7 @@ var Desktop = React.createClass({
         { className: 'col logo' },
         React.createElement(
           'a',
-          { href: '/' },
+          { href: 'http://luxe.uptowncreativeinc.com:8000/' },
           React.createElement('img', { src: this.props.desktopLogo })
         )
       )
