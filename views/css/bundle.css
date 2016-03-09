@@ -176,8 +176,6 @@ th {
   padding: 0;
 }
 .Nav {
-  position: absolute;
-  top: 0px;
   width: 100%;
   z-index: 9000;
   background-color: #fff;
@@ -3629,14 +3627,4 @@ html #Main {
 }
 html #Main .App {
   margin: auto;
-}
-@media only screen and (max-width: 1280px) {
-  html #Main .App {
-    padding-top: 50px;
-  }
-}
-@media only screen and (min-width: 1281px) {
-  html #Main .App {
-    padding-top: 160px;
-  }
 }

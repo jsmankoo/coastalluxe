@@ -15,7 +15,9 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "CStylus": "stylus -u axis -u rupture -u jeet -u autoprefixer-stylus ./src/stylus/bundle.styl -o ./views/css/bundle.css",
+    "CIStylus": "stylus -u axis -u rupture -u jeet -u autoprefixer-stylus ./src/stylus/ihomefinder.styl -o ./views/css/ihomefinder.css",
     "CStylusW": "stylus -u axis -u rupture -u jeet -u autoprefixer-stylus -w ./src/stylus/bundle.styl -o ./views/css/bundle.css",
+    "CIStylusW": "stylus -u axis -u rupture -u jeet -u autoprefixer-stylus -w ./src/stylus/ihomefinder.styl -o ./views/css/ihomefinder.css",
     "FStart": "forever start server.js",
     "FList": "forever list",
     "FStop": "forever stop"
