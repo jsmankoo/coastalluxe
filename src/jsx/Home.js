@@ -9,10 +9,6 @@ var store = require('./store');
 
 const Home = React.createClass({
   componentDidMount(){
-    window.scrollTo(0, 0);
-    store.dispatch({
-      type: 'NAV_AFFIX_RESET'
-    });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/18')
       .then(({acf})=>{
         store.dispatch({
@@ -21,17 +17,9 @@ const Home = React.createClass({
         });
       });
   },
-  handleWaypoint(){
-    store.dispatch({
-      type: 'NAV_AFFIX_TOGGLE'
-    });
-  },
   render(){
     return (
       <div className="Home">
-        <MediaQuery minDeviceWidth={1281}>
-          <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
-        </MediaQuery>
         <Top
           headline={store.getState().Home.headline}
           subheadline={store.getState().Home.subheadline}/>
@@ -321,12 +309,14 @@ const Explore = React.createClass({
                     <a href={item.link} className="link" style={{
                       backgroundImage: `url(${item.Image})`
                     }}>
-                      <div className="titleWrapper">
-                        <div className="linkTitle">
-                          {item.title}
-                        </div>
-                        <div className="linkSubtitle">
-                          {item.subtitle}
+                      <div className="exploreTint">
+                        <div className="titleWrapper">
+                          <div className="linkTitle">
+                            {item.title}
+                          </div>
+                          <div className="linkSubtitle">
+                            {item.subtitle}
+                          </div>
                         </div>
                       </div>
                     </a>

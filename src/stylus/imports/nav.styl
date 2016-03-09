@@ -1,24 +1,24 @@
 .Nav
-  fixed top 0px
+  absolute top 0px
   width 100%
   z-index 9000
   background-color navbarColor
-  box-shadow: 0px 10px 5px 0px rgba(#000,  0.2)
-  opacity: 0.8
   .wrap
     center(1280px)
     cf()
     +below(1280px)
       height 50px
     +above(1281px)
-      &.false
-        height 160px
-        .col.logo a img
-          size auto 109px
-      &.true
-        height 50px
-        .col.logo a img
-          size auto 30px
+      height 160px
+    .menuScroll
+      fixed top 0px right 0px
+      font-size 25px
+      background-color menuScrollColor
+      color white
+      z-index 9999
+      padding 13px
+      +above(1280px)
+        font-size 30px
     .col
       height 100%
       position relative
@@ -27,13 +27,14 @@
         font-size 20px
         font-weight: 700
       &.contact
+        display: none
         column(0.25)
         a
-          width 110px
           i.fa
             padding 5px
             float left
           .linkName
+            font-family: otherFont
             padding 3px
             float right
       &.logo
@@ -45,15 +46,24 @@
               opacity: 0.8
             img
               size auto 30px
-        +above(768px)
-          column(0.5)
+        +between(768px, 1280px)
+          column(1)
           a
             &:hover
             &:focus
               opacity: 0.8
             img
               size auto 30px
+        +above(1281px)
+          column(1)
+          a
+            &:hover
+            &:focus
+              opacity: 0.8
+            img
+              size auto 109px
       &.menu
+        display: none
         column(0.25)
         a
           i.fa
@@ -62,5 +72,6 @@
             +below(767px)
               font-size 25px
           .linkName
+            font-family: otherFont
             padding 3px
             float left

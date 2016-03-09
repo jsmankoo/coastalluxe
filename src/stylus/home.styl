@@ -156,7 +156,7 @@
     background-size: cover
     background-position: center
     .bgTint
-      background-color bgTintColor
+      background-color RyanTint
     .wrap
       center(1280px)
       margin auto
@@ -322,6 +322,12 @@
           &:hover
           &:hover
             opacity: 0.90
+          .exploreTint
+            background-color exploreTint
+            +below(767px)
+              size 300px 175px
+            +above(768px)
+              size 100% 250px
           .link
             background-repeat: no-repeat
             background-size: cover

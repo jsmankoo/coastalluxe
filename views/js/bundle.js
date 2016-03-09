@@ -37960,6 +37960,8 @@ module.exports = warning;
 },{"_process":55}],311:[function(require,module,exports){
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var React = require('react');
 var store = require('./store');
 
@@ -37974,7 +37976,7 @@ var App = React.createClass({
     return React.createElement(
       'div',
       { className: 'App' },
-      React.createElement(Nav, store.getState().Nav),
+      React.createElement(Nav, _extends({}, store.getState().Nav, { MenuShow: store.getState().Menu.show })),
       store.getState().Menu.show ? React.createElement(Menu, store.getState().Menu) : React.createElement('div', null),
       this.props.children,
       React.createElement(Foot, store.getState().Foot)
@@ -38986,10 +38988,6 @@ var store = require('./store');
 var Home = React.createClass({
   displayName: 'Home',
   componentDidMount: function componentDidMount() {
-    window.scrollTo(0, 0);
-    store.dispatch({
-      type: 'NAV_AFFIX_RESET'
-    });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/18').then(function (_ref) {
       var acf = _ref.acf;
 
@@ -38999,20 +38997,10 @@ var Home = React.createClass({
       });
     });
   },
-  handleWaypoint: function handleWaypoint() {
-    store.dispatch({
-      type: 'NAV_AFFIX_TOGGLE'
-    });
-  },
   render: function render() {
     return React.createElement(
       'div',
       { className: 'Home' },
-      React.createElement(
-        MediaQuery,
-        { minDeviceWidth: 1281 },
-        React.createElement(Waypoint, { onEnter: this.handleWaypoint, onLeave: this.handleWaypoint })
-      ),
       React.createElement(Top, {
         headline: store.getState().Home.headline,
         subheadline: store.getState().Home.subheadline }),
@@ -39445,16 +39433,20 @@ var Explore = React.createClass({
                   } },
                 React.createElement(
                   'div',
-                  { className: 'titleWrapper' },
+                  { className: 'exploreTint' },
                   React.createElement(
                     'div',
-                    { className: 'linkTitle' },
-                    item.title
-                  ),
-                  React.createElement(
-                    'div',
-                    { className: 'linkSubtitle' },
-                    item.subtitle
+                    { className: 'titleWrapper' },
+                    React.createElement(
+                      'div',
+                      { className: 'linkTitle' },
+                      item.title
+                    ),
+                    React.createElement(
+                      'div',
+                      { className: 'linkSubtitle' },
+                      item.subtitle
+                    )
                   )
                 )
               )
@@ -40364,6 +40356,7 @@ var Mobile = React.createClass({
     return React.createElement(
       'div',
       { className: 'wrap' },
+      React.createElement('i', { onClick: this.clickHandler, className: 'fa ' + this.props.menuLogo + ' menuScroll' }),
       React.createElement(
         'div',
         { className: 'col logo' },
@@ -40371,15 +40364,6 @@ var Mobile = React.createClass({
           'a',
           { href: '/' },
           React.createElement('img', { src: this.props.logo })
-        )
-      ),
-      React.createElement(
-        'div',
-        { className: 'col menu' },
-        React.createElement(
-          'a',
-          { onClick: this.clickHandler },
-          React.createElement('i', { className: 'fa ' + this.props.menuLogo })
         )
       )
     );
@@ -40391,24 +40375,30 @@ var Tablet = React.createClass({
   clickHandler: function clickHandler(event) {
     event.preventDefault();
     store.dispatch({ type: 'MENU_TOGGLE' });
+    // switch (this.props.menuLogo) {
+    //   case 'fa-bars':
+    //     return store.dispatch({
+    //       type: 'NAV_MENU',
+    //       logo: 'fa-times'
+    //     });
+    //   case 'fa-times':
+    //     return store.dispatch({
+    //       type: 'NAV_MENU',
+    //       logo: 'fa-bars'
+    //     });
+    //   default:
+    //     console.log('Mobile nav: clickHandler default case');
+    //     console.log(this.props.menuLogo);
+    // }
   },
   render: function render() {
     return React.createElement(
       'div',
       { className: 'wrap' },
-      React.createElement(
+      !this.props.MenuShow ? React.createElement('i', { onClick: this.clickHandler, className: 'fa ' + this.props.menuLogo + ' menuScroll' }) : React.createElement(
         'div',
-        { className: 'col contact' },
-        React.createElement(
-          'a',
-          { href: '/#/contact' },
-          React.createElement('i', { className: 'fa ' + this.props.contactLogo }),
-          React.createElement(
-            'div',
-            { className: 'linkName' },
-            'Contact'
-          )
-        )
+        null,
+        this.props.MenuShow
       ),
       React.createElement(
         'div',
@@ -40417,20 +40407,6 @@ var Tablet = React.createClass({
           'a',
           { href: '/' },
           React.createElement('img', { src: this.props.logo })
-        )
-      ),
-      React.createElement(
-        'div',
-        { className: 'col menu' },
-        React.createElement(
-          'a',
-          { onClick: this.clickHandler },
-          React.createElement(
-            'div',
-            { className: 'linkName' },
-            'Menu'
-          ),
-          React.createElement('i', { className: 'fa ' + this.props.menuLogo })
         )
       )
     );
@@ -40442,24 +40418,30 @@ var Desktop = React.createClass({
   clickHandler: function clickHandler(event) {
     event.preventDefault();
     store.dispatch({ type: 'MENU_TOGGLE' });
+    // switch (this.props.menuLogo) {
+    //   case 'fa-bars':
+    //     return store.dispatch({
+    //       type: 'NAV_MENU',
+    //       logo: 'fa-times'
+    //     });
+    //   case 'fa-times':
+    //     return store.dispatch({
+    //       type: 'NAV_MENU',
+    //       logo: 'fa-bars'
+    //     });
+    //   default:
+    //     console.log('Mobile nav: clickHandler default case');
+    //     console.log(this.props.menuLogo);
+    // }
   },
   render: function render() {
     return React.createElement(
       'div',
-      { className: 'wrap ' + this.props.affix },
-      React.createElement(
+      { className: 'wrap' },
+      !this.props.MenuShow ? React.createElement('i', { onClick: this.clickHandler, className: 'fa ' + this.props.menuLogo + ' menuScroll' }) : React.createElement(
         'div',
-        { className: 'col contact' },
-        React.createElement(
-          'a',
-          { href: '/#/contact' },
-          React.createElement('i', { className: 'fa ' + this.props.contactLogo }),
-          React.createElement(
-            'div',
-            { className: 'linkName' },
-            'Contact'
-          )
-        )
+        null,
+        this.props.MenuShow
       ),
       React.createElement(
         'div',
@@ -40467,21 +40449,7 @@ var Desktop = React.createClass({
         React.createElement(
           'a',
           { href: '/' },
-          React.createElement('img', { src: this.props.affix ? this.props.mobileLogo : this.props.desktopLogo })
-        )
-      ),
-      React.createElement(
-        'div',
-        { className: 'col menu' },
-        React.createElement(
-          'a',
-          { onClick: this.clickHandler },
-          React.createElement(
-            'div',
-            { className: 'linkName' },
-            'Menu'
-          ),
-          React.createElement('i', { className: 'fa ' + this.props.menuLogo })
+          React.createElement('img', { src: this.props.desktopLogo })
         )
       )
     );

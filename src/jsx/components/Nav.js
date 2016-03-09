@@ -47,16 +47,17 @@ const Mobile = React.createClass({
   render(){
     return (
       <div className="wrap">
+        <i onClick={this.clickHandler} className={`fa ${this.props.menuLogo} menuScroll`} />
         <div className="col logo">
           <a href='/' >
             <img src={this.props.logo} />
           </a>
         </div>
-        <div className="col menu">
+        {/*<div className="col menu">
           <a onClick={this.clickHandler} >
             <i className={`fa ${this.props.menuLogo}`} />
           </a>
-        </div>
+        </div>*/}
       </div>
     );
   }
@@ -66,31 +67,50 @@ const Tablet = React.createClass({
   clickHandler(event){
     event.preventDefault();
     store.dispatch({type:'MENU_TOGGLE'});
+    // switch (this.props.menuLogo) {
+    //   case 'fa-bars':
+    //     return store.dispatch({
+    //       type: 'NAV_MENU',
+    //       logo: 'fa-times'
+    //     });
+    //   case 'fa-times':
+    //     return store.dispatch({
+    //       type: 'NAV_MENU',
+    //       logo: 'fa-bars'
+    //     });
+    //   default:
+    //     console.log('Mobile nav: clickHandler default case');
+    //     console.log(this.props.menuLogo);
+    // }
   },
   render(){
     return (
       <div className="wrap">
-        <div className="col contact">
+        { !this.props.MenuShow ?
+          <i onClick={this.clickHandler} className={`fa ${this.props.menuLogo} menuScroll`} /> :
+          <div>{this.props.MenuShow}</div>
+        }
+        {/*<div className="col contact">
           <a href='/#/contact' >
             <i className={`fa ${this.props.contactLogo}`} />
             <div className="linkName">
-              Contact
+              CONTACT
             </div>
           </a>
-        </div>
+        </div>*/}
         <div className="col logo">
           <a href='/' >
             <img src={this.props.logo} />
           </a>
         </div>
-        <div className="col menu">
+        {/*<div className="col menu">
           <a onClick={this.clickHandler}>
             <div className="linkName">
-              Menu
+              MENU
             </div>
             <i className={`fa ${this.props.menuLogo}`} />
           </a>
-        </div>
+        </div>*/}
       </div>
     );
   }
@@ -100,35 +120,50 @@ const Desktop = React.createClass({
   clickHandler(event){
     event.preventDefault();
     store.dispatch({type:'MENU_TOGGLE'});
+    // switch (this.props.menuLogo) {
+    //   case 'fa-bars':
+    //     return store.dispatch({
+    //       type: 'NAV_MENU',
+    //       logo: 'fa-times'
+    //     });
+    //   case 'fa-times':
+    //     return store.dispatch({
+    //       type: 'NAV_MENU',
+    //       logo: 'fa-bars'
+    //     });
+    //   default:
+    //     console.log('Mobile nav: clickHandler default case');
+    //     console.log(this.props.menuLogo);
+    // }
   },
   render(){
     return (
-      <div className={`wrap ${this.props.affix}`}>
-        <div className="col contact">
+      <div className={`wrap`}>
+        { !this.props.MenuShow ?
+          <i onClick={this.clickHandler} className={`fa ${this.props.menuLogo} menuScroll`} /> :
+          <div>{this.props.MenuShow}</div>
+        }
+        {/*<div className="col contact">
           <a href='/#/contact' >
             <i className={`fa ${this.props.contactLogo}`} />
             <div className="linkName">
-              Contact
+              CONTACT
             </div>
           </a>
-        </div>
+        </div>*/}
         <div className="col logo">
           <a href='/' >
-            <img src={
-              this.props.affix
-              ? this.props.mobileLogo
-              : this.props.desktopLogo
-            }/>
+            <img src={this.props.desktopLogo}/>
           </a>
         </div>
-        <div className="col menu">
+        {/*<div className="col menu">
           <a onClick={this.clickHandler} >
             <div className="linkName">
-              Menu
+              MENU
             </div>
             <i className={`fa ${this.props.menuLogo}`} />
           </a>
-        </div>
+        </div>*/}
       </div>
     );
   }

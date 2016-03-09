@@ -176,13 +176,11 @@ th {
   padding: 0;
 }
 .Nav {
-  position: fixed;
+  position: absolute;
   top: 0px;
   width: 100%;
   z-index: 9000;
   background-color: #fff;
-  box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.2);
-  opacity: 0.8;
 }
 .Nav .wrap {
   *zoom: 1;
@@ -218,19 +216,23 @@ th {
   }
 }
 @media only screen and (min-width: 1281px) {
-  .Nav .wrap.false {
+  .Nav .wrap {
     height: 160px;
   }
-  .Nav .wrap.false .col.logo a img {
-    width: auto;
-    height: 109px;
-  }
-  .Nav .wrap.true {
-    height: 50px;
-  }
-  .Nav .wrap.true .col.logo a img {
-    width: auto;
-    height: 30px;
+}
+.Nav .wrap .menuScroll {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  font-size: 25px;
+  background-color: rgba(0,55,133,0.75);
+  color: #fff;
+  z-index: 9999;
+  padding: 13px;
+}
+@media only screen and (min-width: 1280px) {
+  .Nav .wrap .menuScroll {
+    font-size: 30px;
   }
 }
 .Nav .wrap .col {
@@ -249,6 +251,7 @@ th {
   font-weight: 700;
 }
 .Nav .wrap .col.contact {
+  display: none;
   *zoom: 1;
   float: left;
   clear: none;
@@ -268,14 +271,12 @@ th {
 .Nav .wrap .col.contact:last-child {
   margin-right: 0%;
 }
-.Nav .wrap .col.contact a {
-  width: 110px;
-}
 .Nav .wrap .col.contact a i.fa {
   padding: 5px;
   float: left;
 }
 .Nav .wrap .col.contact a .linkName {
+  font-family: museo-slab;
   padding: 3px;
   float: right;
 }
@@ -309,13 +310,13 @@ th {
     height: 30px;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
   .Nav .wrap .col.logo {
     *zoom: 1;
     float: left;
     clear: none;
     text-align: inherit;
-    width: 48.5%;
+    width: 100%;
     margin-left: 0%;
     margin-right: 3%;
   }
@@ -339,7 +340,38 @@ th {
     height: 30px;
   }
 }
+@media only screen and (min-width: 1281px) {
+  .Nav .wrap .col.logo {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .Nav .wrap .col.logo:before,
+  .Nav .wrap .col.logo:after {
+    content: '';
+    display: table;
+  }
+  .Nav .wrap .col.logo:after {
+    clear: both;
+  }
+  .Nav .wrap .col.logo:last-child {
+    margin-right: 0%;
+  }
+  .Nav .wrap .col.logo a:hover,
+  .Nav .wrap .col.logo a:focus {
+    opacity: 0.8;
+  }
+  .Nav .wrap .col.logo a img {
+    width: auto;
+    height: 109px;
+  }
+}
 .Nav .wrap .col.menu {
+  display: none;
   *zoom: 1;
   float: left;
   clear: none;
@@ -369,6 +401,7 @@ th {
   }
 }
 .Nav .wrap .col.menu a .linkName {
+  font-family: museo-slab;
   padding: 3px;
   float: left;
 }
@@ -402,7 +435,7 @@ th {
   margin-left: auto;
   padding-left: 0;
   padding-right: 0;
-  background-color: rgba(0,55,133,0.95);
+  background-color: rgba(0,55,133,0.75);
 }
 .Menu .Mobile .wrap:before,
 .Menu .Mobile .wrap:after {
@@ -460,7 +493,7 @@ th {
   height: 100%;
 }
 .Menu .Tablet .wrap {
-  background-color: rgba(0,55,133,0.95);
+  background-color: rgba(0,55,133,0.75);
   width: 390px;
   height: 100%;
 }
@@ -730,7 +763,7 @@ th {
   text-align: center;
   font-size: 10px;
   font-family: museo-sans;
-  margin: 20px auto 40px;
+  margin: 20px auto 0px;
 }
 .Foot .Tablet .midContent .dev p {
   margin: 0px auto;
@@ -1060,7 +1093,7 @@ th {
   background-position: center;
 }
 .Home .Ryan .bgTint {
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(242,245,249,0.85);
 }
 .Home .Ryan .wrap {
   *zoom: 1;
@@ -1483,6 +1516,21 @@ th {
 .Home .Explore .wrap .links .link-wrap:hover {
   opacity: 0.9;
 }
+.Home .Explore .wrap .links .link-wrap .exploreTint {
+  background-color: rgba(0,55,133,0.38);
+}
+@media only screen and (max-width: 767px) {
+  .Home .Explore .wrap .links .link-wrap .exploreTint {
+    width: 300px;
+    height: 175px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .Home .Explore .wrap .links .link-wrap .exploreTint {
+    width: 100%;
+    height: 250px;
+  }
+}
 .Home .Explore .wrap .links .link-wrap .link {
   background-repeat: no-repeat;
   background-size: cover;
@@ -1620,7 +1668,7 @@ th {
   margin-left: auto;
   padding-left: 0;
   padding-right: 0;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.75);
   color: #003785;
   text-align: center;
   font-family: museo-slab;
@@ -1715,7 +1763,7 @@ th {
   height: 120px;
 }
 .Contact .Top .Tablet .BGContent .info {
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.75);
   *zoom: 1;
   width: auto;
   max-width: 1280px;
@@ -1997,7 +2045,7 @@ th {
   position: relative;
 }
 .FeaturedProperties .Jumbotron .bgTint {
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(242,245,249,0.85);
   width: 100%;
   height: 300px;
 }
@@ -2365,7 +2413,7 @@ th {
   height: 300px;
 }
 .Property .Jumbotron .bgTint {
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(242,245,249,0.85);
   width: 100%;
   height: 300px;
 }
@@ -2744,7 +2792,7 @@ th {
 @media only screen and (min-width: 1281px) {
   .Property .Facilities #facilitiesSlide .item .img-wrapper {
     width: 100%;
-    height: 430px;
+    height: 600px;
   }
 }
 .Property .Facilities #facilitiesSlide .item .img-wrapper .specialText {
@@ -2903,7 +2951,7 @@ th {
   height: 300px;
 }
 .Building .Jumbotron .bgTint {
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(242,245,249,0.85);
   width: 100%;
   height: 300px;
 }

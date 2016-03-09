@@ -11,7 +11,7 @@ const App = React.createClass({
   render(){
     return (
       <div className="App">
-        <Nav {...store.getState().Nav} />
+        <Nav {...store.getState().Nav} MenuShow={store.getState().Menu.show} />
         {
           store.getState().Menu.show ?
            <Menu {...store.getState().Menu} />
