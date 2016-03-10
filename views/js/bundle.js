@@ -37963,6 +37963,8 @@ module.exports = warning;
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var React = require('react');
+var Waypoint = require('react-waypoint');
+var MediaQuery = require('react-responsive');
 var store = require('./store');
 
 var Nav = require('./components/Nav');
@@ -37972,12 +37974,25 @@ var Foot = require('./components/Foot');
 var App = React.createClass({
   displayName: 'App',
   componentDidMount: function componentDidMount() {},
+  handleEnter: function handleEnter(event) {
+    console.log('enter');
+    store.dispatch({ type: 'MENU_BUTTON_TOGGLE' });
+  },
+  handleLeave: function handleLeave(event) {
+    console.log('leave');
+    store.dispatch({ type: 'MENU_BUTTON_TOGGLE' });
+  },
   render: function render() {
     return React.createElement(
       'div',
       { className: 'App' },
-      React.createElement(Nav, _extends({}, store.getState().Nav, { MenuShow: store.getState().Menu.show })),
-      store.getState().Menu.show ? React.createElement(Menu, store.getState().Menu) : React.createElement('div', null),
+      React.createElement(Nav, _extends({}, store.getState().Nav, { MenuShow: store.getState().Menu.show, buttonShow: store.getState().Menu.buttonShow })),
+      store.getState().Menu.show ? React.createElement(Menu, _extends({}, store.getState().Menu, { menuLogo: store.getState().Nav.menuLogo })) : React.createElement('div', null),
+      React.createElement(
+        MediaQuery,
+        { minDeviceWidth: 1281 },
+        React.createElement(Waypoint, { onEnter: this.handleEnter, onLeave: this.handleLeave })
+      ),
       this.props.children,
       React.createElement(Foot, store.getState().Foot)
     );
@@ -37986,7 +38001,7 @@ var App = React.createClass({
 
 module.exports = App;
 
-},{"./components/Foot":318,"./components/Menu":319,"./components/Nav":320,"./store":322,"react":238}],312:[function(require,module,exports){
+},{"./components/Foot":318,"./components/Menu":319,"./components/Nav":320,"./store":322,"react":238,"react-responsive":62,"react-waypoint":104}],312:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -39071,6 +39086,17 @@ var Featured = React.createClass({
     var _this = this;
 
     var pullList = ['http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured', 'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr', 'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr', 'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr'];
+    // $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured')
+    //   .then((data)=>{
+    //     this.setState({...this.state,
+    //       items: [...this.state.items, ...[{...data[0],
+    //           building: 'featured'
+    //         },{...data[1],
+    //           building: 'featured'
+    //         }]
+    //       ]
+    //     });
+    //   });
     pullList.map(function (link) {
       $.get(link).then(function (properties) {
         _this.setState(_extends({}, _this.state, {
@@ -39104,7 +39130,7 @@ var Featured = React.createClass({
 
     return React.createElement(
       'div',
-      { className: 'Featured' },
+      { id: 'Featured', className: 'Featured' },
       React.createElement(
         'div',
         { className: 'Heading' },
@@ -39144,8 +39170,8 @@ var Featured = React.createClass({
             'div',
             { className: 'item', key: index },
             React.createElement(
-              'div',
-              { className: 'img-wrapper', style: { backgroundImage: 'url(' + item.acf.image + ')' } },
+              'a',
+              { href: '/#/featured/' + item.type + '/' + item.acf.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.acf.image + ')' } },
               item.acf.text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },
@@ -39322,7 +39348,7 @@ var Ryan = React.createClass({
           React.createElement(
             'a',
             { href: '/#/contact' },
-            'MORE ',
+            'More ',
             React.createElement('i', { className: 'fa fa-chevron-right' })
           )
         )
@@ -39390,7 +39416,7 @@ var Ryan = React.createClass({
           React.createElement(
             'a',
             { href: '/#/contact' },
-            'MORE ',
+            'More ',
             React.createElement('i', { className: 'fa fa-chevron-right' })
           )
         )
@@ -39492,7 +39518,7 @@ var renderDom = function renderDom() {
       React.createElement(_reactRouter.Route, { path: '/featured/:building/:name/:id', component: Property }),
       React.createElement(_reactRouter.Route, { path: 'forSale/:building', component: ForSale }),
       React.createElement(_reactRouter.Route, { path: 'lease/:building', component: ForLease }),
-      React.createElement(_reactRouter.Route, { path: 'contact', component: Contact })
+      React.createElement(_reactRouter.Route, { path: '/contact', component: Contact })
     )
   ), document.getElementById('Main'));
 };
@@ -40185,6 +40211,21 @@ var Mobile = React.createClass({
   displayName: 'Mobile',
   onClickHandler: function onClickHandler(event) {
     store.dispatch({ type: 'MENU_TOGGLE' });
+    switch (this.props.menuLogo) {
+      case 'fa-bars':
+        return store.dispatch({
+          type: 'NAV_MENU',
+          logo: 'fa-times'
+        });
+      case 'fa-times':
+        return store.dispatch({
+          type: 'NAV_MENU',
+          logo: 'fa-bars'
+        });
+      default:
+        console.log('Mobile nav: clickHandler default case');
+        console.log(this.props.menuLogo);
+    }
   },
   render: function render() {
     var _this = this;
@@ -40195,6 +40236,19 @@ var Mobile = React.createClass({
       React.createElement(
         'div',
         { className: 'wrap' },
+        React.createElement(
+          'div',
+          { className: 'category' },
+          React.createElement(
+            'div',
+            { className: 'categoryName' },
+            React.createElement(
+              'a',
+              { href: '/#/', onClick: this.onClickHandler },
+              'HOME'
+            )
+          )
+        ),
         this.props.list.map(function (_ref, index) {
           var category = _ref.category;
           var submenu = _ref.submenu;
@@ -40203,7 +40257,7 @@ var Mobile = React.createClass({
           return React.createElement(
             'div',
             { className: 'category', key: index },
-            index != 0 ? React.createElement('div', { className: 'menuBorder' }) : React.createElement('div', null),
+            React.createElement('div', { className: 'menuBorder' }),
             React.createElement(
               'div',
               {
@@ -40229,7 +40283,21 @@ var Mobile = React.createClass({
               );
             }) : React.createElement('div', null)
           );
-        })
+        }),
+        React.createElement(
+          'div',
+          { className: 'category' },
+          React.createElement('div', { className: 'menuBorder' }),
+          React.createElement(
+            'div',
+            { className: 'categoryName' },
+            React.createElement(
+              'a',
+              { href: '/#/contact', onClick: this.onClickHandler },
+              'CONTACT'
+            )
+          )
+        )
       )
     );
   }
@@ -40258,6 +40326,19 @@ var Tablet = React.createClass({
           { className: 'menuClose' },
           React.createElement('i', { onClick: this.closeMenu, className: 'fa fa-times' })
         ),
+        React.createElement(
+          'div',
+          { className: 'category' },
+          React.createElement(
+            'div',
+            { className: 'categoryName' },
+            React.createElement(
+              'a',
+              { href: '/#/', onClick: this.onClickHandler },
+              'HOME'
+            )
+          )
+        ),
         this.props.list.map(function (_ref3, index) {
           var category = _ref3.category;
           var submenu = _ref3.submenu;
@@ -40265,7 +40346,7 @@ var Tablet = React.createClass({
           return React.createElement(
             'div',
             { className: 'category', key: index },
-            index != 0 ? React.createElement('div', { className: 'menuBorder' }) : React.createElement('div', null),
+            React.createElement('div', { className: 'menuBorder' }),
             React.createElement(
               'div',
               { className: 'categoryName' },
@@ -40286,7 +40367,21 @@ var Tablet = React.createClass({
               );
             })
           );
-        })
+        }),
+        React.createElement(
+          'div',
+          { className: 'category' },
+          React.createElement('div', { className: 'menuBorder' }),
+          React.createElement(
+            'div',
+            { className: 'categoryName' },
+            React.createElement(
+              'a',
+              { href: '/#/contact', onClick: this.onClickHandler },
+              'CONTACT'
+            )
+          )
+        )
       )
     );
   }
@@ -40362,7 +40457,7 @@ var Mobile = React.createClass({
         { className: 'col logo' },
         React.createElement(
           'a',
-          { href: 'http://luxe.uptowncreativeinc.com:8000/' },
+          { href: '/#/' },
           React.createElement('img', { src: this.props.logo })
         )
       )
@@ -40405,7 +40500,7 @@ var Tablet = React.createClass({
         { className: 'col logo' },
         React.createElement(
           'a',
-          { href: 'http://luxe.uptowncreativeinc.com:8000/' },
+          { href: '/#/' },
           React.createElement('img', { src: this.props.logo })
         )
       )
@@ -40438,18 +40533,42 @@ var Desktop = React.createClass({
     return React.createElement(
       'div',
       { className: 'Desktop wrap' },
-      !this.props.MenuShow ? React.createElement('i', { onClick: this.clickHandler, className: 'fa ' + this.props.menuLogo + ' menuScroll' }) : React.createElement(
+      !this.props.MenuShow && this.props.buttonShow ? React.createElement('i', { onClick: this.clickHandler, className: 'fa ' + this.props.menuLogo + ' menuScroll' }) : React.createElement('div', null),
+      React.createElement(
         'div',
-        null,
-        this.props.MenuShow
+        { className: 'col contact' },
+        React.createElement(
+          'a',
+          { href: '/#/contact' },
+          React.createElement('i', { className: 'fa ' + this.props.contactLogo }),
+          React.createElement(
+            'div',
+            { className: 'linkName' },
+            'CONTACT'
+          )
+        )
       ),
       React.createElement(
         'div',
         { className: 'col logo' },
         React.createElement(
           'a',
-          { href: 'http://luxe.uptowncreativeinc.com:8000/' },
+          { href: '/#/' },
           React.createElement('img', { src: this.props.desktopLogo })
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'col menu' },
+        React.createElement(
+          'a',
+          { onClick: this.clickHandler },
+          React.createElement(
+            'div',
+            { className: 'linkName' },
+            'MENU'
+          ),
+          React.createElement('i', { className: 'fa ' + this.props.menuLogo })
         )
       )
     );
@@ -40731,6 +40850,12 @@ var reducer = function reducer(state, action) {
           show: !state.Menu.show
         })
       });
+    case 'MENU_BUTTON_TOGGLE':
+      return _extends({}, state, {
+        Menu: _extends({}, state.Menu, {
+          buttonShow: !state.Menu.buttonShow
+        })
+      });
     case 'MENU_LIST':
       return _extends({}, state, {
         Menu: _extends({}, state.Menu, {
@@ -40793,6 +40918,7 @@ var store = Redux.createStore(reducer, {
     mobileLogo: '/img/loader.gif'
   },
   Menu: {
+    buttonShow: true,
     show: false,
     list: []
   },

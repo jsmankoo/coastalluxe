@@ -59,6 +59,12 @@ const reducer = (state, action)=>{
           show: !state.Menu.show
         }
       };
+    case 'MENU_BUTTON_TOGGLE':
+      return {...state,
+        Menu: {...state.Menu,
+          buttonShow: !state.Menu.buttonShow
+        }
+      };
     case 'MENU_LIST':
       return {...state,
         Menu: {...state.Menu,
@@ -122,6 +128,7 @@ const store = Redux.createStore(reducer, {
     mobileLogo: '/img/loader.gif'
   },
   Menu: {
+    buttonShow: true,
     show: false,
     list: []
   },

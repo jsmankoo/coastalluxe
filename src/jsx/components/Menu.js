@@ -21,16 +21,36 @@ const Menu = React.createClass({
 const Mobile = React.createClass({
   onClickHandler(event){
     store.dispatch({type:'MENU_TOGGLE'});
+    switch (this.props.menuLogo) {
+      case 'fa-bars':
+        return store.dispatch({
+          type: 'NAV_MENU',
+          logo: 'fa-times'
+        });
+      case 'fa-times':
+        return store.dispatch({
+          type: 'NAV_MENU',
+          logo: 'fa-bars'
+        });
+      default:
+        console.log('Mobile nav: clickHandler default case');
+        console.log(this.props.menuLogo);
+    }
   },
   render(){
     return (
       <div className="View Mobile">
         <div className="wrap">
+          <div className="category">
+            <div className="categoryName">
+              <a href='/#/' onClick={this.onClickHandler}>HOME</a>
+            </div>
+          </div>
           {
             this.props.list.map(({category, submenu, show}, index)=>{
               return (
                 <div className="category" key={index} >
-                  { index != 0 ? <div className="menuBorder"/> : <div />}
+                  <div className="menuBorder"/>
                   <div
                     onClick={()=>store.dispatch({type: 'MENU_LIST_TOGGLE', index: index})}
                     className="categoryName">
@@ -52,6 +72,12 @@ const Mobile = React.createClass({
               );
             })
           }
+          <div className="category">
+            <div className="menuBorder"/>
+            <div className="categoryName">
+              <a href='/#/contact' onClick={this.onClickHandler}>CONTACT</a>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -73,11 +99,16 @@ const Tablet = React.createClass({
           <div className="menuClose">
             <i onClick={this.closeMenu} className='fa fa-times' />
           </div>
+          <div className="category">
+            <div className="categoryName">
+              <a href='/#/' onClick={this.onClickHandler}>HOME</a>
+            </div>
+          </div>
           {
             this.props.list.map(({category, submenu}, index)=>{
               return (
                 <div className="category" key={index}>
-                  { index != 0 ? <div className="menuBorder"/> : <div />}
+                  <div className="menuBorder"/>
                   <div className="categoryName">{category}</div>
                   {
                     submenu.map(({link, name}, index)=>{
@@ -92,6 +123,12 @@ const Tablet = React.createClass({
               );
             })
           }
+          <div className="category">
+            <div className="menuBorder"/>
+            <div className="categoryName">
+              <a href='/#/contact' onClick={this.onClickHandler}>CONTACT</a>
+            </div>
+          </div>
         </div>
       </div>
     );

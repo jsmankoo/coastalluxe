@@ -58,6 +58,11 @@ const Top = React.createClass({
             <div className="subheadline">
               {this.props.subheadline}
             </div>
+            {/*<div className="scrollDown">
+              <a href='#Featured'>
+                <i className='fa fa-chevron-down' />
+              </a>
+            </div>*/}
           </div>
         </ReactBGVideo>
       </div>
@@ -85,6 +90,17 @@ const Featured = React.createClass({
       'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr',
       'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr'
     ];
+    // $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured')
+    //   .then((data)=>{
+    //     this.setState({...this.state,
+    //       items: [...this.state.items, ...[{...data[0],
+    //           building: 'featured'
+    //         },{...data[1],
+    //           building: 'featured'
+    //         }]
+    //       ]
+    //     });
+    //   });
     pullList.map((link)=>{
       $.get(link).then((properties)=>{
           this.setState({...this.state,
@@ -115,7 +131,7 @@ const Featured = React.createClass({
   },
   render(){
     return (
-      <div className="Featured">
+      <div id='Featured' className="Featured">
         <div className="Heading">
           <div className="title">
             <a href='/#/featured'>Featured</a>
@@ -135,7 +151,7 @@ const Featured = React.createClass({
             this.state.items.map((item, index)=>{
               return (
                 <div className="item" key={index}>
-                  <div className="img-wrapper" style={{backgroundImage: `url(${item.acf.image})`}}>
+                  <a href={`/#/featured/${item.type}/${item.acf.name}/${item.id}`} className="img-wrapper" style={{backgroundImage: `url(${item.acf.image})`}}>
                     {
                       item.acf.text !== '' ?
                       <div className="specialText">
@@ -143,7 +159,7 @@ const Featured = React.createClass({
                       </div> :
                       <div />
                     }
-                  </div>
+                  </a>
                   <div className="info">
                     <div className="name">
                       {item.acf.name}
@@ -249,7 +265,7 @@ const Ryan = React.createClass({
           </div>
           <div className="hidden half"></div>
           <div className="more">
-            <a href='/#/contact'>MORE <i className='fa fa-chevron-right' /></a>
+            <a href='/#/contact'>More <i className='fa fa-chevron-right' /></a>
           </div>
         </div>
       </div>
@@ -280,7 +296,7 @@ const Ryan = React.createClass({
           </div>
           <div className="hidden half"></div>
           <div className="more">
-            <a href='/#/contact'>MORE <i className='fa fa-chevron-right' /></a>
+            <a href='/#/contact'>More <i className='fa fa-chevron-right' /></a>
           </div>
         </div>
       </div>

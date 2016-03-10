@@ -1,6 +1,6 @@
 var ReactDom = require('react-dom');
 var React = require('react');
-import {Router, Route, hashHistory, IndexRoute } from "react-router";
+import {Router, Route, hashHistory, browserHistory, IndexRoute } from "react-router";
 
 var store = require('./store');
 
@@ -22,7 +22,7 @@ const renderDom = ()=>{
         <Route path='/featured/:building/:name/:id' component={Property} />
         <Route path='forSale/:building' component={ForSale} />
         <Route path='lease/:building' component={ForLease} />
-        <Route path='contact' component={Contact} />
+        <Route path='/contact' component={Contact} />
       </Route>
     </Router>,
     document.getElementById('Main')

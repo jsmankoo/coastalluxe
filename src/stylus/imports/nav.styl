@@ -11,16 +11,28 @@
       .col.logo
         column(0.75)
         a
+          size auto 30px
           &:hover
           &:focus
             opacity: 0.8
           img
             size auto 30px
+      .menuScroll
+        fixed top 0px right 0px
+        font-size 25px
+        background-color menuScrollColor
+        color white
+        z-index 9999
+        padding 13px
+        &.fa-times
+          width 100%
+          text-align: right
     &.Tablet
       height 50px
       .col.logo
         column(1)
         a
+          size auto 30px
           &:hover
           &:focus
             opacity: 0.8
@@ -29,8 +41,9 @@
     &.Desktop
       height 160px
       .col.logo
-        column(1)
+        column(0.5)
         a
+          size auto 109px
           &:hover
           &:focus
             opacity: 0.8
@@ -50,19 +63,17 @@
         align('both')
         font-size 20px
         font-weight: 700
-      // &.contact
-      //   display: none
-      //   column(0.25)
-      //   a
-      //     i.fa
-      //       padding 5px
-      //       float left
-      //     .linkName
-      //       font-family: otherFont
-      //       padding 3px
-      //       float right
+      &.contact
+        column(0.25)
+        a
+          i.fa
+            padding 5px
+            float left
+          .linkName
+            font-family: otherFont
+            padding 3px
+            float right
       &.menu
-        display: none
         column(0.25)
         a
           i.fa

@@ -11,7 +11,7 @@ app.use(morgan('dev'));
 app.use(express.static("./views"));
 
 app.get('/', (req, res)=>{
-  res.render('index');
+  res.render('index.jade');
 });
 
 app.get('/ihome', (req, res)=>{

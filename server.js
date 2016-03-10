@@ -20,7 +20,7 @@ app.use((0, _morgan2.default)('dev'));
 app.use(_express2.default.static("./views"));
 
 app.get('/', function (req, res) {
-  res.render('index');
+  res.render('index.jade');
 });
 
 app.get('/ihome', function (req, res) {
