@@ -15,7 +15,9 @@ const Property = React.createClass({
         "image": "",
         "moreContent": "",
         "jumbotron": "",
-        "facilities": []
+        "facilities": [],
+        "streetAddress": "",
+        "city": ""
       },
       featured: [],
       options : {
@@ -146,7 +148,11 @@ const Details = React.createClass({
           </div>
           <div className="paragraph">
             <Markdown>{this.props.content}</Markdown>
-            <i className={`fa fa-chevron-${this.state.moreContentShow ? 'up' : 'down'}`} onClick={this.showContent}/>
+            <div className="arrow">
+              <i
+                className={`fa fa-chevron-${this.state.moreContentShow ? 'up' : 'down'}`}
+                onClick={this.showContent}/>
+            </div>
           </div>
         </div>
         {

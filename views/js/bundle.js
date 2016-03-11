@@ -38502,7 +38502,9 @@ var Property = React.createClass({
         "image": "",
         "moreContent": "",
         "jumbotron": "",
-        "facilities": []
+        "facilities": [],
+        "streetAddress": "",
+        "city": ""
       },
       featured: [],
       options: {
@@ -38664,7 +38666,13 @@ var Details = React.createClass({
             null,
             this.props.content
           ),
-          React.createElement('i', { className: 'fa fa-chevron-' + (this.state.moreContentShow ? 'up' : 'down'), onClick: this.showContent })
+          React.createElement(
+            'div',
+            { className: 'arrow' },
+            React.createElement('i', {
+              className: 'fa fa-chevron-' + (this.state.moreContentShow ? 'up' : 'down'),
+              onClick: this.showContent })
+          )
         )
       ),
       this.state.moreContentShow ? React.createElement(
