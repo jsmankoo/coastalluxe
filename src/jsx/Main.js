@@ -25,8 +25,9 @@ const renderDom = ()=>{
         <Route path='/Cove' component={Cove} />
         <Route path='/featured/Cove' component={FeaturedCove} />
         <Route path='/featured/:building/:name/:id' component={Property} />
-        <Route path='forSale/:building' component={ForSale} />
-        <Route path='lease/:building' component={ForLease} />
+        <Route path='/forSale' component={ForSale} />
+        <Route path='/lease' component={ForLease} />
+        <Route path='/sold' component={Sold} />
         <Route path='/contact' component={Contact} />
       </Route>
     </Router>,
@@ -65,6 +66,19 @@ const ForLease = React.createClass({
     store.dispatch({
       type: 'FeaturedProperties_INIT',
       saleType: 'lease',
+      building: 'all'
+    });
+  },
+  render(){
+    return <FeaturedProperties {...store.getState().FeaturedProperties} />;
+  }
+});
+
+const Sold = React.createClass({
+  componentDidMount(){
+    store.dispatch({
+      type: 'FeaturedProperties_INIT',
+      saleType: 'sold',
       building: 'all'
     });
   },

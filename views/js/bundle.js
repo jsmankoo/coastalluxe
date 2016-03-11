@@ -40085,8 +40085,9 @@ var renderDom = function renderDom() {
       React.createElement(_reactRouter.Route, { path: '/Cove', component: Cove }),
       React.createElement(_reactRouter.Route, { path: '/featured/Cove', component: FeaturedCove }),
       React.createElement(_reactRouter.Route, { path: '/featured/:building/:name/:id', component: Property }),
-      React.createElement(_reactRouter.Route, { path: 'forSale/:building', component: ForSale }),
-      React.createElement(_reactRouter.Route, { path: 'lease/:building', component: ForLease }),
+      React.createElement(_reactRouter.Route, { path: '/forSale', component: ForSale }),
+      React.createElement(_reactRouter.Route, { path: '/lease', component: ForLease }),
+      React.createElement(_reactRouter.Route, { path: '/sold', component: Sold }),
       React.createElement(_reactRouter.Route, { path: '/contact', component: Contact })
     )
   ), document.getElementById('Main'));
@@ -40126,6 +40127,20 @@ var ForLease = React.createClass({
     store.dispatch({
       type: 'FeaturedProperties_INIT',
       saleType: 'lease',
+      building: 'all'
+    });
+  },
+  render: function render() {
+    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
+  }
+});
+
+var Sold = React.createClass({
+  displayName: 'Sold',
+  componentDidMount: function componentDidMount() {
+    store.dispatch({
+      type: 'FeaturedProperties_INIT',
+      saleType: 'sold',
       building: 'all'
     });
   },
