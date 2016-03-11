@@ -59,9 +59,9 @@ const Mobile = React.createClass({
                   </div>
                   {
                     show ?
-                      submenu.map(({link, name})=>{
+                      submenu.map(({link, name}, index)=>{
                         return (
-                          <div className="submenu">
+                          <div className="submenu" key={index}>
                             <a href={link} onClick={this.onClickHandler}>{name}</a>
                           </div>
                         );

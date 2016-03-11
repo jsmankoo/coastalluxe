@@ -39249,7 +39249,9 @@ var FeaturedProperties = React.createClass({
           all: [].concat(_toConsumableArray(_this.state.buildings.all), _toConsumableArray(list.map(function (acf) {
             return _extends({}, acf, { building: 'featured' });
           }))),
-          properties: list
+          properties: list.map(function (acf) {
+            return _extends({}, acf, { building: 'featured' });
+          })
         })
       }));
     });
@@ -39265,7 +39267,9 @@ var FeaturedProperties = React.createClass({
           all: [].concat(_toConsumableArray(_this.state.buildings.all), _toConsumableArray(list.map(function (acf) {
             return _extends({}, acf, { building: '13700marinapointedr' });
           }))),
-          building13700: list
+          building13700: list.map(function (acf) {
+            return _extends({}, acf, { building: '13700marinapointedr' });
+          })
         })
       }));
     });
@@ -39281,7 +39285,9 @@ var FeaturedProperties = React.createClass({
           all: [].concat(_toConsumableArray(_this.state.buildings.all), _toConsumableArray(list.map(function (acf) {
             return _extends({}, acf, { building: '13750marinapointedr' });
           }))),
-          building13750: list
+          building13750: list.map(function (acf) {
+            return _extends({}, acf, { building: '13750marinapointedr' });
+          })
         })
       }));
     });
@@ -39297,7 +39303,9 @@ var FeaturedProperties = React.createClass({
           all: [].concat(_toConsumableArray(_this.state.buildings.all), _toConsumableArray(list.map(function (acf) {
             return _extends({}, acf, { building: '13800marinapointedr' });
           }))),
-          building13800: list
+          building13800: list.map(function (acf) {
+            return _extends({}, acf, { building: '13800marinapointedr' });
+          })
         })
       }));
     });
@@ -39391,7 +39399,7 @@ var Jumbotron = React.createClass({
                 React.createElement(Select, {
                   name: 'Building',
                   value: this.props.building,
-                  options: [{ value: 'all', label: 'All' }, { value: 'featured', label: 'Featured Properties' }, { value: '13700marinapointedr', label: 'AZZURRA' }, { value: '13750marinapointedr', label: 'REGATTA' }, { value: '13800marinapointedr', label: 'COVE' }],
+                  options: [{ value: 'all', label: 'All' }, { value: 'featured', label: 'Other' }, { value: '13700marinapointedr', label: 'AZZURRA' }, { value: '13750marinapointedr', label: 'REGATTA' }, { value: '13800marinapointedr', label: 'COVE' }],
                   onChange: this.buildingOnChange
                 })
               )
@@ -40259,7 +40267,8 @@ var Property = React.createClass({
         "lease": "",
         "text": "",
         "image": "",
-        "slide_show": []
+        "slide_show": [],
+        "facilities": []
       },
       featured: [],
       options: {
@@ -40314,7 +40323,7 @@ var Property = React.createClass({
       var acf = _ref5.acf;
 
       _this.setState(_extends({}, _this.state, {
-        property: acf
+        property: _extends({}, _this.state.property, acf)
       }));
     });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/' + this.props.params.building).then(function (data) {
@@ -40345,10 +40354,7 @@ var Property = React.createClass({
       React.createElement(Jumbotron, this.state),
       React.createElement(Details, _extends({}, this.state.property, { options: this.state.options })),
       this.state.building.facilities.length === 0 ? React.createElement('div', null) : React.createElement(Facilities, this.state.building),
-      React.createElement(Featured, {
-        building: this.props.params.building,
-        featured: this.state.featured,
-        options: this.state.options })
+      this.state.property.facilities.length ? React.createElement(Facilities, { facilities: this.state.property.facilities }) : React.createElement('div', null)
     );
   }
 });
@@ -40413,7 +40419,7 @@ var Details = React.createClass({
     if (sale !== '' && lease !== '') {
       return React.createElement(
         'div',
-        { className: 'info-wrapper' },
+        { className: 'price' },
         '$',
         this.props.forSale,
         React.createElement('br', null),
@@ -40424,7 +40430,7 @@ var Details = React.createClass({
     } else if (sale !== '') {
       return React.createElement(
         'div',
-        { className: 'info-wrapper' },
+        { className: 'price' },
         'FOR SALE',
         React.createElement('br', null),
         '$',
@@ -40433,11 +40439,12 @@ var Details = React.createClass({
     } else if (lease !== '') {
       return React.createElement(
         'div',
-        { className: 'info-wrapper' },
+        { className: 'price' },
         'FOR LEASE',
         React.createElement('br', null),
         '$',
-        this.props.lease
+        this.props.lease,
+        '/mo.'
       );
     }
   },
@@ -40461,19 +40468,20 @@ var Details = React.createClass({
       React.createElement(
         'div',
         { className: 'info' },
-        this.handlePrice(this.props.forSale, this.props.lease),
+        React.createElement(
+          'div',
+          { className: 'info-wrapper' },
+          this.handlePrice(this.props.forSale, this.props.lease)
+        ),
         React.createElement(
           'div',
           { className: 'info-wrapper' },
           React.createElement(
             'div',
-            { className: 'bath' },
+            { className: 'bedBath' },
             'BATH: ',
-            this.props.bath
-          ),
-          React.createElement(
-            'div',
-            { className: 'bed' },
+            this.props.bath,
+            React.createElement('br', null),
             'BED: ',
             this.props.bed
           )
@@ -40609,6 +40617,7 @@ var Facilities = React.createClass({
     };
   },
   render: function render() {
+    console.log(this.props.facilities);
     return React.createElement(
       'div',
       { className: 'Facilities' },
@@ -40940,13 +40949,13 @@ var Mobile = React.createClass({
               category,
               React.createElement('i', { className: 'fa fa-chevron-' + (show ? 'up' : 'down') })
             ),
-            show ? submenu.map(function (_ref2) {
+            show ? submenu.map(function (_ref2, index) {
               var link = _ref2.link;
               var name = _ref2.name;
 
               return React.createElement(
                 'div',
-                { className: 'submenu' },
+                { className: 'submenu', key: index },
                 React.createElement(
                   'a',
                   { href: link, onClick: _this.onClickHandler },

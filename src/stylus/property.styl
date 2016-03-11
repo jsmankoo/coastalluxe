@@ -23,12 +23,13 @@
           +below(767px)
             font-size 40px
         .border
-          border 1px solid darkBlue
-          size 340px auto
+          border-top 1px solid lightBlue
           +below(767px)
             margin 10px auto
+            size 200px auto
           +above(768px)
             margin 20px auto
+            size 340px auto
         .info
           color darkBlue
           text-align: center
@@ -59,16 +60,22 @@
         +below(767px)
           size 100% 300px
     .info
-      size 1280px 175px
-      max-width: 100%
-      margin auto
+      center(1280px)
       margin 40px auto 60px
-      background-color: propInfoColor
+      // background-color: propInfoColor
+      //   height 350px
+      // +above(768px)
       .info-wrapper
-        column(1/4)
-        height 100%
         position: relative
-        .bed
+        background-color: propInfoColor
+        height 175px
+        +below(767px)
+          span(1/2, cycle: 2)
+          // height 100%
+        +above(768px)
+          span(1/4)
+          // height 100%
+        .price
           align(b)
           width 100%
           color darkBlue
@@ -79,7 +86,7 @@
           line-height 50px
           +below(767px)
             font-size 16px
-        .bath
+        .bedBath
           align(b)
           width 100%
           color darkBlue
@@ -117,6 +124,7 @@
       center(1100px)
       color darkBlue
       text-align: center
+      // padding-top 40px
       h1
         col()
         h1()
@@ -146,9 +154,9 @@
         +above(768px)
           font-size 18px
   .Facilities
-    padding 0px
+    padding-bottom 100px
     +below(767px)
-      padding 0px
+      padding-bottom 50px
     .title
       text-align: center
       h1()

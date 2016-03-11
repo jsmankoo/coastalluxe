@@ -40,7 +40,7 @@ const FeaturedProperties = React.createClass({
         this.setState({...this.state,
           buildings: {...this.state.buildings,
             all: [...this.state.buildings.all, ...list.map((acf)=>{return {...acf, building: 'featured'};})],
-            properties: list
+            properties: list.map((acf)=>{return {...acf, building: 'featured'};})
           }
         });
       });
@@ -52,7 +52,7 @@ const FeaturedProperties = React.createClass({
         this.setState({...this.state,
           buildings: {...this.state.buildings,
             all: [...this.state.buildings.all, ...list.map((acf)=>{return {...acf, building: '13700marinapointedr'};})],
-            building13700: list
+            building13700: list.map((acf)=>{return {...acf, building: '13700marinapointedr'};})
           }
         });
       });
@@ -64,7 +64,7 @@ const FeaturedProperties = React.createClass({
         this.setState({...this.state,
           buildings: {...this.state.buildings,
             all: [...this.state.buildings.all, ...list.map((acf)=>{return {...acf, building: '13750marinapointedr'};})],
-            building13750: list
+            building13750: list.map((acf)=>{return {...acf, building: '13750marinapointedr'};})
           }
         });
       });
@@ -76,7 +76,7 @@ const FeaturedProperties = React.createClass({
         this.setState({...this.state,
           buildings: {...this.state.buildings,
             all: [...this.state.buildings.all, ...list.map((acf)=>{return {...acf, building: '13800marinapointedr'};})],
-            building13800: list
+            building13800: list.map((acf)=>{return {...acf, building: '13800marinapointedr'};})
           }
         });
       });
@@ -149,7 +149,7 @@ const Jumbotron = React.createClass({
                     value={this.props.building}
                     options={[
                       { value: 'all', label: 'All' },
-                      { value: 'featured', label: 'Featured Properties' },
+                      { value: 'featured', label: 'Other' },
                       { value: '13700marinapointedr', label: 'AZZURRA' },
                       { value: '13750marinapointedr', label: 'REGATTA' },
                       { value: '13800marinapointedr', label: 'COVE' }

@@ -23,7 +23,7 @@
           +below(767px)
             font-size 40px
         .border
-          border 1px solid darkBlue
+          border-top 1px solid lightBlue
           +below(767px)
             margin 10px auto
             size 200px auto
@@ -183,7 +183,7 @@
           +below(1024px)
             size 100% 300px
           +above(1025px)
-            size 100% 430px
+            size 100% 600px
           .specialText
             absolute bottom 0px
             background-color rgba(lightBlue, 0.50)
@@ -202,7 +202,7 @@
   .Featured
     center(1280px)
     padding-top 100px
-    border-bottom 1px solid darkBlue
+    border-bottom 1px solid lightBlue
     .more
       +below(767px)
         margin 25px
@@ -211,14 +211,15 @@
         float left
       a
         display: block
-        size 200px auto
+        size 150px auto
         background-color darkBlue
         text-align: center
         color: white
         font-family: otherFont
         font-weight: 700
         padding 5px 0px
-        font-size 25px
+        font-size 20px
+        font-style: italic;
         +below(767px)
           margin auto
     #featuredSlide
@@ -227,7 +228,7 @@
         margin 25px
         +above(768px)
           margin 50px
-          absolute bottom -135px right 0px
+          absolute bottom -130px right 0px
       .item
         .img-wrapper
           background-repeat: no-repeat
@@ -247,8 +248,8 @@
             font-size 30px
             font-family: mainFont
             font-weight: 500
-            text-align: left
-            padding 12px 40px
+            text-align: center
+            padding 12px 0px
             +below(767px)
               text-align: center
               display: block

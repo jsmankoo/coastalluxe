@@ -33,7 +33,8 @@ const Property = React.createClass({
         "lease": "",
         "text": "",
         "image": "",
-        "slide_show": []
+        "slide_show": [],
+        "facilities": []
       },
       featured: [],
       options : {
@@ -81,7 +82,7 @@ const Property = React.createClass({
     $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/${this.props.params.building}/${this.props.params.id}`)
       .then(({acf})=>{
         this.setState({...this.state,
-          property: acf
+          property: {...this.state.property, ...acf}
         });
       });
     $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/${this.props.params.building}`)
@@ -111,10 +112,15 @@ const Property = React.createClass({
           <div /> :
           <Facilities {...this.state.building} />
         }
-        <Featured
+        {
+          this.state.property.facilities.length ?
+          <Facilities facilities={this.state.property.facilities} /> :
+          <div />
+        }
+        {/*<Featured
           building={this.props.params.building}
           featured={this.state.featured}
-          options={this.state.options} />
+          options={this.state.options} />*/}
       </div>
     );
   }
@@ -161,7 +167,7 @@ const Details = React.createClass({
   handlePrice(sale, lease){
     if(sale !== '' && lease !== ''){
       return (
-        <div className="info-wrapper">
+        <div className="price">
           ${this.props.forSale}
           <br />
           ${this.props.lease}/mo.
@@ -169,7 +175,7 @@ const Details = React.createClass({
       );
     } else if( sale !== ''){
       return (
-        <div className="info-wrapper">
+        <div className="price">
           FOR SALE
           <br />
           ${this.props.forSale}
@@ -177,10 +183,10 @@ const Details = React.createClass({
       );
     } else if( lease !== ''){
       return (
-        <div className="info-wrapper">
+        <div className="price">
           FOR LEASE
           <br />
-          ${this.props.lease}
+          ${this.props.lease}/mo.
         </div>
       );
     }
@@ -201,14 +207,17 @@ const Details = React.createClass({
           </OwlCarousel>
         </div>
         <div className="info">
-          {this.handlePrice(this.props.forSale, this.props.lease)}
           <div className="info-wrapper">
-            <div className="bath">
+            {this.handlePrice(this.props.forSale, this.props.lease)}
+          </div>
+          <div className="info-wrapper">
+            <div className="bedBath">
               BATH: {this.props.bath}
-            </div>
-            <div className="bed">
+              <br />
               BED: {this.props.bed}
             </div>
+            {/*<div className="bed">
+            </div>*/}
           </div>
           <div className="info-wrapper">
             <div className="area">
@@ -314,6 +323,7 @@ const Facilities = React.createClass({
     };
   },
   render(){
+    console.log(this.props.facilities);
     return (
       <div className="Facilities">
         <div className="title">
