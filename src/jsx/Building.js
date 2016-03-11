@@ -148,11 +148,6 @@ const Details = React.createClass({
           </div>
           <div className="paragraph">
             <Markdown>{this.props.content}</Markdown>
-            <div className="arrow">
-              <i
-                className={`fa fa-chevron-${this.state.moreContentShow ? 'up' : 'down'}`}
-                onClick={this.showContent}/>
-            </div>
           </div>
         </div>
         {
@@ -164,6 +159,11 @@ const Details = React.createClass({
             </div>
           : <div />
         }
+        <div className="arrow">
+          <i
+            className={`fa fa-chevron-${this.state.moreContentShow ? 'up' : 'down'}`}
+            onClick={this.showContent}/>
+        </div>
       </div>
     );
   }

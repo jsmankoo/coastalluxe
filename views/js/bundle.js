@@ -38665,13 +38665,6 @@ var Details = React.createClass({
             Markdown,
             null,
             this.props.content
-          ),
-          React.createElement(
-            'div',
-            { className: 'arrow' },
-            React.createElement('i', {
-              className: 'fa fa-chevron-' + (this.state.moreContentShow ? 'up' : 'down'),
-              onClick: this.showContent })
           )
         )
       ),
@@ -38687,7 +38680,14 @@ var Details = React.createClass({
             this.props.moreContent
           )
         )
-      ) : React.createElement('div', null)
+      ) : React.createElement('div', null),
+      React.createElement(
+        'div',
+        { className: 'arrow' },
+        React.createElement('i', {
+          className: 'fa fa-chevron-' + (this.state.moreContentShow ? 'up' : 'down'),
+          onClick: this.showContent })
+      )
     );
   }
 });

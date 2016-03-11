@@ -47,44 +47,10 @@
     margin 90px auto 0px
     +below(767px)
       margin 60px auto 0px
-    .paragraph
-      color darkBlue
-      font-family: otherFont
-      text-align: left;
-      +below(767px)
-        text-align: center
-      h1
-        h1()
-        text-align: center
-        margin 0px auto
-      h2
-        h2()
-        text-align: center
-        margin 0px auto
-      h3
-        h3()
-        text-align: center
-        margin 0px auto
-      h4
-        h4()
-        text-align: center
-        margin 0px auto
-      h5
-        h5()
-        text-align: center
-        margin 0px auto
-      h6
-        h6()
-        text-align: center
-        margin 0px auto
-      p
-        margin: 0px auto
-        font-weight: 500
-        font-size 14px
     .intro
       center(900px)
       .img-wrapper
-        column(2/7)
+        column(2/7, gutter: 7px)
         height 375px
         background-repeat: no-repeat
         background-size: cover
@@ -93,7 +59,7 @@
         +below(767px)
           center(250px)
       .paragraph
-        column(5/7)
+        column(5/7, gutter: 7px)
         font-family: otherFont
         color darkBlue
         text-align: left
@@ -102,80 +68,99 @@
           margin-top 50px
         h1
           h1()
+          font-weight: 500
           font-family: sans-serif
-          font-weight 500
-          margin 0px auto
+          margin-top 0px
+          line-height: 40px
+          text-align: left
+          +below(767px)
+            text-align: center
         h2
           h2()
+          font-weight: 500
           font-family: sans-serif
-          font-weight 500
-          margin 0px auto
+          text-align: left
+          +below(767px)
+            text-align: center
         h3
           h3()
+          font-weight: 500
           font-family: sans-serif
-          font-weight 500
-          margin 0px auto
+          text-align: left
+          +below(767px)
+            text-align: center
         h4
           h4()
+          font-weight: 500
           font-family: sans-serif
-          font-weight 500
-          margin 0px auto
+          text-align: left
+          +below(767px)
+            text-align: center
         h5
           h5()
+          font-weight: 500
           font-family: sans-serif
-          font-weight 500
-          margin 0px auto
+          text-align: left
+          +below(767px)
+            text-align: center
         h6
           h6()
+          font-weight: 500
           font-family: sans-serif
-          font-weight 500
-          margin 0px auto
-        p
-          normal()
-          line-height 35px
-          margin auto
+          text-align: left
           +below(767px)
-            font-size 18px
             text-align: center
-          +above(768px)
-            font-size 18px
-        i.fa
-          font-size 25px
+        p
+          font-size 16px
+          line-height: 27px
+          font-weight: 500
+          text-align: left
+          +below(767px)
+            text-align: center
     .rest
       center(900px)
       font-family: otherFont
       color darkBlue
-      text-align: left
+      text-align: center
       h1
         h1()
-        margin 0px auto
+        font-weight: 500
+        font-family: sans-serif
+        line-height: 40px
       h2
         h2()
-        margin 0px auto
+        font-weight: 500
+        font-family: sans-serif
       h3
         h3()
-        margin 0px auto
+        font-weight: 500
+        font-family: sans-serif
       h4
         h4()
-        margin 0px auto
+        font-weight: 500
+        font-family: sans-serif
       h5
         h5()
-        margin 0px auto
+        font-weight: 500
+        font-family: sans-serif
       h6
         h6()
-        margin 0px auto
+        font-weight: 500
+        font-family: sans-serif
       p
-        normal()
-        line-height 35px
-        margin auto
-        +below(767px)
-          font-size 18px
-        +above(768px)
-          font-size 18px
+        font-size 16px
+        line-height: 27px
+        font-weight: 500
+    .arrow
+      width 100%
+      i.fa
+        display: block
+        margin 20px auto
+        size 30px 30px
+        color darkBlue
+        font-size 25px
   .Facilities
-    padding 100px 0px
-    +below(767px)
-      padding 50px 0px
+    padding 20px 0px
     .title
       text-align: center
       h1()
@@ -283,7 +268,6 @@
             +above(768px)
               font-size: 20px
               text-align: center
-              padding-left 40px
               margin 20px auto 0px
           .price
             color darkBlue
@@ -295,4 +279,3 @@
               margin 5px auto 0px
               font-size 18px
               text-align: center
-              padding-left 40px

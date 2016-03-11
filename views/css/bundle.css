@@ -1337,7 +1337,8 @@ th {
     line-height: 1.6em;
     font-weight: 500;
     font-family: sans-serif;
-    margin: 0px auto;
+    margin-top: 0px;
+    line-height: 40px;
     text-align: left;
   }
   .Home .Ryan .Row .info h2 {
@@ -1349,7 +1350,7 @@ th {
     line-height: 1.6em;
     font-weight: 500;
     font-family: sans-serif;
-    margin: 0px auto;
+    margin-top: 0px;
     text-align: left;
   }
   .Home .Ryan .Row .info h3 {
@@ -1361,7 +1362,7 @@ th {
     line-height: 1.6em;
     font-weight: 500;
     font-family: sans-serif;
-    margin: 0px auto;
+    margin-top: 0px;
     text-align: left;
   }
   .Home .Ryan .Row .info h4 {
@@ -1373,7 +1374,7 @@ th {
     line-height: 1.6em;
     font-weight: 500;
     font-family: sans-serif;
-    margin: 0px auto;
+    margin-top: 0px;
     text-align: left;
   }
   .Home .Ryan .Row .info h5 {
@@ -1385,7 +1386,7 @@ th {
     line-height: 1.6em;
     font-weight: 500;
     font-family: sans-serif;
-    margin: 0px auto;
+    margin-top: 0px;
     text-align: left;
   }
   .Home .Ryan .Row .info h6 {
@@ -1398,14 +1399,14 @@ th {
     text-transform: uppercase;
     font-weight: 500;
     font-family: sans-serif;
-    margin: 0px auto;
+    margin-top: 0px;
     text-align: left;
   }
   .Home .Ryan .Row .info p {
     font-size: 16px;
     line-height: 27px;
     font-weight: 500;
-    margin: 0px auto;
+    margin-top: 0px;
     text-align: left;
   }
   .Home .Ryan .Row .socialMedia {
@@ -1972,9 +1973,9 @@ th {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 31.33333333333333%;
+  width: 28.66666666666666%;
   margin-left: 0%;
-  margin-right: 3%;
+  margin-right: 7.000000000000001%;
 }
 .Contact .Ryan .Tablet .wrap .image:before,
 .Contact .Ryan .Tablet .wrap .image:after {
@@ -1994,17 +1995,17 @@ th {
   max-height: 380px;
 }
 .Contact .Ryan .Tablet .wrap .content {
-  text-align: left;
-  font-family: museo-slab;
-  color: #003785;
-  margin: auto;
   *zoom: 1;
   float: left;
   clear: none;
   text-align: inherit;
-  width: 65.66666666666666%;
+  width: 64.33333333333333%;
   margin-left: 0%;
-  margin-right: 3%;
+  margin-right: 7.000000000000001%;
+  text-align: left;
+  font-family: museo-slab;
+  color: #003785;
+  margin: auto;
 }
 .Contact .Ryan .Tablet .wrap .content:before,
 .Contact .Ryan .Tablet .wrap .content:after {
@@ -2016,6 +2017,88 @@ th {
 }
 .Contact .Ryan .Tablet .wrap .content:last-child {
   margin-right: 0%;
+}
+.Contact .Ryan .Tablet .wrap .content h1 {
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
+  text-align: left;
+  line-height: 40px;
+  margin-top: 0px;
+}
+.Contact .Ryan .Tablet .wrap .content h2 {
+  font-size: 28.8px;
+  font-size: 1.8rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
+  text-align: left;
+  margin-top: 0px;
+}
+.Contact .Ryan .Tablet .wrap .content h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
+  text-align: left;
+  margin-top: 0px;
+}
+.Contact .Ryan .Tablet .wrap .content h4 {
+  font-size: 20.8px;
+  font-size: 1.3rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
+  text-align: left;
+  margin-top: 0px;
+}
+.Contact .Ryan .Tablet .wrap .content h5 {
+  font-size: 16px;
+  font-size: 1rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
+  text-align: left;
+  margin-top: 0px;
+}
+.Contact .Ryan .Tablet .wrap .content h6 {
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: sans-serif;
+  text-align: left;
+  margin-top: 0px;
+}
+.Contact .Ryan .Tablet .wrap .content p {
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 500;
+  text-align: left;
+  font-family: museo-slab;
+  margin-top: 0px;
 }
 .Contact .Ryan .Tablet .details {
   *zoom: 1;
@@ -2040,62 +2123,62 @@ th {
 .Contact .Ryan .Tablet .details:after {
   clear: both;
 }
-.Contact .Ryan .Tablet h1 {
+.Contact .Ryan .Tablet .details h1 {
   font-size: 38.4px;
   font-size: 2.4rem;
   text-rendering: optimizelegibility;
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
   text-align: center;
-  margin-bottom: 0px;
-  margin-top: 0px;
 }
-.Contact .Ryan .Tablet h2 {
+.Contact .Ryan .Tablet .details h2 {
   font-size: 28.8px;
   font-size: 1.8rem;
   text-rendering: optimizelegibility;
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
   text-align: center;
-  margin-bottom: 0px;
-  margin-top: 0px;
 }
-.Contact .Ryan .Tablet h3 {
+.Contact .Ryan .Tablet .details h3 {
   font-size: 24px;
   font-size: 1.5rem;
   text-rendering: optimizelegibility;
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
   text-align: center;
-  margin-bottom: 0px;
-  margin-top: 0px;
 }
-.Contact .Ryan .Tablet h4 {
+.Contact .Ryan .Tablet .details h4 {
   font-size: 20.8px;
   font-size: 1.3rem;
   text-rendering: optimizelegibility;
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
   text-align: center;
-  margin-bottom: 0px;
-  margin-top: 0px;
 }
-.Contact .Ryan .Tablet h5 {
+.Contact .Ryan .Tablet .details h5 {
   font-size: 16px;
   font-size: 1rem;
   text-rendering: optimizelegibility;
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
   text-align: center;
-  margin-bottom: 0px;
-  margin-top: 0px;
 }
-.Contact .Ryan .Tablet h6 {
+.Contact .Ryan .Tablet .details h6 {
   font-size: 14.4px;
   font-size: 0.9rem;
   text-rendering: optimizelegibility;
@@ -2103,16 +2186,15 @@ th {
   margin: 0.75em 0;
   line-height: 1.6em;
   text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-.Contact .Ryan .Tablet p {
-  font-size: 16px;
-  line-height: 25px;
   font-weight: 500;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  font-family: sans-serif;
+  text-align: center;
+}
+.Contact .Ryan .Tablet .details p {
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 500;
+  text-align: left;
 }
 .FeaturedProperties .Jumbotron {
   background-repeat: no-repeat;
@@ -3101,82 +3183,6 @@ th {
     margin: 60px auto 0px;
   }
 }
-.Building .Details .paragraph {
-  color: #003785;
-  font-family: museo-slab;
-  text-align: left;
-}
-@media only screen and (max-width: 767px) {
-  .Building .Details .paragraph {
-    text-align: center;
-  }
-}
-.Building .Details .paragraph h1 {
-  font-size: 38.4px;
-  font-size: 2.4rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  text-align: center;
-  margin: 0px auto;
-}
-.Building .Details .paragraph h2 {
-  font-size: 28.8px;
-  font-size: 1.8rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  text-align: center;
-  margin: 0px auto;
-}
-.Building .Details .paragraph h3 {
-  font-size: 24px;
-  font-size: 1.5rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  text-align: center;
-  margin: 0px auto;
-}
-.Building .Details .paragraph h4 {
-  font-size: 20.8px;
-  font-size: 1.3rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  text-align: center;
-  margin: 0px auto;
-}
-.Building .Details .paragraph h5 {
-  font-size: 16px;
-  font-size: 1rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  text-align: center;
-  margin: 0px auto;
-}
-.Building .Details .paragraph h6 {
-  font-size: 14.4px;
-  font-size: 0.9rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 0px auto;
-}
-.Building .Details .paragraph p {
-  margin: 0px auto;
-  font-weight: 500;
-  font-size: 14px;
-}
 .Building .Details .intro {
   *zoom: 1;
   width: auto;
@@ -3201,9 +3207,9 @@ th {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 26.428571428571427%;
+  width: 23.57142857142857%;
   margin-left: 0%;
-  margin-right: 3%;
+  margin-right: 7.000000000000001%;
   height: 375px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3247,9 +3253,9 @@ th {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 70.57142857142857%;
+  width: 69.42857142857143%;
   margin-left: 0%;
-  margin-right: 3%;
+  margin-right: 7.000000000000001%;
   font-family: museo-slab;
   color: #003785;
   text-align: left;
@@ -3295,9 +3301,16 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-family: sans-serif;
   font-weight: 500;
-  margin: 0px auto;
+  font-family: sans-serif;
+  margin-top: 0px;
+  line-height: 40px;
+  text-align: left;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Details .intro .paragraph h1 {
+    text-align: center;
+  }
 }
 .Building .Details .intro .paragraph h2 {
   font-size: 28.8px;
@@ -3306,9 +3319,14 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-family: sans-serif;
   font-weight: 500;
-  margin: 0px auto;
+  font-family: sans-serif;
+  text-align: left;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Details .intro .paragraph h2 {
+    text-align: center;
+  }
 }
 .Building .Details .intro .paragraph h3 {
   font-size: 24px;
@@ -3317,9 +3335,14 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-family: sans-serif;
   font-weight: 500;
-  margin: 0px auto;
+  font-family: sans-serif;
+  text-align: left;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Details .intro .paragraph h3 {
+    text-align: center;
+  }
 }
 .Building .Details .intro .paragraph h4 {
   font-size: 20.8px;
@@ -3328,9 +3351,14 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-family: sans-serif;
   font-weight: 500;
-  margin: 0px auto;
+  font-family: sans-serif;
+  text-align: left;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Details .intro .paragraph h4 {
+    text-align: center;
+  }
 }
 .Building .Details .intro .paragraph h5 {
   font-size: 16px;
@@ -3339,9 +3367,14 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-family: sans-serif;
   font-weight: 500;
-  margin: 0px auto;
+  font-family: sans-serif;
+  text-align: left;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Details .intro .paragraph h5 {
+    text-align: center;
+  }
 }
 .Building .Details .intro .paragraph h6 {
   font-size: 14.4px;
@@ -3351,29 +3384,25 @@ th {
   margin: 0.75em 0;
   line-height: 1.6em;
   text-transform: uppercase;
-  font-family: sans-serif;
   font-weight: 500;
-  margin: 0px auto;
-}
-.Building .Details .intro .paragraph p {
-  font-weight: normal;
-  font-style: normal;
-  line-height: 35px;
-  margin: auto;
+  font-family: sans-serif;
+  text-align: left;
 }
 @media only screen and (max-width: 767px) {
-  .Building .Details .intro .paragraph p {
-    font-size: 18px;
+  .Building .Details .intro .paragraph h6 {
     text-align: center;
   }
 }
-@media only screen and (min-width: 768px) {
-  .Building .Details .intro .paragraph p {
-    font-size: 18px;
-  }
+.Building .Details .intro .paragraph p {
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 500;
+  text-align: left;
 }
-.Building .Details .intro .paragraph i.fa {
-  font-size: 25px;
+@media only screen and (max-width: 767px) {
+  .Building .Details .intro .paragraph p {
+    text-align: center;
+  }
 }
 .Building .Details .rest {
   *zoom: 1;
@@ -3387,7 +3416,7 @@ th {
   padding-right: 0;
   font-family: museo-slab;
   color: #003785;
-  text-align: left;
+  text-align: center;
 }
 .Building .Details .rest:before,
 .Building .Details .rest:after {
@@ -3404,7 +3433,9 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  margin: 0px auto;
+  font-weight: 500;
+  font-family: sans-serif;
+  line-height: 40px;
 }
 .Building .Details .rest h2 {
   font-size: 28.8px;
@@ -3413,7 +3444,8 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  margin: 0px auto;
+  font-weight: 500;
+  font-family: sans-serif;
 }
 .Building .Details .rest h3 {
   font-size: 24px;
@@ -3422,7 +3454,8 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  margin: 0px auto;
+  font-weight: 500;
+  font-family: sans-serif;
 }
 .Building .Details .rest h4 {
   font-size: 20.8px;
@@ -3431,7 +3464,8 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  margin: 0px auto;
+  font-weight: 500;
+  font-family: sans-serif;
 }
 .Building .Details .rest h5 {
   font-size: 16px;
@@ -3440,7 +3474,8 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  margin: 0px auto;
+  font-weight: 500;
+  font-family: sans-serif;
 }
 .Building .Details .rest h6 {
   font-size: 14.4px;
@@ -3450,31 +3485,27 @@ th {
   margin: 0.75em 0;
   line-height: 1.6em;
   text-transform: uppercase;
-  margin: 0px auto;
+  font-weight: 500;
+  font-family: sans-serif;
 }
 .Building .Details .rest p {
-  font-weight: normal;
-  font-style: normal;
-  line-height: 35px;
-  margin: auto;
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 500;
 }
-@media only screen and (max-width: 767px) {
-  .Building .Details .rest p {
-    font-size: 18px;
-  }
+.Building .Details .arrow {
+  width: 100%;
 }
-@media only screen and (min-width: 768px) {
-  .Building .Details .rest p {
-    font-size: 18px;
-  }
+.Building .Details .arrow i.fa {
+  display: block;
+  margin: 20px auto;
+  width: 30px;
+  height: 30px;
+  color: #003785;
+  font-size: 25px;
 }
 .Building .Facilities {
-  padding: 100px 0px;
-}
-@media only screen and (max-width: 767px) {
-  .Building .Facilities {
-    padding: 50px 0px;
-  }
+  padding: 20px 0px;
 }
 .Building .Facilities .title {
   text-align: center;
@@ -3685,7 +3716,6 @@ th {
   .Building .Featured #featuredSlide .item .info .name {
     font-size: 20px;
     text-align: center;
-    padding-left: 40px;
     margin: 20px auto 0px;
   }
 }
@@ -3704,7 +3734,6 @@ th {
     margin: 5px auto 0px;
     font-size: 18px;
     text-align: center;
-    padding-left: 40px;
   }
 }
 a {
