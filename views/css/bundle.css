@@ -2592,6 +2592,39 @@ th {
     padding: 90px 0px 160px;
   }
 }
+.FeaturedProperties .Properties .moreProperties {
+  *zoom: 1;
+  width: auto;
+  max-width: 1280px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.FeaturedProperties .Properties .moreProperties:before,
+.FeaturedProperties .Properties .moreProperties:after {
+  content: '';
+  display: table;
+}
+.FeaturedProperties .Properties .moreProperties:after {
+  clear: both;
+}
+.FeaturedProperties .Properties .moreProperties a {
+  display: block;
+  margin: auto;
+  width: 150px;
+  height: auto;
+  background-color: #003785;
+  color: #fff;
+  font-family: museo-slab;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  text-align: center;
+  padding: 5px 0px;
+}
 .FeaturedProperties .Properties .wrap {
   *zoom: 1;
   width: auto;

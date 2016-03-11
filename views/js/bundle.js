@@ -39215,6 +39215,7 @@ var FeaturedProperties = React.createClass({
         "jumbotron": ""
       },
       buildings: {
+        page: 2,
         all: [],
         properties: [],
         building13700: [],
@@ -39315,6 +39316,90 @@ var FeaturedProperties = React.createClass({
       type: 'NAV_AFFIX_TOGGLE'
     });
   },
+  loadProperties: function loadProperties() {
+    var _this2 = this;
+
+    var promise = 0;
+    var featured = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured?page=' + this.state.buildings.page).then(function (data) {
+      var list = data.map(function (_ref6) {
+        var id = _ref6.id;
+        var acf = _ref6.acf;
+
+        return _extends({}, acf, { id: id });
+      });
+      _this2.setState(_extends({}, _this2.state, {
+        buildings: _extends({}, _this2.state.buildings, {
+          all: [].concat(_toConsumableArray(_this2.state.buildings.all), _toConsumableArray(list.map(function (acf) {
+            return _extends({}, acf, { building: 'featured' });
+          }))),
+          properties: [].concat(_toConsumableArray(_this2.state.buildings.properties), _toConsumableArray(list.map(function (acf) {
+            return _extends({}, acf, { building: 'featured' });
+          })))
+        })
+      }));
+    });
+    var building13700 = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr?page=' + this.state.buildings.page).then(function (data) {
+      var list = data.map(function (_ref7) {
+        var id = _ref7.id;
+        var acf = _ref7.acf;
+
+        return _extends({}, acf, { id: id });
+      });
+      _this2.setState(_extends({}, _this2.state, {
+        buildings: _extends({}, _this2.state.buildings, {
+          all: [].concat(_toConsumableArray(_this2.state.buildings.all), _toConsumableArray(list.map(function (acf) {
+            return _extends({}, acf, { building: '13700marinapointedr' });
+          }))),
+          building13700: [].concat(_toConsumableArray(_this2.state.buildings.building13700), _toConsumableArray(list.map(function (acf) {
+            return _extends({}, acf, { building: '13700marinapointedr' });
+          })))
+        })
+      }));
+    });
+    var building13750 = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr?page=' + this.state.buildings.page).then(function (data) {
+      var list = data.map(function (_ref8) {
+        var id = _ref8.id;
+        var acf = _ref8.acf;
+
+        return _extends({}, acf, { id: id });
+      });
+      _this2.setState(_extends({}, _this2.state, {
+        buildings: _extends({}, _this2.state.buildings, {
+          all: [].concat(_toConsumableArray(_this2.state.buildings.all), _toConsumableArray(list.map(function (acf) {
+            return _extends({}, acf, { building: '13750marinapointedr' });
+          }))),
+          building13750: [].concat(_toConsumableArray(_this2.state.buildings.building13750), _toConsumableArray(list.map(function (acf) {
+            return _extends({}, acf, { building: '13750marinapointedr' });
+          })))
+        })
+      }));
+    });
+    var building13800 = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr?page=' + this.state.buildings.page).then(function (data) {
+      var list = data.map(function (_ref9) {
+        var id = _ref9.id;
+        var acf = _ref9.acf;
+
+        return _extends({}, acf, { id: id });
+      });
+      _this2.setState(_extends({}, _this2.state, {
+        buildings: _extends({}, _this2.state.buildings, {
+          all: [].concat(_toConsumableArray(_this2.state.buildings.all), _toConsumableArray(list.map(function (acf) {
+            return _extends({}, acf, { building: '13800marinapointedr' });
+          }))),
+          building13800: [].concat(_toConsumableArray(_this2.state.buildings.building13800), _toConsumableArray(list.map(function (acf) {
+            return _extends({}, acf, { building: '13800marinapointedr' });
+          })))
+        })
+      }));
+    });
+    $.when(featured, building13700, building13750, building13800).done(function (v1, v2, v3, v4) {
+      _this2.setState(_extends({}, _this2.state, {
+        buildings: _extends({}, _this2.state.buildings, {
+          page: _this2.state.buildings.page + 1
+        })
+      }));
+    });
+  },
   render: function render() {
     return React.createElement(
       'div',
@@ -39325,23 +39410,26 @@ var FeaturedProperties = React.createClass({
         React.createElement(Waypoint, { onEnter: this.handleWaypoint, onLeave: this.handleWaypoint })
       ),
       React.createElement(Jumbotron, _extends({}, this.state.index, { saleType: this.props.saleType, building: this.props.building })),
-      React.createElement(Properties, _extends({}, this.state.buildings, { saleType: this.props.saleType, building: this.props.building }))
+      React.createElement(Properties, _extends({}, this.state.buildings, {
+        saleType: this.props.saleType,
+        building: this.props.building,
+        loadProperties: this.loadProperties }))
     );
   }
 });
 
 var Jumbotron = React.createClass({
   displayName: 'Jumbotron',
-  saleOnChange: function saleOnChange(_ref6) {
-    var value = _ref6.value;
+  saleOnChange: function saleOnChange(_ref10) {
+    var value = _ref10.value;
 
     store.dispatch({
       type: 'FeaturedProperties_SALETYPE',
       saleType: value
     });
   },
-  buildingOnChange: function buildingOnChange(_ref7) {
-    var value = _ref7.value;
+  buildingOnChange: function buildingOnChange(_ref11) {
+    var value = _ref11.value;
 
     store.dispatch({
       type: 'FeaturedProperties_BUILDING',
@@ -39434,22 +39522,22 @@ var Properties = React.createClass({
       case 'all':
         return list;
       case 'sale':
-        return list.filter(function (_ref8) {
-          var forSale = _ref8.forSale;
-          var lease = _ref8.lease;
+        return list.filter(function (_ref12) {
+          var forSale = _ref12.forSale;
+          var lease = _ref12.lease;
 
           return forSale !== '';
         });
       case 'lease':
-        return list.filter(function (_ref9) {
-          var forSale = _ref9.forSale;
-          var lease = _ref9.lease;
+        return list.filter(function (_ref13) {
+          var forSale = _ref13.forSale;
+          var lease = _ref13.lease;
 
           return lease !== '';
         });
       case 'sold':
-        return list.filter(function (_ref10) {
-          var status = _ref10.status;
+        return list.filter(function (_ref14) {
+          var status = _ref14.status;
 
           return status === 'sold';
         });
@@ -39478,7 +39566,7 @@ var Properties = React.createClass({
     );
   },
   render: function render() {
-    var _this2 = this;
+    var _this3 = this;
 
     return React.createElement(
       'div',
@@ -39486,14 +39574,14 @@ var Properties = React.createClass({
       React.createElement(
         'div',
         { className: 'wrap' },
-        this.pickProperty().map(function (_ref11, index) {
-          var building = _ref11.building;
-          var id = _ref11.id;
-          var name = _ref11.name;
-          var image = _ref11.image;
-          var forSale = _ref11.forSale;
-          var lease = _ref11.lease;
-          var text = _ref11.text;
+        this.pickProperty().map(function (_ref15, index) {
+          var building = _ref15.building;
+          var id = _ref15.id;
+          var name = _ref15.name;
+          var image = _ref15.image;
+          var forSale = _ref15.forSale;
+          var lease = _ref15.lease;
+          var text = _ref15.text;
 
           return React.createElement(
             'div',
@@ -39515,10 +39603,19 @@ var Properties = React.createClass({
                 { className: 'name' },
                 name
               ),
-              _this2.handleSale(forSale, lease)
+              _this3.handleSale(forSale, lease)
             )
           );
         })
+      ),
+      React.createElement(
+        'div',
+        { className: 'moreProperties' },
+        React.createElement(
+          'a',
+          { onClick: this.props.loadProperties },
+          'Load more'
+        )
       )
     );
   }

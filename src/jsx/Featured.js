@@ -13,6 +13,7 @@ const FeaturedProperties = React.createClass({
         "jumbotron": ""
       },
       buildings: {
+        page: 2,
         all: [],
         properties: [],
         building13700: [],
@@ -86,6 +87,80 @@ const FeaturedProperties = React.createClass({
       type: 'NAV_AFFIX_TOGGLE'
     });
   },
+  loadProperties(){
+    let promise = 0;
+    const featured = $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured?page=${this.state.buildings.page}`)
+      .then((data)=>{
+        const list = data.map(({id, acf})=>{
+          return {...acf, id: id};
+        });
+        this.setState({...this.state,
+          buildings: {...this.state.buildings,
+            all: [...this.state.buildings.all, ...list.map((acf)=>{
+              return {...acf, building: 'featured'};
+            })],
+            properties: [...this.state.buildings.properties, ...list.map((acf)=>{
+              return {...acf, building: 'featured'};
+            })]
+          }
+        });
+      });
+    const building13700 = $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr?page=${this.state.buildings.page}`)
+      .then((data)=>{
+        const list = data.map(({id, acf})=>{
+          return {...acf, id: id};
+        });
+        this.setState({...this.state,
+          buildings: {...this.state.buildings,
+            all: [...this.state.buildings.all, ...list.map((acf)=>{
+              return {...acf, building: '13700marinapointedr'};
+            })],
+            building13700: [...this.state.buildings.building13700, ...list.map((acf)=>{
+              return {...acf, building: '13700marinapointedr'};
+            })]
+          }
+        });
+      });
+    const building13750 = $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr?page=${this.state.buildings.page}`)
+      .then((data)=>{
+        const list = data.map(({id, acf})=>{
+          return {...acf, id: id};
+        });
+        this.setState({...this.state,
+          buildings: {...this.state.buildings,
+            all: [...this.state.buildings.all, ...list.map((acf)=>{
+              return {...acf, building: '13750marinapointedr'};
+            })],
+            building13750: [...this.state.buildings.building13750, ...list.map((acf)=>{
+              return {...acf, building: '13750marinapointedr'};
+            })]
+          }
+        });
+      });
+    const building13800 = $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr?page=${this.state.buildings.page}`)
+      .then((data)=>{
+        const list = data.map(({id, acf})=>{
+          return {...acf, id: id};
+        });
+        this.setState({...this.state,
+          buildings: {...this.state.buildings,
+            all: [...this.state.buildings.all, ...list.map((acf)=>{
+              return {...acf, building: '13800marinapointedr'};
+            })],
+            building13800: [...this.state.buildings.building13800, ...list.map((acf)=>{
+              return {...acf, building: '13800marinapointedr'};
+            })]
+          }
+        });
+      });
+    $.when(featured, building13700, building13750, building13800).done((v1, v2, v3, v4)=>{
+      this.setState({...this.state,
+        buildings: {...this.state.buildings,
+          page: this.state.buildings.page + 1
+        }
+      });
+    });
+  },
   render(){
     return (
       <div className="FeaturedProperties">
@@ -93,7 +168,11 @@ const FeaturedProperties = React.createClass({
           <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
         </MediaQuery>
         <Jumbotron {...this.state.index} saleType={this.props.saleType} building={this.props.building} />
-        <Properties {...this.state.buildings} saleType={this.props.saleType} building={this.props.building} />
+        <Properties
+          {...this.state.buildings}
+          saleType={this.props.saleType}
+          building={this.props.building}
+          loadProperties={this.loadProperties}/>
       </div>
     );
   }
@@ -250,6 +329,11 @@ const Properties = React.createClass({
               );
             })
           }
+        </div>
+        <div className="moreProperties">
+          <a onClick={this.props.loadProperties}>
+            Load more
+          </a>
         </div>
       </div>
     );
