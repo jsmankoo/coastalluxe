@@ -146,7 +146,7 @@ const Jumbotron = React.createClass({
               <div className="address">
                 {`${this.props.property.number} ${this.props.property.streetname}`} <br /> {`${this.props.property.city}`}
               </div>
-              <a href={`https://www.google.ca/maps/place/${this.props.property.number} ${this.props.property.streetname} ${this.props.property.city}`}>
+              <a target='_blank' href={`https://www.google.ca/maps/place/${this.props.property.number} ${this.props.property.streetname} ${this.props.property.city}`}>
                 <i className='fa fa-map-marker' />
               </a>
             </div>

@@ -32,7 +32,7 @@ const Property = React.createClass({
     store.dispatch({
       type: 'NAV_AFFIX_RESET'
     });
-    switch (this.props.params.building) {
+    switch (this.props.buildingName) {
       case '13700marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137')
           .then(({acf})=>{
@@ -54,7 +54,7 @@ const Property = React.createClass({
       default:
         break;
     }
-    $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/${this.props.params.building}`)
+    $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/${this.props.buildingName}`)
       .then((data)=>{
         this.setState({...this.state,
           featured: data.map(({id, acf})=>{
@@ -74,18 +74,17 @@ const Property = React.createClass({
         <MediaQuery minDeviceWidth={1281}>
           <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
         </MediaQuery>
-        <Jumbotron {...this.state} url={this.props.params.building} />
+        <Jumbotron {...this.state} />
+        <Featured
+          building={this.props.buildingName}
+          featured={this.state.featured}
+          options={this.state.options} />
         <Details {...this.state.building} />
         {
           this.state.building.facilities.length === 0
           ? <div />
           : <Facilities {...this.state.building} />
         }
-        <Featured
-          building={this.props.params.building}
-          featured={this.state.featured}
-          options={this.state.options} />
-
       </div>
     );
   }
@@ -112,17 +111,14 @@ const Jumbotron = React.createClass({
             <div className="title">
               {this.props.building.name}
             </div>
-            <div className="Buttons">
-              <div className="forSale">
-                <a href={`/#/forSale/${this.props.url}`} className="Button">
-                  {this.props.building.name} For Sale
-                </a>
+            <div className="border"></div>
+            <div className="info">
+              <div className="address">
+                {`${this.props.building.streetAddress}`} <br /> {`${this.props.building.city}`}
               </div>
-              <div className="forLease">
-                <a href={`/#/lease/${this.props.url}`} className="Button">
-                  {this.props.building.name} For Lease
-                </a>
-              </div>
+              <a target='_blank' href={`https://www.google.ca/maps/place/${this.props.building.streetAddress} ${this.props.building.city}`}>
+                <i className='fa fa-map-marker' />
+              </a>
             </div>
           </div>
         </div>
@@ -201,12 +197,24 @@ const Featured = React.createClass({
         </div>
       );
   },
+  handleMore(building){
+    switch (building) {
+      case '13700marinapointedr':
+        return <a href={`/#/featured/Azzurra`}>More</a>;
+      case '13750marinapointedr':
+        return <a href={`/#/featured/Regatta`}>More</a>;
+      case '13800marinapointedr':
+        return <a href={`/#/featured/Cove`}>More</a>;
+      default:
+        return <div />;
+    }
+  },
   render(){
     return (
       <div className="Featured">
-        <div className="title">
+        {/*<div className="title">
           Featured Listings
-        </div>
+        </div>*/}
         <OwlCarousel id='featuredSlide' options={this.state.options}>
           {
             this.props.featured.map((item, index)=>{
@@ -232,6 +240,9 @@ const Featured = React.createClass({
             })
           }
         </OwlCarousel>
+        <div className="more">
+          {this.handleMore(this.props.building)}
+        </div>
       </div>
     );
   }

@@ -3,6 +3,7 @@ var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
 var ReactBGVideo = require('react-background-video');
 var Markdown = require('react-remarkable');
+import {Link, Element, Events} from 'react-scroll';
 
 var OwlCarousel = require('./components/OwlCarousel');
 var store = require('./store');
@@ -23,7 +24,13 @@ const Home = React.createClass({
         <Top
           headline={store.getState().Home.headline}
           subheadline={store.getState().Home.subheadline}/>
-        <Featured />
+        <Element name='featured'>
+          <Featured
+            featured={store.getState().Home.featured}
+            azzurraa={store.getState().Home.azzurraa}
+            regatta={store.getState().Home.regatta}
+            cove={store.getState().Home.cove} />
+        </Element>
         <Ryan />
         <Explore
           title={store.getState().Home.title}
@@ -58,11 +65,11 @@ const Top = React.createClass({
             <div className="subheadline">
               {this.props.subheadline}
             </div>
-            {/*<div className="scrollDown">
-              <a href='#Featured'>
+            <div className="scrollDown">
+              <Link to='featured' className='button' smooth={true} offset={50} duration={500}>
                 <i className='fa fa-chevron-down' />
-              </a>
-            </div>*/}
+              </Link>
+            </div>
           </div>
         </ReactBGVideo>
       </div>
@@ -90,23 +97,33 @@ const Featured = React.createClass({
       'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr',
       'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr'
     ];
-    // $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured')
-    //   .then((data)=>{
-    //     this.setState({...this.state,
-    //       items: [...this.state.items, ...[{...data[0],
-    //           building: 'featured'
-    //         },{...data[1],
-    //           building: 'featured'
-    //         }]
-    //       ]
-    //     });
-    //   });
-    pullList.map((link)=>{
-      $.get(link).then((properties)=>{
-          this.setState({...this.state,
-            items: [...this.state.items, ...[properties[0], properties[1]]]
-          });
-      });
+    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured').then((properties)=>{
+        this.setState({...this.state,
+          items: [...this.state.items,
+             ...properties.filter((item, i)=> i < this.props.featured)
+           ]
+        });
+    });
+    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr').then((properties)=>{
+        this.setState({...this.state,
+          items: [...this.state.items,
+             ...properties.filter((item, i)=> i < this.props.azzurraa)
+           ]
+        });
+    });
+    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr').then((properties)=>{
+        this.setState({...this.state,
+          items: [...this.state.items,
+             ...properties.filter((item, i)=> i < this.props.regatta)
+           ]
+        });
+    });
+    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr').then((properties)=>{
+        this.setState({...this.state,
+          items: [...this.state.items,
+             ...properties.filter((item, i)=> i < this.props.cove)
+           ]
+        });
     });
   },
   handleSale(item){

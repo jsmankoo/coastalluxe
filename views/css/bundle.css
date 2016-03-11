@@ -372,6 +372,10 @@ th {
 .Nav .wrap .col.contact:last-child {
   margin-right: 0%;
 }
+.Nav .wrap .col.contact a {
+  width: 140px;
+  height: auto;
+}
 .Nav .wrap .col.contact a i.fa {
   padding: 5px;
   float: left;
@@ -912,15 +916,33 @@ th {
   }
 }
 .Home .Top .BGContent .scrollDown {
-  text-align: center;
+  width: 100%;
+  height: auto;
 }
-.Home .Top .BGContent .scrollDown a {
+@media only screen and (max-width: 767px) {
+  .Home .Top .BGContent .scrollDown {
+    position: relative;
+    top: 150px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .Home .Top .BGContent .scrollDown {
+    position: relative;
+    top: 200px;
+  }
+}
+.Home .Top .BGContent .scrollDown .button {
   display: block;
   margin: auto;
+  text-align: center;
   color: #fff;
   font-size: 40px;
 }
-.Home .Top .BGContent .scrollDown a i.fa {
+.Home .Top .BGContent .scrollDown .button:hover i.fa,
+.Home .Top .BGContent .scrollDown .button:focus i.fa {
+  color: #0067d4;
+}
+.Home .Top .BGContent .scrollDown .button i.fa {
   color: #fff;
   font-size: 40px;
 }
@@ -1316,7 +1338,7 @@ th {
     font-weight: 500;
     font-family: sans-serif;
     margin: 0px auto;
-    text-align: center;
+    text-align: left;
   }
   .Home .Ryan .Row .info h2 {
     font-size: 28.8px;
@@ -1328,7 +1350,7 @@ th {
     font-weight: 500;
     font-family: sans-serif;
     margin: 0px auto;
-    text-align: center;
+    text-align: left;
   }
   .Home .Ryan .Row .info h3 {
     font-size: 24px;
@@ -1340,7 +1362,7 @@ th {
     font-weight: 500;
     font-family: sans-serif;
     margin: 0px auto;
-    text-align: center;
+    text-align: left;
   }
   .Home .Ryan .Row .info h4 {
     font-size: 20.8px;
@@ -1352,7 +1374,7 @@ th {
     font-weight: 500;
     font-family: sans-serif;
     margin: 0px auto;
-    text-align: center;
+    text-align: left;
   }
   .Home .Ryan .Row .info h5 {
     font-size: 16px;
@@ -1364,7 +1386,7 @@ th {
     font-weight: 500;
     font-family: sans-serif;
     margin: 0px auto;
-    text-align: center;
+    text-align: left;
   }
   .Home .Ryan .Row .info h6 {
     font-size: 14.4px;
@@ -1377,7 +1399,7 @@ th {
     font-weight: 500;
     font-family: sans-serif;
     margin: 0px auto;
-    text-align: center;
+    text-align: left;
   }
   .Home .Ryan .Row .info p {
     font-size: 16px;
@@ -1391,11 +1413,11 @@ th {
     float: left;
     clear: none;
     text-align: inherit;
-    width: 48.5%;
+    width: 28.66666666666666%;
     margin-left: 0%;
-    margin-right: 3%;
+    margin-right: 7.000000000000001%;
     margin: 30px auto 90px;
-    text-align: left;
+    text-align: center;
   }
   .Home .Ryan .Row .socialMedia:before,
   .Home .Ryan .Row .socialMedia:after {
@@ -1414,20 +1436,17 @@ th {
   .Home .Ryan .Row .socialMedia a i.fa {
     font-size: 16px;
   }
-  .Home .Ryan .Row .hidden {
-    width: 0px;
-    height: 0px;
-  }
   .Home .Ryan .Row .more {
     *zoom: 1;
     float: left;
     clear: none;
     text-align: inherit;
-    width: 48.5%;
-    margin-left: 0%;
-    margin-right: 3%;
-    margin: 30px auto 90px;
-    text-align: right;
+    width: 33.33333333333333%;
+    margin-left: 37.5%;
+    margin-right: 0%;
+    margin-top: 30px;
+    margin-bottom: 90px;
+    text-align: center;
   }
   .Home .Ryan .Row .more:before,
   .Home .Ryan .Row .more:after {
@@ -1436,9 +1455,6 @@ th {
   }
   .Home .Ryan .Row .more:after {
     clear: both;
-  }
-  .Home .Ryan .Row .more:last-child {
-    margin-right: 0%;
   }
   .Home .Ryan .Row .more a {
     font-family: museo-slab;
@@ -2268,7 +2284,7 @@ th {
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building {
   margin: 10px 10px;
-  width: 250px;
+  width: 200px;
   height: auto;
   text-align: left;
   font-family: museo-slab;
@@ -2310,7 +2326,7 @@ th {
 }
 @media only screen and (max-width: 767px) {
   .FeaturedProperties .Properties {
-    padding: 40px 0px 60px;
+    padding: 90px 0px 60px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -2422,6 +2438,8 @@ th {
   width: 530px;
   height: auto;
   max-width: 100%;
+  display: block;
+  margin: auto;
 }
 .FeaturedProperties .Properties .wrap .property .info .name {
   color: #003785;
@@ -2438,8 +2456,7 @@ th {
 @media only screen and (min-width: 768px) {
   .FeaturedProperties .Properties .wrap .property .info .name {
     font-size: 20px;
-    text-align: left;
-    padding-left: 40px;
+    text-align: center;
     margin: 20px auto 0px;
   }
 }
@@ -2457,8 +2474,7 @@ th {
   .FeaturedProperties .Properties .wrap .property .info .price {
     margin: 5px auto 75px;
     font-size: 18px;
-    text-align: left;
-    padding-left: 40px;
+    text-align: center;
   }
 }
 .Property .owl-theme .owl-controls .owl-page span {
@@ -3039,121 +3055,42 @@ th {
     font-size: 40px;
   }
 }
-.Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons {
-  margin: auto;
-  display: block;
+.Building .Jumbotron .bgTint .jumbotron-wrapper .border {
+  border: 1px solid #003785;
+  width: 340px;
+  height: auto;
 }
-.Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .Button {
-  background-color: #003785;
-  color: #fff;
-  font-weight: 700;
-  font-family: museo-slab;
-  font-size: 18px;
+@media only screen and (max-width: 767px) {
+  .Building .Jumbotron .bgTint .jumbotron-wrapper .border {
+    margin: 10px auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .Building .Jumbotron .bgTint .jumbotron-wrapper .border {
+    margin: 20px auto;
+  }
+}
+.Building .Jumbotron .bgTint .jumbotron-wrapper .info {
+  color: #003785;
   text-align: center;
-  margin: 20px 0px;
-  cursor: pointer;
-  padding: 5px 10px;
+  font-family: museo-slab;
+  font-weight: 700;
+}
+.Building .Jumbotron .bgTint .jumbotron-wrapper .info .address {
+  font-size: 20px;
+  line-height: 25px;
+}
+.Building .Jumbotron .bgTint .jumbotron-wrapper .info i.fa {
+  font-size: 25px;
 }
 @media only screen and (max-width: 767px) {
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forSale {
-    *zoom: 1;
-    float: left;
-    clear: none;
-    text-align: inherit;
-    width: 100%;
-    margin-left: 0%;
-    margin-right: 3%;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forSale:before,
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forSale:after {
-    content: '';
-    display: table;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forSale:after {
-    clear: both;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forSale:last-child {
-    margin-right: 0%;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forSale a {
-    display: block;
-    margin: 10px auto;
+  .Building .Jumbotron .bgTint .jumbotron-wrapper .info i.fa {
+    margin: 20px auto 0px;
   }
 }
 @media only screen and (min-width: 768px) {
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forSale {
-    *zoom: 1;
-    float: left;
-    clear: none;
-    text-align: inherit;
-    width: 48.5%;
-    margin-left: 0%;
-    margin-right: 3%;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forSale:before,
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forSale:after {
-    content: '';
-    display: table;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forSale:after {
-    clear: both;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forSale:last-child {
-    margin-right: 0%;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forSale a {
-    float: right;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forLease {
-    *zoom: 1;
-    float: left;
-    clear: none;
-    text-align: inherit;
-    width: 100%;
-    margin-left: 0%;
-    margin-right: 3%;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forLease:before,
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forLease:after {
-    content: '';
-    display: table;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forLease:after {
-    clear: both;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forLease:last-child {
-    margin-right: 0%;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forLease a {
-    display: block;
-    margin: 10px auto;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forLease {
-    *zoom: 1;
-    float: left;
-    clear: none;
-    text-align: inherit;
-    width: 48.5%;
-    margin-left: 0%;
-    margin-right: 3%;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forLease:before,
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forLease:after {
-    content: '';
-    display: table;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forLease:after {
-    clear: both;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forLease:last-child {
-    margin-right: 0%;
-  }
-  .Building .Jumbotron .bgTint .jumbotron-wrapper .Buttons .forLease a {
-    float: left;
+  .Building .Jumbotron .bgTint .jumbotron-wrapper .info i.fa {
+    margin: 20px auto 0px;
   }
 }
 .Building .Details {
@@ -3287,12 +3224,14 @@ th {
 @media only screen and (max-width: 767px) {
   .Building .Details .intro .img-wrapper {
     *zoom: 1;
-    float: left;
-    clear: none;
-    text-align: inherit;
-    width: 100%;
-    margin-left: 0%;
-    margin-right: 3%;
+    width: auto;
+    max-width: 250px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
   }
   .Building .Details .intro .img-wrapper:before,
   .Building .Details .intro .img-wrapper:after {
@@ -3301,9 +3240,6 @@ th {
   }
   .Building .Details .intro .img-wrapper:after {
     clear: both;
-  }
-  .Building .Details .intro .img-wrapper:last-child {
-    margin-right: 0%;
   }
 }
 .Building .Details .intro .paragraph {
@@ -3338,6 +3274,7 @@ th {
     width: 100%;
     margin-left: 0%;
     margin-right: 3%;
+    margin-top: 50px;
   }
   .Building .Details .intro .paragraph:before,
   .Building .Details .intro .paragraph:after {
@@ -3358,6 +3295,8 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
+  font-family: sans-serif;
+  font-weight: 500;
   margin: 0px auto;
 }
 .Building .Details .intro .paragraph h2 {
@@ -3367,6 +3306,8 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
+  font-family: sans-serif;
+  font-weight: 500;
   margin: 0px auto;
 }
 .Building .Details .intro .paragraph h3 {
@@ -3376,6 +3317,8 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
+  font-family: sans-serif;
+  font-weight: 500;
   margin: 0px auto;
 }
 .Building .Details .intro .paragraph h4 {
@@ -3385,6 +3328,8 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
+  font-family: sans-serif;
+  font-weight: 500;
   margin: 0px auto;
 }
 .Building .Details .intro .paragraph h5 {
@@ -3394,6 +3339,8 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
+  font-family: sans-serif;
+  font-weight: 500;
   margin: 0px auto;
 }
 .Building .Details .intro .paragraph h6 {
@@ -3404,6 +3351,8 @@ th {
   margin: 0.75em 0;
   line-height: 1.6em;
   text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: 500;
   margin: 0px auto;
 }
 .Building .Details .intro .paragraph p {
@@ -3415,6 +3364,7 @@ th {
 @media only screen and (max-width: 767px) {
   .Building .Details .intro .paragraph p {
     font-size: 18px;
+    text-align: center;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -3602,24 +3552,53 @@ th {
   }
 }
 .Building .Featured {
-  padding-bottom: 100px;
+  *zoom: 1;
+  width: auto;
+  max-width: 1280px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 100px;
+  border-bottom: 1px solid #003785;
+}
+.Building .Featured:before,
+.Building .Featured:after {
+  content: '';
+  display: table;
+}
+.Building .Featured:after {
+  clear: both;
 }
 @media only screen and (max-width: 767px) {
-  .Building .Featured {
-    padding-bottom: 50px;
+  .Building .Featured .more {
+    margin: 25px;
   }
 }
-.Building .Featured .title {
+@media only screen and (min-width: 768px) {
+  .Building .Featured .more {
+    margin: 50px;
+    float: left;
+  }
+}
+.Building .Featured .more a {
+  display: block;
+  width: 200px;
+  height: auto;
+  background-color: #003785;
   text-align: center;
-  font-size: 38.4px;
-  font-size: 2.4rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  color: #003785;
+  color: #fff;
   font-family: museo-slab;
   font-weight: 700;
+  padding: 5px 0px;
+  font-size: 25px;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Featured .more a {
+    margin: auto;
+  }
 }
 .Building .Featured #featuredSlide {
   *zoom: 1;
@@ -3641,7 +3620,15 @@ th {
   clear: both;
 }
 .Building .Featured #featuredSlide .owl-controls {
-  margin-top: 30px;
+  margin: 25px;
+}
+@media only screen and (min-width: 768px) {
+  .Building .Featured #featuredSlide .owl-controls {
+    margin: 50px;
+    position: absolute;
+    bottom: -135px;
+    right: 0px;
+  }
 }
 .Building .Featured #featuredSlide .item .img-wrapper {
   background-repeat: no-repeat;
@@ -3697,7 +3684,7 @@ th {
 @media only screen and (min-width: 768px) {
   .Building .Featured #featuredSlide .item .info .name {
     font-size: 20px;
-    text-align: left;
+    text-align: center;
     padding-left: 40px;
     margin: 20px auto 0px;
   }
@@ -3716,7 +3703,7 @@ th {
   .Building .Featured #featuredSlide .item .info .price {
     margin: 5px auto 0px;
     font-size: 18px;
-    text-align: left;
+    text-align: center;
     padding-left: 40px;
   }
 }
@@ -3730,6 +3717,9 @@ a:hover {
 }
 html #Main {
   font-family: museo-sans;
+}
+html #Main * {
+  background: rgba(34,34,34,0.05);
 }
 html #Main .App {
   margin: auto;

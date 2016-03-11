@@ -90,7 +90,7 @@ const Tablet = React.createClass({
             </Markdown>
           </div>
           <div className="dev">
-          <Markdown>
+          <Markdown options={{"html": true}}>
             {this.props.dev}
           </Markdown>
           </div>

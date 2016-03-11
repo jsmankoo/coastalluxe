@@ -22,39 +22,27 @@
           text-align: center
           +below(767px)
             font-size 40px
-        .Buttons
-          margin auto
-          display: block
-          .Button
-            background-color: darkBlue
-            color white
-            font-weight: 700
-            font-family: otherFont
-            font-size 18px
-            text-align: center
-            margin 20px 0px
-            cursor: pointer;
-            padding 5px 10px
-          .forSale
+        .border
+          border 1px solid darkBlue
+          size 340px auto
+          +below(767px)
+            margin 10px auto
+          +above(768px)
+            margin 20px auto
+        .info
+          color darkBlue
+          text-align: center
+          font-family: otherFont
+          font-weight: 700
+          .address
+            font-size: 20px
+            line-height: 25px
+          i.fa
+            font-size 25px
             +below(767px)
-              column(1)
-              a
-                display: block
-                margin 10px auto
+              margin 20px auto 0px
             +above(768px)
-              column(1/2)
-              a
-                float right
-          .forLease
-            +below(767px)
-              column(1)
-              a
-                display: block
-                margin 10px auto
-            +above(768px)
-              column(1/2)
-              a
-                float left
+              margin 20px auto 0px
   .Details
     margin 90px auto 0px
     +below(767px)
@@ -103,7 +91,7 @@
         background-position: center
         display: block
         +below(767px)
-          column(1)
+          center(250px)
       .paragraph
         column(5/7)
         font-family: otherFont
@@ -111,23 +99,36 @@
         text-align: left
         +below(767px)
           column(1)
+          margin-top 50px
         h1
           h1()
+          font-family: sans-serif
+          font-weight 500
           margin 0px auto
         h2
           h2()
+          font-family: sans-serif
+          font-weight 500
           margin 0px auto
         h3
           h3()
+          font-family: sans-serif
+          font-weight 500
           margin 0px auto
         h4
           h4()
+          font-family: sans-serif
+          font-weight 500
           margin 0px auto
         h5
           h5()
+          font-family: sans-serif
+          font-weight 500
           margin 0px auto
         h6
           h6()
+          font-family: sans-serif
+          font-weight 500
           margin 0px auto
         p
           normal()
@@ -135,6 +136,7 @@
           margin auto
           +below(767px)
             font-size 18px
+            text-align: center
           +above(768px)
             font-size 18px
         i.fa
@@ -212,19 +214,34 @@
               font-size 25px
               padding 6px 0px
   .Featured
-    padding-bottom 100px
-    +below(767px)
-      padding-bottom 50px
-    .title
-      text-align: center
-      h1()
-      color: darkBlue
-      font-family: otherFont
-      font-weight: 700
+    center(1280px)
+    padding-top 100px
+    border-bottom 1px solid darkBlue
+    .more
+      +below(767px)
+        margin 25px
+      +above(768px)
+        margin 50px
+        float left
+      a
+        display: block
+        size 200px auto
+        background-color darkBlue
+        text-align: center
+        color: white
+        font-family: otherFont
+        font-weight: 700
+        padding 5px 0px
+        font-size 25px
+        +below(767px)
+          margin auto
     #featuredSlide
       center(1280px)
       .owl-controls
-        margin-top 30px
+        margin 25px
+        +above(768px)
+          margin 50px
+          absolute bottom -135px right 0px
       .item
         .img-wrapper
           background-repeat: no-repeat
@@ -265,7 +282,7 @@
               margin 15px auto 0px
             +above(768px)
               font-size: 20px
-              text-align: left
+              text-align: center
               padding-left 40px
               margin 20px auto 0px
           .price
@@ -277,5 +294,5 @@
             +above(768px)
               margin 5px auto 0px
               font-size 18px
-              text-align: left
+              text-align: center
               padding-left 40px
