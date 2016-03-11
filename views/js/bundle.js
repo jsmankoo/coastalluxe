@@ -40112,7 +40112,7 @@ var ForSale = React.createClass({
     store.dispatch({
       type: 'FeaturedProperties_INIT',
       saleType: 'sale',
-      building: this.props.params.building
+      building: 'all'
     });
   },
   render: function render() {
@@ -40126,7 +40126,7 @@ var ForLease = React.createClass({
     store.dispatch({
       type: 'FeaturedProperties_INIT',
       saleType: 'lease',
-      building: this.props.params.building
+      building: 'all'
     });
   },
   render: function render() {
