@@ -3718,9 +3718,6 @@ a:hover {
 html #Main {
   font-family: museo-sans;
 }
-html #Main * {
-  background: rgba(34,34,34,0.05);
-}
 html #Main .App {
   margin: auto;
 }
