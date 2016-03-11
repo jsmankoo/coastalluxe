@@ -39197,6 +39197,8 @@ module.exports = Contact;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 var React = require('react');
 var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
@@ -39213,6 +39215,7 @@ var FeaturedProperties = React.createClass({
         "jumbotron": ""
       },
       buildings: {
+        all: [],
         properties: [],
         building13700: [],
         building13750: [],
@@ -39243,6 +39246,9 @@ var FeaturedProperties = React.createClass({
       });
       _this.setState(_extends({}, _this.state, {
         buildings: _extends({}, _this.state.buildings, {
+          all: [].concat(_toConsumableArray(_this.state.buildings.all), _toConsumableArray(list.map(function (acf) {
+            return _extends({}, acf, { building: 'featured' });
+          }))),
           properties: list
         })
       }));
@@ -39256,6 +39262,9 @@ var FeaturedProperties = React.createClass({
       });
       _this.setState(_extends({}, _this.state, {
         buildings: _extends({}, _this.state.buildings, {
+          all: [].concat(_toConsumableArray(_this.state.buildings.all), _toConsumableArray(list.map(function (acf) {
+            return _extends({}, acf, { building: '13700marinapointedr' });
+          }))),
           building13700: list
         })
       }));
@@ -39269,6 +39278,9 @@ var FeaturedProperties = React.createClass({
       });
       _this.setState(_extends({}, _this.state, {
         buildings: _extends({}, _this.state.buildings, {
+          all: [].concat(_toConsumableArray(_this.state.buildings.all), _toConsumableArray(list.map(function (acf) {
+            return _extends({}, acf, { building: '13750marinapointedr' });
+          }))),
           building13750: list
         })
       }));
@@ -39282,6 +39294,9 @@ var FeaturedProperties = React.createClass({
       });
       _this.setState(_extends({}, _this.state, {
         buildings: _extends({}, _this.state.buildings, {
+          all: [].concat(_toConsumableArray(_this.state.buildings.all), _toConsumableArray(list.map(function (acf) {
+            return _extends({}, acf, { building: '13800marinapointedr' });
+          }))),
           building13800: list
         })
       }));
@@ -39349,10 +39364,15 @@ var Jumbotron = React.createClass({
               React.createElement(
                 'div',
                 { className: 'SaleType' },
+                React.createElement(
+                  'div',
+                  { className: 'filterType' },
+                  'Status:'
+                ),
                 React.createElement(Select, {
                   name: 'Sale Type',
                   value: this.props.saleType,
-                  options: [{ value: 'all', label: 'For Sale & Lease' }, { value: 'sale', label: 'For Sale' }, { value: 'lease', label: 'For Lease' }],
+                  options: [{ value: 'all', label: 'All' }, { value: 'sale', label: 'For Sale' }, { value: 'lease', label: 'For Lease' }, { value: 'sold', label: 'Sold' }],
                   onChange: this.saleOnChange
                 })
               )
@@ -39363,10 +39383,15 @@ var Jumbotron = React.createClass({
               React.createElement(
                 'div',
                 { className: 'Building' },
+                React.createElement(
+                  'div',
+                  { className: 'filterType' },
+                  'Property:'
+                ),
                 React.createElement(Select, {
                   name: 'Building',
                   value: this.props.building,
-                  options: [{ value: 'featured', label: 'Featured Properties' }, { value: '13700marinapointedr', label: 'Azzurra' }, { value: '13750marinapointedr', label: 'Regatta' }, { value: '13800marinapointedr', label: 'Cove' }],
+                  options: [{ value: 'all', label: 'All' }, { value: 'featured', label: 'Featured Properties' }, { value: '13700marinapointedr', label: 'AZZURRA' }, { value: '13750marinapointedr', label: 'REGATTA' }, { value: '13800marinapointedr', label: 'COVE' }],
                   onChange: this.buildingOnChange
                 })
               )
@@ -39382,6 +39407,8 @@ var Properties = React.createClass({
   displayName: 'Properties',
   pickProperty: function pickProperty() {
     switch (this.props.building) {
+      case 'all':
+        return this.filterProperty(this.props.all);
       case 'featured':
         return this.filterProperty(this.props.properties);
       case '13700marinapointedr':
@@ -39397,25 +39424,26 @@ var Properties = React.createClass({
   filterProperty: function filterProperty(list) {
     switch (this.props.saleType) {
       case 'all':
+        return list;
+      case 'sale':
         return list.filter(function (_ref8) {
           var forSale = _ref8.forSale;
           var lease = _ref8.lease;
 
-          return forSale !== '' || lease !== '';
+          return forSale !== '';
         });
-      case 'sale':
+      case 'lease':
         return list.filter(function (_ref9) {
           var forSale = _ref9.forSale;
           var lease = _ref9.lease;
 
-          return forSale !== '';
-        });
-      case 'lease':
-        return list.filter(function (_ref10) {
-          var forSale = _ref10.forSale;
-          var lease = _ref10.lease;
-
           return lease !== '';
+        });
+      case 'sold':
+        return list.filter(function (_ref10) {
+          var status = _ref10.status;
+
+          return status === 'sold';
         });
       default:
         return list;
@@ -39451,6 +39479,7 @@ var Properties = React.createClass({
         'div',
         { className: 'wrap' },
         this.pickProperty().map(function (_ref11, index) {
+          var building = _ref11.building;
           var id = _ref11.id;
           var name = _ref11.name;
           var image = _ref11.image;
@@ -39463,7 +39492,7 @@ var Properties = React.createClass({
             { className: 'property', key: index },
             React.createElement(
               'a',
-              { href: '/#/featured/' + _this2.props.building + '/' + name + '/' + id, className: 'img-wrapper', style: { backgroundImage: 'url(' + image + ')' } },
+              { href: '/#/featured/' + building + '/' + name + '/' + id, className: 'img-wrapper', style: { backgroundImage: 'url(' + image + ')' } },
               text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },
@@ -40069,7 +40098,7 @@ var Featured = React.createClass({
     store.dispatch({
       type: 'FeaturedProperties_INIT',
       saleType: 'all',
-      building: 'featured'
+      building: 'all'
     });
   },
   render: function render() {
@@ -40365,6 +40394,38 @@ var Jumbotron = React.createClass({
 
 var Details = React.createClass({
   displayName: 'Details',
+  handlePrice: function handlePrice(sale, lease) {
+    if (sale !== '' && lease !== '') {
+      return React.createElement(
+        'div',
+        { className: 'info-wrapper' },
+        '$',
+        this.props.forSale,
+        React.createElement('br', null),
+        '$',
+        this.props.lease,
+        '/mo.'
+      );
+    } else if (sale !== '') {
+      return React.createElement(
+        'div',
+        { className: 'info-wrapper' },
+        'FOR SALE',
+        React.createElement('br', null),
+        '$',
+        this.props.forSale
+      );
+    } else if (lease !== '') {
+      return React.createElement(
+        'div',
+        { className: 'info-wrapper' },
+        'FOR LEASE',
+        React.createElement('br', null),
+        '$',
+        this.props.lease
+      );
+    }
+  },
   render: function render() {
     return React.createElement(
       'div',
@@ -40385,28 +40446,21 @@ var Details = React.createClass({
       React.createElement(
         'div',
         { className: 'info' },
-        React.createElement(
-          'div',
-          { className: 'info-wrapper' },
-          React.createElement(
-            'div',
-            { className: 'bed' },
-            'BED ',
-            React.createElement('br', null),
-            ' ',
-            this.props.bed
-          )
-        ),
+        this.handlePrice(this.props.forSale, this.props.lease),
         React.createElement(
           'div',
           { className: 'info-wrapper' },
           React.createElement(
             'div',
             { className: 'bath' },
-            'BATH ',
-            React.createElement('br', null),
-            ' ',
+            'BATH: ',
             this.props.bath
+          ),
+          React.createElement(
+            'div',
+            { className: 'bed' },
+            'BED: ',
+            this.props.bed
           )
         ),
         React.createElement(
@@ -40697,7 +40751,7 @@ var Mobile = React.createClass({
           { className: 'dev' },
           React.createElement(
             Markdown,
-            null,
+            { options: { "html": true } },
             this.props.dev
           )
         )
@@ -41545,7 +41599,7 @@ var store = Redux.createStore(reducer, {
   },
   FeaturedProperties: {
     saleType: 'all',
-    building: 'featured'
+    building: 'all'
   }
 });
 

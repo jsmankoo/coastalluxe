@@ -57,8 +57,10 @@
       .scrollDown
         size 100% auto
         +below(767px)
+          relative top 125px
+        +between(768px, 1280px)
           relative top 150px
-        +above(768px)
+        +above(1281px)
           relative top 200px
         .button
           display: block
@@ -206,23 +208,53 @@
           margin auto
           size 170px auto
       .info
-        overflow hidden
-        height 378px
+        // overflow hidden
+        // height 378px
         color darkBlue
         font-family: otherFont
         h1
+          h1()
+          font-weight: 500
+          font-family: sans-serif
+          margin-top 40px
+          line-height: 40px
+          text-align: center
         h2
+          h2()
+          font-weight: 500
+          font-family: sans-serif
+          margin-top 0px
+          text-align: center
         h3
+          h3()
+          font-weight: 500
+          font-family: sans-serif
+          margin-top 0px
+          text-align: center
         h4
+          h4()
+          font-weight: 500
+          font-family: sans-serif
+          margin-top 0px
+          text-align: center
         h5
+          h5()
+          font-weight: 500
+          font-family: sans-serif
+          margin-top 0px
+          text-align: center
         h6
+          h6()
+          font-weight: 500
+          font-family: sans-serif
+          margin-top 0px
           text-align: center
         p
-          font-size 14px
-          line-height: 25px
+          font-size 16px
+          line-height: 27px
           font-weight: 500
-          margin 16px auto 0px
-          text-align: center
+          margin-top 0px
+          text-align: center;
       .more
         center(75px)
         margin 40px auto 50px

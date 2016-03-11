@@ -158,6 +158,33 @@ const Jumbotron = React.createClass({
 });
 
 const Details = React.createClass({
+  handlePrice(sale, lease){
+    if(sale !== '' && lease !== ''){
+      return (
+        <div className="info-wrapper">
+          ${this.props.forSale}
+          <br />
+          ${this.props.lease}/mo.
+        </div>
+      );
+    } else if( sale !== ''){
+      return (
+        <div className="info-wrapper">
+          FOR SALE
+          <br />
+          ${this.props.forSale}
+        </div>
+      );
+    } else if( lease !== ''){
+      return (
+        <div className="info-wrapper">
+          FOR LEASE
+          <br />
+          ${this.props.lease}
+        </div>
+      );
+    }
+  },
   render(){
     return (
       <div className="Details">
@@ -174,14 +201,13 @@ const Details = React.createClass({
           </OwlCarousel>
         </div>
         <div className="info">
-          <div className="info-wrapper">
-            <div className="bed">
-              BED <br /> {this.props.bed}
-            </div>
-          </div>
+          {this.handlePrice(this.props.forSale, this.props.lease)}
           <div className="info-wrapper">
             <div className="bath">
-              BATH <br /> {this.props.bath}
+              BATH: {this.props.bath}
+            </div>
+            <div className="bed">
+              BED: {this.props.bed}
             </div>
           </div>
           <div className="info-wrapper">

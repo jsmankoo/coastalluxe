@@ -60,7 +60,7 @@ const Mobile = React.createClass({
         </div>
         <div className="col">
           <div className="dev">
-            <Markdown>{this.props.dev}</Markdown>
+            <Markdown options={{"html": true}}>{this.props.dev}</Markdown>
           </div>
         </div>
       </div>

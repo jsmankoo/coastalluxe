@@ -13,6 +13,7 @@ const FeaturedProperties = React.createClass({
         "jumbotron": ""
       },
       buildings: {
+        all: [],
         properties: [],
         building13700: [],
         building13750: [],
@@ -38,10 +39,10 @@ const FeaturedProperties = React.createClass({
         });
         this.setState({...this.state,
           buildings: {...this.state.buildings,
+            all: [...this.state.buildings.all, ...list.map((acf)=>{return {...acf, building: 'featured'};})],
             properties: list
           }
         });
-
       });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr')
       .then((data)=>{
@@ -50,6 +51,7 @@ const FeaturedProperties = React.createClass({
         });
         this.setState({...this.state,
           buildings: {...this.state.buildings,
+            all: [...this.state.buildings.all, ...list.map((acf)=>{return {...acf, building: '13700marinapointedr'};})],
             building13700: list
           }
         });
@@ -61,6 +63,7 @@ const FeaturedProperties = React.createClass({
         });
         this.setState({...this.state,
           buildings: {...this.state.buildings,
+            all: [...this.state.buildings.all, ...list.map((acf)=>{return {...acf, building: '13750marinapointedr'};})],
             building13750: list
           }
         });
@@ -72,6 +75,7 @@ const FeaturedProperties = React.createClass({
         });
         this.setState({...this.state,
           buildings: {...this.state.buildings,
+            all: [...this.state.buildings.all, ...list.map((acf)=>{return {...acf, building: '13800marinapointedr'};})],
             building13800: list
           }
         });
@@ -119,13 +123,17 @@ const Jumbotron = React.createClass({
             <div className="select">
               <div className="SaleType-wrapper">
                 <div className="SaleType">
+                  <div className="filterType">
+                    Status:
+                  </div>
                   <Select
                     name="Sale Type"
                     value={this.props.saleType}
                     options={[
-                      { value: 'all', label: 'For Sale & Lease' },
+                      { value: 'all', label: 'All' },
                       { value: 'sale', label: 'For Sale' },
-                      { value: 'lease', label: 'For Lease' }
+                      { value: 'lease', label: 'For Lease' },
+                      { value: 'sold', label: 'Sold' }
                     ]}
                     onChange={this.saleOnChange}
                   />
@@ -133,14 +141,18 @@ const Jumbotron = React.createClass({
               </div>
               <div className="Building-wrapper">
                 <div className="Building">
+                  <div className="filterType">
+                    Property:
+                  </div>
                   <Select
                     name="Building"
                     value={this.props.building}
                     options={[
+                      { value: 'all', label: 'All' },
                       { value: 'featured', label: 'Featured Properties' },
-                      { value: '13700marinapointedr', label: 'Azzurra' },
-                      { value: '13750marinapointedr', label: 'Regatta' },
-                      { value: '13800marinapointedr', label: 'Cove' },
+                      { value: '13700marinapointedr', label: 'AZZURRA' },
+                      { value: '13750marinapointedr', label: 'REGATTA' },
+                      { value: '13800marinapointedr', label: 'COVE' }
                     ]}
                     onChange={this.buildingOnChange}
                   />
@@ -157,6 +169,8 @@ const Jumbotron = React.createClass({
 const Properties = React.createClass({
   pickProperty(){
     switch (this.props.building) {
+      case 'all':
+        return this.filterProperty(this.props.all);
       case 'featured':
         return this.filterProperty(this.props.properties);
       case '13700marinapointedr':
@@ -172,9 +186,7 @@ const Properties = React.createClass({
   filterProperty(list){
     switch (this.props.saleType) {
       case 'all':
-        return list.filter(({forSale, lease})=>{
-          return forSale !== '' || lease !== '';
-        });
+        return list;
       case 'sale':
         return list.filter(({forSale, lease})=>{
           return forSale !== '';
@@ -182,6 +194,10 @@ const Properties = React.createClass({
       case 'lease':
         return list.filter(({forSale, lease})=>{
           return lease !== '';
+        });
+      case 'sold':
+        return list.filter(({status})=>{
+          return status === 'sold';
         });
       default:
         return list;
@@ -212,10 +228,10 @@ const Properties = React.createClass({
       <div className="Properties">
         <div className="wrap">
           {
-            this.pickProperty().map( ({id, name, image, forSale, lease, text}, index)=>{
+            this.pickProperty().map( ({building, id, name, image, forSale, lease, text}, index)=>{
               return (
                 <div className="property" key={index}>
-                  <a href={`/#/featured/${this.props.building}/${name}/${id}`} className="img-wrapper" style={{backgroundImage: `url(${image})`}}>
+                  <a href={`/#/featured/${building}/${name}/${id}`} className="img-wrapper" style={{backgroundImage: `url(${image})`}}>
                     {
                       text !== '' ?
                       <div className="specialText">

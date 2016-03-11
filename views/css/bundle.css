@@ -384,6 +384,7 @@ th {
   font-family: museo-slab;
   padding: 3px;
   float: right;
+  font-weight: 500;
 }
 .Nav .wrap .col.menu {
   *zoom: 1;
@@ -418,6 +419,7 @@ th {
   font-family: museo-slab;
   padding: 3px;
   float: left;
+  font-weight: 500;
 }
 .Menu {
   z-index: 9999;
@@ -633,6 +635,7 @@ th {
   text-align: center;
   font-size: 12px;
   color: #003785;
+  margin: 35px auto;
 }
 .Foot .Mobile .col .bhhs a {
   display: block;
@@ -922,10 +925,16 @@ th {
 @media only screen and (max-width: 767px) {
   .Home .Top .BGContent .scrollDown {
     position: relative;
+    top: 125px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+  .Home .Top .BGContent .scrollDown {
+    position: relative;
     top: 150px;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1281px) {
   .Home .Top .BGContent .scrollDown {
     position: relative;
     top: 200px;
@@ -1204,24 +1213,88 @@ th {
   height: auto;
 }
 .Home .Ryan .Mobile .info {
-  overflow: hidden;
-  height: 378px;
   color: #003785;
   font-family: museo-slab;
 }
-.Home .Ryan .Mobile .info h1,
-.Home .Ryan .Mobile .info h2,
-.Home .Ryan .Mobile .info h3,
-.Home .Ryan .Mobile .info h4,
-.Home .Ryan .Mobile .info h5,
+.Home .Ryan .Mobile .info h1 {
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
+  margin-top: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.Home .Ryan .Mobile .info h2 {
+  font-size: 28.8px;
+  font-size: 1.8rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
+  margin-top: 0px;
+  text-align: center;
+}
+.Home .Ryan .Mobile .info h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
+  margin-top: 0px;
+  text-align: center;
+}
+.Home .Ryan .Mobile .info h4 {
+  font-size: 20.8px;
+  font-size: 1.3rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
+  margin-top: 0px;
+  text-align: center;
+}
+.Home .Ryan .Mobile .info h5 {
+  font-size: 16px;
+  font-size: 1rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  font-weight: 500;
+  font-family: sans-serif;
+  margin-top: 0px;
+  text-align: center;
+}
 .Home .Ryan .Mobile .info h6 {
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: sans-serif;
+  margin-top: 0px;
   text-align: center;
 }
 .Home .Ryan .Mobile .info p {
-  font-size: 14px;
-  line-height: 25px;
+  font-size: 16px;
+  line-height: 27px;
   font-weight: 500;
-  margin: 16px auto 0px;
+  margin-top: 0px;
   text-align: center;
 }
 .Home .Ryan .Mobile .more {
@@ -2203,6 +2276,7 @@ th {
   width: 100%;
   height: 300px;
   position: relative;
+  margin-bottom: 60px;
 }
 .FeaturedProperties .Jumbotron .bgTint {
   background-color: rgba(242,245,249,0.85);
@@ -2296,6 +2370,13 @@ th {
     float: right;
   }
 }
+.FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .SaleType-wrapper .SaleType .filterType {
+  color: #003785;
+  font-family: museo-slab;
+  font-style: italic;
+  font-weight: 300;
+  margin: 0px auto 10px;
+}
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .SaleType-wrapper .SaleType .Select-control {
   border: none;
   border-radius: 0px;
@@ -2317,6 +2398,16 @@ th {
   display: none;
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .SaleType-wrapper .SaleType .Select-menu-outer .Select-menu {
+  color: #003785;
+}
+.FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .SaleType-wrapper .SaleType .Select-menu-outer .Select-option {
+  background-color: #003785;
+  color: #fff;
+  z-index: 10000;
+}
+.FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .SaleType-wrapper .SaleType .Select-menu-outer .Select-option:hover,
+.FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .SaleType-wrapper .SaleType .Select-menu-outer .Select-option:focus {
+  background-color: #fff;
   color: #003785;
 }
 @media only screen and (max-width: 767px) {
@@ -2383,6 +2474,13 @@ th {
     float: left;
   }
 }
+.FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .filterType {
+  color: #003785;
+  font-family: museo-slab;
+  font-style: italic;
+  font-weight: 300;
+  margin: 0px auto 10px;
+}
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-control {
   border: none;
   border-radius: 0px;
@@ -2404,6 +2502,16 @@ th {
   display: none;
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-menu-outer .Select-menu {
+  color: #003785;
+}
+.FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-menu-outer .Select-option {
+  background-color: #003785;
+  color: #fff;
+  z-index: 10000;
+}
+.FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-menu-outer .Select-option:hover,
+.FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-menu-outer .Select-option:focus {
+  background-color: #fff;
   color: #003785;
 }
 @media only screen and (max-width: 767px) {
@@ -2505,8 +2613,8 @@ th {
   font-size: 30px;
   font-family: museo-sans;
   font-weight: 500;
-  text-align: left;
-  padding: 12px 40px;
+  text-align: center;
+  padding: 12px 0px;
 }
 @media only screen and (max-width: 767px) {
   .FeaturedProperties .Properties .wrap .property .img-wrapper .specialText {
@@ -3139,17 +3247,19 @@ th {
 }
 .Building .Jumbotron .bgTint .jumbotron-wrapper .border {
   border: 1px solid #003785;
-  width: 340px;
-  height: auto;
 }
 @media only screen and (max-width: 767px) {
   .Building .Jumbotron .bgTint .jumbotron-wrapper .border {
     margin: 10px auto;
+    width: 200px;
+    height: auto;
   }
 }
 @media only screen and (min-width: 768px) {
   .Building .Jumbotron .bgTint .jumbotron-wrapper .border {
     margin: 20px auto;
+    width: 340px;
+    height: auto;
   }
 }
 .Building .Jumbotron .bgTint .jumbotron-wrapper .info {
@@ -3744,6 +3854,10 @@ a {
 a:hover {
   color: #0067d4;
 }
+a:hover,
+a:focus {
+  opacity: 0.9;
+}
 html #Main {
   font-family: museo-sans;
 }
@@ -3752,6 +3866,14 @@ html #Main .App {
 }
 @media only screen and (max-width: 767px) {
   html #Main .App p {
+    padding: 0px 20px;
+  }
+  html #Main .App h1,
+  html #Main .App h2,
+  html #Main .App h3,
+  html #Main .App h4,
+  html #Main .App h5,
+  html #Main .App h6 {
     padding: 0px 20px;
   }
 }

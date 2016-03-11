@@ -39,7 +39,7 @@ const Featured = React.createClass({
     store.dispatch({
       type: 'FeaturedProperties_INIT',
       saleType: 'all',
-      building: 'featured'
+      building: 'all'
     });
   },
   render(){

@@ -152,7 +152,7 @@ const store = Redux.createStore(reducer, {
   },
   FeaturedProperties :{
     saleType: 'all',
-    building: 'featured'
+    building: 'all'
   }
 });
 
