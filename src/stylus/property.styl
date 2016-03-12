@@ -219,6 +219,16 @@
       font-weight: 500
       +below(767px)
         font-size 30px
+    .Tablet
+      #facilitiesSlide
+        .item
+          .img-wrapper
+            size 100% 300px
+    .Desktop
+      #facilitiesSlide
+        .item
+          .img-wrapper
+            size 100% 600px
     #facilitiesSlide
       center(1280px)
       .owl-controls
@@ -231,10 +241,10 @@
           display: block
           margin auto
           position: relative
-          +below(1280px)
-            size 100% 300px
-          +above(1281px)
-            size 100% 600px
+          // +below(1280px)
+          //   size 100% 300px
+          // +above(1281px)
+          //   size 100% 600px
           .specialText
             background-color rgba(darkBlue, 0.50)
             absolute bottom 0px

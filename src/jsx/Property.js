@@ -321,25 +321,52 @@ const Facilities = React.createClass({
         <div className="title">
           Building Amenities
         </div>
-        <OwlCarousel id='facilitiesSlide' options={this.state.options}>
-          {
-            this.props.facilities.map((item, index)=>{
-              return (
-                <div className="item" key={index}>
-                  <div className="img-wrapper" style={{backgroundImage: `url(${item.img})`}}>
-                    {
-                      item.text !== '' ?
-                      <div className="specialText">
-                        {item.text}
-                      </div> :
-                      <div />
-                    }
-                  </div>
-                </div>
-              );
-            })
-          }
-        </OwlCarousel>
+        <MediaQuery maxDeviceWidth={1280}>
+          <div className="Tablet">
+            <OwlCarousel id='facilitiesSlide' options={this.state.options}>
+              {
+                this.props.facilities.map((item, index)=>{
+                  return (
+                    <div className="item" key={index}>
+                      <div className="img-wrapper" style={{backgroundImage: `url(${item.img})`}}>
+                        {
+                          item.text !== '' ?
+                          <div className="specialText">
+                            {item.text}
+                          </div> :
+                          <div />
+                        }
+                      </div>
+                    </div>
+                  );
+                })
+              }
+            </OwlCarousel>
+          </div>
+        </MediaQuery>
+        <MediaQuery minDeviceWidth={1281}>
+          <div className="Desktop">
+            <OwlCarousel id='facilitiesSlide' options={this.state.options}>
+              {
+                this.props.facilities.map((item, index)=>{
+                  return (
+                    <div className="item" key={index}>
+                      <div className="img-wrapper" style={{backgroundImage: `url(${item.img})`}}>
+                        {
+                          item.text !== '' ?
+                          <div className="specialText">
+                            {item.text}
+                          </div> :
+                          <div />
+                        }
+                      </div>
+                    </div>
+                  );
+                })
+              }
+            </OwlCarousel>
+          </div>
+        </MediaQuery>
       </div>
     );
   }

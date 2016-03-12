@@ -3254,6 +3254,14 @@ th {
     font-size: 30px;
   }
 }
+.Property .Facilities .Tablet #facilitiesSlide .item .img-wrapper {
+  width: 100%;
+  height: 300px;
+}
+.Property .Facilities .Desktop #facilitiesSlide .item .img-wrapper {
+  width: 100%;
+  height: 600px;
+}
 .Property .Facilities #facilitiesSlide {
   *zoom: 1;
   width: auto;
@@ -3283,18 +3291,6 @@ th {
   display: block;
   margin: auto;
   position: relative;
-}
-@media only screen and (max-width: 1280px) {
-  .Property .Facilities #facilitiesSlide .item .img-wrapper {
-    width: 100%;
-    height: 300px;
-  }
-}
-@media only screen and (min-width: 1281px) {
-  .Property .Facilities #facilitiesSlide .item .img-wrapper {
-    width: 100%;
-    height: 600px;
-  }
 }
 .Property .Facilities #facilitiesSlide .item .img-wrapper .specialText {
   background-color: rgba(0,55,133,0.5);

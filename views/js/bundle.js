@@ -40667,23 +40667,58 @@ var Facilities = React.createClass({
         'Building Amenities'
       ),
       React.createElement(
-        OwlCarousel,
-        { id: 'facilitiesSlide', options: this.state.options },
-        this.props.facilities.map(function (item, index) {
-          return React.createElement(
-            'div',
-            { className: 'item', key: index },
-            React.createElement(
-              'div',
-              { className: 'img-wrapper', style: { backgroundImage: 'url(' + item.img + ')' } },
-              item.text !== '' ? React.createElement(
+        MediaQuery,
+        { maxDeviceWidth: 1280 },
+        React.createElement(
+          'div',
+          { className: 'Tablet' },
+          React.createElement(
+            OwlCarousel,
+            { id: 'facilitiesSlide', options: this.state.options },
+            this.props.facilities.map(function (item, index) {
+              return React.createElement(
                 'div',
-                { className: 'specialText' },
-                item.text
-              ) : React.createElement('div', null)
-            )
-          );
-        })
+                { className: 'item', key: index },
+                React.createElement(
+                  'div',
+                  { className: 'img-wrapper', style: { backgroundImage: 'url(' + item.img + ')' } },
+                  item.text !== '' ? React.createElement(
+                    'div',
+                    { className: 'specialText' },
+                    item.text
+                  ) : React.createElement('div', null)
+                )
+              );
+            })
+          )
+        )
+      ),
+      React.createElement(
+        MediaQuery,
+        { minDeviceWidth: 1281 },
+        React.createElement(
+          'div',
+          { className: 'Desktop' },
+          React.createElement(
+            OwlCarousel,
+            { id: 'facilitiesSlide', options: this.state.options },
+            this.props.facilities.map(function (item, index) {
+              return React.createElement(
+                'div',
+                { className: 'item', key: index },
+                React.createElement(
+                  'div',
+                  { className: 'img-wrapper', style: { backgroundImage: 'url(' + item.img + ')' } },
+                  item.text !== '' ? React.createElement(
+                    'div',
+                    { className: 'specialText' },
+                    item.text
+                  ) : React.createElement('div', null)
+                )
+              );
+            })
+          )
+        )
       )
     );
   }
