@@ -59,6 +59,11 @@ const Mobile = React.createClass({
           </div>
         </div>
         <div className="col">
+          <div className="equalIcon">
+            <img src={this.props.equalIcon} />
+          </div>
+        </div>
+        <div className="col">
           <div className="dev">
             <Markdown options={{"html": true}}>{this.props.dev}</Markdown>
           </div>
@@ -88,6 +93,9 @@ const Tablet = React.createClass({
             <Markdown>
               {`${this.props.copyright}\n${this.props.information}`}
             </Markdown>
+          </div>
+          <div className="equalIcon">
+            <img src={this.props.equalIcon} />
           </div>
           <div className="dev">
           <Markdown options={{"html": true}}>

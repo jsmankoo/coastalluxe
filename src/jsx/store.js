@@ -121,11 +121,11 @@ const reducer = (state, action)=>{
 const store = Redux.createStore(reducer, {
   Nav: {
     contactLogo: 'fa-paper-plane',
-    logo: '/img/loader.gif',
+    logo: '/img/loading-img.png',
     menuLogo: 'fa-bars',
     affix: false,
-    desktopLogo: '/img/loader.gif',
-    mobileLogo: '/img/loader.gif'
+    desktopLogo: '/img/loading-img.png',
+    mobileLogo: '/img/loading-img.png'
   },
   Menu: {
     buttonShow: true,
@@ -133,15 +133,16 @@ const store = Redux.createStore(reducer, {
     list: []
   },
   Foot: {
-    "footerLogo": "/img/loader.gif",
-    "berkshireLogo": "/img/loader.gif",
+    "footerLogo": "/img/loading-img.png",
+    "berkshireLogo": "/img/loading-img.png",
     "email": "",
     "facebook": "",
     "twitter": "",
     "instagram": "",
     "copyright": "Loading ...",
     "information": "Loading ...",
-    "dev": "Loading ..."
+    "dev": "Loading ...",
+    "equalIcon": "/img/loading-img.png"
   },
   Home: {
     "headline": "Loading ...",

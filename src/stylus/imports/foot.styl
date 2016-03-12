@@ -2,7 +2,7 @@
   background-color footerColor
   .Mobile
     center()
-    size 100% 475px
+    size 100% auto
     .col
       center()
       .brandLogo
@@ -35,15 +35,19 @@
           size 112px 55px
           img
             size auto 55px
+      .equalIcon img
+        display: block;
+        margin: auto
+        size auto 33px
       .dev
         text-align center
         color darkBlue
         font-size 12px
-        margin 10px auto 20px
+        margin 35px auto
   .Tablet
     center(1280px)
-    cf()
-    size 100% 140px
+    // cf()
+    size 100% 210px
     .brandLogo
       column(1/4)
       height 100%
@@ -68,15 +72,20 @@
           margin 35px 10px 20px
       .footer
         text-align: center
+        margin 15px auto
         p
           font-size 10px
           font-family: mainFont
           color darkBlue
           margin 0px auto
+      .equalIcon img
+        display: block
+        margin: auto
+        size auto 33px
       .dev
         text-align: center
         font-size 10px
         font-family: mainFont
-        margin 20px auto 0px
+        margin 15px auto 25px
         p
           margin 0px auto

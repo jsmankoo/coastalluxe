@@ -1,5 +1,4 @@
 var React = require('react');
-var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
 var Markdown = require('react-remarkable');
 
@@ -30,10 +29,6 @@ const Property = React.createClass({
     };
   },
   componentDidMount(){
-    window.scrollTo(0, 0);
-    store.dispatch({
-      type: 'NAV_AFFIX_RESET'
-    });
     switch (this.props.buildingName) {
       case '13700marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137')
@@ -65,17 +60,9 @@ const Property = React.createClass({
         });
       });
   },
-  handleWaypoint(){
-    store.dispatch({
-      type: 'NAV_AFFIX_TOGGLE'
-    });
-  },
   render(){
     return (
       <div className="Building">
-        <MediaQuery minDeviceWidth={1281}>
-          <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
-        </MediaQuery>
         <Jumbotron {...this.state} />
         <Featured
           building={this.props.buildingName}

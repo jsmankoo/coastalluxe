@@ -1,5 +1,4 @@
 var React = require('react');
-var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
 var Select = require('react-select');
 
@@ -23,10 +22,6 @@ const FeaturedProperties = React.createClass({
     };
   },
   componentDidMount(){
-    window.scrollTo(0, 0);
-    store.dispatch({
-      type: 'NAV_AFFIX_RESET'
-    });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81')
       .then(({acf})=>{
         this.setState({...this.state,
@@ -81,11 +76,6 @@ const FeaturedProperties = React.createClass({
           }
         });
       });
-  },
-  handleWaypoint(){
-    store.dispatch({
-      type: 'NAV_AFFIX_TOGGLE'
-    });
   },
   loadProperties(){
     let promise = 0;
@@ -164,9 +154,6 @@ const FeaturedProperties = React.createClass({
   render(){
     return (
       <div className="FeaturedProperties">
-        <MediaQuery minDeviceWidth={1281}>
-          <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
-        </MediaQuery>
         <Jumbotron {...this.state.index} saleType={this.props.saleType} building={this.props.building} />
         <Properties
           {...this.state.buildings}

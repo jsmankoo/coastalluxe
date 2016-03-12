@@ -574,7 +574,7 @@ th {
   padding-left: 0;
   padding-right: 0;
   width: 100%;
-  height: 475px;
+  height: auto;
 }
 .Foot .Mobile:before,
 .Foot .Mobile:after {
@@ -647,11 +647,17 @@ th {
   width: auto;
   height: 55px;
 }
+.Foot .Mobile .col .equalIcon img {
+  display: block;
+  margin: auto;
+  width: auto;
+  height: 33px;
+}
 .Foot .Mobile .col .dev {
   text-align: center;
   color: #003785;
   font-size: 12px;
-  margin: 10px auto 20px;
+  margin: 35px auto;
 }
 .Foot .Tablet {
   *zoom: 1;
@@ -663,17 +669,8 @@ th {
   margin-left: auto;
   padding-left: 0;
   padding-right: 0;
-  *zoom: 1;
   width: 100%;
-  height: 140px;
-}
-.Foot .Tablet:before,
-.Foot .Tablet:after {
-  content: '';
-  display: table;
-}
-.Foot .Tablet:after {
-  clear: both;
+  height: 210px;
 }
 .Foot .Tablet:before,
 .Foot .Tablet:after {
@@ -781,6 +778,7 @@ th {
 }
 .Foot .Tablet .midContent .footer {
   text-align: center;
+  margin: 15px auto;
 }
 .Foot .Tablet .midContent .footer p {
   font-size: 10px;
@@ -788,11 +786,17 @@ th {
   color: #003785;
   margin: 0px auto;
 }
+.Foot .Tablet .midContent .equalIcon img {
+  display: block;
+  margin: auto;
+  width: auto;
+  height: 33px;
+}
 .Foot .Tablet .midContent .dev {
   text-align: center;
   font-size: 10px;
   font-family: museo-sans;
-  margin: 20px auto 0px;
+  margin: 15px auto 25px;
 }
 .Foot .Tablet .midContent .dev p {
   margin: 0px auto;
@@ -1213,8 +1217,12 @@ th {
   height: auto;
 }
 .Home .Ryan .Mobile .info {
-  color: #003785;
+  text-align: center;
   font-family: museo-slab;
+  color: #003785;
+}
+.Home .Ryan .Mobile .info i.fa {
+  padding: 0px 5px;
 }
 .Home .Ryan .Mobile .info h1 {
   font-size: 38.4px;
@@ -1223,11 +1231,6 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-weight: 300;
-  font-family: museo-sans;
-  margin-top: 40px;
-  line-height: 40px;
-  text-align: center;
 }
 .Home .Ryan .Mobile .info h2 {
   font-size: 28.8px;
@@ -1236,10 +1239,6 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-weight: 300;
-  font-family: museo-sans;
-  margin-top: 0px;
-  text-align: center;
 }
 .Home .Ryan .Mobile .info h3 {
   font-size: 24px;
@@ -1248,10 +1247,6 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-weight: 300;
-  font-family: museo-sans;
-  margin-top: 0px;
-  text-align: center;
 }
 .Home .Ryan .Mobile .info h4 {
   font-size: 20.8px;
@@ -1260,10 +1255,6 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-weight: 300;
-  font-family: museo-sans;
-  margin-top: 0px;
-  text-align: center;
 }
 .Home .Ryan .Mobile .info h5 {
   font-size: 16px;
@@ -1272,10 +1263,6 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-weight: 300;
-  font-family: museo-sans;
-  margin-top: 0px;
-  text-align: center;
 }
 .Home .Ryan .Mobile .info h6 {
   font-size: 14.4px;
@@ -1285,17 +1272,32 @@ th {
   margin: 0.75em 0;
   line-height: 1.6em;
   text-transform: uppercase;
+}
+.Home .Ryan .Mobile .info h1 {
   font-weight: 300;
   font-family: museo-sans;
-  margin-top: 0px;
+  text-align: center;
+  line-height: 40px;
+}
+.Home .Ryan .Mobile .info h2,
+.Home .Ryan .Mobile .info h3,
+.Home .Ryan .Mobile .info h4,
+.Home .Ryan .Mobile .info h5 {
+  font-weight: 300;
+  font-family: museo-sans;
   text-align: center;
 }
+.Home .Ryan .Mobile .info h6 {
+  font-weight: 300;
+  font-family: museo-sans;
+  text-align: center;
+  font-size: 12px;
+}
 .Home .Ryan .Mobile .info p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 27px;
   font-weight: 500;
-  margin-top: 0px;
-  text-align: center;
+  margin-bottom: 0px;
 }
 .Home .Ryan .Mobile .more {
   *zoom: 1;
@@ -1380,8 +1382,6 @@ th {
     max-height: 380px;
   }
   .Home .Ryan .Row .info {
-    color: #003785;
-    font-family: museo-slab;
     *zoom: 1;
     float: left;
     clear: none;
@@ -1389,6 +1389,10 @@ th {
     width: 64.33333333333333%;
     margin-left: 0%;
     margin-right: 7.000000000000001%;
+    text-align: left;
+    font-family: museo-slab;
+    color: #003785;
+    margin: auto;
   }
   .Home .Ryan .Row .info:before,
   .Home .Ryan .Row .info:after {
@@ -1408,11 +1412,6 @@ th {
     font-weight: bold;
     margin: 0.75em 0;
     line-height: 1.6em;
-    font-weight: 300;
-    font-family: museo-sans;
-    margin-top: 0px;
-    line-height: 40px;
-    text-align: left;
   }
   .Home .Ryan .Row .info h2 {
     font-size: 28.8px;
@@ -1421,10 +1420,6 @@ th {
     font-weight: bold;
     margin: 0.75em 0;
     line-height: 1.6em;
-    font-weight: 300;
-    font-family: museo-sans;
-    margin-top: 0px;
-    text-align: left;
   }
   .Home .Ryan .Row .info h3 {
     font-size: 24px;
@@ -1433,10 +1428,6 @@ th {
     font-weight: bold;
     margin: 0.75em 0;
     line-height: 1.6em;
-    font-weight: 300;
-    font-family: museo-sans;
-    margin-top: 0px;
-    text-align: left;
   }
   .Home .Ryan .Row .info h4 {
     font-size: 20.8px;
@@ -1445,10 +1436,6 @@ th {
     font-weight: bold;
     margin: 0.75em 0;
     line-height: 1.6em;
-    font-weight: 300;
-    font-family: museo-sans;
-    margin-top: 0px;
-    text-align: left;
   }
   .Home .Ryan .Row .info h5 {
     font-size: 16px;
@@ -1457,10 +1444,6 @@ th {
     font-weight: bold;
     margin: 0.75em 0;
     line-height: 1.6em;
-    font-weight: 300;
-    font-family: museo-sans;
-    margin-top: 0px;
-    text-align: left;
   }
   .Home .Ryan .Row .info h6 {
     font-size: 14.4px;
@@ -1470,17 +1453,28 @@ th {
     margin: 0.75em 0;
     line-height: 1.6em;
     text-transform: uppercase;
+  }
+  .Home .Ryan .Row .info h1 {
     font-weight: 300;
     font-family: museo-sans;
+    text-align: left;
+    line-height: 40px;
     margin-top: 0px;
+  }
+  .Home .Ryan .Row .info h2,
+  .Home .Ryan .Row .info h3,
+  .Home .Ryan .Row .info h4,
+  .Home .Ryan .Row .info h5,
+  .Home .Ryan .Row .info h6 {
+    font-weight: 300;
+    font-family: museo-sans;
     text-align: left;
   }
   .Home .Ryan .Row .info p {
     font-size: 16px;
     line-height: 27px;
     font-weight: 500;
-    margin-top: 0px;
-    text-align: left;
+    margin-bottom: 0px;
   }
   .Home .Ryan .Row .socialMedia {
     *zoom: 1;
@@ -1853,6 +1847,7 @@ th {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
+  color: #0067d4;
 }
 .Contact .Top .Mobile .BGContent .info .wrapper:before,
 .Contact .Top .Mobile .BGContent .info .wrapper:after {
@@ -1864,6 +1859,10 @@ th {
 }
 .Contact .Top .Mobile .BGContent .info .wrapper:last-child {
   margin-right: 0%;
+}
+.Contact .Top .Mobile .BGContent .info .wrapper:hover,
+.Contact .Top .Mobile .BGContent .info .wrapper:focus {
+  color: #003785;
 }
 .Contact .Top .Mobile .BGContent .info .wrapper .icon {
   *zoom: 1;
@@ -1934,7 +1933,6 @@ th {
   padding-left: 0;
   padding-right: 0;
   height: 150px;
-  color: #003785;
   text-align: center;
   font-family: museo-slab;
   font-weight: 500;
@@ -1958,6 +1956,7 @@ th {
   margin-right: 0%;
   height: 100%;
   position: relative;
+  color: #0067d4;
 }
 .Contact .Top .Tablet .BGContent .info .col:before,
 .Contact .Top .Tablet .BGContent .info .col:after {
@@ -1967,18 +1966,24 @@ th {
 .Contact .Top .Tablet .BGContent .info .col:after {
   clear: both;
 }
+.Contact .Top .Tablet .BGContent .info .col:hover {
+  color: #003785;
+}
 .Contact .Top .Tablet .BGContent .info .col .wrapper {
-  position: absolute;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   width: 100%;
 }
 .Contact .Top .Tablet .BGContent .info .col .wrapper .icon {
-  font-size: 30px;
   padding-bottom: 10px;
+  padding-top: 35px;
+}
+.Contact .Top .Tablet .BGContent .info .col .wrapper .icon i.fa.fa-mobile {
+  font-size: 40px;
+}
+.Contact .Top .Tablet .BGContent .info .col .wrapper .icon i.fa.fa-map-marker {
+  font-size: 35px;
+}
+.Contact .Top .Tablet .BGContent .info .col .wrapper .icon i.fa.fa-paper-plane {
+  font-size: 27px;
 }
 .Contact .Top .Tablet .BGContent .info .col .wrapper .content {
   text-align: center;
@@ -1998,6 +2003,10 @@ th {
   text-align: center;
   font-family: museo-slab;
   color: #003785;
+}
+.Contact .Ryan .Mobile .content i.fa,
+.Contact .Ryan .Mobile .details i.fa {
+  padding: 0px 5px;
 }
 .Contact .Ryan .Mobile .content h1,
 .Contact .Ryan .Mobile .details h1 {
@@ -2068,18 +2077,22 @@ th {
 .Contact .Ryan .Mobile .content h4,
 .Contact .Ryan .Mobile .details h4,
 .Contact .Ryan .Mobile .content h5,
-.Contact .Ryan .Mobile .details h5,
+.Contact .Ryan .Mobile .details h5 {
+  font-weight: 300;
+  font-family: museo-sans;
+  text-align: center;
+}
 .Contact .Ryan .Mobile .content h6,
 .Contact .Ryan .Mobile .details h6 {
   font-weight: 300;
   font-family: museo-sans;
   text-align: center;
-  margin-top: 0px;
+  font-size: 12px;
 }
 .Contact .Ryan .Mobile .content p,
 .Contact .Ryan .Mobile .details p {
   font-size: 14px;
-  line-height: 25px;
+  line-height: 27px;
   font-weight: 500;
   margin-bottom: 0px;
 }
@@ -2127,9 +2140,9 @@ th {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 28.66666666666666%;
+  width: 28.33333333333333%;
   margin-left: 0%;
-  margin-right: 7.000000000000001%;
+  margin-right: 7.5%;
 }
 .Contact .Ryan .Tablet .wrap .image:before,
 .Contact .Ryan .Tablet .wrap .image:after {
@@ -2153,9 +2166,9 @@ th {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 64.33333333333333%;
+  width: 64.16666666666666%;
   margin-left: 0%;
-  margin-right: 7.000000000000001%;
+  margin-right: 7.5%;
   text-align: left;
   font-family: museo-slab;
   color: #003785;
@@ -2238,8 +2251,8 @@ th {
   text-align: left;
 }
 .Contact .Ryan .Tablet .wrap .content p {
-  font-size: 14px;
-  line-height: 25px;
+  font-size: 16px;
+  line-height: 27px;
   font-weight: 500;
   margin-bottom: 0px;
 }
@@ -2265,6 +2278,9 @@ th {
 }
 .Contact .Ryan .Tablet .details:after {
   clear: both;
+}
+.Contact .Ryan .Tablet .details i.fa {
+  padding: 0px 5px;
 }
 .Contact .Ryan .Tablet .details h1 {
   font-size: 38.4px;
@@ -2325,17 +2341,24 @@ th {
 .Contact .Ryan .Tablet .details h2,
 .Contact .Ryan .Tablet .details h3,
 .Contact .Ryan .Tablet .details h4,
-.Contact .Ryan .Tablet .details h5,
-.Contact .Ryan .Tablet .details h6 {
+.Contact .Ryan .Tablet .details h5 {
   font-weight: 300;
   font-family: museo-sans;
   text-align: left;
 }
+.Contact .Ryan .Tablet .details h6 {
+  font-weight: 300;
+  font-family: museo-sans;
+  text-align: left;
+  font-size: 10px;
+  color: #0067d4;
+}
 .Contact .Ryan .Tablet .details p {
-  font-size: 14px;
-  line-height: 25px;
+  font-size: 16px;
+  line-height: 27px;
   font-weight: 500;
   margin-bottom: 0px;
+  margin-top: 0px;
 }
 .FeaturedProperties .Jumbotron {
   background-repeat: no-repeat;
@@ -2372,6 +2395,16 @@ th {
 @media only screen and (max-width: 767px) {
   .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .title {
     font-size: 40px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select {
+    margin-top: 15px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select {
+    margin-top: 30px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -2443,12 +2476,14 @@ th {
   font-family: museo-slab;
   font-style: italic;
   font-weight: 300;
-  margin: 0px auto 10px;
+  margin: 0px auto 5px;
+  font-size: 14px;
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .SaleType-wrapper .SaleType .Select-control {
   border: none;
   border-radius: 0px;
   background-color: #003785;
+  height: 33px;
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .SaleType-wrapper .SaleType .Select-control .Select-value {
   background-color: #003785;
@@ -2471,7 +2506,6 @@ th {
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .SaleType-wrapper .SaleType .Select-menu-outer .Select-option {
   background-color: #003785;
   color: #fff;
-  z-index: 10000;
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .SaleType-wrapper .SaleType .Select-menu-outer .Select-option:hover,
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .SaleType-wrapper .SaleType .Select-menu-outer .Select-option:focus {
@@ -2525,7 +2559,7 @@ th {
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building {
   margin: 10px 10px;
-  width: 200px;
+  width: 180px;
   height: auto;
   text-align: left;
   font-family: museo-slab;
@@ -2547,12 +2581,14 @@ th {
   font-family: museo-slab;
   font-style: italic;
   font-weight: 300;
-  margin: 0px auto 10px;
+  margin: 0px auto 5px;
+  font-size: 14px;
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-control {
   border: none;
   border-radius: 0px;
   background-color: #003785;
+  height: 33px;
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-control .Select-value {
   background-color: #003785;
@@ -2575,7 +2611,6 @@ th {
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-menu-outer .Select-option {
   background-color: #003785;
   color: #fff;
-  z-index: 10000;
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-menu-outer .Select-option:hover,
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-menu-outer .Select-option:focus {
@@ -2809,7 +2844,7 @@ th {
   }
 }
 .Property .Jumbotron .bgTint .jumbotron-wrapper .border {
-  border-top: 1px solid #0067d4;
+  border-top: 1px solid #bccce0;
 }
 @media only screen and (max-width: 767px) {
   .Property .Jumbotron .bgTint .jumbotron-wrapper .border {
@@ -2832,7 +2867,7 @@ th {
   font-weight: 700;
 }
 .Property .Jumbotron .bgTint .jumbotron-wrapper .info .address {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 25px;
 }
 .Property .Jumbotron .bgTint .jumbotron-wrapper .info i.fa {
@@ -2851,6 +2886,11 @@ th {
 .Property .Details {
   margin-bottom: 120px;
 }
+@media only screen and (max-width: 767px) {
+  .Property .Details {
+    margin-bottom: 60px;
+  }
+}
 .Property .Details .slideShow {
   padding: 60px 0px 0px;
 }
@@ -2863,6 +2903,7 @@ th {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  position: relative;
   width: 1280px;
   height: 600px;
   max-width: 100%;
@@ -2872,6 +2913,27 @@ th {
   .Property .Details .slideShow .item.img-wrapper {
     width: 100%;
     height: 300px;
+  }
+}
+.Property .Details .slideShow .item.img-wrapper .specialText {
+  background-color: rgba(0,55,133,0.4);
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  padding: 25px 35px;
+  width: auto;
+  height: auto;
+  min-width: 10px;
+  letter-spacing: 1px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Details .slideShow .item.img-wrapper .specialText {
+    font-size: 15px;
+    padding: 8px 20px;
   }
 }
 .Property .Details .info {
@@ -2957,11 +3019,17 @@ th {
   font-weight: 700;
   font-family: museo-slab;
   font-size: 20px;
-  line-height: 50px;
+  line-height: 37px;
+}
+@media only screen and (min-width: 768px) {
+  .Property .Details .info .info-wrapper .price {
+    border-right: 1px solid #bccce0;
+  }
 }
 @media only screen and (max-width: 767px) {
   .Property .Details .info .info-wrapper .price {
     font-size: 16px;
+    border-right: 1px solid #bccce0;
   }
 }
 .Property .Details .info .info-wrapper .bedBath {
@@ -2978,7 +3046,12 @@ th {
   font-weight: 700;
   font-family: museo-slab;
   font-size: 20px;
-  line-height: 50px;
+  line-height: 37px;
+}
+@media only screen and (min-width: 768px) {
+  .Property .Details .info .info-wrapper .bedBath {
+    border-right: 1px solid #bccce0;
+  }
 }
 @media only screen and (max-width: 767px) {
   .Property .Details .info .info-wrapper .bedBath {
@@ -2999,11 +3072,17 @@ th {
   font-weight: 700;
   font-family: museo-slab;
   font-size: 20px;
-  line-height: 50px;
+  line-height: 37px;
+}
+@media only screen and (min-width: 768px) {
+  .Property .Details .info .info-wrapper .area {
+    border-right: 1px solid #bccce0;
+  }
 }
 @media only screen and (max-width: 767px) {
   .Property .Details .info .info-wrapper .area {
     font-size: 16px;
+    border-right: 1px solid #bccce0;
   }
 }
 .Property .Details .info .info-wrapper .mls {
@@ -3020,7 +3099,7 @@ th {
   font-weight: 700;
   font-family: museo-slab;
   font-size: 20px;
-  line-height: 50px;
+  line-height: 37px;
 }
 @media only screen and (max-width: 767px) {
   .Property .Details .info .info-wrapper .mls {
@@ -3028,7 +3107,6 @@ th {
   }
 }
 .Property .Details .paragraph {
-  font-family: museo-slab;
   *zoom: 1;
   width: auto;
   max-width: 1100px;
@@ -3038,8 +3116,9 @@ th {
   margin-left: auto;
   padding-left: 0;
   padding-right: 0;
-  color: #003785;
   text-align: center;
+  font-family: museo-slab;
+  color: #003785;
 }
 .Property .Details .paragraph:before,
 .Property .Details .paragraph:after {
@@ -3050,10 +3129,6 @@ th {
   clear: both;
 }
 .Property .Details .paragraph h1 {
-  min-height: 1px;
-  font-size: 1rem;
-  vertical-align: middle;
-  box-sizing: border-box;
   font-size: 38.4px;
   font-size: 2.4rem;
   text-rendering: optimizelegibility;
@@ -3061,16 +3136,7 @@ th {
   margin: 0.75em 0;
   line-height: 1.6em;
 }
-@media only screen and (min-width: 768px) {
-  .Property .Details .paragraph h1 {
-    font-size: 50px;
-  }
-}
 .Property .Details .paragraph h2 {
-  min-height: 1px;
-  font-size: 1rem;
-  vertical-align: middle;
-  box-sizing: border-box;
   font-size: 28.8px;
   font-size: 1.8rem;
   text-rendering: optimizelegibility;
@@ -3079,10 +3145,6 @@ th {
   line-height: 1.6em;
 }
 .Property .Details .paragraph h3 {
-  min-height: 1px;
-  font-size: 1rem;
-  vertical-align: middle;
-  box-sizing: border-box;
   font-size: 24px;
   font-size: 1.5rem;
   text-rendering: optimizelegibility;
@@ -3091,10 +3153,6 @@ th {
   line-height: 1.6em;
 }
 .Property .Details .paragraph h4 {
-  min-height: 1px;
-  font-size: 1rem;
-  vertical-align: middle;
-  box-sizing: border-box;
   font-size: 20.8px;
   font-size: 1.3rem;
   text-rendering: optimizelegibility;
@@ -3103,10 +3161,6 @@ th {
   line-height: 1.6em;
 }
 .Property .Details .paragraph h5 {
-  min-height: 1px;
-  font-size: 1rem;
-  vertical-align: middle;
-  box-sizing: border-box;
   font-size: 16px;
   font-size: 1rem;
   text-rendering: optimizelegibility;
@@ -3115,10 +3169,6 @@ th {
   line-height: 1.6em;
 }
 .Property .Details .paragraph h6 {
-  min-height: 1px;
-  font-size: 1rem;
-  vertical-align: middle;
-  box-sizing: border-box;
   font-size: 14.4px;
   font-size: 0.9rem;
   text-rendering: optimizelegibility;
@@ -3127,20 +3177,56 @@ th {
   line-height: 1.6em;
   text-transform: uppercase;
 }
-.Property .Details .paragraph p {
-  font-weight: normal;
-  font-style: normal;
-  line-height: 35px;
-  margin: auto;
-}
 @media only screen and (max-width: 767px) {
+  .Property .Details .paragraph {
+    margin-top: 50px;
+  }
+  .Property .Details .paragraph h1 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 0px;
+  }
+  .Property .Details .paragraph h2,
+  .Property .Details .paragraph h3,
+  .Property .Details .paragraph h4,
+  .Property .Details .paragraph h5,
+  .Property .Details .paragraph h6 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: center;
+  }
   .Property .Details .paragraph p {
-    font-size: 18px;
+    font-size: 14px;
+    line-height: 27px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    text-align: center;
   }
 }
 @media only screen and (min-width: 768px) {
+  .Property .Details .paragraph h1 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 0px;
+  }
+  .Property .Details .paragraph h2,
+  .Property .Details .paragraph h3,
+  .Property .Details .paragraph h4,
+  .Property .Details .paragraph h5,
+  .Property .Details .paragraph h6 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: center;
+  }
   .Property .Details .paragraph p {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 500;
+    margin-bottom: 0px;
   }
 }
 .Property .Facilities {
@@ -3161,7 +3247,12 @@ th {
   line-height: 1.6em;
   color: #003785;
   font-family: museo-slab;
-  font-weight: 700;
+  font-weight: 500;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Facilities .title {
+    font-size: 30px;
+  }
 }
 .Property .Facilities #facilitiesSlide {
   *zoom: 1;
@@ -3388,7 +3479,7 @@ th {
   }
 }
 .Building .Jumbotron .bgTint .jumbotron-wrapper .border {
-  border-top: 1px solid #0067d4;
+  border-top: 1px solid #bccce0;
 }
 @media only screen and (max-width: 767px) {
   .Building .Jumbotron .bgTint .jumbotron-wrapper .border {
@@ -3411,7 +3502,7 @@ th {
   font-weight: 700;
 }
 .Building .Jumbotron .bgTint .jumbotron-wrapper .info .address {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 25px;
 }
 .Building .Jumbotron .bgTint .jumbotron-wrapper .info i.fa {
@@ -3508,9 +3599,9 @@ th {
   width: 69.42857142857143%;
   margin-left: 0%;
   margin-right: 7.000000000000001%;
+  text-align: left;
   font-family: museo-slab;
   color: #003785;
-  text-align: left;
 }
 .Building .Details .intro .paragraph:before,
 .Building .Details .intro .paragraph:after {
@@ -3522,6 +3613,55 @@ th {
 }
 .Building .Details .intro .paragraph:last-child {
   margin-right: 0%;
+}
+.Building .Details .intro .paragraph h1 {
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+}
+.Building .Details .intro .paragraph h2 {
+  font-size: 28.8px;
+  font-size: 1.8rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+}
+.Building .Details .intro .paragraph h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+}
+.Building .Details .intro .paragraph h4 {
+  font-size: 20.8px;
+  font-size: 1.3rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+}
+.Building .Details .intro .paragraph h5 {
+  font-size: 16px;
+  font-size: 1rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+}
+.Building .Details .intro .paragraph h6 {
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-transform: uppercase;
 }
 @media only screen and (max-width: 767px) {
   .Building .Details .intro .paragraph {
@@ -3545,115 +3685,52 @@ th {
   .Building .Details .intro .paragraph:last-child {
     margin-right: 0%;
   }
-}
-.Building .Details .intro .paragraph h1 {
-  font-size: 38.4px;
-  font-size: 2.4rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  font-weight: 500;
-  font-family: sans-serif;
-  margin-top: 0px;
-  line-height: 40px;
-  text-align: left;
-}
-@media only screen and (max-width: 767px) {
   .Building .Details .intro .paragraph h1 {
+    font-weight: 300;
+    font-family: museo-sans;
     text-align: center;
+    line-height: 40px;
+    margin-top: 0px;
   }
-}
-.Building .Details .intro .paragraph h2 {
-  font-size: 28.8px;
-  font-size: 1.8rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  font-weight: 500;
-  font-family: sans-serif;
-  text-align: left;
-}
-@media only screen and (max-width: 767px) {
-  .Building .Details .intro .paragraph h2 {
-    text-align: center;
-  }
-}
-.Building .Details .intro .paragraph h3 {
-  font-size: 24px;
-  font-size: 1.5rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  font-weight: 500;
-  font-family: sans-serif;
-  text-align: left;
-}
-@media only screen and (max-width: 767px) {
-  .Building .Details .intro .paragraph h3 {
-    text-align: center;
-  }
-}
-.Building .Details .intro .paragraph h4 {
-  font-size: 20.8px;
-  font-size: 1.3rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  font-weight: 500;
-  font-family: sans-serif;
-  text-align: left;
-}
-@media only screen and (max-width: 767px) {
-  .Building .Details .intro .paragraph h4 {
-    text-align: center;
-  }
-}
-.Building .Details .intro .paragraph h5 {
-  font-size: 16px;
-  font-size: 1rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  font-weight: 500;
-  font-family: sans-serif;
-  text-align: left;
-}
-@media only screen and (max-width: 767px) {
-  .Building .Details .intro .paragraph h5 {
-    text-align: center;
-  }
-}
-.Building .Details .intro .paragraph h6 {
-  font-size: 14.4px;
-  font-size: 0.9rem;
-  text-rendering: optimizelegibility;
-  font-weight: bold;
-  margin: 0.75em 0;
-  line-height: 1.6em;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-family: sans-serif;
-  text-align: left;
-}
-@media only screen and (max-width: 767px) {
+  .Building .Details .intro .paragraph h2,
+  .Building .Details .intro .paragraph h3,
+  .Building .Details .intro .paragraph h4,
+  .Building .Details .intro .paragraph h5,
   .Building .Details .intro .paragraph h6 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: center;
+  }
+  .Building .Details .intro .paragraph p {
+    font-size: 14px;
+    line-height: 27px;
+    font-weight: 500;
+    margin-bottom: 0px;
     text-align: center;
   }
 }
-.Building .Details .intro .paragraph p {
-  font-size: 16px;
-  line-height: 27px;
-  font-weight: 500;
-  text-align: left;
-}
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 768px) {
+  .Building .Details .intro .paragraph h1 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: left;
+    line-height: 40px;
+    margin-top: 0px;
+  }
+  .Building .Details .intro .paragraph h2,
+  .Building .Details .intro .paragraph h3,
+  .Building .Details .intro .paragraph h4,
+  .Building .Details .intro .paragraph h5,
+  .Building .Details .intro .paragraph h6 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: left;
+  }
   .Building .Details .intro .paragraph p {
-    text-align: center;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 500;
+    margin-bottom: 0px;
   }
 }
 .Building .Details .rest {
@@ -3666,9 +3743,10 @@ th {
   margin-left: auto;
   padding-left: 0;
   padding-right: 0;
+  text-align: left;
   font-family: museo-slab;
   color: #003785;
-  text-align: center;
+  margin: auto;
 }
 .Building .Details .rest:before,
 .Building .Details .rest:after {
@@ -3678,6 +3756,9 @@ th {
 .Building .Details .rest:after {
   clear: both;
 }
+.Building .Details .rest i.fa {
+  padding: 0px 5px;
+}
 .Building .Details .rest h1 {
   font-size: 38.4px;
   font-size: 2.4rem;
@@ -3685,9 +3766,6 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-weight: 500;
-  font-family: sans-serif;
-  line-height: 40px;
 }
 .Building .Details .rest h2 {
   font-size: 28.8px;
@@ -3696,8 +3774,6 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-weight: 500;
-  font-family: sans-serif;
 }
 .Building .Details .rest h3 {
   font-size: 24px;
@@ -3706,8 +3782,6 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-weight: 500;
-  font-family: sans-serif;
 }
 .Building .Details .rest h4 {
   font-size: 20.8px;
@@ -3716,8 +3790,6 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-weight: 500;
-  font-family: sans-serif;
 }
 .Building .Details .rest h5 {
   font-size: 16px;
@@ -3726,8 +3798,6 @@ th {
   font-weight: bold;
   margin: 0.75em 0;
   line-height: 1.6em;
-  font-weight: 500;
-  font-family: sans-serif;
 }
 .Building .Details .rest h6 {
   font-size: 14.4px;
@@ -3737,13 +3807,58 @@ th {
   margin: 0.75em 0;
   line-height: 1.6em;
   text-transform: uppercase;
-  font-weight: 500;
-  font-family: sans-serif;
 }
-.Building .Details .rest p {
-  font-size: 16px;
-  line-height: 27px;
-  font-weight: 500;
+@media only screen and (max-width: 767px) {
+  .Building .Details .rest {
+    margin-top: 50px;
+  }
+  .Building .Details .rest h1 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 0px;
+  }
+  .Building .Details .rest h2,
+  .Building .Details .rest h3,
+  .Building .Details .rest h4,
+  .Building .Details .rest h5,
+  .Building .Details .rest h6 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: center;
+  }
+  .Building .Details .rest p {
+    font-size: 14px;
+    line-height: 27px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .Building .Details .rest h1 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: left;
+    line-height: 40px;
+    margin-top: 0px;
+  }
+  .Building .Details .rest h2,
+  .Building .Details .rest h3,
+  .Building .Details .rest h4,
+  .Building .Details .rest h5,
+  .Building .Details .rest h6 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: left;
+  }
+  .Building .Details .rest p {
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 500;
+    margin-bottom: 0px;
+  }
 }
 .Building .Details .arrow {
   width: 100%;
@@ -3769,7 +3884,12 @@ th {
   line-height: 1.6em;
   color: #003785;
   font-family: museo-slab;
-  font-weight: 700;
+  font-weight: 500;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Facilities .title {
+    font-size: 30px;
+  }
 }
 .Building .Facilities #facilitiesSlide {
   *zoom: 1;
@@ -3845,7 +3965,7 @@ th {
   padding-left: 0;
   padding-right: 0;
   padding-top: 100px;
-  border-bottom: 1px solid #0067d4;
+  border-bottom: 1px solid #bccce0;
 }
 .Building .Featured:before,
 .Building .Featured:after {
@@ -3876,7 +3996,7 @@ th {
   font-family: museo-slab;
   font-weight: 700;
   padding: 5px 0px;
-  font-size: 20px;
+  font-size: 18px;
   font-style: italic;
 }
 @media only screen and (max-width: 767px) {

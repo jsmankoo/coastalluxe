@@ -139,10 +139,10 @@ const Desktop = React.createClass({
   render(){
     return (
       <div className={`Desktop wrap`}>
-        { !this.props.MenuShow && this.props.buttonShow?
+        {/*{ !this.props.MenuShow && this.props.buttonShow?
           <i onClick={this.clickHandler} className={`fa ${this.props.menuLogo} menuScroll`} /> :
           <div />
-        }
+        }*/}
         <div className="col contact">
           <a href='/#/contact' >
             <i className={`fa ${this.props.contactLogo}`} />

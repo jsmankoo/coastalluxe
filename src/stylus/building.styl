@@ -23,7 +23,7 @@
           +below(767px)
             font-size 40px
         .border
-          border-top 1px solid lightBlue
+          border-top 1px solid infoBorder
           +below(767px)
             margin 10px auto
             size 200px auto
@@ -36,7 +36,7 @@
           font-family: otherFont
           font-weight: 700
           .address
-            font-size: 20px
+            font-size: 18px
             line-height: 25px
           i.fa
             font-size 25px
@@ -61,97 +61,131 @@
           center(250px)
       .paragraph
         column(5/7, gutter: 7px)
+        text-align: left
         font-family: otherFont
         color darkBlue
-        text-align: left
+        h1
+          h1()
+        h2
+          h2()
+        h3
+          h3()
+        h4
+          h4()
+        h5
+          h5()
+        h6
+          h6()
         +below(767px)
           column(1)
           margin-top 50px
+          h1
+            font-weight: 300
+            font-family: mainFont
+            text-align: center
+            line-height: 40px
+            margin-top 0px
+          h2
+          h3
+          h4
+          h5
+          h6
+            font-weight: 300
+            font-family: mainFont
+            text-align: center
+            // margin-top 0px
+          p
+            font-size 14px
+            line-height: 27px
+            font-weight: 500
+            margin-bottom 0px
+            text-align: center
+        +above(768px)
+          h1
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            line-height: 40px
+            margin-top 0px
+          h2
+          h3
+          h4
+          h5
+          h6
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            // margin-top 0px
+          p
+            font-size 16px
+            line-height: 27px
+            font-weight: 500
+            margin-bottom 0px
+    .rest
+      center(900px)
+      text-align: left
+      font-family: otherFont
+      color darkBlue
+      margin auto
+      i.fa
+        padding 0px 5px
+      h1
+        h1()
+      h2
+        h2()
+      h3
+        h3()
+      h4
+        h4()
+      h5
+        h5()
+      h6
+        h6()
+      +below(767px)
+        margin-top 50px
         h1
-          h1()
-          font-weight: 500
-          font-family: sans-serif
-          margin-top 0px
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
           line-height: 40px
-          text-align: left
-          +below(767px)
-            text-align: center
+          margin-top 0px
         h2
-          h2()
-          font-weight: 500
-          font-family: sans-serif
-          text-align: left
-          +below(767px)
-            text-align: center
         h3
-          h3()
-          font-weight: 500
-          font-family: sans-serif
-          text-align: left
-          +below(767px)
-            text-align: center
         h4
-          h4()
-          font-weight: 500
-          font-family: sans-serif
-          text-align: left
-          +below(767px)
-            text-align: center
         h5
-          h5()
-          font-weight: 500
-          font-family: sans-serif
-          text-align: left
-          +below(767px)
-            text-align: center
         h6
-          h6()
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          // margin-top 0px
+        p
+          font-size 14px
+          line-height: 27px
           font-weight: 500
-          font-family: sans-serif
+          margin-bottom 0px
+          text-align: center
+      +above(768px)
+        h1
+          font-weight: 300
+          font-family: mainFont
           text-align: left
-          +below(767px)
-            text-align: center
+          line-height: 40px
+          margin-top 0px
+        h2
+        h3
+        h4
+        h5
+        h6
+          font-weight: 300
+          font-family: mainFont
+          text-align: left
+          // margin-top 0px
         p
           font-size 16px
           line-height: 27px
           font-weight: 500
-          text-align: left
-          +below(767px)
-            text-align: center
-    .rest
-      center(900px)
-      font-family: otherFont
-      color darkBlue
-      text-align: center
-      h1
-        h1()
-        font-weight: 500
-        font-family: sans-serif
-        line-height: 40px
-      h2
-        h2()
-        font-weight: 500
-        font-family: sans-serif
-      h3
-        h3()
-        font-weight: 500
-        font-family: sans-serif
-      h4
-        h4()
-        font-weight: 500
-        font-family: sans-serif
-      h5
-        h5()
-        font-weight: 500
-        font-family: sans-serif
-      h6
-        h6()
-        font-weight: 500
-        font-family: sans-serif
-      p
-        font-size 16px
-        line-height: 27px
-        font-weight: 500
+          margin-bottom 0px
+
     .arrow
       width 100%
       i.fa
@@ -167,7 +201,9 @@
       h1()
       color: darkBlue
       font-family: otherFont
-      font-weight: 700
+      font-weight: 500
+      +below(767px)
+        font-size 30px
     #facilitiesSlide
       center(1280px)
       .owl-controls
@@ -202,7 +238,7 @@
   .Featured
     center(1280px)
     padding-top 100px
-    border-bottom 1px solid lightBlue
+    border-bottom 1px solid infoBorder
     .more
       +below(767px)
         margin 25px
@@ -218,7 +254,7 @@
         font-family: otherFont
         font-weight: 700
         padding 5px 0px
-        font-size 20px
+        font-size 18px
         font-style: italic;
         +below(767px)
           margin auto

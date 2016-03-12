@@ -38451,26 +38451,12 @@ var Foot = require('./components/Foot');
 
 var App = React.createClass({
   displayName: 'App',
-  componentDidMount: function componentDidMount() {},
-  handleEnter: function handleEnter(event) {
-    console.log('enter');
-    store.dispatch({ type: 'MENU_BUTTON_TOGGLE' });
-  },
-  handleLeave: function handleLeave(event) {
-    console.log('leave');
-    store.dispatch({ type: 'MENU_BUTTON_TOGGLE' });
-  },
   render: function render() {
     return React.createElement(
       'div',
       { className: 'App' },
       React.createElement(Nav, _extends({}, store.getState().Nav, { MenuShow: store.getState().Menu.show, buttonShow: store.getState().Menu.buttonShow })),
       store.getState().Menu.show ? React.createElement(Menu, _extends({}, store.getState().Menu, { menuLogo: store.getState().Nav.menuLogo })) : React.createElement('div', null),
-      React.createElement(
-        MediaQuery,
-        { minDeviceWidth: 1281 },
-        React.createElement(Waypoint, { onEnter: this.handleEnter, onLeave: this.handleLeave })
-      ),
       this.props.children,
       React.createElement(Foot, store.getState().Foot)
     );
@@ -38485,7 +38471,6 @@ module.exports = App;
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var React = require('react');
-var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
 var Markdown = require('react-remarkable');
 
@@ -38519,10 +38504,6 @@ var Property = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
-    window.scrollTo(0, 0);
-    store.dispatch({
-      type: 'NAV_AFFIX_RESET'
-    });
     switch (this.props.buildingName) {
       case '13700marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137').then(function (_ref) {
@@ -38559,20 +38540,10 @@ var Property = React.createClass({
       }));
     });
   },
-  handleWaypoint: function handleWaypoint() {
-    store.dispatch({
-      type: 'NAV_AFFIX_TOGGLE'
-    });
-  },
   render: function render() {
     return React.createElement(
       'div',
       { className: 'Building' },
-      React.createElement(
-        MediaQuery,
-        { minDeviceWidth: 1281 },
-        React.createElement(Waypoint, { onEnter: this.handleWaypoint, onLeave: this.handleWaypoint })
-      ),
       React.createElement(Jumbotron, this.state),
       React.createElement(Featured, {
         building: this.props.buildingName,
@@ -38842,11 +38813,10 @@ var Facilities = React.createClass({
 
 module.exports = Property;
 
-},{"./components/OwlCarousel":332,"./store":333,"react":249,"react-remarkable":61,"react-responsive":62,"react-waypoint":115}],324:[function(require,module,exports){
+},{"./components/OwlCarousel":332,"./store":333,"react":249,"react-remarkable":61,"react-responsive":62}],324:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
-var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
 var ReactBGVideo = require('react-background-video');
 var Markdown = require('react-remarkable');
@@ -38870,25 +38840,16 @@ var Contact = React.createClass({
       "Office": "Loading ...",
       "City": "Loading ...",
       map: '',
-      details: 'Loading ...'
+      details: []
     };
   },
   componentDidMount: function componentDidMount() {
     var _this = this;
 
-    window.scrollTo(0, 0);
-    store.dispatch({
-      type: 'NAV_AFFIX_RESET'
-    });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/28').then(function (_ref) {
       var acf = _ref.acf;
 
       _this.setState(acf);
-    });
-  },
-  handleWaypoint: function handleWaypoint() {
-    store.dispatch({
-      type: 'NAV_AFFIX_TOGGLE'
     });
   },
   render: function render() {
@@ -38902,11 +38863,6 @@ var Contact = React.createClass({
         Office: this.state.Office,
         City: this.state.City,
         url: this.state.map }),
-      React.createElement(
-        MediaQuery,
-        { minDeviceWidth: 1281 },
-        React.createElement(Waypoint, { onEnter: this.handleWaypoint, onLeave: this.handleWaypoint })
-      ),
       React.createElement(Ryan, {
         mobileimage: this.state.mobileimage,
         image: this.state.image,
@@ -39147,11 +39103,15 @@ var Ryan = React.createClass({
       React.createElement(
         'div',
         { className: 'details' },
-        React.createElement(
-          Markdown,
-          null,
-          this.props.details
-        )
+        this.props.details.map(function (_ref2, index) {
+          var paragraph = _ref2.paragraph;
+
+          return React.createElement(
+            Markdown,
+            { options: { 'html': true }, key: index },
+            paragraph
+          );
+        })
       )
     );
   },
@@ -39180,11 +39140,15 @@ var Ryan = React.createClass({
       React.createElement(
         'div',
         { className: 'details' },
-        React.createElement(
-          Markdown,
-          null,
-          this.props.details
-        )
+        this.props.details.map(function (_ref3, index) {
+          var paragraph = _ref3.paragraph;
+
+          return React.createElement(
+            Markdown,
+            { options: { 'html': true }, key: index },
+            paragraph
+          );
+        })
       )
     );
   }
@@ -39192,7 +39156,7 @@ var Ryan = React.createClass({
 
 module.exports = Contact;
 
-},{"./store":333,"react":249,"react-background-video":58,"react-remarkable":61,"react-responsive":62,"react-waypoint":115}],325:[function(require,module,exports){
+},{"./store":333,"react":249,"react-background-video":58,"react-remarkable":61,"react-responsive":62}],325:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -39200,7 +39164,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var React = require('react');
-var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
 var Select = require('react-select');
 
@@ -39227,10 +39190,6 @@ var FeaturedProperties = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
-    window.scrollTo(0, 0);
-    store.dispatch({
-      type: 'NAV_AFFIX_RESET'
-    });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81').then(function (_ref) {
       var acf = _ref.acf;
 
@@ -39309,11 +39268,6 @@ var FeaturedProperties = React.createClass({
           })
         })
       }));
-    });
-  },
-  handleWaypoint: function handleWaypoint() {
-    store.dispatch({
-      type: 'NAV_AFFIX_TOGGLE'
     });
   },
   loadProperties: function loadProperties() {
@@ -39404,11 +39358,6 @@ var FeaturedProperties = React.createClass({
     return React.createElement(
       'div',
       { className: 'FeaturedProperties' },
-      React.createElement(
-        MediaQuery,
-        { minDeviceWidth: 1281 },
-        React.createElement(Waypoint, { onEnter: this.handleWaypoint, onLeave: this.handleWaypoint })
-      ),
       React.createElement(Jumbotron, _extends({}, this.state.index, { saleType: this.props.saleType, building: this.props.building })),
       React.createElement(Properties, _extends({}, this.state.buildings, {
         saleType: this.props.saleType,
@@ -39623,7 +39572,7 @@ var Properties = React.createClass({
 
 module.exports = FeaturedProperties;
 
-},{"./store":333,"react":249,"react-responsive":62,"react-select":112,"react-waypoint":115}],326:[function(require,module,exports){
+},{"./store":333,"react":249,"react-responsive":62,"react-select":112}],326:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -39633,7 +39582,6 @@ var _reactScroll = require('react-scroll');
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var React = require('react');
-var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
 var ReactBGVideo = require('react-background-video');
 var Markdown = require('react-remarkable');
@@ -39868,15 +39816,15 @@ var Ryan = React.createClass({
   displayName: 'Ryan',
   getInitialState: function getInitialState() {
     return {
-      "image": "/img/loader.gif",
+      "image": "/img/loading-img.png",
       "facebook": "",
       "twitter": "",
       "email": "",
       "instagram": "",
       "name": "Loading ...",
       "content": "Loading ...",
-      "mobileimage": "/img/loader.gif",
-      "bgImage": "/img/loader.gif"
+      "mobileimage": "/img/loading-img.png",
+      "bgImage": ""
     };
   },
   componentDidMount: function componentDidMount() {
@@ -39991,7 +39939,7 @@ var Ryan = React.createClass({
           { className: 'socialMedia' },
           React.createElement(
             'a',
-            { href: this.state.email },
+            { href: 'mailto:' + this.state.email },
             React.createElement('i', { className: 'fa fa-envelope' })
           ),
           React.createElement(
@@ -40059,7 +40007,7 @@ var Ryan = React.createClass({
           { className: 'socialMedia' },
           React.createElement(
             'a',
-            { href: this.state.email },
+            { href: 'mailto:' + this.state.email },
             React.createElement('i', { className: 'fa fa-envelope' })
           ),
           React.createElement(
@@ -40155,7 +40103,7 @@ var Explore = React.createClass({
 
 module.exports = Home;
 
-},{"./components/OwlCarousel":332,"./store":333,"react":249,"react-background-video":58,"react-remarkable":61,"react-responsive":62,"react-scroll":102,"react-waypoint":115}],327:[function(require,module,exports){
+},{"./components/OwlCarousel":332,"./store":333,"react":249,"react-background-video":58,"react-remarkable":61,"react-responsive":62,"react-scroll":102}],327:[function(require,module,exports){
 'use strict';
 
 var _reactRouter = require('react-router');
@@ -40329,7 +40277,6 @@ renderDom();
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var React = require('react');
-var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
 var Markdown = require('react-remarkable');
 
@@ -40380,10 +40327,6 @@ var Property = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
-    window.scrollTo(0, 0);
-    store.dispatch({
-      type: 'NAV_AFFIX_RESET'
-    });
     switch (this.props.params.building) {
       case 'featured':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81').then(function (_ref) {
@@ -40434,20 +40377,10 @@ var Property = React.createClass({
       }));
     });
   },
-  handleWaypoint: function handleWaypoint() {
-    store.dispatch({
-      type: 'NAV_AFFIX_TOGGLE'
-    });
-  },
   render: function render() {
     return React.createElement(
       'div',
       { className: 'Property' },
-      React.createElement(
-        MediaQuery,
-        { minDeviceWidth: 1281 },
-        React.createElement(Waypoint, { onEnter: this.handleWaypoint, onLeave: this.handleWaypoint })
-      ),
       React.createElement(Jumbotron, this.state),
       React.createElement(Details, _extends({}, this.state.property, { options: this.state.options })),
       this.state.building.facilities.length === 0 ? React.createElement('div', null) : React.createElement(Facilities, this.state.building),
@@ -40546,6 +40479,8 @@ var Details = React.createClass({
     }
   },
   render: function render() {
+    var _this2 = this;
+
     return React.createElement(
       'div',
       { className: 'Details' },
@@ -40558,7 +40493,15 @@ var Details = React.createClass({
           this.props.slide_show.map(function (_ref7, index) {
             var img = _ref7.img;
 
-            return React.createElement('div', { key: index, className: 'item img-wrapper', style: { backgroundImage: 'url(' + img + ')' } });
+            return React.createElement(
+              'div',
+              { key: index, className: 'item img-wrapper', style: { backgroundImage: 'url(' + img + ')' } },
+              _this2.props.text === '' ? React.createElement('div', null) : React.createElement(
+                'div',
+                { className: 'specialText' },
+                _this2.props.text
+              )
+            );
           })
         )
       ),
@@ -40589,7 +40532,7 @@ var Details = React.createClass({
           React.createElement(
             'div',
             { className: 'area' },
-            'SQ.FT. ',
+            'APPROX. SQ.FT. ',
             React.createElement('br', null),
             ' ',
             this.props.area
@@ -40657,7 +40600,7 @@ var Featured = React.createClass({
     );
   },
   render: function render() {
-    var _this2 = this;
+    var _this3 = this;
 
     return React.createElement(
       'div',
@@ -40676,7 +40619,7 @@ var Featured = React.createClass({
             { className: 'item', key: index },
             React.createElement(
               'a',
-              { href: '/#/featured/' + _this2.props.building + '/' + item.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.image + ')' } },
+              { href: '/#/featured/' + _this3.props.building + '/' + item.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.image + ')' } },
               item.text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },
@@ -40691,7 +40634,7 @@ var Featured = React.createClass({
                 { className: 'name' },
                 item.name
               ),
-              _this2.handleSale(item.forSale, item.lease)
+              _this3.handleSale(item.forSale, item.lease)
             )
           );
         })
@@ -40748,7 +40691,7 @@ var Facilities = React.createClass({
 
 module.exports = Property;
 
-},{"./components/OwlCarousel":332,"./store":333,"react":249,"react-remarkable":61,"react-responsive":62,"react-waypoint":115}],329:[function(require,module,exports){
+},{"./components/OwlCarousel":332,"./store":333,"react":249,"react-remarkable":61,"react-responsive":62}],329:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40869,6 +40812,15 @@ var Mobile = React.createClass({
         { className: 'col' },
         React.createElement(
           'div',
+          { className: 'equalIcon' },
+          React.createElement('img', { src: this.props.equalIcon })
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'col' },
+        React.createElement(
+          'div',
           { className: 'dev' },
           React.createElement(
             Markdown,
@@ -40931,6 +40883,11 @@ var Tablet = React.createClass({
             null,
             this.props.copyright + '\n' + this.props.information
           )
+        ),
+        React.createElement(
+          'div',
+          { className: 'equalIcon' },
+          React.createElement('img', { src: this.props.equalIcon })
         ),
         React.createElement(
           'div',
@@ -41311,7 +41268,6 @@ var Desktop = React.createClass({
     return React.createElement(
       'div',
       { className: 'Desktop wrap' },
-      !this.props.MenuShow && this.props.buttonShow ? React.createElement('i', { onClick: this.clickHandler, className: 'fa ' + this.props.menuLogo + ' menuScroll' }) : React.createElement('div', null),
       React.createElement(
         'div',
         { className: 'col contact' },
@@ -41689,11 +41645,11 @@ var reducer = function reducer(state, action) {
 var store = Redux.createStore(reducer, {
   Nav: {
     contactLogo: 'fa-paper-plane',
-    logo: '/img/loader.gif',
+    logo: '/img/loading-img.png',
     menuLogo: 'fa-bars',
     affix: false,
-    desktopLogo: '/img/loader.gif',
-    mobileLogo: '/img/loader.gif'
+    desktopLogo: '/img/loading-img.png',
+    mobileLogo: '/img/loading-img.png'
   },
   Menu: {
     buttonShow: true,
@@ -41701,15 +41657,16 @@ var store = Redux.createStore(reducer, {
     list: []
   },
   Foot: {
-    "footerLogo": "/img/loader.gif",
-    "berkshireLogo": "/img/loader.gif",
+    "footerLogo": "/img/loading-img.png",
+    "berkshireLogo": "/img/loading-img.png",
     "email": "",
     "facebook": "",
     "twitter": "",
     "instagram": "",
     "copyright": "Loading ...",
     "information": "Loading ...",
-    "dev": "Loading ..."
+    "dev": "Loading ...",
+    "equalIcon": "/img/loading-img.png"
   },
   Home: {
     "headline": "Loading ...",

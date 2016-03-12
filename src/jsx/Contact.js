@@ -1,5 +1,4 @@
 var React = require('react');
-var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
 var ReactBGVideo = require('react-background-video');
 var Markdown = require('react-remarkable');
@@ -22,23 +21,14 @@ const Contact = React.createClass({
       "Office": "Loading ...",
       "City": "Loading ...",
       map: '',
-      details: 'Loading ...'
+      details: []
     };
   },
   componentDidMount(){
-    window.scrollTo(0, 0);
-    store.dispatch({
-      type: 'NAV_AFFIX_RESET'
-    });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/28')
       .then(({acf})=>{
         this.setState(acf);
       });
-  },
-  handleWaypoint(){
-    store.dispatch({
-      type: 'NAV_AFFIX_TOGGLE'
-    });
   },
   render(){
     return (
@@ -50,9 +40,6 @@ const Contact = React.createClass({
           Office={this.state.Office}
           City={this.state.City}
           url={this.state.map}/>
-        <MediaQuery minDeviceWidth={1281}>
-          <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
-        </MediaQuery>
         <Ryan
           mobileimage={this.state.mobileimage}
           image={this.state.image}
@@ -211,9 +198,9 @@ const Ryan = React.createClass({
           </Markdown>
         </div>
         <div className="details">
-          <Markdown>
-            {this.props.details}
-          </Markdown>
+          {this.props.details.map(({paragraph}, index)=>{
+            return <Markdown options={{'html': true}} key={index}>{paragraph}</Markdown>;
+          })}
         </div>
       </div>
     );
@@ -232,9 +219,9 @@ const Ryan = React.createClass({
           </div>
         </div>
         <div className="details">
-          <Markdown>
-            {this.props.details}
-          </Markdown>
+          {this.props.details.map(({paragraph}, index)=>{
+            return <Markdown options={{'html': true}} key={index}>{paragraph}</Markdown>;
+          })}
         </div>
       </div>
     );

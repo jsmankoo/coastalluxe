@@ -1,5 +1,4 @@
 var React = require('react');
-var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
 var Markdown = require('react-remarkable');
 
@@ -47,10 +46,6 @@ const Property = React.createClass({
     };
   },
   componentDidMount(){
-    window.scrollTo(0, 0);
-    store.dispatch({
-      type: 'NAV_AFFIX_RESET'
-    });
     switch (this.props.params.building) {
       case 'featured':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81')
@@ -94,17 +89,9 @@ const Property = React.createClass({
         });
       });
   },
-  handleWaypoint(){
-    store.dispatch({
-      type: 'NAV_AFFIX_TOGGLE'
-    });
-  },
   render(){
     return (
       <div className="Property">
-        <MediaQuery minDeviceWidth={1281}>
-          <Waypoint onEnter={this.handleWaypoint} onLeave={this.handleWaypoint}/>
-        </MediaQuery>
         <Jumbotron {...this.state} />
         <Details {...this.state.property} options={this.state.options} />
         {
@@ -200,6 +187,11 @@ const Details = React.createClass({
               this.props.slide_show.map(({img}, index)=>{
                 return (
                   <div key={index} className="item img-wrapper" style={{backgroundImage: `url(${img})`}}>
+                    {
+                      this.props.text === '' ?
+                      <div /> :
+                      <div className="specialText">{this.props.text}</div>
+                    }
                   </div>
                 );
               })
@@ -221,7 +213,7 @@ const Details = React.createClass({
           </div>
           <div className="info-wrapper">
             <div className="area">
-              SQ.FT. <br /> {this.props.area}
+              APPROX. SQ.FT. <br /> {this.props.area}
             </div>
           </div>
           <div className="info-wrapper">

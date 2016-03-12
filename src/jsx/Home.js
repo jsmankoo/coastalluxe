@@ -1,5 +1,4 @@
 var React = require('react');
-var Waypoint = require('react-waypoint');
 var MediaQuery = require('react-responsive');
 var ReactBGVideo = require('react-background-video');
 var Markdown = require('react-remarkable');
@@ -196,15 +195,15 @@ const Featured = React.createClass({
 const Ryan = React.createClass({
   getInitialState(){
     return {
-      "image": "/img/loader.gif",
+      "image": "/img/loading-img.png",
       "facebook": "",
       "twitter": "",
       "email": "",
       "instagram": "",
       "name": "Loading ...",
       "content": "Loading ...",
-      "mobileimage": "/img/loader.gif",
-      "bgImage": "/img/loader.gif"
+      "mobileimage": "/img/loading-img.png",
+      "bgImage": ""
     };
   },
   componentDidMount(){
@@ -275,7 +274,7 @@ const Ryan = React.createClass({
         </div>
         <div className="Row">
           <div className="socialMedia">
-            <a href={this.state.email}><i className='fa fa-envelope' /></a>
+            <a href={`mailto:${this.state.email}`}><i className='fa fa-envelope' /></a>
             <a href={this.state.facebook}><i className='fa fa-facebook-f' /></a>
             <a href={this.state.twitter}><i className='fa fa-twitter' /></a>
             <a href={this.state.instagram}><i className='fa fa-instagram' /></a>
@@ -306,7 +305,7 @@ const Ryan = React.createClass({
         </div>
         <div className="Row">
           <div className="socialMedia">
-            <a href={this.state.email}><i className='fa fa-envelope' /></a>
+            <a href={`mailto:${this.state.email}`}><i className='fa fa-envelope' /></a>
             <a href={this.state.facebook}><i className='fa fa-facebook-f' /></a>
             <a href={this.state.twitter}><i className='fa fa-twitter' /></a>
             <a href={this.state.instagram}><i className='fa fa-instagram' /></a>

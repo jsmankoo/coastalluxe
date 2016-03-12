@@ -8,16 +8,6 @@ var Menu = require('./components/Menu');
 var Foot = require('./components/Foot');
 
 const App = React.createClass({
-  componentDidMount(){
-  },
-  handleEnter(event){
-    console.log('enter');
-    store.dispatch({type: 'MENU_BUTTON_TOGGLE'});
-  },
-  handleLeave(event){
-    console.log('leave');
-    store.dispatch({type: 'MENU_BUTTON_TOGGLE'});
-  },
   render(){
     return (
       <div className="App">
@@ -27,9 +17,9 @@ const App = React.createClass({
            <Menu {...store.getState().Menu} menuLogo={store.getState().Nav.menuLogo} />
           : <div />
         }
-        <MediaQuery minDeviceWidth={1281}>
+        {/*<MediaQuery minDeviceWidth={1281}>
           <Waypoint onEnter={this.handleEnter} onLeave={this.handleLeave} />
-        </MediaQuery>
+        </MediaQuery>*/}
         {this.props.children}
         <Foot {...store.getState().Foot} />
       </div>

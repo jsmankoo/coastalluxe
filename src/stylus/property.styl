@@ -23,7 +23,7 @@
           +below(767px)
             font-size 40px
         .border
-          border-top 1px solid lightBlue
+          border-top 1px solid infoBorder
           +below(767px)
             margin 10px auto
             size 200px auto
@@ -36,7 +36,7 @@
           font-family: otherFont
           font-weight: 700
           .address
-            font-size: 20px
+            font-size: 18px
             line-height: 25px
           i.fa
             font-size 25px
@@ -46,6 +46,8 @@
               margin 20px auto 0px
   .Details
     margin-bottom 120px
+    +below(767px)
+      margin-bottom 60px
     .slideShow
       padding 60px 0px 0px
       +below(767px)
@@ -54,11 +56,27 @@
         background-repeat: no-repeat
         background-size: cover
         background-position: center
+        position relative
         size 1280px 600px
         max-width: 100%
         margin auto auto 40px
         +below(767px)
           size 100% 300px
+        .specialText
+          background-color slideShowSpecialText
+          color white
+          font-size 25px
+          font-weight: 700
+          padding 25px 35px
+          size auto auto
+          min-width: 10px
+          letter-spacing: 1px
+          text-align: center
+          absolute top 0px right 0px
+          +below(767px)
+            font-size 15px
+            padding 8px 20px
+
     .info
       center(1280px)
       margin 40px auto 60px
@@ -83,9 +101,12 @@
           font-weight: 700
           font-family otherFont
           font-size 20px
-          line-height 50px
+          line-height 37px
+          +above(768px)
+            border-right 1px solid infoBorder
           +below(767px)
             font-size 16px
+            border-right 1px solid infoBorder
         .bedBath
           align(b)
           width 100%
@@ -94,7 +115,9 @@
           font-weight: 700
           font-family otherFont
           font-size 20px
-          line-height 50px
+          line-height 37px
+          +above(768px)
+            border-right 1px solid infoBorder
           +below(767px)
             font-size 16px
         .area
@@ -105,9 +128,12 @@
           font-weight: 700
           font-family otherFont
           font-size 20px
-          line-height 50px
+          line-height 37px
+          +above(768px)
+            border-right 1px solid infoBorder
           +below(767px)
             font-size 16px
+            border-right 1px solid infoBorder
         .mls
           align(b)
           width 100%
@@ -116,53 +142,83 @@
           font-weight: 700
           font-family otherFont
           font-size 20px
-          line-height 50px
+          line-height 37px
           +below(767px)
             font-size 16px
     .paragraph
-      font-family: otherFont
       center(1100px)
-      color darkBlue
       text-align: center
-      // padding-top 40px
+      font-family: otherFont
+      color darkBlue
       h1
-        col()
         h1()
-        +above(768px)
-          font-size: 50px
       h2
-        col()
         h2()
       h3
-        col()
         h3()
       h4
-        col()
         h4()
       h5
-        col()
         h5()
       h6
-        col()
         h6()
-      p
-        normal()
-        line-height 35px
-        margin auto
-        +below(767px)
-          font-size 18px
-        +above(768px)
-          font-size 18px
+      +below(767px)
+        margin-top 50px
+        h1
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          line-height: 40px
+          margin-top 0px
+        h2
+        h3
+        h4
+        h5
+        h6
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          // margin-top 0px
+        p
+          font-size 14px
+          line-height: 27px
+          font-weight: 500
+          margin-bottom 0px
+          text-align: center
+      +above(768px)
+        h1
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          line-height: 40px
+          margin-top 0px
+        h2
+        h3
+        h4
+        h5
+        h6
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          // margin-top 0px
+        p
+          font-size 16px
+          line-height: 27px
+          font-weight: 500
+          margin-bottom 0px
   .Facilities
     padding-bottom 100px
     +below(767px)
+      // padding-top 50px
       padding-bottom 50px
     .title
       text-align: center
       h1()
       color: darkBlue
       font-family: otherFont
-      font-weight: 700
+      font-weight: 500
+      +below(767px)
+        font-size 30px
     #facilitiesSlide
       center(1280px)
       .owl-controls
