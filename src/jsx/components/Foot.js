@@ -35,7 +35,7 @@ const Mobile = React.createClass({
         </div>
         <div className="col">
           <div className="socialMedia">
-            <a href={this.props.email} ><i className='fa fa-envelope' /></a>
+            <a href={`mailto:${this.props.email}`} ><i className='fa fa-envelope' /></a>
             <a href={this.props.facebook} ><i className='fa fa-facebook-f' /></a>
             <a href={this.props.twitter} ><i className='fa fa-twitter' /></a>
             <a href={this.props.instagram} ><i className='fa fa-instagram' /></a>
@@ -84,7 +84,7 @@ const Tablet = React.createClass({
         </div>
         <div className="midContent">
           <div className="socialMedia">
-            <a href={this.props.email} ><i className='fa fa-envelope' /></a>
+            <a href={`mailto:${this.props.email}`} ><i className='fa fa-envelope' /></a>
             <a href={this.props.facebook} ><i className='fa fa-facebook-f' /></a>
             <a href={this.props.twitter} ><i className='fa fa-twitter' /></a>
             <a href={this.props.instagram} ><i className='fa fa-instagram' /></a>

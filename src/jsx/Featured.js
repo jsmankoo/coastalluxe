@@ -12,6 +12,7 @@ const FeaturedProperties = React.createClass({
         "jumbotron": ""
       },
       buildings: {
+        done: false,
         page: 2,
         all: [],
         properties: [],
@@ -22,6 +23,7 @@ const FeaturedProperties = React.createClass({
     };
   },
   componentDidMount(){
+    $(window).scrollTop(0);
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81')
       .then(({acf})=>{
         this.setState({...this.state,
@@ -94,6 +96,7 @@ const FeaturedProperties = React.createClass({
             })]
           }
         });
+        return data.length;
       });
     const building13700 = $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr?page=${this.state.buildings.page}`)
       .then((data)=>{
@@ -110,6 +113,7 @@ const FeaturedProperties = React.createClass({
             })]
           }
         });
+        return data.length;
       });
     const building13750 = $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr?page=${this.state.buildings.page}`)
       .then((data)=>{
@@ -126,6 +130,7 @@ const FeaturedProperties = React.createClass({
             })]
           }
         });
+        return data.length;
       });
     const building13800 = $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr?page=${this.state.buildings.page}`)
       .then((data)=>{
@@ -142,8 +147,16 @@ const FeaturedProperties = React.createClass({
             })]
           }
         });
+        return data.length;
       });
     $.when(featured, building13700, building13750, building13800).done((v1, v2, v3, v4)=>{
+      if(v1 === 0 && v2 === 0 && v3 === 0 && v4 === 0){
+        this.setState({...this.state,
+          buildings: {...this.state.buildings,
+            done: true
+          }
+        });
+      }
       this.setState({...this.state,
         buildings: {...this.state.buildings,
           page: this.state.buildings.page + 1
@@ -317,11 +330,15 @@ const Properties = React.createClass({
             })
           }
         </div>
-        <div className="moreProperties">
-          <a onClick={this.props.loadProperties}>
-            Load more
-          </a>
-        </div>
+        {
+          this.props.done ?
+          <div /> :
+          <div className="moreProperties">
+            <a onClick={this.props.loadProperties}>
+              Load more
+            </a>
+          </div>
+        }
       </div>
     );
   }

@@ -38489,7 +38489,8 @@ var Property = React.createClass({
         "jumbotron": "",
         "facilities": [],
         "streetAddress": "",
-        "city": ""
+        "city": "",
+        floor_plans: []
       },
       featured: [],
       options: {
@@ -38504,6 +38505,7 @@ var Property = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
+    $(window).scrollTop(0);
     switch (this.props.buildingName) {
       case '13700marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137').then(function (_ref) {
@@ -38550,7 +38552,8 @@ var Property = React.createClass({
         featured: this.state.featured,
         options: this.state.options }),
       React.createElement(Details, this.state.building),
-      this.state.building.facilities.length === 0 ? React.createElement('div', null) : React.createElement(Facilities, this.state.building)
+      this.state.building.facilities.length === 0 ? React.createElement('div', null) : React.createElement(Facilities, this.state.building),
+      React.createElement(Floorplans, this.state.building)
     );
   }
 });
@@ -38811,6 +38814,32 @@ var Facilities = React.createClass({
   }
 });
 
+var Floorplans = React.createClass({
+  displayName: 'Floorplans',
+  render: function render() {
+    console.log(this.props.floor_plans);
+    return React.createElement(
+      'div',
+      { className: 'Floorplans' },
+      React.createElement(
+        'div',
+        { className: 'Title' },
+        'Floor Plans'
+      ),
+      this.props.floor_plans.map(function (_ref5, index) {
+        var floor_name = _ref5.floor_name;
+        var floor_plan = _ref5.floor_plan;
+
+        return React.createElement(
+          'a',
+          { className: 'FloorPlan', href: floor_plan, key: index },
+          floor_name
+        );
+      })
+    );
+  }
+});
+
 module.exports = Property;
 
 },{"./components/OwlCarousel":332,"./store":333,"react":249,"react-remarkable":61,"react-responsive":62}],324:[function(require,module,exports){
@@ -38846,6 +38875,7 @@ var Contact = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
+    $(window).scrollTop(0);
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/28').then(function (_ref) {
       var acf = _ref.acf;
 
@@ -38906,7 +38936,9 @@ var Top = React.createClass({
             src: '/img/ryan.ogv'
           }],
           poster: '/img/ryan.jpg',
-          loop: true },
+          loop: true,
+          autoPlay: true,
+          preload: true },
         React.createElement(
           'div',
           { className: 'BGContent' },
@@ -38998,7 +39030,9 @@ var Top = React.createClass({
             src: '/img/ryan.ogv'
           }],
           poster: '/img/ryan.jpg',
-          loop: true },
+          loop: true,
+          autoPlay: true,
+          preload: true },
         React.createElement(
           'div',
           { className: 'BGContent' },
@@ -39025,6 +39059,7 @@ var Top = React.createClass({
                 this.props.Mobile
               )
             ),
+            React.createElement('div', { className: 'border' }),
             React.createElement(
               'a',
               { href: this.props.url, className: 'office wrapper' },
@@ -39043,6 +39078,7 @@ var Top = React.createClass({
                 this.props.City
               )
             ),
+            React.createElement('div', { className: 'border' }),
             React.createElement(
               'a',
               { href: 'mailto:' + this.props.email, className: 'email wrapper' },
@@ -39178,6 +39214,7 @@ var FeaturedProperties = React.createClass({
         "jumbotron": ""
       },
       buildings: {
+        done: false,
         page: 2,
         all: [],
         properties: [],
@@ -39190,6 +39227,7 @@ var FeaturedProperties = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
+    $(window).scrollTop(0);
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81').then(function (_ref) {
       var acf = _ref.acf;
 
@@ -39291,6 +39329,7 @@ var FeaturedProperties = React.createClass({
           })))
         })
       }));
+      return data.length;
     });
     var building13700 = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr?page=' + this.state.buildings.page).then(function (data) {
       var list = data.map(function (_ref7) {
@@ -39309,6 +39348,7 @@ var FeaturedProperties = React.createClass({
           })))
         })
       }));
+      return data.length;
     });
     var building13750 = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr?page=' + this.state.buildings.page).then(function (data) {
       var list = data.map(function (_ref8) {
@@ -39327,6 +39367,7 @@ var FeaturedProperties = React.createClass({
           })))
         })
       }));
+      return data.length;
     });
     var building13800 = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr?page=' + this.state.buildings.page).then(function (data) {
       var list = data.map(function (_ref9) {
@@ -39345,8 +39386,16 @@ var FeaturedProperties = React.createClass({
           })))
         })
       }));
+      return data.length;
     });
     $.when(featured, building13700, building13750, building13800).done(function (v1, v2, v3, v4) {
+      if (v1 === 0 && v2 === 0 && v3 === 0 && v4 === 0) {
+        _this2.setState(_extends({}, _this2.state, {
+          buildings: _extends({}, _this2.state.buildings, {
+            done: true
+          })
+        }));
+      }
       _this2.setState(_extends({}, _this2.state, {
         buildings: _extends({}, _this2.state.buildings, {
           page: _this2.state.buildings.page + 1
@@ -39557,7 +39606,7 @@ var Properties = React.createClass({
           );
         })
       ),
-      React.createElement(
+      this.props.done ? React.createElement('div', null) : React.createElement(
         'div',
         { className: 'moreProperties' },
         React.createElement(
@@ -39593,6 +39642,7 @@ var store = require('./store');
 var Home = React.createClass({
   displayName: 'Home',
   componentDidMount: function componentDidMount() {
+    $(window).scrollTop(0);
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/18').then(function (_ref) {
       var acf = _ref.acf;
 
@@ -39816,14 +39866,14 @@ var Ryan = React.createClass({
   displayName: 'Ryan',
   getInitialState: function getInitialState() {
     return {
-      "image": "/img/loading-img.png",
+      "image": "/img/transparent.png",
       "facebook": "",
       "twitter": "",
       "email": "",
       "instagram": "",
       "name": "Loading ...",
       "content": "Loading ...",
-      "mobileimage": "/img/loading-img.png",
+      "mobileimage": "/img/transparent.png",
       "bgImage": ""
     };
   },
@@ -40327,6 +40377,7 @@ var Property = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
+    $(window).scrollTop(0);
     switch (this.props.params.building) {
       case 'featured':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81').then(function (_ref) {
@@ -40783,7 +40834,7 @@ var Mobile = React.createClass({
           { className: 'socialMedia' },
           React.createElement(
             'a',
-            { href: this.props.email },
+            { href: 'mailto:' + this.props.email },
             React.createElement('i', { className: 'fa fa-envelope' })
           ),
           React.createElement(
@@ -40891,7 +40942,7 @@ var Tablet = React.createClass({
           { className: 'socialMedia' },
           React.createElement(
             'a',
-            { href: this.props.email },
+            { href: 'mailto:' + this.props.email },
             React.createElement('i', { className: 'fa fa-envelope' })
           ),
           React.createElement(
@@ -41680,11 +41731,11 @@ var reducer = function reducer(state, action) {
 var store = Redux.createStore(reducer, {
   Nav: {
     contactLogo: 'fa-paper-plane',
-    logo: '/img/loading-img.png',
+    logo: '/img/transparent.png',
     menuLogo: 'fa-bars',
     affix: false,
-    desktopLogo: '/img/loading-img.png',
-    mobileLogo: '/img/loading-img.png'
+    desktopLogo: '/img/transparent.png',
+    mobileLogo: '/img/transparent.png'
   },
   Menu: {
     buttonShow: true,
@@ -41692,8 +41743,8 @@ var store = Redux.createStore(reducer, {
     list: []
   },
   Foot: {
-    "footerLogo": "/img/loading-img.png",
-    "berkshireLogo": "/img/loading-img.png",
+    "footerLogo": '/img/transparent.png',
+    "berkshireLogo": '/img/transparent.png',
     "email": "",
     "facebook": "",
     "twitter": "",
@@ -41701,7 +41752,7 @@ var store = Redux.createStore(reducer, {
     "copyright": "Loading ...",
     "information": "Loading ...",
     "dev": "Loading ...",
-    "equalIcon": "/img/loading-img.png"
+    "equalIcon": '/img/transparent.png'
   },
   Home: {
     "headline": "Loading ...",

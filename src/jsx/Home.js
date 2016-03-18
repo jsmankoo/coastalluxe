@@ -9,6 +9,7 @@ var store = require('./store');
 
 const Home = React.createClass({
   componentDidMount(){
+    $(window).scrollTop(0);
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/18')
       .then(({acf})=>{
         store.dispatch({
@@ -195,14 +196,14 @@ const Featured = React.createClass({
 const Ryan = React.createClass({
   getInitialState(){
     return {
-      "image": "/img/loading-img.png",
+      "image": "/img/transparent.png",
       "facebook": "",
       "twitter": "",
       "email": "",
       "instagram": "",
       "name": "Loading ...",
       "content": "Loading ...",
-      "mobileimage": "/img/loading-img.png",
+      "mobileimage": "/img/transparent.png",
       "bgImage": ""
     };
   },

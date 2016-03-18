@@ -23,7 +23,7 @@
           color white
           font-family: otherFont
           font-weight: 700
-          font-size: 40px
+          font-size: 30px
           text-align: center
           padding 70px 0px
         .hidden
@@ -32,12 +32,17 @@
           center()
           background-color ContactInfoTint
           color darkBlue
-          text-align: center
           font-family: otherFont
           font-weight: 500;
           font-size 20px
           padding-top 20px
           padding-bottom 20px
+          .border
+            center()
+            border-bottom 1px solid lightBlue
+            size 300px auto
+            display: block
+            margin: auto
           .wrapper
             column(1)
             color lightBlue
@@ -47,12 +52,23 @@
             .icon
               column(1/5)
               text-align: center
-              font-size 22px
-              padding 5px 0px
+              i.fa.fa-mobile
+                font-size: 30px
+                padding 0px 0px 12px
+              i.fa.fa-map-marker
+                font-size: 25px
+                padding 12px 0px
+              i.fa.fa-paper-plane
+                font-size: 19px
+                padding 12px 0px 0px
             .content
               column(4/5)
               font-size 14px
-              padding 5px 0px
+              text-align: left
+              padding 7px 0px
+            &.email
+              .content
+                padding 12px 0px
 
     .Tablet
       .BGContent
@@ -126,6 +142,7 @@
           font-family: mainFont
           text-align: center
           line-height: 40px
+          font-size: 30px
           // margin-top 0px
         h2
         h3

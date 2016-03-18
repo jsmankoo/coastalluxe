@@ -25,6 +25,7 @@ const Contact = React.createClass({
     };
   },
   componentDidMount(){
+    $(window).scrollTop(0);
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/28')
       .then(({acf})=>{
         this.setState(acf);
@@ -76,7 +77,9 @@ const Top = React.createClass({
             src: '/img/ryan.ogv'
           }]}
           poster='/img/ryan.jpg'
-          loop={true}>
+          loop={true}
+          autoPlay={true}
+          preload={true}>
           <div className="BGContent">
             <div className="name">
               {this.props.name}
@@ -133,7 +136,9 @@ const Top = React.createClass({
             src: '/img/ryan.ogv'
           }]}
           poster='/img/ryan.jpg'
-          loop={true}>
+          loop={true}
+          autoPlay={true}
+          preload={true}>
           <div className="BGContent">
             <div className="name">
               {this.props.name}
@@ -149,6 +154,7 @@ const Top = React.createClass({
                   {this.props.Mobile}
                 </div>
               </div>
+              <div className="border" />
               <a href={this.props.url} className="office wrapper">
                 <div className="icon">
                   <i className='fa fa-map-marker' />
@@ -157,6 +163,7 @@ const Top = React.createClass({
                   {this.props.Office} <br/> {this.props.City}
                 </div>
               </a>
+              <div className="border" />
               <a href={`mailto:${this.props.email}`} className="email wrapper">
                 <div className="icon">
                   <i className='fa fa-paper-plane' />

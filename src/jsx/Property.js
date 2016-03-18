@@ -46,6 +46,7 @@ const Property = React.createClass({
     };
   },
   componentDidMount(){
+    $(window).scrollTop(0);
     switch (this.props.params.building) {
       case 'featured':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81')

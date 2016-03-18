@@ -16,7 +16,8 @@ const Property = React.createClass({
         "jumbotron": "",
         "facilities": [],
         "streetAddress": "",
-        "city": ""
+        "city": "",
+        floor_plans: []
       },
       featured: [],
       options : {
@@ -29,6 +30,7 @@ const Property = React.createClass({
     };
   },
   componentDidMount(){
+    $(window).scrollTop(0);
     switch (this.props.buildingName) {
       case '13700marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137')
@@ -74,6 +76,7 @@ const Property = React.createClass({
           ? <div />
           : <Facilities {...this.state.building} />
         }
+        <Floorplans {...this.state.building} />
       </div>
     );
   }
@@ -278,6 +281,28 @@ const Facilities = React.createClass({
             })
           }
         </OwlCarousel>
+      </div>
+    );
+  }
+});
+
+const Floorplans = React.createClass({
+  render(){
+    console.log(this.props.floor_plans);
+    return (
+      <div className="Floorplans">
+        <div className="Title">
+          Floor Plans
+        </div>
+        {
+          this.props.floor_plans.map(({floor_name, floor_plan}, index)=>{
+            return (
+              <a className='FloorPlan' href={floor_plan} key={index}>
+                {floor_name}
+              </a>
+            );
+          })
+        }
       </div>
     );
   }

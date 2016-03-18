@@ -991,7 +991,7 @@ th {
 }
 @media only screen and (max-width: 767px) {
   .Home .Featured .Heading .title {
-    font-size: 40px;
+    font-size: 30px;
     margin: 70px auto 20px;
   }
 }
@@ -1208,7 +1208,7 @@ th {
 }
 .Home .Ryan .Mobile .name {
   margin: 50px auto 25px;
-  font-size: 40px;
+  font-size: 30px;
 }
 .Home .Ryan .Mobile .image img {
   display: block;
@@ -1278,6 +1278,7 @@ th {
   font-family: museo-sans;
   text-align: center;
   line-height: 40px;
+  font-size: 30px;
 }
 .Home .Ryan .Mobile .info h2,
 .Home .Ryan .Mobile .info h3,
@@ -1575,7 +1576,7 @@ th {
 @media only screen and (max-width: 767px) {
   .Home .Explore .wrap .title {
     margin: 50px auto 30px;
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -1725,7 +1726,7 @@ th {
 }
 @media only screen and (max-width: 767px) {
   .Home .Explore .wrap .links .link-wrap .link .titleWrapper .linkTitle {
-    font-size: 35px;
+    font-size: 30px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
@@ -1804,7 +1805,7 @@ th {
   color: #fff;
   font-family: museo-slab;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
   padding: 70px 0px;
 }
@@ -1824,7 +1825,6 @@ th {
   padding-right: 0;
   background-color: rgba(255,255,255,0.75);
   color: #003785;
-  text-align: center;
   font-family: museo-slab;
   font-weight: 500;
   font-size: 20px;
@@ -1837,6 +1837,30 @@ th {
   display: table;
 }
 .Contact .Top .Mobile .BGContent .info:after {
+  clear: both;
+}
+.Contact .Top .Mobile .BGContent .info .border {
+  *zoom: 1;
+  width: auto;
+  max-width: 1440px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 1px solid #0067d4;
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+.Contact .Top .Mobile .BGContent .info .border:before,
+.Contact .Top .Mobile .BGContent .info .border:after {
+  content: '';
+  display: table;
+}
+.Contact .Top .Mobile .BGContent .info .border:after {
   clear: both;
 }
 .Contact .Top .Mobile .BGContent .info .wrapper {
@@ -1873,8 +1897,6 @@ th {
   margin-left: 0%;
   margin-right: 3%;
   text-align: center;
-  font-size: 22px;
-  padding: 5px 0px;
 }
 .Contact .Top .Mobile .BGContent .info .wrapper .icon:before,
 .Contact .Top .Mobile .BGContent .info .wrapper .icon:after {
@@ -1887,6 +1909,18 @@ th {
 .Contact .Top .Mobile .BGContent .info .wrapper .icon:last-child {
   margin-right: 0%;
 }
+.Contact .Top .Mobile .BGContent .info .wrapper .icon i.fa.fa-mobile {
+  font-size: 30px;
+  padding: 0px 0px 12px;
+}
+.Contact .Top .Mobile .BGContent .info .wrapper .icon i.fa.fa-map-marker {
+  font-size: 25px;
+  padding: 12px 0px;
+}
+.Contact .Top .Mobile .BGContent .info .wrapper .icon i.fa.fa-paper-plane {
+  font-size: 19px;
+  padding: 12px 0px 0px;
+}
 .Contact .Top .Mobile .BGContent .info .wrapper .content {
   *zoom: 1;
   float: left;
@@ -1896,7 +1930,8 @@ th {
   margin-left: 0%;
   margin-right: 3%;
   font-size: 14px;
-  padding: 5px 0px;
+  text-align: left;
+  padding: 7px 0px;
 }
 .Contact .Top .Mobile .BGContent .info .wrapper .content:before,
 .Contact .Top .Mobile .BGContent .info .wrapper .content:after {
@@ -1908,6 +1943,9 @@ th {
 }
 .Contact .Top .Mobile .BGContent .info .wrapper .content:last-child {
   margin-right: 0%;
+}
+.Contact .Top .Mobile .BGContent .info .wrapper.email .content {
+  padding: 12px 0px;
 }
 .Contact .Top .Tablet .BGContent .name {
   color: #fff;
@@ -2069,6 +2107,7 @@ th {
   font-family: museo-sans;
   text-align: center;
   line-height: 40px;
+  font-size: 30px;
 }
 .Contact .Ryan .Mobile .content h2,
 .Contact .Ryan .Mobile .details h2,
@@ -2394,7 +2433,7 @@ th {
 }
 @media only screen and (max-width: 767px) {
   .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .title {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -2840,7 +2879,7 @@ th {
 }
 @media only screen and (max-width: 767px) {
   .Property .Jumbotron .bgTint .jumbotron-wrapper .title {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 .Property .Jumbotron .bgTint .jumbotron-wrapper .border {
@@ -2869,6 +2908,11 @@ th {
 .Property .Jumbotron .bgTint .jumbotron-wrapper .info .address {
   font-size: 18px;
   line-height: 25px;
+}
+@media only screen and (max-width: 767px) {
+  .Property .Jumbotron .bgTint .jumbotron-wrapper .info .address {
+    font-size: 14px;
+  }
 }
 .Property .Jumbotron .bgTint .jumbotron-wrapper .info i.fa {
   font-size: 25px;
@@ -3187,6 +3231,7 @@ th {
     text-align: center;
     line-height: 40px;
     margin-top: 0px;
+    font-size: 30px;
   }
   .Property .Details .paragraph h2,
   .Property .Details .paragraph h3,
@@ -3471,7 +3516,7 @@ th {
 }
 @media only screen and (max-width: 767px) {
   .Building .Jumbotron .bgTint .jumbotron-wrapper .title {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 .Building .Jumbotron .bgTint .jumbotron-wrapper .border {
@@ -3500,6 +3545,11 @@ th {
 .Building .Jumbotron .bgTint .jumbotron-wrapper .info .address {
   font-size: 18px;
   line-height: 25px;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Jumbotron .bgTint .jumbotron-wrapper .info .address {
+    font-size: 14px;
+  }
 }
 .Building .Jumbotron .bgTint .jumbotron-wrapper .info i.fa {
   font-size: 25px;
@@ -3687,6 +3737,7 @@ th {
     text-align: center;
     line-height: 40px;
     margin-top: 0px;
+    font-size: 30px;
   }
   .Building .Details .intro .paragraph h2,
   .Building .Details .intro .paragraph h3,
@@ -3814,6 +3865,7 @@ th {
     text-align: center;
     line-height: 40px;
     margin-top: 0px;
+    font-size: 30px;
   }
   .Building .Details .rest h2,
   .Building .Details .rest h3,
@@ -4104,6 +4156,59 @@ th {
     font-size: 18px;
     text-align: center;
   }
+}
+.Building .Floorplans {
+  *zoom: 1;
+  width: auto;
+  max-width: 768px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.Building .Floorplans:before,
+.Building .Floorplans:after {
+  content: '';
+  display: table;
+}
+.Building .Floorplans:after {
+  clear: both;
+}
+.Building .Floorplans .Title {
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  text-align: center;
+}
+.Building .Floorplans .FloorPlan {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 31.33333333333333%;
+  margin-left: 0%;
+  margin-right: 3%;
+  text-align: center;
+}
+.Building .Floorplans .FloorPlan:before,
+.Building .Floorplans .FloorPlan:after {
+  content: '';
+  display: table;
+}
+.Building .Floorplans .FloorPlan:after {
+  clear: both;
+}
+.Building .Floorplans .FloorPlan:nth-child(3n) {
+  margin-right: 0%;
+  float: right;
+}
+.Building .Floorplans .FloorPlan:nth-child(3n+1) {
+  clear: both;
 }
 a {
   color: #003785;
