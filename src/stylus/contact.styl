@@ -1,5 +1,12 @@
 .Contact
   .Top
+    +below(767px)
+      size 100% 470px
+    +above(768px)
+      size 100% 525px
+    position relative
+    overflow hidden
+    background-color rgba(darkBlue, 0.5)
     .BGVideo
       overflow hidden
       position relative
@@ -109,7 +116,10 @@
                   font-size: 27px
               .content
                 text-align: center
-                font-size: 18px
+                +below(1024px)
+                  font-size: 14px
+                +above(1025px)
+                  font-size: 18px
   .Ryan
     .Mobile
       padding 40px 0px 60px

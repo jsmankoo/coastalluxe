@@ -294,15 +294,51 @@ const Floorplans = React.createClass({
         <div className="Title">
           Floor Plans
         </div>
-        {
-          this.props.floor_plans.map(({floor_name, floor_plan}, index)=>{
-            return (
-              <a className='FloorPlan' href={floor_plan} key={index}>
-                {floor_name}
-              </a>
-            );
-          })
-        }
+        <MediaQuery maxDeviceWidth={767}>
+          <div className="Mobile">
+            {
+              this.props.floor_plans.map(({floor_name, floor_plan}, index)=>{
+                return (
+                  <div className='FloorPlan' key={index}>
+                    <a href={floor_plan}>
+                      <i className='fa fa-file'>  {floor_name}</i>
+                    </a>
+                  </div>
+                );
+              })
+            }
+          </div>
+        </MediaQuery>
+        <MediaQuery minDeviceWidth={768} maxDeviceWidth={1279}>
+          <div className="Tablet">
+            {
+              this.props.floor_plans.map(({floor_name, floor_plan}, index)=>{
+                return (
+                  <div className='FloorPlan' key={index}>
+                    <a href={floor_plan}>
+                      <i className='fa fa-file'>  {floor_name}</i>
+                    </a>
+                  </div>
+                );
+              })
+            }
+          </div>
+        </MediaQuery>
+        <MediaQuery minDeviceWidth={1280}>
+          <div className="Desktop">
+            {
+              this.props.floor_plans.map(({floor_name, floor_plan}, index)=>{
+                return (
+                  <div className='FloorPlan' key={index}>
+                    <a href={floor_plan}>
+                      <i className='fa fa-file'>  {floor_name}</i>
+                    </a>
+                  </div>
+                );
+              })
+            }
+          </div>
+        </MediaQuery>
       </div>
     );
   }

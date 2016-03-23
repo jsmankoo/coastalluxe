@@ -267,12 +267,12 @@ const Properties = React.createClass({
       case 'all':
         return list;
       case 'sale':
-        return list.filter(({forSale, lease})=>{
-          return forSale !== '';
+        return list.filter(({forSale, lease, status})=>{
+          return forSale !== '' && status !== 'sold';
         });
       case 'lease':
         return list.filter(({forSale, lease})=>{
-          return lease !== '';
+          return lease !== '' && status !== 'sold';
         });
       case 'sold':
         return list.filter(({status})=>{

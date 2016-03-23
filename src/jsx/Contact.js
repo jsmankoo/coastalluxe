@@ -58,13 +58,16 @@ const Top = React.createClass({
         <MediaQuery maxDeviceWidth={767}>
           {this.Mobile()}
         </MediaQuery>
-        <MediaQuery minDeviceWidth={768}>
+        <MediaQuery minDeviceWidth={768} maxDeviceWidth={1024}>
           {this.Tablet()}
+        </MediaQuery>
+        <MediaQuery minDeviceWidth={1025}>
+          {this.Desktop()}
         </MediaQuery>
       </div>
     );
   },
-  Tablet(){
+  Desktop(){
     return (
       <div className="Tablet">
         <ReactBGVideo
@@ -123,58 +126,111 @@ const Top = React.createClass({
       </div>
     );
   },
-  Mobile(){
+  Tablet(){
     return (
-      <div className=" Mobile">
-        <ReactBGVideo
-          className='BGVideo'
-          videos={[{
-            src: '/img/ryan.mp4'
-          },{
-            src: '/img/ryan.webm'
-          },{
-            src: '/img/ryan.ogv'
-          }]}
-          poster='/img/ryan.jpg'
-          loop={true}
-          autoPlay={true}
-          preload={true}>
-          <div className="BGContent">
-            <div className="name">
-              {this.props.name}
-            </div>
-            <div className="hidden">
-            </div>
-            <div className="info">
-              <div className="mobile wrapper">
-                <div className="icon">
+      <div className="Tablet">
+        <div className="BGVideo" style={{
+          backgroundImage: "url('/img/ryan.jpg')",
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          WebkitBackgroundSize: 'cover',
+          position: 'absolute',
+          minHeight: '100%',
+          minWidth: '100%',
+          zIndex: '-10000'
+        }}>
+        </div>
+        <div className="BGContent">
+          <div className="name">
+            {this.props.name}
+          </div>
+          <div className="hidden">
+          </div>
+          <div className="info">
+            <div className="mobile col">
+              <div className="wrapper">
+                          <div className="icon">
                   <i className='fa fa-mobile' />
                 </div>
                 <div className="content">
                   {this.props.Mobile}
                 </div>
               </div>
-              <div className="border" />
-              <a href={this.props.url} className="office wrapper">
-                <div className="icon">
+            </div>
+            <a href={this.props.url} className="office col">
+              <div className="wrapper">
+                          <div className="icon">
                   <i className='fa fa-map-marker' />
                 </div>
                 <div className="content">
                   {this.props.Office} <br/> {this.props.City}
                 </div>
-              </a>
-              <div className="border" />
-              <a href={`mailto:${this.props.email}`} className="email wrapper">
-                <div className="icon">
+              </div>
+            </a>
+            <a href={`mailto:${this.props.email}`} className="email col">
+              <div className="wrapper">
+                          <div className="icon">
                   <i className='fa fa-paper-plane' />
                 </div>
                 <div className="content">
                   {this.props.email}
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
           </div>
-        </ReactBGVideo>
+        </div>
+      </div>
+    );
+  },
+  Mobile(){
+    return (
+      <div className=" Mobile">
+        <div className="BGVideo" style={{
+          backgroundImage: "url('/img/ryan.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          WebkitBackgroundSize: 'cover',
+          position: 'absolute',
+          minHeight: '100%',
+          minWidth: '100%',
+          zIndex: '-10000'
+        }}>
+        </div>
+        <div className="BGContent">
+          <div className="name">
+            {this.props.name}
+          </div>
+          <div className="hidden">
+          </div>
+          <div className="info">
+            <div className="mobile wrapper">
+              <div className="icon">
+                <i className='fa fa-mobile' />
+              </div>
+              <div className="content">
+                {this.props.Mobile}
+              </div>
+            </div>
+            <div className="border" />
+            <a href={this.props.url} className="office wrapper">
+              <div className="icon">
+                <i className='fa fa-map-marker' />
+              </div>
+              <div className="content">
+                {this.props.Office} <br/> {this.props.City}
+              </div>
+            </a>
+            <div className="border" />
+            <a href={`mailto:${this.props.email}`} className="email wrapper">
+              <div className="icon">
+                <i className='fa fa-paper-plane' />
+              </div>
+              <div className="content">
+                {this.props.email}
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     );
   }

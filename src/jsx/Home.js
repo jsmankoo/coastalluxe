@@ -45,17 +45,18 @@ const Top = React.createClass({
   render(){
     return (
       <div className="Top">
-        <ReactBGVideo
-          className='BGVideo'
-          videos={[{
-            src: '/img/azzura.mp4'
-          },{
-            src: '/img/azzura.webm'
-          },{
-            src: '/img/azzura.ogv'
-          }]}
-          poster='/img/azzura.jpg'
-          loop={true}>
+        <MediaQuery maxDeviceWidth={1024}>
+          <div className="BGVideo" style={{
+            backgroundImage: "url('/img/azzura.jpg')",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            WebkitBackgroundSize: 'cover',
+            position: 'absolute',
+            minHeight: '100%',
+            minWidth: '100%',
+            zIndex: '-9999'
+          }}>
+          </div>
           <div className="BGContent">
             <div className="headline">
               {this.props.headline}
@@ -71,7 +72,36 @@ const Top = React.createClass({
               </Link>
             </div>
           </div>
-        </ReactBGVideo>
+        </MediaQuery>
+        <MediaQuery minDeviceWidth={1025}>
+          <ReactBGVideo
+            className='BGVideo'
+            videos={[{
+              src: '/img/azzura.mp4'
+            },{
+              src: '/img/azzura.webm'
+            },{
+              src: '/img/azzura.ogv'
+            }]}
+            poster='/img/azzura.jpg'
+            loop={true}>
+            <div className="BGContent">
+              <div className="headline">
+                {this.props.headline}
+              </div>
+              <div className="bgBorder">
+              </div>
+              <div className="subheadline">
+                {this.props.subheadline}
+              </div>
+              <div className="scrollDown">
+                <Link to='featured' className='button' smooth={true} offset={50} duration={500}>
+                  <i className='fa fa-chevron-down' />
+                </Link>
+              </div>
+            </div>
+          </ReactBGVideo>
+        </MediaQuery>
       </div>
     );
   }

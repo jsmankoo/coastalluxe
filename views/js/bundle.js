@@ -38826,16 +38826,87 @@ var Floorplans = React.createClass({
         { className: 'Title' },
         'Floor Plans'
       ),
-      this.props.floor_plans.map(function (_ref5, index) {
-        var floor_name = _ref5.floor_name;
-        var floor_plan = _ref5.floor_plan;
+      React.createElement(
+        MediaQuery,
+        { maxDeviceWidth: 767 },
+        React.createElement(
+          'div',
+          { className: 'Mobile' },
+          this.props.floor_plans.map(function (_ref5, index) {
+            var floor_name = _ref5.floor_name;
+            var floor_plan = _ref5.floor_plan;
 
-        return React.createElement(
-          'a',
-          { className: 'FloorPlan', href: floor_plan, key: index },
-          floor_name
-        );
-      })
+            return React.createElement(
+              'div',
+              { className: 'FloorPlan', key: index },
+              React.createElement(
+                'a',
+                { href: floor_plan },
+                React.createElement(
+                  'i',
+                  { className: 'fa fa-file' },
+                  '  ',
+                  floor_name
+                )
+              )
+            );
+          })
+        )
+      ),
+      React.createElement(
+        MediaQuery,
+        { minDeviceWidth: 768, maxDeviceWidth: 1279 },
+        React.createElement(
+          'div',
+          { className: 'Tablet' },
+          this.props.floor_plans.map(function (_ref6, index) {
+            var floor_name = _ref6.floor_name;
+            var floor_plan = _ref6.floor_plan;
+
+            return React.createElement(
+              'div',
+              { className: 'FloorPlan', key: index },
+              React.createElement(
+                'a',
+                { href: floor_plan },
+                React.createElement(
+                  'i',
+                  { className: 'fa fa-file' },
+                  '  ',
+                  floor_name
+                )
+              )
+            );
+          })
+        )
+      ),
+      React.createElement(
+        MediaQuery,
+        { minDeviceWidth: 1280 },
+        React.createElement(
+          'div',
+          { className: 'Desktop' },
+          this.props.floor_plans.map(function (_ref7, index) {
+            var floor_name = _ref7.floor_name;
+            var floor_plan = _ref7.floor_plan;
+
+            return React.createElement(
+              'div',
+              { className: 'FloorPlan', key: index },
+              React.createElement(
+                'a',
+                { href: floor_plan },
+                React.createElement(
+                  'i',
+                  { className: 'fa fa-file' },
+                  '  ',
+                  floor_name
+                )
+              )
+            );
+          })
+        )
+      )
     );
   }
 });
@@ -38915,12 +38986,17 @@ var Top = React.createClass({
       ),
       React.createElement(
         MediaQuery,
-        { minDeviceWidth: 768 },
+        { minDeviceWidth: 768, maxDeviceWidth: 1024 },
         this.Tablet()
+      ),
+      React.createElement(
+        MediaQuery,
+        { minDeviceWidth: 1025 },
+        this.Desktop()
       )
     );
   },
-  Tablet: function Tablet() {
+  Desktop: function Desktop() {
     return React.createElement(
       'div',
       { className: 'Tablet' },
@@ -39014,40 +39090,38 @@ var Top = React.createClass({
       )
     );
   },
-  Mobile: function Mobile() {
+  Tablet: function Tablet() {
     return React.createElement(
       'div',
-      { className: ' Mobile' },
+      { className: 'Tablet' },
+      React.createElement('div', { className: 'BGVideo', style: {
+          backgroundImage: "url('/img/ryan.jpg')",
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          WebkitBackgroundSize: 'cover',
+          position: 'absolute',
+          minHeight: '100%',
+          minWidth: '100%',
+          zIndex: '-10000'
+        } }),
       React.createElement(
-        ReactBGVideo,
-        {
-          className: 'BGVideo',
-          videos: [{
-            src: '/img/ryan.mp4'
-          }, {
-            src: '/img/ryan.webm'
-          }, {
-            src: '/img/ryan.ogv'
-          }],
-          poster: '/img/ryan.jpg',
-          loop: true,
-          autoPlay: true,
-          preload: true },
+        'div',
+        { className: 'BGContent' },
         React.createElement(
           'div',
-          { className: 'BGContent' },
+          { className: 'name' },
+          this.props.name
+        ),
+        React.createElement('div', { className: 'hidden' }),
+        React.createElement(
+          'div',
+          { className: 'info' },
           React.createElement(
             'div',
-            { className: 'name' },
-            this.props.name
-          ),
-          React.createElement('div', { className: 'hidden' }),
-          React.createElement(
-            'div',
-            { className: 'info' },
+            { className: 'mobile col' },
             React.createElement(
               'div',
-              { className: 'mobile wrapper' },
+              { className: 'wrapper' },
               React.createElement(
                 'div',
                 { className: 'icon' },
@@ -39058,11 +39132,14 @@ var Top = React.createClass({
                 { className: 'content' },
                 this.props.Mobile
               )
-            ),
-            React.createElement('div', { className: 'border' }),
+            )
+          ),
+          React.createElement(
+            'a',
+            { href: this.props.url, className: 'office col' },
             React.createElement(
-              'a',
-              { href: this.props.url, className: 'office wrapper' },
+              'div',
+              { className: 'wrapper' },
               React.createElement(
                 'div',
                 { className: 'icon' },
@@ -39077,11 +39154,14 @@ var Top = React.createClass({
                 ' ',
                 this.props.City
               )
-            ),
-            React.createElement('div', { className: 'border' }),
+            )
+          ),
+          React.createElement(
+            'a',
+            { href: 'mailto:' + this.props.email, className: 'email col' },
             React.createElement(
-              'a',
-              { href: 'mailto:' + this.props.email, className: 'email wrapper' },
+              'div',
+              { className: 'wrapper' },
               React.createElement(
                 'div',
                 { className: 'icon' },
@@ -39092,6 +39172,84 @@ var Top = React.createClass({
                 { className: 'content' },
                 this.props.email
               )
+            )
+          )
+        )
+      )
+    );
+  },
+  Mobile: function Mobile() {
+    return React.createElement(
+      'div',
+      { className: ' Mobile' },
+      React.createElement('div', { className: 'BGVideo', style: {
+          backgroundImage: "url('/img/ryan.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          WebkitBackgroundSize: 'cover',
+          position: 'absolute',
+          minHeight: '100%',
+          minWidth: '100%',
+          zIndex: '-10000'
+        } }),
+      React.createElement(
+        'div',
+        { className: 'BGContent' },
+        React.createElement(
+          'div',
+          { className: 'name' },
+          this.props.name
+        ),
+        React.createElement('div', { className: 'hidden' }),
+        React.createElement(
+          'div',
+          { className: 'info' },
+          React.createElement(
+            'div',
+            { className: 'mobile wrapper' },
+            React.createElement(
+              'div',
+              { className: 'icon' },
+              React.createElement('i', { className: 'fa fa-mobile' })
+            ),
+            React.createElement(
+              'div',
+              { className: 'content' },
+              this.props.Mobile
+            )
+          ),
+          React.createElement('div', { className: 'border' }),
+          React.createElement(
+            'a',
+            { href: this.props.url, className: 'office wrapper' },
+            React.createElement(
+              'div',
+              { className: 'icon' },
+              React.createElement('i', { className: 'fa fa-map-marker' })
+            ),
+            React.createElement(
+              'div',
+              { className: 'content' },
+              this.props.Office,
+              ' ',
+              React.createElement('br', null),
+              ' ',
+              this.props.City
+            )
+          ),
+          React.createElement('div', { className: 'border' }),
+          React.createElement(
+            'a',
+            { href: 'mailto:' + this.props.email, className: 'email wrapper' },
+            React.createElement(
+              'div',
+              { className: 'icon' },
+              React.createElement('i', { className: 'fa fa-paper-plane' })
+            ),
+            React.createElement(
+              'div',
+              { className: 'content' },
+              this.props.email
             )
           )
         )
@@ -39523,15 +39681,16 @@ var Properties = React.createClass({
         return list.filter(function (_ref12) {
           var forSale = _ref12.forSale;
           var lease = _ref12.lease;
+          var status = _ref12.status;
 
-          return forSale !== '';
+          return forSale !== '' && status !== 'sold';
         });
       case 'lease':
         return list.filter(function (_ref13) {
           var forSale = _ref13.forSale;
           var lease = _ref13.lease;
 
-          return lease !== '';
+          return lease !== '' && status !== 'sold';
         });
       case 'sold':
         return list.filter(function (_ref14) {
@@ -39684,18 +39843,18 @@ var Top = React.createClass({
       'div',
       { className: 'Top' },
       React.createElement(
-        ReactBGVideo,
-        {
-          className: 'BGVideo',
-          videos: [{
-            src: '/img/azzura.mp4'
-          }, {
-            src: '/img/azzura.webm'
-          }, {
-            src: '/img/azzura.ogv'
-          }],
-          poster: '/img/azzura.jpg',
-          loop: true },
+        MediaQuery,
+        { maxDeviceWidth: 1024 },
+        React.createElement('div', { className: 'BGVideo', style: {
+            backgroundImage: "url('/img/azzura.jpg')",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            WebkitBackgroundSize: 'cover',
+            position: 'absolute',
+            minHeight: '100%',
+            minWidth: '100%',
+            zIndex: '-9999'
+          } }),
         React.createElement(
           'div',
           { className: 'BGContent' },
@@ -39717,6 +39876,48 @@ var Top = React.createClass({
               _reactScroll.Link,
               { to: 'featured', className: 'button', smooth: true, offset: 50, duration: 500 },
               React.createElement('i', { className: 'fa fa-chevron-down' })
+            )
+          )
+        )
+      ),
+      React.createElement(
+        MediaQuery,
+        { minDeviceWidth: 1025 },
+        React.createElement(
+          ReactBGVideo,
+          {
+            className: 'BGVideo',
+            videos: [{
+              src: '/img/azzura.mp4'
+            }, {
+              src: '/img/azzura.webm'
+            }, {
+              src: '/img/azzura.ogv'
+            }],
+            poster: '/img/azzura.jpg',
+            loop: true },
+          React.createElement(
+            'div',
+            { className: 'BGContent' },
+            React.createElement(
+              'div',
+              { className: 'headline' },
+              this.props.headline
+            ),
+            React.createElement('div', { className: 'bgBorder' }),
+            React.createElement(
+              'div',
+              { className: 'subheadline' },
+              this.props.subheadline
+            ),
+            React.createElement(
+              'div',
+              { className: 'scrollDown' },
+              React.createElement(
+                _reactScroll.Link,
+                { to: 'featured', className: 'button', smooth: true, offset: 50, duration: 500 },
+                React.createElement('i', { className: 'fa fa-chevron-down' })
+              )
             )
           )
         )
@@ -40379,30 +40580,23 @@ var Property = React.createClass({
 
     $(window).scrollTop(0);
     switch (this.props.params.building) {
-      case 'featured':
-        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81').then(function (_ref) {
+      case '13700marinapointedr':
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137').then(function (_ref) {
           var acf = _ref.acf;
 
           _this.setState(_extends({}, _this.state, { building: _extends({}, _this.state.building, acf) }));
         });
         break;
-      case '13700marinapointedr':
-        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137').then(function (_ref2) {
+      case '13750marinapointedr':
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/139').then(function (_ref2) {
           var acf = _ref2.acf;
 
           _this.setState(_extends({}, _this.state, { building: _extends({}, _this.state.building, acf) }));
         });
         break;
-      case '13750marinapointedr':
-        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/139').then(function (_ref3) {
-          var acf = _ref3.acf;
-
-          _this.setState(_extends({}, _this.state, { building: _extends({}, _this.state.building, acf) }));
-        });
-        break;
       case '13800marinapointedr':
-        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/140').then(function (_ref4) {
-          var acf = _ref4.acf;
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/140').then(function (_ref3) {
+          var acf = _ref3.acf;
 
           _this.setState(_extends({}, _this.state, { building: _extends({}, _this.state.building, acf) }));
         });
@@ -40410,18 +40604,19 @@ var Property = React.createClass({
       default:
         break;
     }
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/' + this.props.params.building + '/' + this.props.params.id).then(function (_ref5) {
-      var acf = _ref5.acf;
+    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/' + this.props.params.building + '/' + this.props.params.id).then(function (_ref4) {
+      var acf = _ref4.acf;
 
       _this.setState(_extends({}, _this.state, {
-        property: _extends({}, _this.state.property, acf)
+        property: _extends({}, _this.state.property, acf),
+        building: _extends({}, _this.state.building, { jumbotron: acf.image })
       }));
     });
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/' + this.props.params.building).then(function (data) {
       _this.setState(_extends({}, _this.state, {
-        featured: data.map(function (_ref6) {
-          var id = _ref6.id;
-          var acf = _ref6.acf;
+        featured: data.map(function (_ref5) {
+          var id = _ref5.id;
+          var acf = _ref5.acf;
 
           return _extends({}, acf, { id: id });
         })
@@ -40541,8 +40736,8 @@ var Details = React.createClass({
         React.createElement(
           OwlCarousel,
           { id: 'slideShow', options: this.props.options },
-          this.props.slide_show.map(function (_ref7, index) {
-            var img = _ref7.img;
+          this.props.slide_show.map(function (_ref6, index) {
+            var img = _ref6.img;
 
             return React.createElement(
               'div',

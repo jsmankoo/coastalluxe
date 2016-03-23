@@ -48,12 +48,6 @@ const Property = React.createClass({
   componentDidMount(){
     $(window).scrollTop(0);
     switch (this.props.params.building) {
-      case 'featured':
-        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/81')
-          .then(({acf})=>{
-            this.setState({...this.state, building: {...this.state.building, ...acf}});
-          });
-        break;
       case '13700marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137')
           .then(({acf})=>{
@@ -78,7 +72,8 @@ const Property = React.createClass({
     $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/${this.props.params.building}/${this.props.params.id}`)
       .then(({acf})=>{
         this.setState({...this.state,
-          property: {...this.state.property, ...acf}
+          property: {...this.state.property, ...acf},
+          building: {...this.state.building, jumbotron: acf.image}
         });
       });
     $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/${this.props.params.building}`)
