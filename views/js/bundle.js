@@ -41131,9 +41131,10 @@ var store = require('../store');
 var Menu = React.createClass({
   displayName: 'Menu',
   render: function render() {
+    var height = $(window).height();
     return React.createElement(
       'div',
-      { className: 'Menu' },
+      { className: 'Menu', style: { height: height - 50 } },
       React.createElement(
         MediaQuery,
         { maxDeviceWidth: 767 },
