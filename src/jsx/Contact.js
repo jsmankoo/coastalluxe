@@ -92,34 +92,34 @@ const Top = React.createClass({
             <div className="info">
               <div className="mobile col">
                 <div className="wrapper">
-                            <div className="icon">
+                  <a href='tel:310-344-0898' className="icon">
                     <i className='fa fa-mobile' />
-                  </div>
+                  </a>
                   <div className="content">
                     {this.props.Mobile}
                   </div>
                 </div>
               </div>
-              <a href={this.props.url} className="office col">
+              <div className="office col">
                 <div className="wrapper">
-                            <div className="icon">
+                  <a href={this.props.url}  className="icon">
                     <i className='fa fa-map-marker' />
-                  </div>
+                  </a>
                   <div className="content">
                     {this.props.Office} <br/> {this.props.City}
                   </div>
                 </div>
-              </a>
-              <a href={`mailto:${this.props.email}`} className="email col">
+              </div>
+              <div className="email col">
                 <div className="wrapper">
-                            <div className="icon">
+                  <a href={`mailto:${this.props.email}`} className="icon">
                     <i className='fa fa-paper-plane' />
-                  </div>
+                  </a>
                   <div className="content">
                     {this.props.email}
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </ReactBGVideo>
@@ -147,36 +147,36 @@ const Top = React.createClass({
           <div className="hidden">
           </div>
           <div className="info">
-            <div className="mobile col">
+            <div className='mobile col'>
               <div className="wrapper">
-                          <div className="icon">
+                <a href='tel:310-344-0898' className="icon">
                   <i className='fa fa-mobile' />
-                </div>
+                </a>
                 <div className="content">
                   {this.props.Mobile}
                 </div>
               </div>
             </div>
-            <a href={this.props.url} className="office col">
+            <div className="office col">
               <div className="wrapper">
-                          <div className="icon">
+                <a href={this.props.url} className="icon">
                   <i className='fa fa-map-marker' />
-                </div>
+                </a>
                 <div className="content">
                   {this.props.Office} <br/> {this.props.City}
                 </div>
               </div>
-            </a>
-            <a href={`mailto:${this.props.email}`} className="email col">
+            </div>
+            <div className="email col">
               <div className="wrapper">
-                          <div className="icon">
+                <a href={`mailto:${this.props.email}`} className="icon">
                   <i className='fa fa-paper-plane' />
-                </div>
+                </a>
                 <div className="content">
                   {this.props.email}
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
@@ -204,31 +204,31 @@ const Top = React.createClass({
           </div>
           <div className="info">
             <div className="mobile wrapper">
-              <div className="icon">
+              <a href='tel:310-344-0898' className="icon">
                 <i className='fa fa-mobile' />
-              </div>
+              </a>
               <div className="content">
                 {this.props.Mobile}
               </div>
             </div>
             <div className="border" />
-            <a href={this.props.url} className="office wrapper">
-              <div className="icon">
+            <div className="office wrapper">
+              <a href={this.props.url} className="icon">
                 <i className='fa fa-map-marker' />
-              </div>
+              </a>
               <div className="content">
                 {this.props.Office} <br/> {this.props.City}
               </div>
-            </a>
+            </div>
             <div className="border" />
-            <a href={`mailto:${this.props.email}`} className="email wrapper">
-              <div className="icon">
+            <div className="email wrapper">
+              <a href={`mailto:${this.props.email}`} className="icon">
                 <i className='fa fa-paper-plane' />
-              </div>
+              </a>
               <div className="content">
                 {this.props.email}
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
@@ -255,15 +255,9 @@ const Ryan = React.createClass({
         <div className="image">
           <img src={this.props.mobileimage} />
         </div>
-        <div className="content">
-          <Markdown>
-            {this.props.content}
-          </Markdown>
+        <div className="content" dangerouslySetInnerHTML={{__html: this.props.content}}>
         </div>
-        <div className="details">
-          {this.props.details.map(({paragraph}, index)=>{
-            return <Markdown options={{'html': true}} key={index}>{paragraph}</Markdown>;
-          })}
+        <div className="details" dangerouslySetInnerHTML={{__html: this.props.details}}>
         </div>
       </div>
     );
@@ -275,16 +269,10 @@ const Ryan = React.createClass({
           <div className="image">
             <img src={this.props.image} />
           </div>
-          <div className="content">
-            <Markdown>
-              {this.props.content}
-            </Markdown>
+          <div className="content" dangerouslySetInnerHTML={{__html: this.props.content}}>
           </div>
         </div>
-        <div className="details">
-          {this.props.details.map(({paragraph}, index)=>{
-            return <Markdown options={{'html': true}} key={index}>{paragraph}</Markdown>;
-          })}
+        <div className="details" dangerouslySetInnerHTML={{__html: this.props.details}}>
         </div>
       </div>
     );

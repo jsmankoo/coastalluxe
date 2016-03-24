@@ -38632,28 +38632,12 @@ var Details = React.createClass({
         'div',
         { className: 'intro' },
         React.createElement('div', { className: 'img-wrapper', style: { backgroundImage: 'url(' + this.props.image + ')' } }),
-        React.createElement(
-          'div',
-          { className: 'paragraph' },
-          React.createElement(
-            Markdown,
-            null,
-            this.props.content
-          )
-        )
+        React.createElement('div', { className: 'paragraph', dangerouslySetInnerHTML: { __html: this.props.content } })
       ),
       this.state.moreContentShow ? React.createElement(
         'div',
         { className: 'rest' },
-        React.createElement(
-          'div',
-          { className: 'paragraph' },
-          React.createElement(
-            Markdown,
-            null,
-            this.props.moreContent
-          )
-        )
+        React.createElement('div', { className: 'paragraph', dangerouslySetInnerHTML: { __html: this.props.moreContent } })
       ) : React.createElement('div', null),
       React.createElement(
         'div',
@@ -38841,12 +38825,20 @@ var Floorplans = React.createClass({
               { className: 'FloorPlan', key: index },
               React.createElement(
                 'a',
-                { href: floor_plan },
+                { href: floor_plan, target: '_blank' },
                 React.createElement(
-                  'i',
-                  { className: 'fa fa-file' },
-                  '  ',
-                  floor_name
+                  'div',
+                  { className: 'icon' },
+                  React.createElement('i', { className: 'fa fa-file' })
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'text-wrapper' },
+                  React.createElement(
+                    'div',
+                    { className: 'text' },
+                    floor_name
+                  )
                 )
               )
             );
@@ -38868,12 +38860,20 @@ var Floorplans = React.createClass({
               { className: 'FloorPlan', key: index },
               React.createElement(
                 'a',
-                { href: floor_plan },
+                { href: floor_plan, target: '_blank' },
                 React.createElement(
-                  'i',
-                  { className: 'fa fa-file' },
-                  '  ',
-                  floor_name
+                  'div',
+                  { className: 'icon' },
+                  React.createElement('i', { className: 'fa fa-file' })
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'text-wrapper' },
+                  React.createElement(
+                    'div',
+                    { className: 'text' },
+                    floor_name
+                  )
                 )
               )
             );
@@ -38895,12 +38895,20 @@ var Floorplans = React.createClass({
               { className: 'FloorPlan', key: index },
               React.createElement(
                 'a',
-                { href: floor_plan },
+                { href: floor_plan, target: '_blank' },
                 React.createElement(
-                  'i',
-                  { className: 'fa fa-file' },
-                  '  ',
-                  floor_name
+                  'div',
+                  { className: 'icon' },
+                  React.createElement('i', { className: 'fa fa-file' })
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'text-wrapper' },
+                  React.createElement(
+                    'div',
+                    { className: 'text' },
+                    floor_name
+                  )
                 )
               )
             );
@@ -39034,8 +39042,8 @@ var Top = React.createClass({
                 'div',
                 { className: 'wrapper' },
                 React.createElement(
-                  'div',
-                  { className: 'icon' },
+                  'a',
+                  { href: 'tel:310-344-0898', className: 'icon' },
                   React.createElement('i', { className: 'fa fa-mobile' })
                 ),
                 React.createElement(
@@ -39046,14 +39054,14 @@ var Top = React.createClass({
               )
             ),
             React.createElement(
-              'a',
-              { href: this.props.url, className: 'office col' },
+              'div',
+              { className: 'office col' },
               React.createElement(
                 'div',
                 { className: 'wrapper' },
                 React.createElement(
-                  'div',
-                  { className: 'icon' },
+                  'a',
+                  { href: this.props.url, className: 'icon' },
                   React.createElement('i', { className: 'fa fa-map-marker' })
                 ),
                 React.createElement(
@@ -39068,14 +39076,14 @@ var Top = React.createClass({
               )
             ),
             React.createElement(
-              'a',
-              { href: 'mailto:' + this.props.email, className: 'email col' },
+              'div',
+              { className: 'email col' },
               React.createElement(
                 'div',
                 { className: 'wrapper' },
                 React.createElement(
-                  'div',
-                  { className: 'icon' },
+                  'a',
+                  { href: 'mailto:' + this.props.email, className: 'icon' },
                   React.createElement('i', { className: 'fa fa-paper-plane' })
                 ),
                 React.createElement(
@@ -39123,8 +39131,8 @@ var Top = React.createClass({
               'div',
               { className: 'wrapper' },
               React.createElement(
-                'div',
-                { className: 'icon' },
+                'a',
+                { href: 'tel:310-344-0898', className: 'icon' },
                 React.createElement('i', { className: 'fa fa-mobile' })
               ),
               React.createElement(
@@ -39135,14 +39143,14 @@ var Top = React.createClass({
             )
           ),
           React.createElement(
-            'a',
-            { href: this.props.url, className: 'office col' },
+            'div',
+            { className: 'office col' },
             React.createElement(
               'div',
               { className: 'wrapper' },
               React.createElement(
-                'div',
-                { className: 'icon' },
+                'a',
+                { href: this.props.url, className: 'icon' },
                 React.createElement('i', { className: 'fa fa-map-marker' })
               ),
               React.createElement(
@@ -39157,14 +39165,14 @@ var Top = React.createClass({
             )
           ),
           React.createElement(
-            'a',
-            { href: 'mailto:' + this.props.email, className: 'email col' },
+            'div',
+            { className: 'email col' },
             React.createElement(
               'div',
               { className: 'wrapper' },
               React.createElement(
-                'div',
-                { className: 'icon' },
+                'a',
+                { href: 'mailto:' + this.props.email, className: 'icon' },
                 React.createElement('i', { className: 'fa fa-paper-plane' })
               ),
               React.createElement(
@@ -39208,8 +39216,8 @@ var Top = React.createClass({
             'div',
             { className: 'mobile wrapper' },
             React.createElement(
-              'div',
-              { className: 'icon' },
+              'a',
+              { href: 'tel:310-344-0898', className: 'icon' },
               React.createElement('i', { className: 'fa fa-mobile' })
             ),
             React.createElement(
@@ -39220,11 +39228,11 @@ var Top = React.createClass({
           ),
           React.createElement('div', { className: 'border' }),
           React.createElement(
-            'a',
-            { href: this.props.url, className: 'office wrapper' },
+            'div',
+            { className: 'office wrapper' },
             React.createElement(
-              'div',
-              { className: 'icon' },
+              'a',
+              { href: this.props.url, className: 'icon' },
               React.createElement('i', { className: 'fa fa-map-marker' })
             ),
             React.createElement(
@@ -39239,11 +39247,11 @@ var Top = React.createClass({
           ),
           React.createElement('div', { className: 'border' }),
           React.createElement(
-            'a',
-            { href: 'mailto:' + this.props.email, className: 'email wrapper' },
+            'div',
+            { className: 'email wrapper' },
             React.createElement(
-              'div',
-              { className: 'icon' },
+              'a',
+              { href: 'mailto:' + this.props.email, className: 'icon' },
               React.createElement('i', { className: 'fa fa-paper-plane' })
             ),
             React.createElement(
@@ -39285,28 +39293,8 @@ var Ryan = React.createClass({
         { className: 'image' },
         React.createElement('img', { src: this.props.mobileimage })
       ),
-      React.createElement(
-        'div',
-        { className: 'content' },
-        React.createElement(
-          Markdown,
-          null,
-          this.props.content
-        )
-      ),
-      React.createElement(
-        'div',
-        { className: 'details' },
-        this.props.details.map(function (_ref2, index) {
-          var paragraph = _ref2.paragraph;
-
-          return React.createElement(
-            Markdown,
-            { options: { 'html': true }, key: index },
-            paragraph
-          );
-        })
-      )
+      React.createElement('div', { className: 'content', dangerouslySetInnerHTML: { __html: this.props.content } }),
+      React.createElement('div', { className: 'details', dangerouslySetInnerHTML: { __html: this.props.details } })
     );
   },
   Tablet: function Tablet() {
@@ -39321,29 +39309,9 @@ var Ryan = React.createClass({
           { className: 'image' },
           React.createElement('img', { src: this.props.image })
         ),
-        React.createElement(
-          'div',
-          { className: 'content' },
-          React.createElement(
-            Markdown,
-            null,
-            this.props.content
-          )
-        )
+        React.createElement('div', { className: 'content', dangerouslySetInnerHTML: { __html: this.props.content } })
       ),
-      React.createElement(
-        'div',
-        { className: 'details' },
-        this.props.details.map(function (_ref3, index) {
-          var paragraph = _ref3.paragraph;
-
-          return React.createElement(
-            Markdown,
-            { options: { 'html': true }, key: index },
-            paragraph
-          );
-        })
-      )
+      React.createElement('div', { className: 'details', dangerouslySetInnerHTML: { __html: this.props.details } })
     );
   }
 });
@@ -39393,7 +39361,7 @@ var FeaturedProperties = React.createClass({
         index: acf
       }));
     });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured').then(function (data) {
+    var featured = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured').then(function (data) {
       var list = data.map(function (_ref2) {
         var id = _ref2.id;
         var acf = _ref2.acf;
@@ -39410,8 +39378,9 @@ var FeaturedProperties = React.createClass({
           })
         })
       }));
+      return data.length;
     });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr').then(function (data) {
+    var building13700 = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr').then(function (data) {
       var list = data.map(function (_ref3) {
         var id = _ref3.id;
         var acf = _ref3.acf;
@@ -39428,8 +39397,9 @@ var FeaturedProperties = React.createClass({
           })
         })
       }));
+      return data.length;
     });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr').then(function (data) {
+    var building13750 = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr').then(function (data) {
       var list = data.map(function (_ref4) {
         var id = _ref4.id;
         var acf = _ref4.acf;
@@ -39446,8 +39416,9 @@ var FeaturedProperties = React.createClass({
           })
         })
       }));
+      return data.length;
     });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr').then(function (data) {
+    var building13800 = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr').then(function (data) {
       var list = data.map(function (_ref5) {
         var id = _ref5.id;
         var acf = _ref5.acf;
@@ -39464,6 +39435,16 @@ var FeaturedProperties = React.createClass({
           })
         })
       }));
+      return data.length;
+    });
+    $.when(featured, building13700, building13750, building13800).done(function (v1, v2, v3, v4) {
+      if (v1 !== 10 && v2 !== 10 && v3 !== 10 && v4 !== 10) {
+        _this.setState(_extends({}, _this.state, {
+          buildings: _extends({}, _this.state.buildings, {
+            done: true
+          })
+        }));
+      }
     });
   },
   loadProperties: function loadProperties() {
@@ -39800,7 +39781,21 @@ var store = require('./store');
 
 var Home = React.createClass({
   displayName: 'Home',
+  getInitialState: function getInitialState() {
+    return {
+      items: [],
+      options: {
+        navigation: false, // Show next and prev buttons
+        slideSpeed: 300,
+        paginationSpeed: 400,
+        singleItem: true,
+        autoPlay: true
+      }
+    };
+  },
   componentDidMount: function componentDidMount() {
+    var _this = this;
+
     $(window).scrollTop(0);
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/18').then(function (_ref) {
       var acf = _ref.acf;
@@ -39808,6 +39803,15 @@ var Home = React.createClass({
       store.dispatch({
         type: 'HOME_INIT',
         data: acf
+      });
+      var links = ['' + (acf.featured !== '0' ? 'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured?per_page=' + acf.featured : ''), '' + (acf.azzurraa !== '0' ? 'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr?per_page=' + acf.azzurraa : ''), '' + (acf.regatta !== '0' ? 'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr?per_page=' + acf.regatta : ''), '' + (acf.cove !== '0' ? 'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr?per_page=' + acf.cove : '')];
+      links.map(function (link) {
+        if (link === '') return;
+        $.get(link).then(function (properties) {
+          _this.setState(_extends({}, _this.state, {
+            items: [].concat(_toConsumableArray(_this.state.items), _toConsumableArray(properties))
+          }));
+        });
       });
     });
   },
@@ -39822,10 +39826,8 @@ var Home = React.createClass({
         _reactScroll.Element,
         { name: 'featured' },
         React.createElement(Featured, {
-          featured: store.getState().Home.featured,
-          azzurraa: store.getState().Home.azzurraa,
-          regatta: store.getState().Home.regatta,
-          cove: store.getState().Home.cove })
+          items: this.state.items,
+          options: this.state.options })
       ),
       React.createElement(Ryan, null),
       React.createElement(Explore, {
@@ -39928,51 +39930,6 @@ var Top = React.createClass({
 
 var Featured = React.createClass({
   displayName: 'Featured',
-  getInitialState: function getInitialState() {
-    return {
-      items: [],
-      options: {
-        navigation: false, // Show next and prev buttons
-        slideSpeed: 300,
-        paginationSpeed: 400,
-        singleItem: true,
-        autoPlay: true
-      }
-    };
-  },
-  componentDidMount: function componentDidMount() {
-    var _this = this;
-
-    var pullList = ['http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured', 'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr', 'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr', 'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr'];
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured').then(function (properties) {
-      _this.setState(_extends({}, _this.state, {
-        items: [].concat(_toConsumableArray(_this.state.items), _toConsumableArray(properties.filter(function (item, i) {
-          return i < _this.props.featured;
-        })))
-      }));
-    });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr').then(function (properties) {
-      _this.setState(_extends({}, _this.state, {
-        items: [].concat(_toConsumableArray(_this.state.items), _toConsumableArray(properties.filter(function (item, i) {
-          return i < _this.props.azzurraa;
-        })))
-      }));
-    });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr').then(function (properties) {
-      _this.setState(_extends({}, _this.state, {
-        items: [].concat(_toConsumableArray(_this.state.items), _toConsumableArray(properties.filter(function (item, i) {
-          return i < _this.props.regatta;
-        })))
-      }));
-    });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr').then(function (properties) {
-      _this.setState(_extends({}, _this.state, {
-        items: [].concat(_toConsumableArray(_this.state.items), _toConsumableArray(properties.filter(function (item, i) {
-          return i < _this.props.cove;
-        })))
-      }));
-    });
-  },
   handleSale: function handleSale(item) {
     if (item.acf.forSale !== '' && item.acf.lease !== '') return React.createElement(
       'div',
@@ -40032,8 +39989,8 @@ var Featured = React.createClass({
       ),
       React.createElement(
         OwlCarousel,
-        { id: 'featuredSlide', options: this.state.options },
-        this.state.items.map(function (item, index) {
+        { id: 'featuredSlide', options: this.props.options },
+        this.props.items.map(function (item, index) {
           return React.createElement(
             'div',
             { className: 'item', key: index },
@@ -40584,21 +40541,33 @@ var Property = React.createClass({
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137').then(function (_ref) {
           var acf = _ref.acf;
 
-          _this.setState(_extends({}, _this.state, { building: _extends({}, _this.state.building, acf) }));
+          _this.setState(_extends({}, _this.state, {
+            building: _extends({}, _this.state.building, {
+              facilities: acf.facilities
+            })
+          }));
         });
         break;
       case '13750marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/139').then(function (_ref2) {
           var acf = _ref2.acf;
 
-          _this.setState(_extends({}, _this.state, { building: _extends({}, _this.state.building, acf) }));
+          _this.setState(_extends({}, _this.state, {
+            building: _extends({}, _this.state.building, {
+              facilities: acf.facilities
+            })
+          }));
         });
         break;
       case '13800marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/140').then(function (_ref3) {
           var acf = _ref3.acf;
 
-          _this.setState(_extends({}, _this.state, { building: _extends({}, _this.state.building, acf) }));
+          _this.setState(_extends({}, _this.state, {
+            building: _extends({}, _this.state.building, {
+              facilities: acf.facilities
+            })
+          }));
         });
         break;
       default:
@@ -40797,15 +40766,7 @@ var Details = React.createClass({
           )
         )
       ),
-      React.createElement(
-        'div',
-        { className: 'paragraph' },
-        React.createElement(
-          Markdown,
-          null,
-          this.props.paragraph
-        )
-      )
+      React.createElement('div', { className: 'paragraph', dangerouslySetInnerHTML: { __html: this.props.paragraph } })
     );
   }
 });
@@ -41052,15 +41013,7 @@ var Mobile = React.createClass({
       React.createElement(
         'div',
         { className: 'col' },
-        React.createElement(
-          'div',
-          { className: 'footer' },
-          React.createElement(
-            Markdown,
-            null,
-            this.props.copyright
-          )
-        )
+        React.createElement('div', { className: 'footer', dangerouslySetInnerHTML: { __html: this.props.copyright } })
       ),
       React.createElement(
         'div',
@@ -41078,15 +41031,7 @@ var Mobile = React.createClass({
       React.createElement(
         'div',
         { className: 'col' },
-        React.createElement(
-          'div',
-          { className: 'footer' },
-          React.createElement(
-            Markdown,
-            null,
-            this.props.information
-          )
-        )
+        React.createElement('div', { className: 'footer', dangerouslySetInnerHTML: { __html: this.props.information } })
       ),
       React.createElement(
         'div',
@@ -41100,15 +41045,7 @@ var Mobile = React.createClass({
       React.createElement(
         'div',
         { className: 'col' },
-        React.createElement(
-          'div',
-          { className: 'dev' },
-          React.createElement(
-            Markdown,
-            { options: { "html": true } },
-            this.props.dev
-          )
-        )
+        React.createElement('div', { className: 'dev', dangerouslySetInnerHTML: { __html: this.props.dev } })
       )
     );
   }
@@ -41156,29 +41093,13 @@ var Tablet = React.createClass({
             React.createElement('i', { className: 'fa fa-instagram' })
           )
         ),
-        React.createElement(
-          'div',
-          { className: 'footer' },
-          React.createElement(
-            Markdown,
-            null,
-            this.props.copyright + '\n' + this.props.information
-          )
-        ),
+        React.createElement('div', { className: 'footer', dangerouslySetInnerHTML: { __html: this.props.copyright + '\n' + this.props.information } }),
         React.createElement(
           'div',
           { className: 'equalIcon' },
           React.createElement('img', { src: this.props.equalIcon })
         ),
-        React.createElement(
-          'div',
-          { className: 'dev' },
-          React.createElement(
-            Markdown,
-            { options: { "html": true } },
-            this.props.dev
-          )
-        )
+        React.createElement('div', { className: 'dev', dangerouslySetInnerHTML: { __html: this.props.dev } })
       ),
       React.createElement(
         'div',
@@ -41954,7 +41875,11 @@ var store = Redux.createStore(reducer, {
     "subheadline": "Loading ...",
     "title": "Loading ...",
     "subtitle": "Loading ...",
-    "links": []
+    "links": [],
+    "featured": "0",
+    "azzurraa": "0",
+    "regatta": "0",
+    "cove": "0"
   },
   FeaturedProperties: {
     saleType: 'all',

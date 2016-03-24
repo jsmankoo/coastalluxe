@@ -1889,7 +1889,7 @@ th {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
-  color: #0067d4;
+  color: #003785;
 }
 .Contact .Top .Mobile .BGContent .info .wrapper:before,
 .Contact .Top .Mobile .BGContent .info .wrapper:after {
@@ -1902,10 +1902,6 @@ th {
 .Contact .Top .Mobile .BGContent .info .wrapper:last-child {
   margin-right: 0%;
 }
-.Contact .Top .Mobile .BGContent .info .wrapper:hover,
-.Contact .Top .Mobile .BGContent .info .wrapper:focus {
-  color: #003785;
-}
 .Contact .Top .Mobile .BGContent .info .wrapper .icon {
   *zoom: 1;
   float: left;
@@ -1915,6 +1911,7 @@ th {
   margin-left: 0%;
   margin-right: 3%;
   text-align: center;
+  color: #0067d4;
 }
 .Contact .Top .Mobile .BGContent .info .wrapper .icon:before,
 .Contact .Top .Mobile .BGContent .info .wrapper .icon:after {
@@ -1926,6 +1923,9 @@ th {
 }
 .Contact .Top .Mobile .BGContent .info .wrapper .icon:last-child {
   margin-right: 0%;
+}
+.Contact .Top .Mobile .BGContent .info .wrapper .icon:hover {
+  color: #003785;
 }
 .Contact .Top .Mobile .BGContent .info .wrapper .icon i.fa.fa-mobile {
   font-size: 30px;
@@ -2012,7 +2012,7 @@ th {
   margin-right: 0%;
   height: 100%;
   position: relative;
-  color: #0067d4;
+  color: #003785;
 }
 .Contact .Top .Tablet .BGContent .info .col:before,
 .Contact .Top .Tablet .BGContent .info .col:after {
@@ -2022,15 +2022,16 @@ th {
 .Contact .Top .Tablet .BGContent .info .col:after {
   clear: both;
 }
-.Contact .Top .Tablet .BGContent .info .col:hover {
-  color: #003785;
-}
 .Contact .Top .Tablet .BGContent .info .col .wrapper {
   width: 100%;
 }
 .Contact .Top .Tablet .BGContent .info .col .wrapper .icon {
+  color: #0067d4;
   padding-bottom: 10px;
   padding-top: 35px;
+}
+.Contact .Top .Tablet .BGContent .info .col .wrapper .icon:hover {
+  color: #003785;
 }
 .Contact .Top .Tablet .BGContent .info .col .wrapper .icon i.fa.fa-mobile {
   font-size: 40px;
@@ -4245,13 +4246,75 @@ th {
 }
 .Building .Floorplans .Mobile .FloorPlan a {
   display: block;
-  margin: auto;
-  text-align: center;
+  width: 100%;
+  height: 75px;
 }
-.Building .Floorplans .Mobile .FloorPlan i.fa {
-  margin: 25px auto;
-  font-size: 20px;
+.Building .Floorplans .Mobile .FloorPlan a .icon {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 14.166666666666664%;
+  margin-left: 0%;
+  margin-right: 3%;
+  position: relative;
+  height: 100%;
+}
+.Building .Floorplans .Mobile .FloorPlan a .icon:before,
+.Building .Floorplans .Mobile .FloorPlan a .icon:after {
+  content: '';
+  display: table;
+}
+.Building .Floorplans .Mobile .FloorPlan a .icon:after {
+  clear: both;
+}
+.Building .Floorplans .Mobile .FloorPlan a .icon:last-child {
+  margin-right: 0%;
+}
+.Building .Floorplans .Mobile .FloorPlan a .icon i.fa {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 30px;
   line-height: 30px;
+}
+.Building .Floorplans .Mobile .FloorPlan a .text-wrapper {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 82.83333333333334%;
+  margin-left: 0%;
+  margin-right: 3%;
+  position: relative;
+  height: 100%;
+}
+.Building .Floorplans .Mobile .FloorPlan a .text-wrapper:before,
+.Building .Floorplans .Mobile .FloorPlan a .text-wrapper:after {
+  content: '';
+  display: table;
+}
+.Building .Floorplans .Mobile .FloorPlan a .text-wrapper:after {
+  clear: both;
+}
+.Building .Floorplans .Mobile .FloorPlan a .text-wrapper:last-child {
+  margin-right: 0%;
+}
+.Building .Floorplans .Mobile .FloorPlan a .text-wrapper .text {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: museo-slab;
 }
 .Building .Floorplans .Tablet {
   *zoom: 1;
@@ -4296,10 +4359,77 @@ th {
 .Building .Floorplans .Tablet .FloorPlan:nth-child(2n+1) {
   clear: both;
 }
-.Building .Floorplans .Tablet .FloorPlan i.fa {
-  margin: 25px;
-  font-size: 20px;
+.Building .Floorplans .Tablet .FloorPlan a {
+  display: block;
+  width: 100%;
+  height: 75px;
+}
+.Building .Floorplans .Tablet .FloorPlan a .icon {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 14.166666666666664%;
+  margin-left: 0%;
+  margin-right: 3%;
+  position: relative;
+  height: 100%;
+}
+.Building .Floorplans .Tablet .FloorPlan a .icon:before,
+.Building .Floorplans .Tablet .FloorPlan a .icon:after {
+  content: '';
+  display: table;
+}
+.Building .Floorplans .Tablet .FloorPlan a .icon:after {
+  clear: both;
+}
+.Building .Floorplans .Tablet .FloorPlan a .icon:last-child {
+  margin-right: 0%;
+}
+.Building .Floorplans .Tablet .FloorPlan a .icon i.fa {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 30px;
   line-height: 30px;
+}
+.Building .Floorplans .Tablet .FloorPlan a .text-wrapper {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 82.83333333333334%;
+  margin-left: 0%;
+  margin-right: 3%;
+  position: relative;
+  height: 100%;
+}
+.Building .Floorplans .Tablet .FloorPlan a .text-wrapper:before,
+.Building .Floorplans .Tablet .FloorPlan a .text-wrapper:after {
+  content: '';
+  display: table;
+}
+.Building .Floorplans .Tablet .FloorPlan a .text-wrapper:after {
+  clear: both;
+}
+.Building .Floorplans .Tablet .FloorPlan a .text-wrapper:last-child {
+  margin-right: 0%;
+}
+.Building .Floorplans .Tablet .FloorPlan a .text-wrapper .text {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: museo-slab;
 }
 .Building .Floorplans .Desktop {
   *zoom: 1;
@@ -4344,10 +4474,77 @@ th {
 .Building .Floorplans .Desktop .FloorPlan:nth-child(3n+1) {
   clear: both;
 }
-.Building .Floorplans .Desktop .FloorPlan i.fa {
-  margin: 25px auto;
-  font-size: 20px;
+.Building .Floorplans .Desktop .FloorPlan a {
+  display: block;
+  width: 100%;
+  height: 75px;
+}
+.Building .Floorplans .Desktop .FloorPlan a .icon {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 14.166666666666664%;
+  margin-left: 0%;
+  margin-right: 3%;
+  position: relative;
+  height: 100%;
+}
+.Building .Floorplans .Desktop .FloorPlan a .icon:before,
+.Building .Floorplans .Desktop .FloorPlan a .icon:after {
+  content: '';
+  display: table;
+}
+.Building .Floorplans .Desktop .FloorPlan a .icon:after {
+  clear: both;
+}
+.Building .Floorplans .Desktop .FloorPlan a .icon:last-child {
+  margin-right: 0%;
+}
+.Building .Floorplans .Desktop .FloorPlan a .icon i.fa {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 30px;
   line-height: 30px;
+}
+.Building .Floorplans .Desktop .FloorPlan a .text-wrapper {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 82.83333333333334%;
+  margin-left: 0%;
+  margin-right: 3%;
+  position: relative;
+  height: 100%;
+}
+.Building .Floorplans .Desktop .FloorPlan a .text-wrapper:before,
+.Building .Floorplans .Desktop .FloorPlan a .text-wrapper:after {
+  content: '';
+  display: table;
+}
+.Building .Floorplans .Desktop .FloorPlan a .text-wrapper:after {
+  clear: both;
+}
+.Building .Floorplans .Desktop .FloorPlan a .text-wrapper:last-child {
+  margin-right: 0%;
+}
+.Building .Floorplans .Desktop .FloorPlan a .text-wrapper .text {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: museo-slab;
 }
 a {
   color: #003785;

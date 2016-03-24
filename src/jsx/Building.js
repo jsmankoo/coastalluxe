@@ -136,15 +136,13 @@ const Details = React.createClass({
         <div className="intro">
           <div className="img-wrapper" style={{backgroundImage: `url(${this.props.image})`}}>
           </div>
-          <div className="paragraph">
-            <Markdown>{this.props.content}</Markdown>
+          <div className="paragraph" dangerouslySetInnerHTML={{__html: this.props.content}}>
           </div>
         </div>
         {
           this.state.moreContentShow
           ? <div className="rest">
-              <div className="paragraph">
-                <Markdown>{this.props.moreContent}</Markdown>
+              <div className="paragraph" dangerouslySetInnerHTML={{__html: this.props.moreContent}}>
               </div>
             </div>
           : <div />
@@ -300,8 +298,13 @@ const Floorplans = React.createClass({
               this.props.floor_plans.map(({floor_name, floor_plan}, index)=>{
                 return (
                   <div className='FloorPlan' key={index}>
-                    <a href={floor_plan}>
-                      <i className='fa fa-file'>  {floor_name}</i>
+                    <a href={floor_plan} target='_blank' >
+                      <div className="icon">
+                        <i className='fa fa-file' />
+                      </div>
+                      <div className="text-wrapper">
+                        <div className='text'>{floor_name}</div>
+                      </div>
                     </a>
                   </div>
                 );
@@ -315,8 +318,13 @@ const Floorplans = React.createClass({
               this.props.floor_plans.map(({floor_name, floor_plan}, index)=>{
                 return (
                   <div className='FloorPlan' key={index}>
-                    <a href={floor_plan}>
-                      <i className='fa fa-file'>  {floor_name}</i>
+                    <a href={floor_plan} target='_blank' >
+                      <div className="icon">
+                        <i className='fa fa-file' />
+                      </div>
+                      <div className="text-wrapper">
+                        <div className='text'>{floor_name}</div>
+                      </div>
                     </a>
                   </div>
                 );
@@ -330,8 +338,13 @@ const Floorplans = React.createClass({
               this.props.floor_plans.map(({floor_name, floor_plan}, index)=>{
                 return (
                   <div className='FloorPlan' key={index}>
-                    <a href={floor_plan}>
-                      <i className='fa fa-file'>  {floor_name}</i>
+                    <a href={floor_plan} target='_blank' >
+                      <div className="icon">
+                        <i className='fa fa-file' />
+                      </div>
+                      <div className="text-wrapper">
+                        <div className='text'>{floor_name}</div>
+                      </div>
                     </a>
                   </div>
                 );

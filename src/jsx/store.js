@@ -149,7 +149,11 @@ const store = Redux.createStore(reducer, {
     "subheadline": "Loading ...",
     "title": "Loading ...",
     "subtitle": "Loading ...",
-    "links": []
+    "links": [],
+    "featured": "0",
+    "azzurraa": "0",
+    "regatta": "0",
+    "cove": "0"
   },
   FeaturedProperties :{
     saleType: 'all',

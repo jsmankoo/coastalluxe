@@ -30,7 +30,7 @@ const FeaturedProperties = React.createClass({
           index: acf
         });
       });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured')
+    const featured = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured')
       .then((data)=>{
         const list = data.map(({id, acf})=>{
           return {...acf, id: id};
@@ -41,8 +41,9 @@ const FeaturedProperties = React.createClass({
             properties: list.map((acf)=>{return {...acf, building: 'featured'};})
           }
         });
+        return data.length;
       });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr')
+    const building13700 = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr')
       .then((data)=>{
         const list = data.map(({id, acf})=>{
           return {...acf, id: id};
@@ -53,8 +54,9 @@ const FeaturedProperties = React.createClass({
             building13700: list.map((acf)=>{return {...acf, building: '13700marinapointedr'};})
           }
         });
+        return data.length;
       });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr')
+    const building13750 = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr')
       .then((data)=>{
         const list = data.map(({id, acf})=>{
           return {...acf, id: id};
@@ -65,8 +67,9 @@ const FeaturedProperties = React.createClass({
             building13750: list.map((acf)=>{return {...acf, building: '13750marinapointedr'};})
           }
         });
+        return data.length;
       });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr')
+    const building13800 = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr')
       .then((data)=>{
         const list = data.map(({id, acf})=>{
           return {...acf, id: id};
@@ -77,7 +80,17 @@ const FeaturedProperties = React.createClass({
             building13800: list.map((acf)=>{return {...acf, building: '13800marinapointedr'};})
           }
         });
+        return data.length;
       });
+    $.when(featured, building13700, building13750, building13800).done((v1, v2, v3, v4)=>{
+      if(v1 !== 10 && v2 !== 10 && v3 !== 10 && v4 !== 10){
+        this.setState({...this.state,
+          buildings: {...this.state.buildings,
+            done: true
+          }
+        });
+      }
+    });
   },
   loadProperties(){
     let promise = 0;

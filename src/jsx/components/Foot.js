@@ -42,8 +42,7 @@ const Mobile = React.createClass({
           </div>
         </div>
         <div className="col">
-          <div className="footer">
-            <Markdown>{this.props.copyright}</Markdown>
+          <div className="footer" dangerouslySetInnerHTML={{__html: this.props.copyright}}>
           </div>
         </div>
         <div className="col">
@@ -54,8 +53,7 @@ const Mobile = React.createClass({
           </div>
         </div>
         <div className="col">
-          <div className="footer">
-            <Markdown>{this.props.information}</Markdown>
+          <div className="footer" dangerouslySetInnerHTML={{__html: this.props.information}}>
           </div>
         </div>
         <div className="col">
@@ -64,8 +62,7 @@ const Mobile = React.createClass({
           </div>
         </div>
         <div className="col">
-          <div className="dev">
-            <Markdown options={{"html": true}}>{this.props.dev}</Markdown>
+          <div className="dev" dangerouslySetInnerHTML={{__html: this.props.dev}}>
           </div>
         </div>
       </div>
@@ -89,18 +86,12 @@ const Tablet = React.createClass({
             <a href={this.props.twitter} ><i className='fa fa-twitter' /></a>
             <a href={this.props.instagram} ><i className='fa fa-instagram' /></a>
           </div>
-          <div className="footer">
-            <Markdown>
-              {`${this.props.copyright}\n${this.props.information}`}
-            </Markdown>
+          <div className="footer" dangerouslySetInnerHTML={{__html: `${this.props.copyright}\n${this.props.information}`}}>
           </div>
           <div className="equalIcon">
             <img src={this.props.equalIcon} />
           </div>
-          <div className="dev">
-          <Markdown options={{"html": true}}>
-            {this.props.dev}
-          </Markdown>
+          <div className="dev" dangerouslySetInnerHTML={{__html: this.props.dev}}>
           </div>
         </div>
         <div className="bhhs">

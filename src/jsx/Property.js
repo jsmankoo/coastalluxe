@@ -51,19 +51,31 @@ const Property = React.createClass({
       case '13700marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137')
           .then(({acf})=>{
-            this.setState({...this.state, building: {...this.state.building, ...acf}});
+            this.setState({...this.state,
+              building: {...this.state.building,
+                facilities: acf.facilities
+              }
+            });
           });
         break;
       case '13750marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/139')
           .then(({acf})=>{
-            this.setState({...this.state, building: {...this.state.building, ...acf}});
+            this.setState({...this.state,
+              building: {...this.state.building,
+                facilities: acf.facilities
+              }
+            });
           });
         break;
       case '13800marinapointedr':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/140')
           .then(({acf})=>{
-            this.setState({...this.state, building: {...this.state.building, ...acf}});
+            this.setState({...this.state,
+              building: {...this.state.building,
+                facilities: acf.facilities
+              }
+            });
           });
         break ;
       default:
@@ -218,10 +230,7 @@ const Details = React.createClass({
             </div>
           </div>
         </div>
-        <div className="paragraph">
-          <Markdown>
-            {this.props.paragraph}
-          </Markdown>
+        <div className="paragraph" dangerouslySetInnerHTML={{__html: this.props.paragraph}}>
         </div>
       </div>
     );

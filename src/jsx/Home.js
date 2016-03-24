@@ -8,6 +8,18 @@ var OwlCarousel = require('./components/OwlCarousel');
 var store = require('./store');
 
 const Home = React.createClass({
+  getInitialState(){
+    return {
+      items : [],
+      options : {
+        navigation : false, // Show next and prev buttons
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        singleItem : true,
+        autoPlay : true,
+      },
+    };
+  },
   componentDidMount(){
     $(window).scrollTop(0);
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/18')
@@ -16,6 +28,21 @@ const Home = React.createClass({
           type: 'HOME_INIT',
           data: acf
         });
+        const links = [
+          `${acf.featured !== '0' ? `http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured?per_page=${acf.featured}` : ''}`,
+          `${acf.azzurraa !== '0' ? `http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr?per_page=${acf.azzurraa}` : ''}`,
+          `${acf.regatta !== '0' ? `http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr?per_page=${acf.regatta}` : ''}`,
+          `${acf.cove !== '0' ? `http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr?per_page=${acf.cove}` : ''}`,
+        ];
+        links.map((link)=>{
+          if(link === '') return;
+          $.get(link).then((properties)=>{
+            this.setState({...this.state,
+              items: [...this.state.items, ...properties]
+            });
+          });
+        });
+
       });
   },
   render(){
@@ -26,10 +53,8 @@ const Home = React.createClass({
           subheadline={store.getState().Home.subheadline}/>
         <Element name='featured'>
           <Featured
-            featured={store.getState().Home.featured}
-            azzurraa={store.getState().Home.azzurraa}
-            regatta={store.getState().Home.regatta}
-            cove={store.getState().Home.cove} />
+            items={this.state.items}
+            options={this.state.options}/>
         </Element>
         <Ryan />
         <Explore
@@ -108,54 +133,6 @@ const Top = React.createClass({
 });
 
 const Featured = React.createClass({
-  getInitialState(){
-    return {
-      items : [],
-      options : {
-				navigation : false, // Show next and prev buttons
-				slideSpeed : 300,
-				paginationSpeed : 400,
-				singleItem : true,
-				autoPlay : true,
-			},
-    };
-  },
-  componentDidMount(){
-    const pullList = [
-      'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured',
-      'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr',
-      'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr',
-      'http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr'
-    ];
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured').then((properties)=>{
-        this.setState({...this.state,
-          items: [...this.state.items,
-             ...properties.filter((item, i)=> i < this.props.featured)
-           ]
-        });
-    });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr').then((properties)=>{
-        this.setState({...this.state,
-          items: [...this.state.items,
-             ...properties.filter((item, i)=> i < this.props.azzurraa)
-           ]
-        });
-    });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr').then((properties)=>{
-        this.setState({...this.state,
-          items: [...this.state.items,
-             ...properties.filter((item, i)=> i < this.props.regatta)
-           ]
-        });
-    });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr').then((properties)=>{
-        this.setState({...this.state,
-          items: [...this.state.items,
-             ...properties.filter((item, i)=> i < this.props.cove)
-           ]
-        });
-    });
-  },
   handleSale(item){
     if (item.acf.forSale !== '' && item.acf.lease !== '')
       return (
@@ -193,9 +170,9 @@ const Featured = React.createClass({
             </div>
           </div>
         </div>
-        <OwlCarousel id='featuredSlide' options={this.state.options}>
+        <OwlCarousel id='featuredSlide' options={this.props.options}>
           {
-            this.state.items.map((item, index)=>{
+            this.props.items.map((item, index)=>{
               return (
                 <div className="item" key={index}>
                   <a href={`/#/featured/${item.type}/${item.acf.name}/${item.id}`} className="img-wrapper" style={{backgroundImage: `url(${item.acf.image})`}}>
