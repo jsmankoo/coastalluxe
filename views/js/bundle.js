@@ -39674,6 +39674,7 @@ var Properties = React.createClass({
         return list.filter(function (_ref13) {
           var forSale = _ref13.forSale;
           var lease = _ref13.lease;
+          var status = _ref13.status;
 
           return lease !== '' && status !== 'sold';
         });
