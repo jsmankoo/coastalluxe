@@ -41108,9 +41108,10 @@ var Menu = React.createClass({
   displayName: 'Menu',
   render: function render() {
     var height = $(window).height();
+
     return React.createElement(
       'div',
-      { className: 'Menu', style: { height: height - 50 } },
+      { className: 'Menu', style: height < 768 ? { height: height - 50 } : {} },
       React.createElement(
         MediaQuery,
         { maxDeviceWidth: 767 },

@@ -6,8 +6,9 @@ var store = require('../store');
 const Menu = React.createClass({
   render(){
     const height = $(window).height();
+
     return (
-      <div className="Menu" style={{height: height-50}}>
+      <div className="Menu" style={height < 768 ? {height: height-50} : {} }>
         <MediaQuery maxDeviceWidth={767}>
           <Mobile {...this.props} />
         </MediaQuery>
