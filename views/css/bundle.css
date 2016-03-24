@@ -1859,7 +1859,7 @@ th {
   clear: both;
 }
 .Contact .Top .Mobile .BGContent .info-wrapper .info {
-  width: 290px;
+  width: 275px;
   height: auto;
   position: absolute;
   -webkit-transform-style: preserve-3d;
@@ -1917,7 +1917,7 @@ th {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 11.714285714285714%;
+  width: 7.3%;
   margin-left: 0%;
   margin-right: 3%;
   text-align: center;
@@ -1940,21 +1940,27 @@ th {
 .Contact .Top .Mobile .BGContent .info-wrapper .info .wrapper .icon i.fa.fa-mobile {
   font-size: 30px;
   padding: 0px 0px 12px;
+  text-align: left;
+  width: 100%;
 }
 .Contact .Top .Mobile .BGContent .info-wrapper .info .wrapper .icon i.fa.fa-map-marker {
   font-size: 25px;
   padding: 12px 0px;
+  text-align: left;
+  width: 100%;
 }
 .Contact .Top .Mobile .BGContent .info-wrapper .info .wrapper .icon i.fa.fa-paper-plane {
   font-size: 19px;
   padding: 12px 0px 0px;
+  text-align: left;
+  width: 100%;
 }
 .Contact .Top .Mobile .BGContent .info-wrapper .info .wrapper .content {
   *zoom: 1;
   float: left;
   clear: none;
   text-align: inherit;
-  width: 85.28571428571428%;
+  width: 89.7%;
   margin-left: 0%;
   margin-right: 3%;
   font-size: 14px;
