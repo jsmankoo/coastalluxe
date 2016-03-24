@@ -429,7 +429,8 @@ th {
     position: fixed;
     top: 50px;
     width: 100%;
-    height: auto;
+    height: 80%;
+    overflow: scroll;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -4205,8 +4206,15 @@ th {
     text-align: center;
   }
 }
-.Building .Floorplans {
-  margin: 150px auto;
+@media only screen and (min-width: 768px) {
+  .Building .Floorplans {
+    margin: 150px auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .Building .Floorplans {
+    margin: 50px auto;
+  }
 }
 .Building .Floorplans .Title {
   text-align: center;
@@ -4245,24 +4253,10 @@ th {
   clear: both;
 }
 .Building .Floorplans .Mobile .FloorPlan {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 100%;
-  margin-left: 0%;
-  margin-right: 3%;
-}
-.Building .Floorplans .Mobile .FloorPlan:before,
-.Building .Floorplans .Mobile .FloorPlan:after {
-  content: '';
-  display: table;
-}
-.Building .Floorplans .Mobile .FloorPlan:after {
-  clear: both;
-}
-.Building .Floorplans .Mobile .FloorPlan:last-child {
-  margin-right: 0%;
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: auto;
 }
 .Building .Floorplans .Mobile .FloorPlan a {
   display: block;

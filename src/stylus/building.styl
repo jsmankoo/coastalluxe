@@ -321,7 +321,10 @@
               font-size 18px
               text-align: center
   .Floorplans
-    margin 150px auto
+    +above(768px)
+      margin 150px auto
+    +below(767px)
+      margin 50px auto
     .Title
       text-align: center
       h1()
@@ -333,7 +336,9 @@
     .Mobile
       center(768px)
       .FloorPlan
-        column(1)
+        size 80% auto
+        display: block
+        margin: auto
         a
           display: block
           size 100% 75px
