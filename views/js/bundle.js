@@ -39211,53 +39211,57 @@ var Top = React.createClass({
         React.createElement('div', { className: 'hidden' }),
         React.createElement(
           'div',
-          { className: 'info' },
+          { className: 'info-wrapper' },
           React.createElement(
             'div',
-            { className: 'mobile wrapper' },
-            React.createElement(
-              'a',
-              { href: 'tel:310-344-0898', className: 'icon' },
-              React.createElement('i', { className: 'fa fa-mobile' })
-            ),
+            { className: 'info' },
             React.createElement(
               'div',
-              { className: 'content' },
-              this.props.Mobile
-            )
-          ),
-          React.createElement('div', { className: 'border' }),
-          React.createElement(
-            'div',
-            { className: 'office wrapper' },
-            React.createElement(
-              'a',
-              { href: this.props.url, className: 'icon' },
-              React.createElement('i', { className: 'fa fa-map-marker' })
+              { className: 'mobile wrapper' },
+              React.createElement(
+                'a',
+                { href: 'tel:310-344-0898', className: 'icon' },
+                React.createElement('i', { className: 'fa fa-mobile' })
+              ),
+              React.createElement(
+                'div',
+                { className: 'content' },
+                this.props.Mobile
+              )
             ),
+            React.createElement('div', { className: 'border' }),
             React.createElement(
               'div',
-              { className: 'content' },
-              this.props.Office,
-              ' ',
-              React.createElement('br', null),
-              ' ',
-              this.props.City
-            )
-          ),
-          React.createElement('div', { className: 'border' }),
-          React.createElement(
-            'div',
-            { className: 'email wrapper' },
-            React.createElement(
-              'a',
-              { href: 'mailto:' + this.props.email, className: 'icon' },
-              React.createElement('i', { className: 'fa fa-paper-plane' })
+              { className: 'office wrapper' },
+              React.createElement(
+                'a',
+                { href: this.props.url, className: 'icon' },
+                React.createElement('i', { className: 'fa fa-map-marker' })
+              ),
+              React.createElement(
+                'div',
+                { className: 'content' },
+                this.props.Office,
+                ' ',
+                React.createElement('br', null),
+                ' ',
+                this.props.City
+              )
             ),
+            React.createElement('div', { className: 'border' }),
             React.createElement(
               'div',
-              { className: 'content' },
-              this.props.email
+              { className: 'email wrapper' },
+              React.createElement(
+                'a',
+                { href: 'mailto:' + this.props.email, className: 'icon' },
+                React.createElement('i', { className: 'fa fa-paper-plane' })
+              ),
+              React.createElement(
+                'div',
+                { className: 'content' },
+                this.props.email
+              )
             )
           )
         )

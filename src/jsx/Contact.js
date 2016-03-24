@@ -202,31 +202,33 @@ const Top = React.createClass({
           </div>
           <div className="hidden">
           </div>
-          <div className="info">
-            <div className="mobile wrapper">
-              <a href='tel:310-344-0898' className="icon">
-                <i className='fa fa-mobile' />
-              </a>
-              <div className="content">
-                {this.props.Mobile}
+          <div className="info-wrapper">
+            <div className="info">
+              <div className="mobile wrapper">
+                <a href='tel:310-344-0898' className="icon">
+                  <i className='fa fa-mobile' />
+                </a>
+                <div className="content">
+                  {this.props.Mobile}
+                </div>
               </div>
-            </div>
-            <div className="border" />
-            <div className="office wrapper">
-              <a href={this.props.url} className="icon">
-                <i className='fa fa-map-marker' />
-              </a>
-              <div className="content">
-                {this.props.Office} <br/> {this.props.City}
+              <div className="border" />
+              <div className="office wrapper">
+                <a href={this.props.url} className="icon">
+                  <i className='fa fa-map-marker' />
+                </a>
+                <div className="content">
+                  {this.props.Office} <br/> {this.props.City}
+                </div>
               </div>
-            </div>
-            <div className="border" />
-            <div className="email wrapper">
-              <a href={`mailto:${this.props.email}`} className="icon">
-                <i className='fa fa-paper-plane' />
-              </a>
-              <div className="content">
-                {this.props.email}
+              <div className="border" />
+              <div className="email wrapper">
+                <a href={`mailto:${this.props.email}`} className="icon">
+                  <i className='fa fa-paper-plane' />
+                </a>
+                <div className="content">
+                  {this.props.email}
+                </div>
               </div>
             </div>
           </div>

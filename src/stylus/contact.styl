@@ -35,46 +35,47 @@
           padding 70px 0px
         .hidden
           size 100% 40px
-        .info
+        .info-wrapper
           center()
           background-color ContactInfoTint
+          size 100% 150px
           color darkBlue
           font-family: otherFont
           font-weight: 500;
           font-size 20px
-          padding-top 20px
-          padding-bottom 20px
-          .border
-            center()
-            border-bottom 1px solid lightBlue
-            size 300px auto
-            display: block
-            margin: auto
-          .wrapper
-            column(1)
-            color darkBlue
-            .icon
-              column(1/5)
-              text-align: center
-              color lightBlue
-              hover-color darkBlue true
-              i.fa.fa-mobile
-                font-size: 30px
-                padding 0px 0px 12px
-              i.fa.fa-map-marker
-                font-size: 25px
-                padding 12px 0px
-              i.fa.fa-paper-plane
-                font-size: 19px
-                padding 12px 0px 0px
-            .content
-              column(4/5)
-              font-size 14px
-              text-align: left
-              padding 7px 0px
-            &.email
+          position relative
+          .info
+            size 290px auto
+            align(b)
+            .border
+              center()
+              border-bottom 1px solid lightBlue
+              size 100% auto
+            .wrapper
+              column(1)
+              color darkBlue
+              .icon
+                column(1/7)
+                text-align: center
+                color lightBlue
+                hover-color darkBlue true
+                i.fa.fa-mobile
+                  font-size: 30px
+                  padding 0px 0px 12px
+                i.fa.fa-map-marker
+                  font-size: 25px
+                  padding 12px 0px
+                i.fa.fa-paper-plane
+                  font-size: 19px
+                  padding 12px 0px 0px
               .content
-                padding 12px 0px
+                column(6/7)
+                font-size 14px
+                text-align: left
+                padding 7px 0px
+              &.email
+                .content
+                  padding 12px 0px
 
     .Tablet
       .BGContent
@@ -106,14 +107,18 @@
               .icon
                 color lightBlue
                 hover-color darkBlue true
-                padding-bottom 10px
-                padding-top 35px
                 i.fa.fa-mobile
                   font-size: 40px
+                  padding-bottom 10px
+                  padding-top 35px
                 i.fa.fa-map-marker
                   font-size: 35px
+                  padding-bottom 10px
+                  padding-top 35px
                 i.fa.fa-paper-plane
                   font-size: 27px
+                  padding-bottom 10px
+                  padding-top 35px
               .content
                 text-align: center
                 +below(1024px)
