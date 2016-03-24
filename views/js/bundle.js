@@ -40095,15 +40095,7 @@ var Ryan = React.createClass({
         { className: 'image' },
         React.createElement('img', { src: this.state.mobileimage })
       ),
-      React.createElement(
-        'div',
-        { className: 'info' },
-        React.createElement(
-          Markdown,
-          { className: 'paragraph' },
-          this.state.content
-        )
-      ),
+      React.createElement('div', { className: 'info', dangerouslySetInnerHTML: { __html: this.state.content } }),
       React.createElement(
         'a',
         { href: '/#/contact', className: 'more' },
@@ -40133,15 +40125,7 @@ var Ryan = React.createClass({
           { className: 'image' },
           React.createElement('img', { src: this.state.image })
         ),
-        React.createElement(
-          'div',
-          { className: 'info' },
-          React.createElement(
-            Markdown,
-            { className: 'paragraph' },
-            this.state.content
-          )
-        )
+        React.createElement('div', { className: 'info', dangerouslySetInnerHTML: { __html: this.state.content } })
       ),
       React.createElement(
         'div',
@@ -40201,15 +40185,7 @@ var Ryan = React.createClass({
           { className: 'image' },
           React.createElement('img', { src: this.state.image })
         ),
-        React.createElement(
-          'div',
-          { className: 'info' },
-          React.createElement(
-            Markdown,
-            { className: 'paragraph' },
-            this.state.content
-          )
-        )
+        React.createElement('div', { className: 'info', dangerouslySetInnerHTML: { __html: this.state.content } })
       ),
       React.createElement(
         'div',

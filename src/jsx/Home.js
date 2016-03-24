@@ -250,10 +250,7 @@ const Ryan = React.createClass({
         <div className="image">
           <img src={this.state.mobileimage} />
         </div>
-        <div className="info">
-          <Markdown className="paragraph">
-            {this.state.content}
-          </Markdown>
+        <div className="info" dangerouslySetInnerHTML={{__html: this.state.content}}>
         </div>
         <a href='/#/contact' className="more">
           <div className="linkName">
@@ -274,10 +271,7 @@ const Ryan = React.createClass({
           <div className="image">
             <img src={this.state.image} />
           </div>
-          <div className="info">
-            <Markdown className="paragraph">
-              {this.state.content}
-            </Markdown>
+          <div className="info" dangerouslySetInnerHTML={{__html: this.state.content}}>
           </div>
         </div>
         <div className="Row">
@@ -305,10 +299,7 @@ const Ryan = React.createClass({
           <div className="image">
             <img src={this.state.image} />
           </div>
-          <div className="info">
-            <Markdown className="paragraph">
-              {this.state.content}
-            </Markdown>
+          <div className="info" dangerouslySetInnerHTML={{__html: this.state.content}}>
           </div>
         </div>
         <div className="Row">
