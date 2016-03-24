@@ -211,7 +211,8 @@ const Featured = React.createClass({
         </div>*/}
         <OwlCarousel id='featuredSlide' options={this.state.options}>
           {
-            this.props.featured.map((item, index)=>{
+            this.props.featured.filter(({status})=>status !== 'sold')
+            .map((item, index)=>{
               return (
                 <div className="item" key={index}>
                   <a href={`/#/featured/${this.props.building}/${item.name}/${item.id}`} className="img-wrapper" style={{backgroundImage: `url(${item.image})`}}>

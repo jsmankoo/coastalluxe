@@ -38718,7 +38718,10 @@ var Featured = React.createClass({
       React.createElement(
         OwlCarousel,
         { id: 'featuredSlide', options: this.state.options },
-        this.props.featured.map(function (item, index) {
+        this.props.featured.filter(function (_ref5) {
+          var status = _ref5.status;
+          return status !== 'sold';
+        }).map(function (item, index) {
           return React.createElement(
             'div',
             { className: 'item', key: index },
@@ -38816,9 +38819,9 @@ var Floorplans = React.createClass({
         React.createElement(
           'div',
           { className: 'Mobile' },
-          this.props.floor_plans.map(function (_ref5, index) {
-            var floor_name = _ref5.floor_name;
-            var floor_plan = _ref5.floor_plan;
+          this.props.floor_plans.map(function (_ref6, index) {
+            var floor_name = _ref6.floor_name;
+            var floor_plan = _ref6.floor_plan;
 
             return React.createElement(
               'div',
@@ -38851,9 +38854,9 @@ var Floorplans = React.createClass({
         React.createElement(
           'div',
           { className: 'Tablet' },
-          this.props.floor_plans.map(function (_ref6, index) {
-            var floor_name = _ref6.floor_name;
-            var floor_plan = _ref6.floor_plan;
+          this.props.floor_plans.map(function (_ref7, index) {
+            var floor_name = _ref7.floor_name;
+            var floor_plan = _ref7.floor_plan;
 
             return React.createElement(
               'div',
@@ -38886,9 +38889,9 @@ var Floorplans = React.createClass({
         React.createElement(
           'div',
           { className: 'Desktop' },
-          this.props.floor_plans.map(function (_ref7, index) {
-            var floor_name = _ref7.floor_name;
-            var floor_plan = _ref7.floor_plan;
+          this.props.floor_plans.map(function (_ref8, index) {
+            var floor_name = _ref8.floor_name;
+            var floor_plan = _ref8.floor_plan;
 
             return React.createElement(
               'div',
