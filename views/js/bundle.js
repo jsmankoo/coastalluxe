@@ -39901,8 +39901,6 @@ var Top = React.createClass({
               src: '/img/azzura.mp4'
             }, {
               src: '/img/azzura.webm'
-            }, {
-              src: '/img/azzura.ogv'
             }],
             poster: '/img/azzura.jpg',
             loop: true },

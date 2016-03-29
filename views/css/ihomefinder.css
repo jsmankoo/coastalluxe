@@ -226,6 +226,7 @@ html .container #ihf-main-container #ihf-sidebar-container {
   width: 0px;
   height: 0px;
 }
+html .container #ihf-main-container .btn,
 html .container #ihf-main-container .btn-primary {
   color: #fff;
   background-color: #003785;
@@ -234,6 +235,7 @@ html .container #ihf-main-container .btn-primary {
   text-decoration: none;
   cursor: pointer;
 }
+html .container #ihf-main-container .btn:hover,
 html .container #ihf-main-container .btn-primary:hover {
   color: #0067d4;
 }
