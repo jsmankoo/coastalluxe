@@ -32,13 +32,15 @@
           font-weight: 700
           font-size: 30px
           text-align: center
-          padding 70px 0px
-        .hidden
-          size 100% 40px
+          size 100% 300px
+          position: relative
+          .text
+            align(b)
+            width 100%
         .info-wrapper
           center()
           background-color ContactInfoTint
-          size 100% 150px
+          size 100% 170px
           color darkBlue
           font-family: otherFont
           font-weight: 500;
@@ -54,34 +56,39 @@
             .wrapper
               column(1)
               color darkBlue
+              height 56px
               .icon
                 column(1/10)
                 text-align: center
                 color lightBlue
                 hover-color darkBlue true
+                position: relative
+                height 100%
                 i.fa.fa-mobile
                   font-size: 30px
-                  padding 0px 0px 9px
                   text-align: left
                   width 100%
+                  align(v)
                 i.fa.fa-map-marker
                   font-size: 25px
-                  padding 12px 0px
                   text-align: left
                   width 100%
+                  align(v)
                 i.fa.fa-paper-plane
                   font-size: 19px
-                  padding 8px 0px 0px
                   text-align: left
                   width 100%
+                  align(v)
               .content
                 column(9/10)
                 font-size 14px
                 text-align: left
-                padding 7px 0px
-              &.email
-                .content
-                  padding 8px 0px
+                height 100%
+                position: relative
+                .text
+                  align(v)
+                  padding-left 10px
+                  width 100%
 
     .Tablet
       .BGContent

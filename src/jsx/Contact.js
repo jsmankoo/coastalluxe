@@ -200,9 +200,9 @@ const Top = React.createClass({
         </div>
         <div className="BGContent">
           <div className="name">
-            {this.props.name}
-          </div>
-          <div className="hidden">
+            <div className="text">
+              {this.props.name}
+            </div>
           </div>
           <div className="info-wrapper">
             <div className="info">
@@ -211,7 +211,9 @@ const Top = React.createClass({
                   <i className='fa fa-mobile' />
                 </a>
                 <div className="content">
-                  {this.props.Mobile}
+                  <div className="text">
+                    {this.props.Mobile}
+                  </div>
                 </div>
               </div>
               <div className="border" />
@@ -220,7 +222,9 @@ const Top = React.createClass({
                   <i className='fa fa-map-marker' />
                 </a>
                 <div className="content">
-                  {this.props.Office} <br/> {this.props.City}
+                  <div className="text">
+                    {this.props.Office} <br/> {this.props.City}
+                  </div>
                 </div>
               </div>
               <div className="border" />
@@ -229,7 +233,9 @@ const Top = React.createClass({
                   <i className='fa fa-paper-plane' />
                 </a>
                 <div className="content">
-                  {this.props.email}
+                  <div className="text">
+                    {this.props.email}
+                  </div>
                 </div>
               </div>
             </div>

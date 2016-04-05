@@ -40665,9 +40665,12 @@ var Top = React.createClass({
         React.createElement(
           'div',
           { className: 'name' },
-          this.props.name
+          React.createElement(
+            'div',
+            { className: 'text' },
+            this.props.name
+          )
         ),
-        React.createElement('div', { className: 'hidden' }),
         React.createElement(
           'div',
           { className: 'info-wrapper' },
@@ -40685,7 +40688,11 @@ var Top = React.createClass({
               React.createElement(
                 'div',
                 { className: 'content' },
-                this.props.Mobile
+                React.createElement(
+                  'div',
+                  { className: 'text' },
+                  this.props.Mobile
+                )
               )
             ),
             React.createElement('div', { className: 'border' }),
@@ -40700,11 +40707,15 @@ var Top = React.createClass({
               React.createElement(
                 'div',
                 { className: 'content' },
-                this.props.Office,
-                ' ',
-                React.createElement('br', null),
-                ' ',
-                this.props.City
+                React.createElement(
+                  'div',
+                  { className: 'text' },
+                  this.props.Office,
+                  ' ',
+                  React.createElement('br', null),
+                  ' ',
+                  this.props.City
+                )
               )
             ),
             React.createElement('div', { className: 'border' }),
@@ -40719,7 +40730,11 @@ var Top = React.createClass({
               React.createElement(
                 'div',
                 { className: 'content' },
-                this.props.email
+                React.createElement(
+                  'div',
+                  { className: 'text' },
+                  this.props.email
+                )
               )
             )
           )
