@@ -194,11 +194,26 @@ const Featured = React.createClass({
   handleMore(building){
     switch (building) {
       case '13700marinapointedr':
-        return <a href={`/#/featured/Azzurra`}>More</a>;
+        return (
+          <div className="More">
+            <a href='http://idx.coastalluxeliving.com/report/listing-report/Azzurra-For-Lease/89398/314340'>More listings for LEASE</a>
+            <a href='http://idx.coastalluxeliving.com/report/listing-report/Azzurra-For-Sale/89398/314339'>More listings for SALE</a>
+          </div>
+        );
       case '13750marinapointedr':
-        return <a href={`/#/featured/Regatta`}>More</a>;
+        return (
+          <div className="More">
+            <a href='http://idx.coastalluxeliving.com/report/listing-report/Regatta-For-Lease/89398/314414'>More listings for LEASE</a>
+            <a href='http://idx.coastalluxeliving.com/report/listing-report/Regatta-For-Sale/89398/314413'>More listings for SALE</a>
+          </div>
+        );
       case '13800marinapointedr':
-        return <a href={`/#/featured/Cove`}>More</a>;
+        return (
+          <div className="More">
+            <a href='http://idx.coastalluxeliving.com/report/listing-report/Cove-For-Lease/89398/314347'>More listings for LEASE</a>
+            <a href='http://idx.coastalluxeliving.com/report/listing-report/Cove-For-Sale/89398/314346'>More listings for SALE</a>
+          </div>
+        );
       default:
         return <div />;
     }

@@ -3,6 +3,7 @@ var MediaQuery = require('react-responsive');
 var ReactBGVideo = require('react-background-video');
 var Markdown = require('react-remarkable');
 import {Link, Element, Events} from 'react-scroll';
+import {Motion, spring} from 'react-motion';
 
 var OwlCarousel = require('./components/OwlCarousel');
 var store = require('./store');
@@ -72,7 +73,7 @@ const Top = React.createClass({
       <div className="Top">
         <MediaQuery maxDeviceWidth={1024}>
           <div className="BGVideo" style={{
-            backgroundImage: "url('/img/azzura.jpg')",
+            backgroundImage: "url('/img/home-mobile-photo.jpg')",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             WebkitBackgroundSize: 'cover',
@@ -83,14 +84,14 @@ const Top = React.createClass({
           }}>
           </div>
           <div className="BGContent">
-            <div className="headline">
+            {/*<div className="headline">
               {this.props.headline}
             </div>
             <div className="bgBorder">
             </div>
             <div className="subheadline">
               {this.props.subheadline}
-            </div>
+            </div>*/}
             <div className="scrollDown">
               <Link to='featured' className='button' smooth={true} offset={50} duration={500}>
                 <i className='fa fa-chevron-down' />
@@ -109,14 +110,14 @@ const Top = React.createClass({
             poster='/img/azzura.jpg'
             loop={true}>
             <div className="BGContent">
-              <div className="headline">
+              {/*<div className="headline">
                 {this.props.headline}
               </div>
               <div className="bgBorder">
               </div>
               <div className="subheadline">
                 {this.props.subheadline}
-              </div>
+              </div>*/}
               <div className="scrollDown">
                 <Link to='featured' className='button' smooth={true} offset={50} duration={500}>
                   <i className='fa fa-chevron-down' />
@@ -154,41 +155,62 @@ const Featured = React.createClass({
   render(){
     return (
       <div id='Featured' className="Featured">
-        <div className="Heading">
-          <div className="title">
-            <a href='/#/featured'>Featured</a>
-          </div>
-          <div className="Row">
-            <div className="all">
-              <MediaQuery minDeviceWidth={768}>
-                <a href='/#/featured'>
-                  All Properties <i className='fa fa-th' />
-                </a>
-              </MediaQuery>
-            </div>
-          </div>
-        </div>
+        <Motion defaultStyle={{y:50, opacity:0}}
+          style={{
+            y:spring(0, {stiffness:100, damping: 40}),
+            opacity:spring(1, {stiffness:100, damping: 40})
+          }}>
+            {style=>
+              <div className="Heading" style={{
+                opacity: style.opacity,
+                position: 'relative',
+                top: style.y
+              }}>
+                <div className="title">
+                  <a href='/#/featured'>Featured</a>
+                </div>
+                <div className="Row">
+                  <div className="all">
+                    <MediaQuery minDeviceWidth={768}>
+                      <a href='/#/featured'>
+                        All Properties <i className='fa fa-th' />
+                      </a>
+                    </MediaQuery>
+                  </div>
+                </div>
+              </div>
+            }
+        </Motion>
         <OwlCarousel id='featuredSlide' options={this.props.options}>
           {
             this.props.items.map((item, index)=>{
               return (
-                <div className="item" key={index}>
-                  <a href={`/#/featured/${item.type}/${item.acf.name}/${item.id}`} className="img-wrapper" style={{backgroundImage: `url(${item.acf.image})`}}>
-                    {
-                      item.acf.text !== '' ?
-                      <div className="specialText">
-                        {item.acf.text}
-                      </div> :
-                      <div />
-                    }
-                  </a>
-                  <div className="info">
-                    <div className="name">
-                      {item.acf.name}
+                <Motion defaultStyle={{opacity:0}}
+                  style={{
+                    opacity:spring(1, {stiffness:150, damping: 40})
+                  }}>
+                  {style=>
+                    <div className="item" key={index} style={{
+                      opacity: style.opacity
+                    }}>
+                      <a href={`/#/featured/${item.type}/${item.acf.name}/${item.id}`} className="img-wrapper" style={{backgroundImage: `url(${item.acf.image})`}}>
+                        {
+                          item.acf.text !== '' ?
+                          <div className="specialText">
+                            {item.acf.text}
+                          </div> :
+                          <div />
+                        }
+                      </a>
+                      <div className="info">
+                        <div className="name">
+                          {item.acf.name}
+                        </div>
+                        {this.handleSale(item)}
+                      </div>
                     </div>
-                    {this.handleSale(item)}
-                  </div>
-                </div>
+                  }
+                </Motion>
               );
             })
           }

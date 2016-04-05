@@ -76,8 +76,6 @@ const Top = React.createClass({
             src: '/img/ryan.mp4'
           },{
             src: '/img/ryan.webm'
-          },{
-            src: '/img/ryan.ogv'
           }]}
           poster='/img/ryan.jpg'
           loop={true}
@@ -85,7 +83,9 @@ const Top = React.createClass({
           preload={true}>
           <div className="BGContent">
             <div className="name">
-              {this.props.name}
+              <div className="text">
+                {this.props.name}
+              </div>
             </div>
             <div className="hidden">
             </div>
@@ -142,7 +142,9 @@ const Top = React.createClass({
         </div>
         <div className="BGContent">
           <div className="name">
-            {this.props.name}
+            <div className="text">
+              {this.props.name}
+            </div>
           </div>
           <div className="hidden">
           </div>

@@ -243,14 +243,17 @@
     padding-top 100px
     border-bottom 1px solid infoBorder
     .more
+      display: flex
       +below(767px)
         margin 25px
       +above(768px)
-        margin 50px
-        float left
+        margin auto 30px 50px
+      .More
+        display: flex
+        margin auto
       a
         display: block
-        size 150px auto
+        size 300px auto
         background-color darkBlue
         text-align: center
         color: white
@@ -259,15 +262,12 @@
         padding 5px 0px
         font-size 18px
         font-style: italic;
+        margin 20px
         +below(767px)
           margin auto
     #featuredSlide
       center(1280px)
-      .owl-controls
-        margin 25px
-        +above(768px)
-          margin 50px
-          absolute bottom -130px right 0px
+      // .owl-controls
       .item
         .img-wrapper
           background-repeat: no-repeat
