@@ -175,21 +175,21 @@ td,
 th {
   padding: 0;
 }
-a {
+html body {
+  font-family: museo-sans;
+}
+html body a {
   color: #003785;
   text-decoration: none;
   cursor: pointer;
 }
-a:hover {
+html body a:hover {
   color: #0067d4;
 }
-html {
-  font-family: museo-sans;
-}
-html #Head .Nav {
+html body #Head .Nav {
   position: relative;
 }
-html .container {
+html body .container {
   *zoom: 1;
   width: auto;
   max-width: 1280px;
@@ -200,34 +200,48 @@ html .container {
   padding-left: 0;
   padding-right: 0;
 }
-html .container:before,
-html .container:after {
+html body .container:before,
+html body .container:after {
   content: '';
   display: table;
 }
-html .container:after {
+html body .container:after {
   clear: both;
 }
-html .container #ihf-main-container #areaPickerContainer .input-text,
-html .container #ihf-main-container #areaPickerContainer input[type="text"],
-html .container #ihf-main-container #areaPickerContainer input[type="input"] {
+html body .container #ihf-main-container a {
+  color: #003785;
+  text-decoration: none;
+  cursor: pointer;
+}
+html body .container #ihf-main-container a:hover {
+  color: #0067d4;
+}
+html body .container #ihf-main-container .title-bar-1 {
+  background-color: #003785;
+  color: #fff;
+  border: none;
+  border-radius: 0px;
+}
+html body .container #ihf-main-container #areaPickerContainer .input-text,
+html body .container #ihf-main-container #areaPickerContainer input[type="text"],
+html body .container #ihf-main-container #areaPickerContainer input[type="input"] {
   padding: 0px !important;
 }
-html .container #ihf-main-container .input-group-addon {
+html body .container #ihf-main-container .input-group-addon {
   border: 1px solid transparent;
   background-color: #003785;
   color: #fff;
 }
-html .container #ihf-main-container .page-header {
+html body .container #ihf-main-container .page-header {
   text-align: center;
 }
-html .container #ihf-main-container #ihf-sidebar-container {
+html body .container #ihf-main-container #ihf-sidebar-container {
   display: none;
   width: 0px;
   height: 0px;
 }
-html .container #ihf-main-container .btn,
-html .container #ihf-main-container .btn-primary {
+html body .container #ihf-main-container .btn,
+html body .container #ihf-main-container .btn-primary {
   color: #fff;
   background-color: #003785;
   border: none;
@@ -235,11 +249,11 @@ html .container #ihf-main-container .btn-primary {
   text-decoration: none;
   cursor: pointer;
 }
-html .container #ihf-main-container .btn:hover,
-html .container #ihf-main-container .btn-primary:hover {
+html body .container #ihf-main-container .btn:hover,
+html body .container #ihf-main-container .btn-primary:hover {
   color: #0067d4;
 }
-html .container #ihf-main-container h1 {
+html body .container #ihf-main-container h1 {
   color: #003785;
   font-size: 38.4px;
   font-size: 2.4rem;
@@ -248,7 +262,7 @@ html .container #ihf-main-container h1 {
   margin: 0.75em 0;
   line-height: 1.6em;
 }
-html .container #ihf-main-container h2 {
+html body .container #ihf-main-container h2 {
   color: #003785;
   font-size: 28.8px;
   font-size: 1.8rem;
@@ -257,7 +271,7 @@ html .container #ihf-main-container h2 {
   margin: 0.75em 0;
   line-height: 1.6em;
 }
-html .container #ihf-main-container h3 {
+html body .container #ihf-main-container h3 {
   color: #003785;
   font-size: 24px;
   font-size: 1.5rem;
@@ -266,7 +280,7 @@ html .container #ihf-main-container h3 {
   margin: 0.75em 0;
   line-height: 1.6em;
 }
-html .container #ihf-main-container h4 {
+html body .container #ihf-main-container h4 {
   color: #003785;
   font-size: 20.8px;
   font-size: 1.3rem;
@@ -275,7 +289,7 @@ html .container #ihf-main-container h4 {
   margin: 0.75em 0;
   line-height: 1.6em;
 }
-html .container #ihf-main-container h5 {
+html body .container #ihf-main-container h5 {
   color: #003785;
   font-size: 16px;
   font-size: 1rem;
@@ -284,7 +298,7 @@ html .container #ihf-main-container h5 {
   margin: 0.75em 0;
   line-height: 1.6em;
 }
-html .container #ihf-main-container h6 {
+html body .container #ihf-main-container h6 {
   color: #003785;
   font-size: 14.4px;
   font-size: 0.9rem;
@@ -294,6 +308,6 @@ html .container #ihf-main-container h6 {
   line-height: 1.6em;
   text-transform: uppercase;
 }
-html #Foot {
+html body #Foot {
   margin: auto;
 }

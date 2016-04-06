@@ -242,15 +242,29 @@
     center(1280px)
     padding-top 100px
     border-bottom 1px solid infoBorder
+    +below(767px)
+      padding-top 25px
+    .title
+      text-align: center
+      h1()
+      color: darkBlue
+      font-family: otherFont
+      font-weight: 500
+      +below(767px)
+        font-size 30px
     .more
       display: flex
       +below(767px)
-        margin 25px
+        .More
+          display: block
+          margin auto
+          a
+            margin 25px auto
       +above(768px)
         margin auto 30px 50px
-      .More
-        display: flex
-        margin auto
+        .More
+          display: flex
+          margin auto
       a
         display: block
         size 300px auto

@@ -4115,6 +4115,28 @@ th {
 .Building .Featured:after {
   clear: both;
 }
+@media only screen and (max-width: 767px) {
+  .Building .Featured {
+    padding-top: 25px;
+  }
+}
+.Building .Featured .title {
+  text-align: center;
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
+  color: #003785;
+  font-family: museo-slab;
+  font-weight: 500;
+}
+@media only screen and (max-width: 767px) {
+  .Building .Featured .title {
+    font-size: 30px;
+  }
+}
 .Building .Featured .more {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4122,21 +4144,25 @@ th {
   display: flex;
 }
 @media only screen and (max-width: 767px) {
-  .Building .Featured .more {
-    margin: 25px;
+  .Building .Featured .more .More {
+    display: block;
+    margin: auto;
+  }
+  .Building .Featured .more .More a {
+    margin: 25px auto;
   }
 }
 @media only screen and (min-width: 768px) {
   .Building .Featured .more {
     margin: auto 30px 50px;
   }
-}
-.Building .Featured .more .More {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
+  .Building .Featured .more .More {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+  }
 }
 .Building .Featured .more a {
   display: block;

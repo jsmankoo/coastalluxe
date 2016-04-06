@@ -91,34 +91,34 @@ const Top = React.createClass({
             </div>
             <div className="info">
               <div className="mobile col">
-                <div className="wrapper">
-                  <a href='tel:310-344-0898' className="icon">
+                <a href='tel:310-344-0898' className="wrapper">
+                  <div className="icon">
                     <i className='fa fa-mobile' />
-                  </a>
+                  </div>
                   <div className="content">
                     {this.props.Mobile}
                   </div>
-                </div>
+                </a>
               </div>
               <div className="office col">
-                <div className="wrapper">
-                  <a href={this.props.url}  className="icon">
+                <a href={this.props.url} className="wrapper">
+                  <div className="icon">
                     <i className='fa fa-map-marker' />
-                  </a>
+                  </div>
                   <div className="content">
                     {this.props.Office} <br/> {this.props.City}
                   </div>
-                </div>
+                </a>
               </div>
               <div className="email col">
-                <div className="wrapper">
-                  <a href={`mailto:${this.props.email}`} className="icon">
+                <a href={`mailto:${this.props.email}`} className="wrapper">
+                  <div className="icon">
                     <i className='fa fa-paper-plane' />
-                  </a>
+                  </div>
                   <div className="content">
                     {this.props.email}
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -150,34 +150,34 @@ const Top = React.createClass({
           </div>
           <div className="info">
             <div className='mobile col'>
-              <div className="wrapper">
-                <a href='tel:310-344-0898' className="icon">
+              <a href='tel:310-344-0898' className="wrapper">
+                <div className="icon">
                   <i className='fa fa-mobile' />
-                </a>
+                </div>
                 <div className="content">
                   {this.props.Mobile}
                 </div>
-              </div>
+              </a>
             </div>
             <div className="office col">
-              <div className="wrapper">
-                <a href={this.props.url} className="icon">
+              <a href={this.props.url} className="wrapper">
+                <div className="icon">
                   <i className='fa fa-map-marker' />
-                </a>
+                </div>
                 <div className="content">
                   {this.props.Office} <br/> {this.props.City}
                 </div>
-              </div>
+              </a>
             </div>
             <div className="email col">
-              <div className="wrapper">
-                <a href={`mailto:${this.props.email}`} className="icon">
+              <a href={`mailto:${this.props.email}`} className="wrapper">
+                <div className="icon">
                   <i className='fa fa-paper-plane' />
-                </a>
+                </div>
                 <div className="content">
                   {this.props.email}
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -206,38 +206,38 @@ const Top = React.createClass({
           </div>
           <div className="info-wrapper">
             <div className="info">
-              <div className="mobile wrapper">
-                <a href='tel:310-344-0898' className="icon">
+              <a href='tel:310-344-0898' className="mobile wrapper">
+                <div className="icon">
                   <i className='fa fa-mobile' />
-                </a>
+                </div>
                 <div className="content">
                   <div className="text">
                     {this.props.Mobile}
                   </div>
                 </div>
-              </div>
+              </a>
               <div className="border" />
-              <div className="office wrapper">
-                <a href={this.props.url} className="icon">
+              <a href={this.props.url} className="office wrapper">
+                <div className="icon">
                   <i className='fa fa-map-marker' />
-                </a>
+                </div>
                 <div className="content">
                   <div className="text">
                     {this.props.Office} <br/> {this.props.City}
                   </div>
                 </div>
-              </div>
+              </a>
               <div className="border" />
-              <div className="email wrapper">
-                <a href={`mailto:${this.props.email}`} className="icon">
+              <a href={`mailto:${this.props.email}`} className="email wrapper">
+                <div className="icon">
                   <i className='fa fa-paper-plane' />
-                </a>
+                </div>
                 <div className="content">
                   <div className="text">
                     {this.props.email}
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>

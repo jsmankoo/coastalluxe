@@ -221,9 +221,9 @@ const Featured = React.createClass({
   render(){
     return (
       <div className="Featured">
-        {/*<div className="title">
-          Featured Listings
-        </div>*/}
+        <div className="title">
+          Properties
+        </div>
         <OwlCarousel id='featuredSlide' options={this.state.options}>
           {
             this.props.featured.filter(({status})=>status !== 'sold')

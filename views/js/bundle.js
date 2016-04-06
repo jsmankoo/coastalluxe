@@ -40166,6 +40166,11 @@ var Featured = React.createClass({
       'div',
       { className: 'Featured' },
       React.createElement(
+        'div',
+        { className: 'title' },
+        'Properties'
+      ),
+      React.createElement(
         OwlCarousel,
         { id: 'featuredSlide', options: this.state.options },
         this.props.featured.filter(function (_ref5) {
@@ -40494,11 +40499,11 @@ var Top = React.createClass({
               'div',
               { className: 'mobile col' },
               React.createElement(
-                'div',
-                { className: 'wrapper' },
+                'a',
+                { href: 'tel:310-344-0898', className: 'wrapper' },
                 React.createElement(
-                  'a',
-                  { href: 'tel:310-344-0898', className: 'icon' },
+                  'div',
+                  { className: 'icon' },
                   React.createElement('i', { className: 'fa fa-mobile' })
                 ),
                 React.createElement(
@@ -40512,11 +40517,11 @@ var Top = React.createClass({
               'div',
               { className: 'office col' },
               React.createElement(
-                'div',
-                { className: 'wrapper' },
+                'a',
+                { href: this.props.url, className: 'wrapper' },
                 React.createElement(
-                  'a',
-                  { href: this.props.url, className: 'icon' },
+                  'div',
+                  { className: 'icon' },
                   React.createElement('i', { className: 'fa fa-map-marker' })
                 ),
                 React.createElement(
@@ -40534,11 +40539,11 @@ var Top = React.createClass({
               'div',
               { className: 'email col' },
               React.createElement(
-                'div',
-                { className: 'wrapper' },
+                'a',
+                { href: 'mailto:' + this.props.email, className: 'wrapper' },
                 React.createElement(
-                  'a',
-                  { href: 'mailto:' + this.props.email, className: 'icon' },
+                  'div',
+                  { className: 'icon' },
                   React.createElement('i', { className: 'fa fa-paper-plane' })
                 ),
                 React.createElement(
@@ -40587,11 +40592,11 @@ var Top = React.createClass({
             'div',
             { className: 'mobile col' },
             React.createElement(
-              'div',
-              { className: 'wrapper' },
+              'a',
+              { href: 'tel:310-344-0898', className: 'wrapper' },
               React.createElement(
-                'a',
-                { href: 'tel:310-344-0898', className: 'icon' },
+                'div',
+                { className: 'icon' },
                 React.createElement('i', { className: 'fa fa-mobile' })
               ),
               React.createElement(
@@ -40605,11 +40610,11 @@ var Top = React.createClass({
             'div',
             { className: 'office col' },
             React.createElement(
-              'div',
-              { className: 'wrapper' },
+              'a',
+              { href: this.props.url, className: 'wrapper' },
               React.createElement(
-                'a',
-                { href: this.props.url, className: 'icon' },
+                'div',
+                { className: 'icon' },
                 React.createElement('i', { className: 'fa fa-map-marker' })
               ),
               React.createElement(
@@ -40627,11 +40632,11 @@ var Top = React.createClass({
             'div',
             { className: 'email col' },
             React.createElement(
-              'div',
-              { className: 'wrapper' },
+              'a',
+              { href: 'mailto:' + this.props.email, className: 'wrapper' },
               React.createElement(
-                'a',
-                { href: 'mailto:' + this.props.email, className: 'icon' },
+                'div',
+                { className: 'icon' },
                 React.createElement('i', { className: 'fa fa-paper-plane' })
               ),
               React.createElement(
@@ -40678,11 +40683,11 @@ var Top = React.createClass({
             'div',
             { className: 'info' },
             React.createElement(
-              'div',
-              { className: 'mobile wrapper' },
+              'a',
+              { href: 'tel:310-344-0898', className: 'mobile wrapper' },
               React.createElement(
-                'a',
-                { href: 'tel:310-344-0898', className: 'icon' },
+                'div',
+                { className: 'icon' },
                 React.createElement('i', { className: 'fa fa-mobile' })
               ),
               React.createElement(
@@ -40697,11 +40702,11 @@ var Top = React.createClass({
             ),
             React.createElement('div', { className: 'border' }),
             React.createElement(
-              'div',
-              { className: 'office wrapper' },
+              'a',
+              { href: this.props.url, className: 'office wrapper' },
               React.createElement(
-                'a',
-                { href: this.props.url, className: 'icon' },
+                'div',
+                { className: 'icon' },
                 React.createElement('i', { className: 'fa fa-map-marker' })
               ),
               React.createElement(
@@ -40720,11 +40725,11 @@ var Top = React.createClass({
             ),
             React.createElement('div', { className: 'border' }),
             React.createElement(
-              'div',
-              { className: 'email wrapper' },
+              'a',
+              { href: 'mailto:' + this.props.email, className: 'email wrapper' },
               React.createElement(
-                'a',
-                { href: 'mailto:' + this.props.email, className: 'icon' },
+                'div',
+                { className: 'icon' },
                 React.createElement('i', { className: 'fa fa-paper-plane' })
               ),
               React.createElement(
