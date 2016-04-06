@@ -222,6 +222,14 @@ html body .container #ihf-main-container .title-bar-1 {
   border: none;
   border-radius: 0px;
 }
+html body .container #ihf-main-container .title-bar-1 a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+html body .container #ihf-main-container .title-bar-1 a:hover {
+  color: #222;
+}
 html body .container #ihf-main-container #areaPickerContainer .input-text,
 html body .container #ihf-main-container #areaPickerContainer input[type="text"],
 html body .container #ihf-main-container #areaPickerContainer input[type="input"] {
