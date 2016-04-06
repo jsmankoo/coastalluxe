@@ -46,7 +46,7 @@ const Mobile = React.createClass({
         <div className="wrap">
           <div className="category">
             <div className="categoryName">
-              <a href='/#/' onClick={this.onClickHandler}>HOME</a>
+              <a href='http://coastalluxeliving.com/#/' onClick={this.onClickHandler}>HOME</a>
             </div>
           </div>
           {
@@ -78,7 +78,7 @@ const Mobile = React.createClass({
           <div className="category">
             <div className="menuBorder"/>
             <div className="categoryName">
-              <a href='/#/contact' onClick={this.onClickHandler}>CONTACT</a>
+              <a href='http://coastalluxeliving.com/#/contact' onClick={this.onClickHandler}>CONTACT</a>
             </div>
           </div>
         </div>
@@ -104,7 +104,7 @@ const Tablet = React.createClass({
           </div>
           <div className="category">
             <div className="categoryName">
-              <a href='/#/' onClick={this.onClickHandler}>HOME</a>
+              <a href='http://coastalluxeliving.com/#/' onClick={this.onClickHandler}>HOME</a>
             </div>
           </div>
           {
@@ -129,7 +129,7 @@ const Tablet = React.createClass({
           <div className="category">
             <div className="menuBorder"/>
             <div className="categoryName">
-              <a href='/#/contact' onClick={this.onClickHandler}>CONTACT</a>
+              <a href='http://coastalluxeliving.com/#/contact' onClick={this.onClickHandler}>CONTACT</a>
             </div>
           </div>
         </div>

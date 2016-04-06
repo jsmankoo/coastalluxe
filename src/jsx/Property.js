@@ -116,6 +116,9 @@ const Property = React.createClass({
           building={this.props.params.building}
           featured={this.state.featured}
           options={this.state.options} />*/}
+        <div dangerouslySetInnerHTML={{
+          __html: '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57056071f6b81438"></script>'
+        }} />
       </div>
     );
   }

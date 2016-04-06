@@ -41937,9 +41937,6 @@ var FeaturedCove = React.createClass({
 });
 
 store.subscribe(renderDom);
-store.subscribe(function () {
-  return console.log(store.getState().Nav.affix);
-});
 renderDom();
 
 },{"./App":336,"./Building":337,"./Contact":338,"./Featured":339,"./Home":340,"./Property":342,"./store":347,"react":263,"react-dom":61,"react-router":106}],342:[function(require,module,exports){
@@ -42062,7 +42059,10 @@ var Property = React.createClass({
       React.createElement(Jumbotron, this.state),
       React.createElement(Details, _extends({}, this.state.property, { options: this.state.options })),
       this.state.building.facilities.length === 0 ? React.createElement('div', null) : React.createElement(Facilities, this.state.building),
-      this.state.property.facilities.length ? React.createElement(Facilities, { facilities: this.state.property.facilities }) : React.createElement('div', null)
+      this.state.property.facilities.length ? React.createElement(Facilities, { facilities: this.state.property.facilities }) : React.createElement('div', null),
+      React.createElement('div', { dangerouslySetInnerHTML: {
+          __html: '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57056071f6b81438"></script>'
+        } })
     );
   }
 });
@@ -42399,6 +42399,8 @@ module.exports = Property;
 },{"./components/OwlCarousel":346,"./store":347,"react":263,"react-remarkable":75,"react-responsive":76}],343:[function(require,module,exports){
 'use strict';
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var React = require('react');
 var MediaQuery = require('react-responsive');
 var Markdown = require('react-remarkable');
@@ -42453,22 +42455,22 @@ var Mobile = React.createClass({
           { className: 'socialMedia' },
           React.createElement(
             'a',
-            { href: 'mailto:' + this.props.email },
+            { href: 'mailto:' + this.props.email, target: '_blank' },
             React.createElement('i', { className: 'fa fa-envelope' })
           ),
           React.createElement(
             'a',
-            { href: this.props.facebook },
+            { href: this.props.facebook, target: '_blank' },
             React.createElement('i', { className: 'fa fa-facebook-f' })
           ),
           React.createElement(
             'a',
-            { href: this.props.twitter },
+            { href: this.props.twitter, target: '_blank' },
             React.createElement('i', { className: 'fa fa-twitter' })
           ),
           React.createElement(
             'a',
-            { href: this.props.instagram },
+            { href: this.props.instagram, target: '_blank' },
             React.createElement('i', { className: 'fa fa-instagram' })
           )
         )
@@ -42486,7 +42488,7 @@ var Mobile = React.createClass({
           { className: 'bhhs' },
           React.createElement(
             'a',
-            { href: 'http://www.berkshirehathawayhs.com/', target: '_blank' },
+            _defineProperty({ target: '_blank', href: 'http://www.berkshirehathawayhs.com/' }, 'target', '_blank'),
             React.createElement('img', { src: this.props.berkshireLogo })
           )
         )
@@ -42537,22 +42539,22 @@ var Tablet = React.createClass({
           { className: 'socialMedia' },
           React.createElement(
             'a',
-            { href: 'mailto:' + this.props.email },
+            { href: 'mailto:' + this.props.email, target: '_blank' },
             React.createElement('i', { className: 'fa fa-envelope' })
           ),
           React.createElement(
             'a',
-            { href: this.props.facebook },
+            { href: this.props.facebook, target: '_blank' },
             React.createElement('i', { className: 'fa fa-facebook-f' })
           ),
           React.createElement(
             'a',
-            { href: this.props.twitter },
+            { href: this.props.twitter, target: '_blank' },
             React.createElement('i', { className: 'fa fa-twitter' })
           ),
           React.createElement(
             'a',
-            { href: this.props.instagram },
+            { href: this.props.instagram, target: '_blank' },
             React.createElement('i', { className: 'fa fa-instagram' })
           )
         ),
@@ -42647,7 +42649,7 @@ var Mobile = React.createClass({
             { className: 'categoryName' },
             React.createElement(
               'a',
-              { href: '/#/', onClick: this.onClickHandler },
+              { href: 'http://coastalluxeliving.com/#/', onClick: this.onClickHandler },
               'HOME'
             )
           )
@@ -42696,7 +42698,7 @@ var Mobile = React.createClass({
             { className: 'categoryName' },
             React.createElement(
               'a',
-              { href: '/#/contact', onClick: this.onClickHandler },
+              { href: 'http://coastalluxeliving.com/#/contact', onClick: this.onClickHandler },
               'CONTACT'
             )
           )
@@ -42737,7 +42739,7 @@ var Tablet = React.createClass({
             { className: 'categoryName' },
             React.createElement(
               'a',
-              { href: '/#/', onClick: this.onClickHandler },
+              { href: 'http://coastalluxeliving.com/#/', onClick: this.onClickHandler },
               'HOME'
             )
           )
@@ -42780,7 +42782,7 @@ var Tablet = React.createClass({
             { className: 'categoryName' },
             React.createElement(
               'a',
-              { href: '/#/contact', onClick: this.onClickHandler },
+              { href: 'http://coastalluxeliving.com/#/contact', onClick: this.onClickHandler },
               'CONTACT'
             )
           )

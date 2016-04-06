@@ -7,6 +7,15 @@
 
 normalize-css()
 
+#loader
+  fixed top 0px left 0px
+  size 100% 100%
+  background-image: url('http://coastalluxeliving.com/img/loader.gif')
+  background-position: center;
+  background-repeat: no-repeat
+  background-color white
+  z-index 20000
+
 html body
   font-family: mainFont
   a
@@ -45,7 +54,13 @@ html body
         background-color darkBlue
         color white
       .page-header
+        h1()
         text-align: center
+        color: darkBlue
+        font-family: otherFont
+        font-weight: 500
+        +below(767px)
+          font-size 30px
       #ihf-sidebar-container
         display: none
         size 0px 0px
@@ -78,4 +93,4 @@ html body
         h6()
 
   #Foot
-    margin auto
+    margin 100px auto auto

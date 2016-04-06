@@ -37,7 +37,6 @@ html( class="no-js" lang="")
         link(rel='stylesheet' href='/css/react-select.min.css')
         link(rel="stylesheet", type="text/css", href="/css/bundle.css")
         <!-- Place favicon.ico in the root directory -->
-
         script(src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js")
         script(src="https://use.typekit.net/azq2lsi.js")
         script try{Typekit.load({ async: true });}catch(e){}
@@ -45,16 +44,21 @@ html( class="no-js" lang="")
         | <!--[if lt IE 8]>
         |     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         | <![endif]-->
-        
+        #loader
         #Main
         
         script(src="/js/vendor/jquery.min.js")
         //script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
         //script(src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js")
-        //script(type="application/javascript", src="https://npmcdn.com/prismic.io@2.0.0/dist/prismic.io.min.js")
-        //script(src="/jquery.vide.min.js")
+        script(type="application/javascript").
+          setTimeout(function(){
+            $('#loader').fadeOut();
+          }, 2000);
         script(src="/js/bundle.js")
+        //- addthis buttons
+        script( type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57056071f6b81438")
+
                   
         // Google Analytics: change UA-XXXXX-X to be your site's ID.
         script.

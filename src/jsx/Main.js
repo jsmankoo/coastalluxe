@@ -145,5 +145,4 @@ const FeaturedCove = React.createClass({
 });
 
 store.subscribe(renderDom);
-store.subscribe(()=>console.log(store.getState().Nav.affix));
 renderDom();

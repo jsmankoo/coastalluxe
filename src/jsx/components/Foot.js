@@ -35,10 +35,10 @@ const Mobile = React.createClass({
         </div>
         <div className="col">
           <div className="socialMedia">
-            <a href={`mailto:${this.props.email}`} ><i className='fa fa-envelope' /></a>
-            <a href={this.props.facebook} ><i className='fa fa-facebook-f' /></a>
-            <a href={this.props.twitter} ><i className='fa fa-twitter' /></a>
-            <a href={this.props.instagram} ><i className='fa fa-instagram' /></a>
+            <a href={`mailto:${this.props.email}`} target='_blank'><i className='fa fa-envelope' /></a>
+            <a href={this.props.facebook} target='_blank'><i className='fa fa-facebook-f' /></a>
+            <a href={this.props.twitter} target='_blank'><i className='fa fa-twitter' /></a>
+            <a href={this.props.instagram} target='_blank'><i className='fa fa-instagram' /></a>
           </div>
         </div>
         <div className="col">
@@ -47,7 +47,7 @@ const Mobile = React.createClass({
         </div>
         <div className="col">
           <div className="bhhs">
-            <a href='http://www.berkshirehathawayhs.com/' target="_blank">
+            <a target='_blank' href='http://www.berkshirehathawayhs.com/' target="_blank">
               <img src={this.props.berkshireLogo} />
             </a>
           </div>
@@ -81,10 +81,10 @@ const Tablet = React.createClass({
         </div>
         <div className="midContent">
           <div className="socialMedia">
-            <a href={`mailto:${this.props.email}`} ><i className='fa fa-envelope' /></a>
-            <a href={this.props.facebook} ><i className='fa fa-facebook-f' /></a>
-            <a href={this.props.twitter} ><i className='fa fa-twitter' /></a>
-            <a href={this.props.instagram} ><i className='fa fa-instagram' /></a>
+            <a href={`mailto:${this.props.email}`} target='_blank' ><i className='fa fa-envelope' /></a>
+            <a href={this.props.facebook} target='_blank' ><i className='fa fa-facebook-f' /></a>
+            <a href={this.props.twitter} target='_blank' ><i className='fa fa-twitter' /></a>
+            <a href={this.props.instagram} target='_blank' ><i className='fa fa-instagram' /></a>
           </div>
           <div className="footer" dangerouslySetInnerHTML={{__html: `${this.props.copyright}\n${this.props.information}`}}>
           </div>

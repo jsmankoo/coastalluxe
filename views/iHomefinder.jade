@@ -44,10 +44,15 @@ html( class="no-js" lang="")
         | <![endif]-->
         
         #Head
+        #loader
         .container
         #Foot
                 
         //- script(src="http://coastalluxeliving.com/js/vendor/jquery.min.js")
+        script(type="application/javascript").
+          setTimeout(function(){
+            $('#loader').fadeOut();
+          }, 2000);
         script(src="http://coastalluxeliving.com/js/iHomefinderTop.js")
         script(src="http://coastalluxeliving.com/js/iHomefinderFoot.js")
         // Google Analytics: change UA-XXXXX-X to be your site's ID.

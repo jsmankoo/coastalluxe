@@ -175,6 +175,18 @@ td,
 th {
   padding: 0;
 }
+#loader {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url("http://coastalluxeliving.com/img/loader.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  z-index: 20000;
+}
 html body {
   font-family: museo-sans;
 }
@@ -241,7 +253,21 @@ html body .container #ihf-main-container .input-group-addon {
   color: #fff;
 }
 html body .container #ihf-main-container .page-header {
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  text-rendering: optimizelegibility;
+  font-weight: bold;
+  margin: 0.75em 0;
+  line-height: 1.6em;
   text-align: center;
+  color: #003785;
+  font-family: museo-slab;
+  font-weight: 500;
+}
+@media only screen and (max-width: 767px) {
+  html body .container #ihf-main-container .page-header {
+    font-size: 30px;
+  }
 }
 html body .container #ihf-main-container #ihf-sidebar-container {
   display: none;
@@ -317,5 +343,5 @@ html body .container #ihf-main-container h6 {
   text-transform: uppercase;
 }
 html body #Foot {
-  margin: auto;
+  margin: 100px auto auto;
 }
