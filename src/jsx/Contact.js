@@ -77,7 +77,6 @@ const Top = React.createClass({
           },{
             src: '/img/ryan.webm'
           }]}
-          poster='/img/ryan.jpg'
           loop={true}
           autoPlay={true}
           preload={true}>
