@@ -42279,7 +42279,7 @@ var Mobile = React.createClass({
         { className: 'col logo' },
         React.createElement(
           'a',
-          { href: '/#/' },
+          { href: 'http://coastalluxeliving.com/#/' },
           React.createElement('img', { src: this.props.logo })
         )
       )
@@ -42322,7 +42322,7 @@ var Tablet = React.createClass({
         { className: 'col logo' },
         React.createElement(
           'a',
-          { href: '/#/' },
+          { href: 'http://coastalluxeliving.com/#/' },
           React.createElement('img', { src: this.props.logo })
         )
       )
@@ -42360,7 +42360,7 @@ var Desktop = React.createClass({
         { className: 'col contact' },
         React.createElement(
           'a',
-          { href: '/#/contact' },
+          { href: 'http://coastalluxeliving.com/#/contact' },
           React.createElement('i', { className: 'fa ' + this.props.contactLogo }),
           React.createElement(
             'div',
@@ -42374,7 +42374,7 @@ var Desktop = React.createClass({
         { className: 'col logo' },
         React.createElement(
           'a',
-          { href: '/#/' },
+          { href: 'http://coastalluxeliving.com/#/' },
           React.createElement('img', { src: this.props.desktopLogo })
         )
       ),
