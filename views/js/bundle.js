@@ -40061,14 +40061,7 @@ var Details = React.createClass({
         'div',
         { className: 'rest' },
         React.createElement('div', { className: 'paragraph', dangerouslySetInnerHTML: { __html: this.props.moreContent } })
-      ) : React.createElement('div', null),
-      React.createElement(
-        'div',
-        { className: 'arrow' },
-        React.createElement('i', {
-          className: 'fa fa-chevron-' + (this.state.moreContentShow ? 'up' : 'down'),
-          onClick: this.showContent })
-      )
+      ) : React.createElement('div', null)
     );
   }
 });

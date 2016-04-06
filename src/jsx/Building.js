@@ -147,11 +147,11 @@ const Details = React.createClass({
             </div>
           : <div />
         }
-        <div className="arrow">
+        {/*<div className="arrow">
           <i
             className={`fa fa-chevron-${this.state.moreContentShow ? 'up' : 'down'}`}
             onClick={this.showContent}/>
-        </div>
+        </div>*/}
       </div>
     );
   }
