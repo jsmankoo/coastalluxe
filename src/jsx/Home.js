@@ -107,6 +107,7 @@ const Top = React.createClass({
             },{
               src: '/img/azzura.webm'
             }]}
+            poster='/img/azzura.jpg'
             loop={true}>
             <div className="BGContent">
               {/*<div className="headline">
