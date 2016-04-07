@@ -41100,7 +41100,7 @@ var Jumbotron = React.createClass({
                 React.createElement(Select, {
                   name: 'Building',
                   value: this.props.building,
-                  options: [{ value: 'all', label: 'All' }, { value: 'featured', label: 'Other' }, { value: '13700marinapointedr', label: 'AZZURRA' }, { value: '13750marinapointedr', label: 'REGATTA' }, { value: '13800marinapointedr', label: 'COVE' }],
+                  options: [{ value: 'all', label: 'All' }, { value: '13700marinapointedr', label: 'Azzurra' }, { value: '13750marinapointedr', label: 'Regatta' }, { value: '13800marinapointedr', label: 'Cove' }, { value: 'featured', label: 'Other' }],
                   onChange: this.buildingOnChange
                 })
               )
