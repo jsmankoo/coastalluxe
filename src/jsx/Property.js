@@ -1,6 +1,7 @@
 var React = require('react');
 var MediaQuery = require('react-responsive');
 var Markdown = require('react-remarkable');
+import Helmet from 'react-helmet';
 
 var OwlCarousel = require('./components/OwlCarousel');
 var store = require('./store');
@@ -100,6 +101,12 @@ const Property = React.createClass({
   render(){
     return (
       <div className="Property">
+        <Helmet
+            title={`Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.property.name}`}
+            script={[
+                  {"src": "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57056071f6b81438", "type": "text/javascript"}
+                ]}
+          />
         <Jumbotron {...this.state} />
         <Details {...this.state.property} options={this.state.options} />
         {
@@ -116,9 +123,6 @@ const Property = React.createClass({
           building={this.props.params.building}
           featured={this.state.featured}
           options={this.state.options} />*/}
-        <div dangerouslySetInnerHTML={{
-          __html: '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57056071f6b81438"></script>'
-        }} />
       </div>
     );
   }

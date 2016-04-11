@@ -2,6 +2,7 @@ var React = require('react');
 var MediaQuery = require('react-responsive');
 var ReactBGVideo = require('react-background-video');
 var Markdown = require('react-remarkable');
+import Helmet from 'react-helmet';
 
 var store = require('./store');
 
@@ -34,6 +35,9 @@ const Contact = React.createClass({
   render(){
     return (
       <div className="Contact">
+        <Helmet
+            title={`Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.name}`}
+          />
         <Top
           name={this.state.name}
           email={this.state.email}
@@ -89,40 +93,42 @@ const Top = React.createClass({
             </div>
             <div className="hidden">
             </div>
-            <div className="info">
-              <div className="mobile col">
-                <a href='tel:310-344-0898' className="wrapper">
-                  <div className="icon">
-                    <i className='fa fa-mobile' />
-                  </div>
-                  <div className="content">
-                    {this.props.Mobile}
-                  </div>
-                </a>
-              </div>
-              <div className="office col">
-                <a href={this.props.url} className="wrapper">
-                  <div className="icon">
-                    <i className='fa fa-map-marker' />
-                  </div>
-                  <div className="content">
-                    {this.props.Office} <br/> {this.props.City}
-                  </div>
-                </a>
-              </div>
-              <div className="email col">
-                <a href={`mailto:${this.props.email}`} className="wrapper">
-                  <div className="icon">
-                    <i className='fa fa-paper-plane' />
-                  </div>
-                  <div className="content">
-                    {this.props.email}
-                  </div>
-                </a>
-              </div>
-            </div>
           </div>
         </ReactBGVideo>
+        <div className="infoWrapper">
+          <div className="info">
+            <div className="mobile col">
+              <a href='tel:310-344-0898' className="wrapper">
+                <div className="icon">
+                  <i className='fa fa-mobile' />
+                </div>
+                <div className="content">
+                  {this.props.Mobile}
+                </div>
+              </a>
+            </div>
+            <div className="office col">
+              <a href={this.props.url} className="wrapper">
+                <div className="icon">
+                  <i className='fa fa-map-marker' />
+                </div>
+                <div className="content">
+                  {this.props.Office} <br/> {this.props.City}
+                </div>
+              </a>
+            </div>
+            <div className="email col">
+              <a href={`mailto:${this.props.email}`} className="wrapper">
+                <div className="icon">
+                  <i className='fa fa-paper-plane' />
+                </div>
+                <div className="content">
+                  {this.props.email}
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     );
   },
@@ -146,10 +152,10 @@ const Top = React.createClass({
               {this.props.name}
             </div>
           </div>
-          <div className="hidden">
-          </div>
+        </div>
+        <div className="infoWrapper">
           <div className="info">
-            <div className='mobile col'>
+            <div className="mobile col">
               <a href='tel:310-344-0898' className="wrapper">
                 <div className="icon">
                   <i className='fa fa-mobile' />
@@ -204,41 +210,41 @@ const Top = React.createClass({
               {this.props.name}
             </div>
           </div>
-          <div className="info-wrapper">
-            <div className="info">
-              <a href='tel:310-344-0898' className="mobile wrapper">
-                <div className="icon">
-                  <i className='fa fa-mobile' />
+        </div>
+        <div className="info-wrapper">
+          <div className="info">
+            <a href='tel:310-344-0898' className="mobile wrapper">
+              <div className="icon">
+                <i className='fa fa-mobile' />
+              </div>
+              <div className="content">
+                <div className="text">
+                  {this.props.Mobile}
                 </div>
-                <div className="content">
-                  <div className="text">
-                    {this.props.Mobile}
-                  </div>
+              </div>
+            </a>
+            <div className="border" />
+            <a href={this.props.url} className="office wrapper">
+              <div className="icon">
+                <i className='fa fa-map-marker' />
+              </div>
+              <div className="content">
+                <div className="text">
+                  {this.props.Office} <br/> {this.props.City}
                 </div>
-              </a>
-              <div className="border" />
-              <a href={this.props.url} className="office wrapper">
-                <div className="icon">
-                  <i className='fa fa-map-marker' />
+              </div>
+            </a>
+            <div className="border" />
+            <a href={`mailto:${this.props.email}`} className="email wrapper">
+              <div className="icon">
+                <i className='fa fa-paper-plane' />
+              </div>
+              <div className="content">
+                <div className="text">
+                  {this.props.email}
                 </div>
-                <div className="content">
-                  <div className="text">
-                    {this.props.Office} <br/> {this.props.City}
-                  </div>
-                </div>
-              </a>
-              <div className="border" />
-              <a href={`mailto:${this.props.email}`} className="email wrapper">
-                <div className="icon">
-                  <i className='fa fa-paper-plane' />
-                </div>
-                <div className="content">
-                  <div className="text">
-                    {this.props.email}
-                  </div>
-                </div>
-              </a>
-            </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>

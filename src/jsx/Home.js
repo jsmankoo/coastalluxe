@@ -4,6 +4,7 @@ var ReactBGVideo = require('react-background-video');
 var Markdown = require('react-remarkable');
 import {Link, Element, Events} from 'react-scroll';
 import {Motion, spring} from 'react-motion';
+import Helmet from 'react-helmet';
 
 var OwlCarousel = require('./components/OwlCarousel');
 var store = require('./store');
@@ -49,6 +50,9 @@ const Home = React.createClass({
   render(){
     return (
       <div className="Home">
+        <Helmet
+            title="Coastal Luxe Living - Specializing in luxury Coastal properties - Home Page"
+          />
         <Top
           headline={store.getState().Home.headline}
           subheadline={store.getState().Home.subheadline}/>

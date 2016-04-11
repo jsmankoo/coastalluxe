@@ -5,7 +5,7 @@
     +above(768px)
       size 100% 525px
     position relative
-    overflow hidden
+    // overflow hidden
     // background-color rgba(darkBlue, 0.5)
     .BGVideo
       overflow hidden
@@ -32,63 +32,64 @@
           font-weight: 700
           font-size: 30px
           text-align: center
-          size 100% 300px
+          size 100% 470px
           position: relative
           .text
             align(b)
             width 100%
-        .info-wrapper
-          center()
-          background-color ContactInfoTint
-          size 100% 170px
-          color darkBlue
-          font-family: otherFont
-          font-weight: 500;
-          font-size 20px
-          position relative
-          .info
-            size 275px auto
-            align(b)
-            .border
-              center()
-              border-bottom 1px solid lightBlue
-              size 100% auto
-            .wrapper
-              column(1)
+      .info-wrapper
+        center()
+        absolute top 470px
+        background-color ContactInfoTint
+        size 100% 170px
+        color darkBlue
+        font-family: otherFont
+        font-weight: 500;
+        font-size 20px
+        position relative
+        .info
+          size 275px auto
+          align(b)
+          .border
+            center()
+            border-bottom 1px solid darkBlue
+            size 100% auto
+          .wrapper
+            column(1)
+            color darkBlue
+            height 56px
+            .icon
+              column(1/10)
+              text-align: center
               color darkBlue
-              height 56px
-              .icon
-                column(1/10)
-                text-align: center
-                color lightBlue
-                hover-color darkBlue true
-                position: relative
-                height 100%
-                i.fa.fa-mobile
-                  font-size: 30px
-                  text-align: left
-                  width 100%
-                  align(v)
-                i.fa.fa-map-marker
-                  font-size: 25px
-                  text-align: left
-                  width 100%
-                  align(v)
-                i.fa.fa-paper-plane
-                  font-size: 19px
-                  text-align: left
-                  width 100%
-                  align(v)
-              .content
-                column(9/10)
-                font-size 14px
+              hover-color lightBlue true
+              position: relative
+              height 100%
+              i.fa.fa-mobile
+                font-size: 30px
                 text-align: left
-                height 100%
-                position: relative
-                .text
-                  align(v)
-                  padding-left 10px
-                  width 100%
+                width 100%
+                align(v)
+              i.fa.fa-map-marker
+                font-size: 25px
+                text-align: left
+                width 100%
+                align(v)
+              i.fa.fa-paper-plane
+                font-size: 19px
+                text-align: left
+                width 100%
+                align(v)
+            .content
+              column(9/10)
+              font-size 14px
+              text-align: left
+              height 100%
+              position: relative
+              .text
+                align(v)
+                padding-left 10px
+                width 100%
 
     .Tablet
       .BGContent
@@ -104,10 +105,12 @@
           .text
             align(b)
             width: 100%
+      .infoWrapper
+        background-color: ContactInfoTint
+        size 100% 150px
+        absolute bottom -150px
         .info
-          background-color: ContactInfoTint
           center(1280px)
-          size 100% 150px
           text-align: center
           font-family: otherFont
           font-weight: 500;
@@ -121,8 +124,8 @@
               // align(v)
               width 100%
               .icon
-                color lightBlue
-                hover-color darkBlue true
+                color darkBlue
+                hover-color lightBlue true
                 i.fa.fa-mobile
                   font-size: 40px
                   padding-bottom 5px
@@ -143,7 +146,7 @@
                   font-size: 18px
   .Ryan
     .Mobile
-      padding 40px 0px 60px
+      padding 200px 0px 60px
       .image
         img
           display: block
@@ -193,7 +196,7 @@
           font-weight: 500
           margin-bottom 0px
     .Tablet
-      padding 90px 0px 160px
+      padding 200px 0px 160px
       center(1280px)
       .wrap
         center(768px)

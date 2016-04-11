@@ -1,6 +1,7 @@
 var React = require('react');
 var MediaQuery = require('react-responsive');
 var Select = require('react-select');
+import Helmet from 'react-helmet';
 
 var store = require('./store');
 
@@ -180,6 +181,9 @@ const FeaturedProperties = React.createClass({
   render(){
     return (
       <div className="FeaturedProperties">
+        <Helmet
+            title={`Coastal Luxe Living - Specializing in luxury Coastal properties - Featured Properties`}
+          />
         <Jumbotron {...this.state.index} saleType={this.props.saleType} building={this.props.building} />
         <Properties
           {...this.state.buildings}

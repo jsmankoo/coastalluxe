@@ -1,6 +1,7 @@
 var React = require('react');
 var MediaQuery = require('react-responsive');
 var Markdown = require('react-remarkable');
+import Helmet from 'react-helmet';
 
 var OwlCarousel = require('./components/OwlCarousel');
 var store = require('./store');
@@ -65,6 +66,9 @@ const Property = React.createClass({
   render(){
     return (
       <div className="Building">
+        <Helmet
+            title={`Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.building.name}`}
+          />
         <Jumbotron {...this.state} />
         <Featured
           building={this.props.buildingName}
