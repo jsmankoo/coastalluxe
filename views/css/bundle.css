@@ -382,10 +382,11 @@ th {
   float: left;
 }
 .Nav .wrap .col.contact a .linkName {
-  font-family: museo-slab;
-  padding: 3px;
+  font-family: trajan-pro-3;
+  padding: 4px 12px;
   float: right;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 15px;
 }
 .Nav .wrap .col.menu {
   *zoom: 1;
@@ -417,10 +418,11 @@ th {
   }
 }
 .Nav .wrap .col.menu a .linkName {
-  font-family: museo-slab;
-  padding: 3px;
+  font-family: trajan-pro-3;
+  padding: 4px 12px;
   float: left;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 15px;
 }
 .Menu {
   z-index: 9999;
@@ -487,14 +489,14 @@ th {
   padding: 15px 20px;
   color: #fff;
   font-size: 20px;
-  font-weight: 700;
-  font-family: museo-slab;
+  font-weight: 600;
+  font-family: trajan-pro-3;
 }
 .Menu .Mobile .wrap .category .categoryName a {
   color: #fff;
   font-size: 20px;
-  font-weight: 700;
-  font-family: museo-slab;
+  font-weight: 600;
+  font-family: trajan-pro-3;
 }
 .Menu .Mobile .wrap .category .categoryName i.fa {
   font-size: 22px;
@@ -534,6 +536,7 @@ th {
 }
 .Menu .Tablet .wrap .category {
   padding-left: 35px;
+  padding-bottom: 12px;
 }
 .Menu .Tablet .wrap .category .menuBorder {
   border-top: 1px solid #fff;
@@ -544,14 +547,16 @@ th {
   color: #fff;
   font-size: 25px;
   font-weight: 500;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   padding: 0px 0px 10px;
+  position: relative;
+  left: -3px;
 }
 .Menu .Tablet .wrap .category .categoryName a {
   color: #fff;
   font-size: 25px;
   font-weight: 500;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
 }
 .Menu .Tablet .wrap .category .submenu {
   margin-bottom: 8px;
@@ -869,7 +874,7 @@ th {
 }
 .Home .Top .BGContent .headline {
   text-align: center;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   color: #fff;
 }
 @media only screen and (max-width: 767px) {
@@ -986,8 +991,8 @@ th {
 .Home .Featured .Heading .title {
   text-align: center;
   color: #003785;
-  font-family: museo-slab;
-  font-weight: 700;
+  font-family: trajan-pro-3;
+  font-weight: 600;
   text-decoration: none;
 }
 .Home .Featured .Heading .title:hover {
@@ -1001,7 +1006,7 @@ th {
 }
 @media only screen and (min-width: 768px) {
   .Home .Featured .Heading .title {
-    font-size: 60px;
+    font-size: 44px;
     margin: 95px auto 0px;
   }
 }
@@ -1014,11 +1019,10 @@ th {
   margin-left: 0%;
   margin-right: 3%;
   float: right;
-  font-style: italic;
   letter-spacing: 1px;
   text-align: center;
-  font-family: museo-slab;
-  font-weight: 700;
+  font-family: trajan-pro-3;
+  font-weight: 600;
   font-size: 16px;
   color: #003785;
   text-decoration: none;
@@ -1041,6 +1045,7 @@ th {
 }
 .Home .Featured .Heading .Row .all i.fa {
   font-size: 20px;
+  padding: 0px 10px;
 }
 .Home .Featured #featuredSlide {
   *zoom: 1;
@@ -1136,8 +1141,8 @@ th {
 }
 .Home .Featured #featuredSlide .item .info .name {
   color: #003785;
-  font-family: museo-slab;
-  font-weight: 700;
+  font-family: trajan-pro-3;
+  font-weight: 600;
 }
 @media only screen and (max-width: 767px) {
   .Home .Featured #featuredSlide .item .info .name {
@@ -1203,8 +1208,8 @@ th {
 .Home .Ryan .name {
   text-align: center;
   color: #003785;
-  font-family: museo-slab;
-  font-weight: 700;
+  font-family: trajan-pro-3;
+  font-weight: 600;
 }
 .Home .Ryan .paragraph {
   text-align: center;
@@ -1222,7 +1227,7 @@ th {
 }
 .Home .Ryan .Mobile .info {
   text-align: center;
-  font-family: museo-slab;
+  font-family: museo-sans;
   color: #003785;
 }
 .Home .Ryan .Mobile .info i.fa {
@@ -1281,10 +1286,14 @@ th {
   font-weight: 300;
   font-family: museo-sans;
   text-align: center;
-  line-height: 40px;
-  font-size: 30px;
+  line-height: 35px;
 }
-.Home .Ryan .Mobile .info h2,
+.Home .Ryan .Mobile .info h2 {
+  font-weight: 300;
+  font-family: museo-sans;
+  text-align: center;
+  line-height: 35px;
+}
 .Home .Ryan .Mobile .info h3,
 .Home .Ryan .Mobile .info h4,
 .Home .Ryan .Mobile .info h5 {
@@ -1307,7 +1316,7 @@ th {
 .Home .Ryan .Mobile .more {
   *zoom: 1;
   width: auto;
-  max-width: 75px;
+  max-width: 90px;
   float: none;
   display: block;
   margin-right: auto;
@@ -1328,18 +1337,18 @@ th {
   font-size: 20px;
   margin: auto;
   float: left;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
 }
 .Home .Ryan .Mobile .more i.fa {
   font-size: 18px;
   margin: auto;
   float: right;
-  padding: 7px 5px 0px;
+  padding: 8px 5px 0px;
 }
 @media only screen and (min-width: 768px) {
   .Home .Ryan .name {
     margin: 80px auto 50px;
-    font-size: 55px;
+    font-size: 44px;
   }
   .Home .Ryan .Row {
     *zoom: 1;
@@ -1395,9 +1404,11 @@ th {
     margin-left: 0%;
     margin-right: 7.000000000000001%;
     text-align: left;
-    font-family: museo-slab;
+    font-family: museo-sans;
     color: #003785;
     margin: auto;
+    position: relative;
+    top: -10px;
   }
   .Home .Ryan .Row .info:before,
   .Home .Ryan .Row .info:after {
@@ -1466,7 +1477,13 @@ th {
     line-height: 40px;
     margin-top: 0px;
   }
-  .Home .Ryan .Row .info h2,
+  .Home .Ryan .Row .info h2 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: left;
+    line-height: 40px;
+    margin-top: 0px;
+  }
   .Home .Ryan .Row .info h3,
   .Home .Ryan .Row .info h4,
   .Home .Ryan .Row .info h5,
@@ -1476,7 +1493,7 @@ th {
     text-align: left;
   }
   .Home .Ryan .Row .info p {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 27px;
     font-weight: 500;
     margin-bottom: 0px;
@@ -1530,10 +1547,9 @@ th {
     clear: both;
   }
   .Home .Ryan .Row .more a {
-    font-family: museo-slab;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 16px;
+    font-family: trajan-pro-3;
+    font-weight: 600;
+    font-size: 15px;
   }
   .Home .Ryan .Row .more a i.fa {
     margin: auto 5px;
@@ -1574,8 +1590,8 @@ th {
 .Home .Explore .wrap .title {
   text-align: center;
   color: #003785;
-  font-family: museo-slab;
-  font-weight: 700;
+  font-family: trajan-pro-3;
+  font-weight: 600;
 }
 @media only screen and (max-width: 767px) {
   .Home .Explore .wrap .title {
@@ -1585,13 +1601,13 @@ th {
 }
 @media only screen and (min-width: 768px) {
   .Home .Explore .wrap .title {
-    font-size: 60px;
-    margin: 135px auto 25px;
+    font-size: 44px;
+    margin: 135px auto 10px;
   }
 }
 .Home .Explore .wrap .exploreBorder {
   display: block;
-  margin: auto;
+  margin: auto auto 75px;
   width: 340px;
   height: auto;
   border: 1px solid #003785;
@@ -1724,8 +1740,8 @@ th {
 .Home .Explore .wrap .links .link-wrap .link .titleWrapper .linkTitle {
   color: #fff;
   text-align: center;
-  font-family: museo-slab;
-  font-weight: 700;
+  font-family: trajan-pro-3;
+  font-weight: 600;
   width: 100%;
 }
 @media only screen and (max-width: 767px) {
@@ -1740,7 +1756,7 @@ th {
 }
 @media only screen and (min-width: 1281px) {
   .Home .Explore .wrap .links .link-wrap .link .titleWrapper .linkTitle {
-    font-size: 55px;
+    font-size: 40px;
   }
 }
 .Home .Explore .wrap .links .link-wrap .link .titleWrapper .linkSubtitle {
@@ -1821,7 +1837,7 @@ th {
 }
 .Contact .Top .Mobile .BGContent .name {
   color: #fff;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   font-weight: 700;
   font-size: 30px;
   text-align: center;
@@ -1855,7 +1871,7 @@ th {
   width: 100%;
   height: 170px;
   color: #003785;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   font-weight: 500;
   font-size: 20px;
   position: relative;
@@ -1951,6 +1967,8 @@ th {
   color: #0067d4;
 }
 .Contact .Top .Mobile .info-wrapper .info .wrapper .icon i.fa.fa-mobile {
+  position: absolute;
+  left: 0px;
   font-size: 30px;
   text-align: left;
   width: 100%;
@@ -1962,6 +1980,8 @@ th {
           transform: translateY(-50%);
 }
 .Contact .Top .Mobile .info-wrapper .info .wrapper .icon i.fa.fa-map-marker {
+  position: absolute;
+  left: 0px;
   font-size: 25px;
   text-align: left;
   width: 100%;
@@ -1973,6 +1993,8 @@ th {
           transform: translateY(-50%);
 }
 .Contact .Top .Mobile .info-wrapper .info .wrapper .icon i.fa.fa-paper-plane {
+  position: absolute;
+  left: 0px;
   font-size: 19px;
   text-align: left;
   width: 100%;
@@ -1991,10 +2013,12 @@ th {
   width: 89.7%;
   margin-left: 0%;
   margin-right: 3%;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 600;
   text-align: left;
   height: 100%;
   position: relative;
+  left: -5px;
 }
 .Contact .Top .Mobile .info-wrapper .info .wrapper .content:before,
 .Contact .Top .Mobile .info-wrapper .info .wrapper .content:after {
@@ -2022,9 +2046,9 @@ th {
   width: 100%;
   height: 375px;
   color: #fff;
-  font-family: museo-slab;
-  font-weight: 700;
-  font-size: 60px;
+  font-family: trajan-pro-3;
+  font-weight: 600;
+  font-size: 44px;
   text-align: center;
   padding: 0px;
 }
@@ -2056,7 +2080,7 @@ th {
   padding-left: 0;
   padding-right: 0;
   text-align: center;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   font-weight: 500;
   font-size: 30px;
 }
@@ -2114,15 +2138,16 @@ th {
 }
 .Contact .Top .Tablet .infoWrapper .info .col .wrapper .content {
   text-align: center;
+  font-weight: 600;
 }
 @media only screen and (max-width: 1024px) {
   .Contact .Top .Tablet .infoWrapper .info .col .wrapper .content {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 @media only screen and (min-width: 1025px) {
   .Contact .Top .Tablet .infoWrapper .info .col .wrapper .content {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 .Contact .Ryan .Mobile {
@@ -2137,7 +2162,8 @@ th {
 .Contact .Ryan .Mobile .content,
 .Contact .Ryan .Mobile .details {
   text-align: center;
-  font-family: museo-slab;
+  font-family: museo-sans;
+  font-size: 17px;
   color: #003785;
 }
 .Contact .Ryan .Mobile .content i.fa,
@@ -2208,9 +2234,20 @@ th {
   font-size: 30px;
 }
 .Contact .Ryan .Mobile .content h2,
-.Contact .Ryan .Mobile .details h2,
+.Contact .Ryan .Mobile .details h2 {
+  font-weight: 300;
+  font-family: museo-sans;
+  text-align: center;
+  line-height: 35px;
+  font-size: 30px;
+}
 .Contact .Ryan .Mobile .content h3,
-.Contact .Ryan .Mobile .details h3,
+.Contact .Ryan .Mobile .details h3 {
+  font-weight: 300;
+  font-family: museo-sans;
+  text-align: center;
+  line-height: 40px;
+}
 .Contact .Ryan .Mobile .content h4,
 .Contact .Ryan .Mobile .details h4,
 .Contact .Ryan .Mobile .content h5,
@@ -2307,9 +2344,11 @@ th {
   margin-left: 0%;
   margin-right: 7.5%;
   text-align: left;
-  font-family: museo-slab;
+  font-family: museo-sans;
   color: #003785;
   margin: auto;
+  position: relative;
+  top: -28px;
 }
 .Contact .Ryan .Tablet .wrap .content:before,
 .Contact .Ryan .Tablet .wrap .content:after {
@@ -2376,10 +2415,19 @@ th {
   font-family: museo-sans;
   text-align: left;
   line-height: 40px;
-  margin-top: 0px;
 }
-.Contact .Ryan .Tablet .wrap .content h2,
-.Contact .Ryan .Tablet .wrap .content h3,
+.Contact .Ryan .Tablet .wrap .content h2 {
+  font-weight: 300;
+  font-family: museo-sans;
+  text-align: left;
+  line-height: 35px;
+}
+.Contact .Ryan .Tablet .wrap .content h3 {
+  font-weight: 300;
+  font-family: museo-sans;
+  text-align: left;
+  line-height: 35px;
+}
 .Contact .Ryan .Tablet .wrap .content h4,
 .Contact .Ryan .Tablet .wrap .content h5,
 .Contact .Ryan .Tablet .wrap .content h6 {
@@ -2388,7 +2436,7 @@ th {
   text-align: left;
 }
 .Contact .Ryan .Tablet .wrap .content p {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 27px;
   font-weight: 500;
   margin-bottom: 0px;
@@ -2404,7 +2452,7 @@ th {
   padding-left: 0;
   padding-right: 0;
   text-align: left;
-  font-family: museo-slab;
+  font-family: museo-sans;
   color: #003785;
   margin: auto;
 }
@@ -2473,10 +2521,19 @@ th {
   font-family: museo-sans;
   text-align: left;
   line-height: 40px;
-  margin-top: 0px;
 }
-.Contact .Ryan .Tablet .details h2,
-.Contact .Ryan .Tablet .details h3,
+.Contact .Ryan .Tablet .details h2 {
+  font-weight: 300;
+  font-family: museo-sans;
+  text-align: left;
+  line-height: 35px;
+}
+.Contact .Ryan .Tablet .details h3 {
+  font-weight: 300;
+  font-family: museo-sans;
+  text-align: left;
+  line-height: 35px;
+}
 .Contact .Ryan .Tablet .details h4,
 .Contact .Ryan .Tablet .details h5 {
   font-weight: 300;
@@ -2491,7 +2548,7 @@ th {
   color: #0067d4;
 }
 .Contact .Ryan .Tablet .details p {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 27px;
   font-weight: 500;
   margin-bottom: 0px;
@@ -2527,11 +2584,12 @@ th {
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .title {
   color: #003785;
-  font-family: museo-slab;
-  font-weight: 700;
-  font-size: 60px;
+  font-family: trajan-pro-3;
+  font-weight: 600;
+  font-size: 44px;
   text-align: center;
   width: 100%;
+  line-height: 35px;
 }
 @media only screen and (max-width: 767px) {
   .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .title {
@@ -2598,7 +2656,7 @@ th {
   width: 180px;
   height: auto;
   text-align: left;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   font-weight: 700;
 }
 @media only screen and (max-width: 767px) {
@@ -2614,8 +2672,7 @@ th {
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .SaleType-wrapper .SaleType .filterType {
   color: #003785;
-  font-family: museo-slab;
-  font-style: italic;
+  font-family: trajan-pro-3;
   font-weight: 300;
   margin: 0px auto 5px;
   font-size: 14px;
@@ -2703,7 +2760,7 @@ th {
   width: 180px;
   height: auto;
   text-align: left;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   font-weight: 700;
 }
 @media only screen and (max-width: 767px) {
@@ -2719,8 +2776,7 @@ th {
 }
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .filterType {
   color: #003785;
-  font-family: museo-slab;
-  font-style: italic;
+  font-family: trajan-pro-3;
   font-weight: 300;
   margin: 0px auto 5px;
   font-size: 14px;
@@ -2749,6 +2805,11 @@ th {
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-menu-outer .Select-menu {
   color: #003785;
 }
+@media only screen and (max-width: 767px) {
+  .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-menu-outer .Select-menu {
+    height: 140px;
+  }
+}
 .FeaturedProperties .Jumbotron .bgTint .jumbotron-wrapper .select .Building-wrapper .Building .Select-menu-outer .Select-option {
   background-color: #003785;
   color: #fff;
@@ -2760,7 +2821,7 @@ th {
 }
 @media only screen and (max-width: 767px) {
   .FeaturedProperties .Properties {
-    padding: 90px 0px 60px;
+    padding: 50px 0px 60px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -2794,7 +2855,7 @@ th {
   height: auto;
   background-color: #003785;
   color: #fff;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   font-size: 20px;
   font-style: italic;
   font-weight: 300;
@@ -2910,8 +2971,8 @@ th {
 }
 .FeaturedProperties .Properties .wrap .property .info .name {
   color: #003785;
-  font-family: museo-slab;
-  font-weight: 700;
+  font-family: trajan-pro-3;
+  font-weight: 600;
 }
 @media only screen and (max-width: 767px) {
   .FeaturedProperties .Properties .wrap .property .info .name {
@@ -2978,9 +3039,9 @@ th {
 }
 .Property .Jumbotron .bgTint .jumbotron-wrapper .title {
   color: #003785;
-  font-family: museo-slab;
-  font-weight: 700;
-  font-size: 60px;
+  font-family: trajan-pro-3;
+  font-weight: 600;
+  font-size: 44px;
   text-align: center;
 }
 @media only screen and (max-width: 767px) {
@@ -3008,11 +3069,11 @@ th {
 .Property .Jumbotron .bgTint .jumbotron-wrapper .info {
   color: #003785;
   text-align: center;
-  font-family: museo-slab;
-  font-weight: 700;
+  font-family: trajan-pro-3;
+  font-weight: 600;
 }
 .Property .Jumbotron .bgTint .jumbotron-wrapper .info .address {
-  font-size: 18px;
+  font-size: 15px;
   line-height: 25px;
 }
 @media only screen and (max-width: 767px) {
@@ -3120,6 +3181,7 @@ th {
     width: 50%;
     margin-left: 0%;
     margin-right: 0%;
+    height: 140px;
   }
   .Property .Details .info .info-wrapper:before,
   .Property .Details .info .info-wrapper:after {
@@ -3166,10 +3228,10 @@ th {
   width: 100%;
   color: #003785;
   text-align: center;
-  font-weight: 700;
-  font-family: museo-slab;
+  font-weight: 600;
+  font-family: trajan-pro-3;
   font-size: 20px;
-  line-height: 37px;
+  line-height: 35px;
 }
 @media only screen and (min-width: 768px) {
   .Property .Details .info .info-wrapper .price {
@@ -3178,7 +3240,7 @@ th {
 }
 @media only screen and (max-width: 767px) {
   .Property .Details .info .info-wrapper .price {
-    font-size: 16px;
+    font-size: 15px;
     border-right: 1px solid #bccce0;
   }
 }
@@ -3193,10 +3255,10 @@ th {
   width: 100%;
   color: #003785;
   text-align: center;
-  font-weight: 700;
-  font-family: museo-slab;
+  font-weight: 600;
+  font-family: trajan-pro-3;
   font-size: 20px;
-  line-height: 37px;
+  line-height: 35px;
 }
 @media only screen and (min-width: 768px) {
   .Property .Details .info .info-wrapper .bedBath {
@@ -3205,7 +3267,7 @@ th {
 }
 @media only screen and (max-width: 767px) {
   .Property .Details .info .info-wrapper .bedBath {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .Property .Details .info .info-wrapper .area {
@@ -3219,10 +3281,10 @@ th {
   width: 100%;
   color: #003785;
   text-align: center;
-  font-weight: 700;
-  font-family: museo-slab;
+  font-weight: 600;
+  font-family: trajan-pro-3;
   font-size: 20px;
-  line-height: 37px;
+  line-height: 35px;
 }
 @media only screen and (min-width: 768px) {
   .Property .Details .info .info-wrapper .area {
@@ -3231,7 +3293,7 @@ th {
 }
 @media only screen and (max-width: 767px) {
   .Property .Details .info .info-wrapper .area {
-    font-size: 16px;
+    font-size: 15px;
     border-right: 1px solid #bccce0;
   }
 }
@@ -3246,14 +3308,14 @@ th {
   width: 100%;
   color: #003785;
   text-align: center;
-  font-weight: 700;
-  font-family: museo-slab;
+  font-weight: 600;
+  font-family: trajan-pro-3;
   font-size: 20px;
-  line-height: 37px;
+  line-height: 35px;
 }
 @media only screen and (max-width: 767px) {
   .Property .Details .info .info-wrapper .mls {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .Property .Details .paragraph {
@@ -3267,7 +3329,7 @@ th {
   padding-left: 0;
   padding-right: 0;
   text-align: center;
-  font-family: museo-slab;
+  font-family: museo-sans;
   color: #003785;
 }
 .Property .Details .paragraph:before,
@@ -3362,10 +3424,19 @@ th {
     font-family: museo-sans;
     text-align: center;
     line-height: 40px;
-    margin-top: 0px;
   }
-  .Property .Details .paragraph h2,
-  .Property .Details .paragraph h3,
+  .Property .Details .paragraph h2 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: center;
+    line-height: 35px;
+  }
+  .Property .Details .paragraph h3 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: center;
+    line-height: 35px;
+  }
   .Property .Details .paragraph h4,
   .Property .Details .paragraph h5,
   .Property .Details .paragraph h6 {
@@ -3374,7 +3445,7 @@ th {
     text-align: center;
   }
   .Property .Details .paragraph p {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 27px;
     font-weight: 500;
     margin-bottom: 0px;
@@ -3397,7 +3468,7 @@ th {
   margin: 0.75em 0;
   line-height: 1.6em;
   color: #003785;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   font-weight: 500;
 }
 @media only screen and (max-width: 767px) {
@@ -3480,7 +3551,7 @@ th {
   margin: 0.75em 0;
   line-height: 1.6em;
   color: #003785;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   font-weight: 700;
 }
 .Property .Featured #featuredSlide {
@@ -3549,7 +3620,7 @@ th {
 }
 .Property .Featured #featuredSlide .item .info .name {
   color: #003785;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   font-weight: 700;
 }
 @media only screen and (max-width: 767px) {
@@ -3619,9 +3690,9 @@ th {
 }
 .Building .Jumbotron .bgTint .jumbotron-wrapper .title {
   color: #003785;
-  font-family: museo-slab;
-  font-weight: 700;
-  font-size: 60px;
+  font-family: trajan-pro-3;
+  font-weight: 600;
+  font-size: 44px;
   text-align: center;
 }
 @media only screen and (max-width: 767px) {
@@ -3649,11 +3720,11 @@ th {
 .Building .Jumbotron .bgTint .jumbotron-wrapper .info {
   color: #003785;
   text-align: center;
-  font-family: museo-slab;
-  font-weight: 700;
+  font-family: trajan-pro-3;
+  font-weight: 600;
 }
 .Building .Jumbotron .bgTint .jumbotron-wrapper .info .address {
-  font-size: 18px;
+  font-size: 15px;
   line-height: 25px;
 }
 @media only screen and (max-width: 767px) {
@@ -3756,7 +3827,7 @@ th {
   margin-left: 0%;
   margin-right: 7.000000000000001%;
   text-align: left;
-  font-family: museo-slab;
+  font-family: museo-sans;
   color: #003785;
   position: relative;
   top: -5px;
@@ -3876,8 +3947,20 @@ th {
     line-height: 40px;
     margin-top: 0px;
   }
-  .Building .Details .intro .paragraph h2,
-  .Building .Details .intro .paragraph h3,
+  .Building .Details .intro .paragraph h2 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: left;
+    line-height: 35px;
+    margin-top: 0px;
+  }
+  .Building .Details .intro .paragraph h3 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: left;
+    line-height: 35px;
+    margin-top: 0px;
+  }
   .Building .Details .intro .paragraph h4,
   .Building .Details .intro .paragraph h5,
   .Building .Details .intro .paragraph h6 {
@@ -3886,7 +3969,7 @@ th {
     text-align: left;
   }
   .Building .Details .intro .paragraph p {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 27px;
     font-weight: 500;
     margin-top: 0px;
@@ -3903,7 +3986,7 @@ th {
   padding-left: 0;
   padding-right: 0;
   text-align: left;
-  font-family: museo-slab;
+  font-family: museo-sans;
   color: #003785;
   margin: auto;
 }
@@ -4002,10 +4085,19 @@ th {
     font-family: museo-sans;
     text-align: left;
     line-height: 40px;
-    margin-top: 0px;
   }
-  .Building .Details .rest h2,
-  .Building .Details .rest h3,
+  .Building .Details .rest h2 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: left;
+    line-height: 35px;
+  }
+  .Building .Details .rest h3 {
+    font-weight: 300;
+    font-family: museo-sans;
+    text-align: left;
+    line-height: 35px;
+  }
   .Building .Details .rest h4,
   .Building .Details .rest h5,
   .Building .Details .rest h6 {
@@ -4014,7 +4106,7 @@ th {
     text-align: left;
   }
   .Building .Details .rest p {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 27px;
     font-weight: 500;
     margin-bottom: 0px;
@@ -4043,7 +4135,7 @@ th {
   margin: 0.75em 0;
   line-height: 1.6em;
   color: #003785;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   font-weight: 500;
 }
 @media only screen and (max-width: 767px) {
@@ -4149,7 +4241,7 @@ th {
   margin: 0.75em 0;
   line-height: 1.6em;
   color: #003785;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   font-weight: 500;
 }
 @media only screen and (max-width: 767px) {
@@ -4191,11 +4283,10 @@ th {
   background-color: #003785;
   text-align: center;
   color: #fff;
-  font-family: museo-slab;
-  font-weight: 700;
+  font-family: trajan-pro-3;
+  font-weight: 600;
   padding: 5px 0px;
   font-size: 18px;
-  font-style: italic;
   margin: 20px;
 }
 @media only screen and (max-width: 767px) {
@@ -4263,8 +4354,8 @@ th {
 }
 .Building .Featured #featuredSlide .item .info .name {
   color: #003785;
-  font-family: museo-slab;
-  font-weight: 700;
+  font-family: trajan-pro-3;
+  font-weight: 600;
 }
 @media only screen and (max-width: 767px) {
   .Building .Featured #featuredSlide .item .info .name {
@@ -4316,7 +4407,7 @@ th {
   margin: 0.75em 0;
   line-height: 1.6em;
   color: #003785;
-  font-family: museo-slab;
+  font-family: trajan-pro-3;
   font-weight: 500;
 }
 @media only screen and (max-width: 767px) {
@@ -4417,9 +4508,9 @@ th {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 100%;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: museo-slab;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: trajan-pro-3;
 }
 .Building .Floorplans .Tablet {
   *zoom: 1;
@@ -4532,9 +4623,9 @@ th {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 100%;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: museo-slab;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: trajan-pro-3;
 }
 .Building .Floorplans .Desktop {
   *zoom: 1;
@@ -4647,9 +4738,9 @@ th {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 100%;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: museo-slab;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: trajan-pro-3;
 }
 a {
   color: #003785;

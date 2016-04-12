@@ -16,10 +16,11 @@
         .title
           color darkBlue
           font-family: otherFont
-          font-weight: 700
-          font-size 60px
+          font-weight: 600
+          font-size 44px
           text-align: center
           width: 100%
+          line-height: 35px
           +below(767px)
             font-size 30px
         .select
@@ -47,7 +48,6 @@
               .filterType
                 color darkBlue
                 font-family: otherFont
-                font-style: italic
                 font-weight: 300
                 margin 0px auto 5px
                 font-size 14px
@@ -97,7 +97,6 @@
               .filterType
                 color darkBlue
                 font-family: otherFont
-                font-style: italic
                 font-weight: 300
                 margin 0px auto 5px
                 font-size 14px
@@ -119,6 +118,8 @@
               .Select-menu-outer
                 .Select-menu
                   color darkBlue
+                  +below(767px)
+                    height 140px
                 .Select-option
                   background-color: darkBlue
                   color white
@@ -129,7 +130,7 @@
 
   .Properties
     +below(767px)
-      padding 90px 0px 60px
+      padding 50px 0px 60px
     +above(768px)
       padding 90px 0px 160px
     .moreProperties
@@ -186,7 +187,7 @@
           .name
             color darkBlue
             font-family: otherFont
-            font-weight: 700
+            font-weight: 600
             +below(767px)
               font-size: 18px
               text-align: center

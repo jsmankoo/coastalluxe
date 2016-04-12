@@ -102,7 +102,7 @@ const Tablet = React.createClass({
           <div className="menuClose">
             <i onClick={this.closeMenu} className='fa fa-times' />
           </div>
-          <div className="category">
+          <div className="category" style={{paddingBottom: 0}}>
             <div className="categoryName">
               <a href='http://coastalluxeliving.com/#/' onClick={this.onClickHandler}>HOME</a>
             </div>

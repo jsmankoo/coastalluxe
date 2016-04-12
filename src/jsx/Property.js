@@ -47,6 +47,9 @@ const Property = React.createClass({
     };
   },
   componentDidMount(){
+    console.log(
+      $('#at4-share').removeClass('at4-show')
+    );
     $(window).scrollTop(0);
     switch (this.props.params.building) {
       case '13700marinapointedr':

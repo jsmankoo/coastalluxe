@@ -66,26 +66,30 @@
               position: relative
               height 100%
               i.fa.fa-mobile
+                absolute left 0px
                 font-size: 30px
                 text-align: left
                 width 100%
                 align(v)
               i.fa.fa-map-marker
+                absolute left 0px
                 font-size: 25px
                 text-align: left
                 width 100%
                 align(v)
               i.fa.fa-paper-plane
+                absolute left 0px
                 font-size: 19px
                 text-align: left
                 width 100%
                 align(v)
             .content
               column(9/10)
-              font-size 14px
+              font-size 12px
+              font-weight: 600
               text-align: left
               height 100%
-              position: relative
+              relative left -5px
               .text
                 align(v)
                 padding-left 10px
@@ -98,8 +102,8 @@
           size 100% 375px
           color white
           font-family: otherFont
-          font-weight: 700
-          font-size: 60px
+          font-weight: 600
+          font-size: 44px
           text-align: center
           padding 0px
           .text
@@ -140,10 +144,11 @@
                   padding-top 35px
               .content
                 text-align: center
+                font-weight: 600
                 +below(1024px)
-                  font-size: 14px
+                  font-size: 13px
                 +above(1025px)
-                  font-size: 18px
+                  font-size: 15px
   .Ryan
     .Mobile
       padding 200px 0px 60px
@@ -155,7 +160,8 @@
       .content
       .details
         text-align: center
-        font-family: otherFont
+        font-family: mainFont
+        font-size 17px
         color darkBlue
         i.fa
           padding 0px 5px
@@ -179,7 +185,16 @@
           font-size: 30px
           // margin-top 0px
         h2
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          line-height: 35px
+          font-size: 30px
         h3
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          line-height: 40px
         h4
         h5
           font-weight: 300
@@ -209,9 +224,10 @@
         .content
           column(2/3, gutter: 7.5px)
           text-align: left
-          font-family: otherFont
+          font-family: mainFont
           color darkBlue
           margin auto
+          relative top -28px
           h1
             h1()
           h2
@@ -229,9 +245,16 @@
             font-family: mainFont
             text-align: left
             line-height: 40px
-            margin-top 0px
           h2
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            line-height: 35px
           h3
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            line-height: 35px
           h4
           h5
           h6
@@ -240,7 +263,7 @@
             text-align: left
             // margin-top 0px
           p
-            font-size 16px
+            font-size 17px
             line-height: 27px
             font-weight: 500
             margin-bottom 0px
@@ -248,7 +271,7 @@
       .details
         center(768px)
         text-align: left
-        font-family: otherFont
+        font-family: mainFont
         color darkBlue
         margin auto
         i.fa
@@ -270,9 +293,16 @@
           font-family: mainFont
           text-align: left
           line-height: 40px
-          margin-top 0px
         h2
+          font-weight: 300
+          font-family: mainFont
+          text-align: left
+          line-height: 35px
         h3
+          font-weight: 300
+          font-family: mainFont
+          text-align: left
+          line-height: 35px
         h4
         h5
           font-weight: 300
@@ -286,7 +316,7 @@
           color lightBlue
           // margin-top 0px
         p
-          font-size 16px
+          font-size 17px
           line-height: 27px
           font-weight: 500
           margin-bottom 0px

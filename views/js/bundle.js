@@ -42761,6 +42761,7 @@ var Property = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
+    console.log($('#at4-share').removeClass('at4-show'));
     $(window).scrollTop(0);
     switch (this.props.params.building) {
       case '13700marinapointedr':
@@ -43500,7 +43501,7 @@ var Tablet = React.createClass({
         ),
         React.createElement(
           'div',
-          { className: 'category' },
+          { className: 'category', style: { paddingBottom: 0 } },
           React.createElement(
             'div',
             { className: 'categoryName' },
