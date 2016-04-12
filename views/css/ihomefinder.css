@@ -252,7 +252,7 @@ html body .container #ihf-main-container .input-group-addon {
   background-color: #003785;
   color: #fff;
 }
-html body .container #ihf-main-container .page-header {
+html body .container #ihf-main-container .page-header h1 {
   font-size: 38.4px;
   font-size: 2.4rem;
   text-rendering: optimizelegibility;
@@ -265,7 +265,7 @@ html body .container #ihf-main-container .page-header {
   font-weight: 600;
 }
 @media only screen and (max-width: 767px) {
-  html body .container #ihf-main-container .page-header {
+  html body .container #ihf-main-container .page-header h1 {
     font-size: 30px;
   }
 }
