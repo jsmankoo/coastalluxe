@@ -1,4 +1,3 @@
-var ReactDom = require('react-dom');
 var React = require('react');
 import {Router, Route, hashHistory, browserHistory, IndexRoute } from "react-router";
 
@@ -11,29 +10,59 @@ var Property = require('./Property');
 var Building = require('./Building');
 var Contact = require('./Contact');
 
-const renderDom = ()=>{
-  ReactDom.render(
-    <Router history={hashHistory}>
-      <Route path='/' component={App}>
-        <IndexRoute component={Home} />
-        <Route path='index' component={Home} />
-        <Route path='/featured' component={Featured}></Route>
-        <Route path='/Azzurra' component={Azzurra} />
-        <Route path='/featured/Azzurra' component={FeaturedAzzurra} />
-        <Route path='/Regatta' component={Regatta} />
-        <Route path='/featured/Regatta' component={FeaturedRegatta} />
-        <Route path='/Cove' component={Cove} />
-        <Route path='/featured/Cove' component={FeaturedCove} />
-        <Route path='/featured/:building/:name/:id' component={Property} />
-        <Route path='/forSale' component={ForSale} />
-        <Route path='/lease' component={ForLease} />
-        <Route path='/sold' component={Sold} />
-        <Route path='/contact' component={Contact} />
-      </Route>
-    </Router>,
-    document.getElementById('Main')
-  );
-}
+const Routes = React.createClass({
+  render(){
+    return (
+      <Router history={browserHistory}>
+        <Route path='/' component={App}>
+          <IndexRoute component={Home} />
+          <Route path='index' component={Home} />
+          <Route path='/featured' component={Featured}></Route>
+          <Route path='/Azzurra' component={Azzurra} />
+          <Route path='/featured/Azzurra' component={FeaturedAzzurra} />
+          <Route path='/Regatta' component={Regatta} />
+          <Route path='/featured/Regatta' component={FeaturedRegatta} />
+          <Route path='/Cove' component={Cove} />
+          <Route path='/featured/Cove' component={FeaturedCove} />
+          <Route path='/featured/:building/:name/:id' component={Property} />
+          <Route path='/forSale' component={ForSale} />
+          <Route path='/lease' component={ForLease} />
+          <Route path='/sold' component={Sold} />
+          <Route path='/contact' component={Contact} />
+        </Route>
+      </Router>
+    );
+  }
+});
+
+module.exports = Routes;
+
+// const renderDom = ()=>{
+//   ReactDom.render(
+//     <Router history={hashHistory}>
+//       <Route path='/' component={App}>
+//         <IndexRoute component={Home} />
+//         <Route path='index' component={Home} />
+//         <Route path='/featured' component={Featured}></Route>
+//         <Route path='/Azzurra' component={Azzurra} />
+//         <Route path='/featured/Azzurra' component={FeaturedAzzurra} />
+//         <Route path='/Regatta' component={Regatta} />
+//         <Route path='/featured/Regatta' component={FeaturedRegatta} />
+//         <Route path='/Cove' component={Cove} />
+//         <Route path='/featured/Cove' component={FeaturedCove} />
+//         <Route path='/featured/:building/:name/:id' component={Property} />
+//         <Route path='/forSale' component={ForSale} />
+//         <Route path='/lease' component={ForLease} />
+//         <Route path='/sold' component={Sold} />
+//         <Route path='/contact' component={Contact} />
+//       </Route>
+//     </Router>,
+//     document.getElementById('Main')
+//   );
+// }
+//
+// store.subscribe(renderDom);
+// renderDom();
 
 const Featured = React.createClass({
   componentDidMount(){
@@ -143,6 +172,3 @@ const FeaturedCove = React.createClass({
     return <FeaturedProperties {...store.getState().FeaturedProperties} />;
   }
 });
-
-store.subscribe(renderDom);
-renderDom();

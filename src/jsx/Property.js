@@ -2,6 +2,7 @@ var React = require('react');
 var MediaQuery = require('react-responsive');
 var Markdown = require('react-remarkable');
 import Helmet from 'react-helmet';
+import {Link} from 'react-router';
 
 var OwlCarousel = require('./components/OwlCarousel');
 var store = require('./store');
@@ -292,7 +293,7 @@ const Featured = React.createClass({
             this.props.featured.map((item, index)=>{
               return (
                 <div className="item" key={index}>
-                  <a href={`/#/featured/${this.props.building}/${item.name}/${item.id}`} className="img-wrapper" style={{backgroundImage: `url(${item.image})`}}>
+                  <Link to={`/featured/${this.props.building}/${item.name}/${item.id}`} className="img-wrapper" style={{backgroundImage: `url(${item.image})`}}>
                     {
                       item.text !== '' ?
                       <div className="specialText">
@@ -300,7 +301,7 @@ const Featured = React.createClass({
                       </div> :
                       <div />
                     }
-                  </a>
+                  </Link>
                   <div className="info">
                     <div className="name">
                       {item.name}
@@ -330,7 +331,6 @@ const Facilities = React.createClass({
     };
   },
   render(){
-    console.log(this.props.facilities);
     return (
       <div className="Facilities">
         <div className="title">

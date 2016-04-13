@@ -107,7 +107,6 @@ const reducer = (state, action)=>{
         }
       };
     case 'FeaturedProperties_BUILDING':
-      console.log(`store: ${action.building}`);
       return {...state,
         FeaturedProperties: {...state.FeaturedProperties,
           building: action.building

@@ -1,5 +1,6 @@
 var React = require('react');
 var MediaQuery = require('react-responsive');
+import {Link} from 'react-router';
 
 var store = require('../store');
 
@@ -22,6 +23,12 @@ const Menu = React.createClass({
 });
 
 const Mobile = React.createClass({
+  getInitialState(){
+    return {
+      properties: false,
+      buildings: false
+    }
+  },
   onClickHandler(event){
     store.dispatch({type:'MENU_TOGGLE'});
     switch (this.props.menuLogo) {
@@ -41,44 +48,75 @@ const Mobile = React.createClass({
     }
   },
   render(){
+    const {properties, buildings} = this.state;
     return (
       <div className="View Mobile">
         <div className="wrap">
           <div className="category">
             <div className="categoryName">
-              <a href='http://coastalluxeliving.com/#/' onClick={this.onClickHandler}>HOME</a>
+              <Link to='/' onClick={this.onClickHandler}>
+                HOME
+              </Link>
             </div>
           </div>
-          {
-            this.props.list.map(({category, submenu, show}, index)=>{
-              return (
-                <div className="category" key={index} >
-                  <div className="menuBorder"/>
-                  <div
-                    onClick={()=>store.dispatch({type: 'MENU_LIST_TOGGLE', index: index})}
-                    className="categoryName">
-                    {category}
-                    <i className={`fa fa-chevron-${show ? 'up' : 'down' }`} />
+          <div className="category">
+            <div className="menuBorder" />
+            <div
+              onClick={()=>(this.setState({...this.state, properties: !properties}))}
+              className="categoryName">
+              PROPERTIES
+              <i className={`fa fa-chevron-${properties ? 'up' : 'down' }`} />
+            </div>
+            {
+              properties ? (
+                <div>
+                  <div className="submenu">
+                    <Link to='/forSale' onClick={this.onClickHandler}>FOR SALE</Link>
                   </div>
-                  {
-                    show ?
-                      submenu.map(({link, name}, index)=>{
-                        return (
-                          <div className="submenu" key={index}>
-                            <a href={link} onClick={this.onClickHandler}>{name}</a>
-                          </div>
-                        );
-                      })
-                      : <div />
-                  }
+                  <div className="submenu">
+                    <Link to='/lease' onClick={this.onClickHandler}>FOR LEASE</Link>
+                  </div>
+                  <div className="submenu">
+                    <Link to='/sold' onClick={this.onClickHandler}>SOLD</Link>
+                  </div>
+                  <div className="submenu">
+                    <a target='_blank' href='http://idx.coastalluxeliving.com/homesearch/89398' onClick={this.onClickHandler}>SEARCH</a>
+                  </div>
+                  <div className="submenu">
+                    <a target='_blank' href='http://idx.coastalluxeliving.com/openhomes/89398' onClick={this.onClickHandler}>OPEN HOMES</a>
+                  </div>
                 </div>
-              );
-            })
-          }
+              ) : <div />
+            }
+          </div>
+          <div className="category">
+            <div className="menuBorder" />
+            <div
+              onClick={()=>(this.setState({...this.state, buildings: !buildings}))}
+              className="categoryName">
+              BUILDINGS
+              <i className={`fa fa-chevron-${buildings ? 'up' : 'down' }`} />
+            </div>
+            {
+              buildings ? (
+                <div>
+                  <div className="submenu">
+                    <Link to='/Azzurra' onClick={this.onClickHandler}>AZZURRA</Link>
+                  </div>
+                  <div className="submenu">
+                    <Link to='/Regatta' onClick={this.onClickHandler}>REGATTA</Link>
+                  </div>
+                  <div className="submenu">
+                    <Link to='/Cove' onClick={this.onClickHandler}>COVE</Link>
+                  </div>
+                </div>
+              ) : <div />
+            }
+          </div>
           <div className="category">
             <div className="menuBorder"/>
             <div className="categoryName">
-              <a href='http://coastalluxeliving.com/#/contact' onClick={this.onClickHandler}>CONTACT</a>
+              <Link to='/contact' onClick={this.onClickHandler}>CONTACT</Link>
             </div>
           </div>
         </div>
@@ -104,32 +142,45 @@ const Tablet = React.createClass({
           </div>
           <div className="category" style={{paddingBottom: 0}}>
             <div className="categoryName">
-              <a href='http://coastalluxeliving.com/#/' onClick={this.onClickHandler}>HOME</a>
+              <Link to='/' onClick={this.onClickHandler}>HOME</Link>
             </div>
           </div>
-          {
-            this.props.list.map(({category, submenu}, index)=>{
-              return (
-                <div className="category" key={index}>
-                  <div className="menuBorder"/>
-                  <div className="categoryName">{category}</div>
-                  {
-                    submenu.map(({link, name}, index)=>{
-                      return (
-                        <div className="submenu" key={index}>
-                          <a href={link} onClick={this.onClickHandler} >{name}</a>
-                        </div>
-                      );
-                    })
-                  }
-                </div>
-              );
-            })
-          }
+          <div className="category">
+            <div className="menuBorder"/>
+            <div className="categoryName">PROPERTIES</div>
+            <div className="submenu">
+              <Link to='/forSale' onClick={this.onClickHandler}>FOR SALE</Link>
+            </div>
+            <div className="submenu">
+              <Link to='/lease' onClick={this.onClickHandler}>FOR LEASE</Link>
+            </div>
+            <div className="submenu">
+              <Link to='/sold' onClick={this.onClickHandler}>SOLD</Link>
+            </div>
+            <div className="submenu">
+              <a target='_blank' href='http://idx.coastalluxeliving.com/homesearch/89398' onClick={this.onClickHandler}>SEARCH</a>
+            </div>
+            <div className="submenu">
+              <a target='_blank' href='http://idx.coastalluxeliving.com/openhomes/89398' onClick={this.onClickHandler}>OPEN HOMES</a>
+            </div>
+          </div>
+          <div className="category">
+            <div className="menuBorder"/>
+            <div className="categoryName">BUILDINGS</div>
+            <div className="submenu">
+              <Link to='/Azzurra' onClick={this.onClickHandler}>AZZURRA</Link>
+            </div>
+            <div className="submenu">
+              <Link to='/Regatta' onClick={this.onClickHandler}>REGATTA</Link>
+            </div>
+            <div className="submenu">
+              <Link to='/Cove' onClick={this.onClickHandler}>COVE</Link>
+            </div>
+          </div>
           <div className="category">
             <div className="menuBorder"/>
             <div className="categoryName">
-              <a href='http://coastalluxeliving.com/#/contact' onClick={this.onClickHandler}>CONTACT</a>
+              <Link to='/contact' onClick={this.onClickHandler}>CONTACT</Link>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ var React = require('react');
 var MediaQuery = require('react-responsive');
 var ReactBGVideo = require('react-background-video');
 var Markdown = require('react-remarkable');
+var A = require('react-router').Link;
 import {Link, Element, Events} from 'react-scroll';
 import {Motion, spring} from 'react-motion';
 import Helmet from 'react-helmet';
@@ -171,14 +172,14 @@ const Featured = React.createClass({
                 top: style.y
               }}>
                 <div className="title">
-                  <a href='/#/featured'>Featured</a>
+                  <A to='/featured'>Featured</A>
                 </div>
                 <div className="Row">
                   <div className="all">
                     <MediaQuery minDeviceWidth={768}>
-                      <a href='/#/featured'>
+                      <A to='/featured'>
                         All Properties <i className='fa fa-th' />
-                      </a>
+                      </A>
                     </MediaQuery>
                   </div>
                 </div>
@@ -197,7 +198,7 @@ const Featured = React.createClass({
                     <div className="item" key={index} style={{
                       opacity: style.opacity
                     }}>
-                      <a href={`/#/featured/${item.type}/${item.acf.name}/${item.id}`} className="img-wrapper" style={{backgroundImage: `url(${item.acf.image})`}}>
+                      <A to={`/featured/${item.type}/${item.acf.name}/${item.id}`} className="img-wrapper" style={{backgroundImage: `url(${item.acf.image})`}}>
                         {
                           item.acf.text !== '' ?
                           <div className="specialText">
@@ -205,7 +206,7 @@ const Featured = React.createClass({
                           </div> :
                           <div />
                         }
-                      </a>
+                      </A>
                       <div className="info">
                         <div className="name">
                           {item.acf.name}
@@ -276,12 +277,12 @@ const Ryan = React.createClass({
         </div>
         <div className="info" dangerouslySetInnerHTML={{__html: this.state.content}}>
         </div>
-        <a href='/#/contact' className="more">
+        <A to='/contact' className="more">
           <div className="linkName">
             More
           </div>
           <i className='fa fa-chevron-right' />
-        </a>
+        </A>
       </div>
     );
   },
@@ -300,14 +301,14 @@ const Ryan = React.createClass({
         </div>
         <div className="Row">
           <div className="socialMedia">
-            <a href={`mailto:${this.state.email}`}><i className='fa fa-envelope' /></a>
-            <a href={this.state.facebook}><i className='fa fa-facebook-f' /></a>
-            <a href={this.state.twitter}><i className='fa fa-twitter' /></a>
-            <a href={this.state.instagram}><i className='fa fa-instagram' /></a>
+            <a target='_blank' href={`mailto:${this.state.email}`}><i className='fa fa-envelope' /></a>
+            <a target='_blank' href={this.state.facebook}><i className='fa fa-facebook-f' /></a>
+            <a target='_blank' href={this.state.twitter}><i className='fa fa-twitter' /></a>
+            <a target='_blank' href={this.state.instagram}><i className='fa fa-instagram' /></a>
           </div>
           <div className="hidden half"></div>
           <div className="more">
-            <a href='/#/contact'>More <i className='fa fa-chevron-right' /></a>
+            <A to='/contact'>More <i className='fa fa-chevron-right' /></A>
           </div>
         </div>
       </div>
@@ -328,14 +329,14 @@ const Ryan = React.createClass({
         </div>
         <div className="Row">
           <div className="socialMedia">
-            <a href={`mailto:${this.state.email}`}><i className='fa fa-envelope' /></a>
-            <a href={this.state.facebook}><i className='fa fa-facebook-f' /></a>
-            <a href={this.state.twitter}><i className='fa fa-twitter' /></a>
-            <a href={this.state.instagram}><i className='fa fa-instagram' /></a>
+            <a target='_blank' href={`mailto:${this.state.email}`}><i className='fa fa-envelope' /></a>
+            <a target='_blank' href={this.state.facebook}><i className='fa fa-facebook-f' /></a>
+            <a target='_blank' href={this.state.twitter}><i className='fa fa-twitter' /></a>
+            <a target='_blank' href={this.state.instagram}><i className='fa fa-instagram' /></a>
           </div>
           <div className="hidden half"></div>
           <div className="more">
-            <a href='/#/contact'>More <i className='fa fa-chevron-right' /></a>
+            <A to='/contact'>More <i className='fa fa-chevron-right' /></A>
           </div>
         </div>
       </div>

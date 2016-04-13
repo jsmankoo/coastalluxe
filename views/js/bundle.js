@@ -40581,6 +40581,30 @@ module.exports = warning;
 },{"_process":56}],342:[function(require,module,exports){
 'use strict';
 
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _Routes = require('./jsx/Routes');
+
+var _Routes2 = _interopRequireDefault(_Routes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var store = require('./jsx/store');
+
+var RenderDom = function RenderDom() {
+  (0, _reactDom.render)(_react2.default.createElement(_Routes2.default, null), document.getElementById('Main'));
+};
+
+store.subscribe(RenderDom);
+RenderDom();
+
+},{"./jsx/Routes":349,"./jsx/store":354,"react":269,"react-dom":61}],343:[function(require,module,exports){
+'use strict';
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var React = require('react');
@@ -40608,7 +40632,7 @@ var App = React.createClass({
 
 module.exports = App;
 
-},{"./components/Foot":349,"./components/Menu":350,"./components/Nav":351,"./store":353,"react":269,"react-responsive":79,"react-waypoint":135}],343:[function(require,module,exports){
+},{"./components/Foot":350,"./components/Menu":351,"./components/Nav":352,"./store":354,"react":269,"react-responsive":79,"react-waypoint":135}],344:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -40616,6 +40640,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _reactHelmet = require('react-helmet');
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
+
+var _reactRouter = require('react-router');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40904,8 +40930,8 @@ var Featured = React.createClass({
             'div',
             { className: 'item', key: index },
             React.createElement(
-              'a',
-              { href: '/#/featured/' + _this2.props.building + '/' + item.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.image + ')' } },
+              _reactRouter.Link,
+              { to: '/featured/' + _this2.props.building + '/' + item.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.image + ')' } },
               item.text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },
@@ -41102,12 +41128,14 @@ var Floorplans = React.createClass({
 
 module.exports = Property;
 
-},{"./components/OwlCarousel":352,"./store":353,"react":269,"react-helmet":62,"react-remarkable":78,"react-responsive":79}],344:[function(require,module,exports){
+},{"./components/OwlCarousel":353,"./store":354,"react":269,"react-helmet":62,"react-remarkable":78,"react-responsive":79,"react-router":109}],345:[function(require,module,exports){
 'use strict';
 
 var _reactHelmet = require('react-helmet');
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
+
+var _reactRouter = require('react-router');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41238,7 +41266,7 @@ var Top = React.createClass({
             { className: 'mobile col' },
             React.createElement(
               'a',
-              { href: 'tel:310-344-0898', className: 'wrapper' },
+              { target: '_blank', href: 'tel:310-344-0898', className: 'wrapper' },
               React.createElement(
                 'div',
                 { className: 'icon' },
@@ -41256,7 +41284,7 @@ var Top = React.createClass({
             { className: 'office col' },
             React.createElement(
               'a',
-              { href: this.props.url, className: 'wrapper' },
+              { target: '_blank', href: this.props.url, className: 'wrapper' },
               React.createElement(
                 'div',
                 { className: 'icon' },
@@ -41278,7 +41306,7 @@ var Top = React.createClass({
             { className: 'email col' },
             React.createElement(
               'a',
-              { href: 'mailto:' + this.props.email, className: 'wrapper' },
+              { target: '_blank', href: 'mailto:' + this.props.email, className: 'wrapper' },
               React.createElement(
                 'div',
                 { className: 'icon' },
@@ -41333,7 +41361,7 @@ var Top = React.createClass({
             { className: 'mobile col' },
             React.createElement(
               'a',
-              { href: 'tel:310-344-0898', className: 'wrapper' },
+              { target: '_blank', href: 'tel:310-344-0898', className: 'wrapper' },
               React.createElement(
                 'div',
                 { className: 'icon' },
@@ -41351,7 +41379,7 @@ var Top = React.createClass({
             { className: 'office col' },
             React.createElement(
               'a',
-              { href: this.props.url, className: 'wrapper' },
+              { target: '_blank', href: this.props.url, className: 'wrapper' },
               React.createElement(
                 'div',
                 { className: 'icon' },
@@ -41373,7 +41401,7 @@ var Top = React.createClass({
             { className: 'email col' },
             React.createElement(
               'a',
-              { href: 'mailto:' + this.props.email, className: 'wrapper' },
+              { target: '_blank', href: 'mailto:' + this.props.email, className: 'wrapper' },
               React.createElement(
                 'div',
                 { className: 'icon' },
@@ -41425,7 +41453,7 @@ var Top = React.createClass({
           { className: 'info' },
           React.createElement(
             'a',
-            { href: 'tel:310-344-0898', className: 'mobile wrapper' },
+            { target: '_blank', href: 'tel:310-344-0898', className: 'mobile wrapper' },
             React.createElement(
               'div',
               { className: 'icon' },
@@ -41444,7 +41472,7 @@ var Top = React.createClass({
           React.createElement('div', { className: 'border' }),
           React.createElement(
             'a',
-            { href: this.props.url, className: 'office wrapper' },
+            { target: '_blank', href: this.props.url, className: 'office wrapper' },
             React.createElement(
               'div',
               { className: 'icon' },
@@ -41467,7 +41495,7 @@ var Top = React.createClass({
           React.createElement('div', { className: 'border' }),
           React.createElement(
             'a',
-            { href: 'mailto:' + this.props.email, className: 'email wrapper' },
+            { target: '_blank', href: 'mailto:' + this.props.email, className: 'email wrapper' },
             React.createElement(
               'div',
               { className: 'icon' },
@@ -41541,7 +41569,7 @@ var Ryan = React.createClass({
 
 module.exports = Contact;
 
-},{"./store":353,"react":269,"react-background-video":60,"react-helmet":62,"react-remarkable":78,"react-responsive":79}],345:[function(require,module,exports){
+},{"./store":354,"react":269,"react-background-video":60,"react-helmet":62,"react-remarkable":78,"react-responsive":79,"react-router":109}],346:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -41549,6 +41577,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _reactHelmet = require('react-helmet');
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
+
+var _reactRouter = require('react-router');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41959,8 +41989,8 @@ var Properties = React.createClass({
             'div',
             { className: 'property', key: index },
             React.createElement(
-              'a',
-              { href: '/#/featured/' + building + '/' + name + '/' + id, className: 'img-wrapper', style: { backgroundImage: 'url(' + image + ')' } },
+              _reactRouter.Link,
+              { to: '/featured/' + building + '/' + name + '/' + id, className: 'img-wrapper', style: { backgroundImage: 'url(' + image + ')' } },
               text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },
@@ -41995,7 +42025,7 @@ var Properties = React.createClass({
 
 module.exports = FeaturedProperties;
 
-},{"./store":353,"react":269,"react-helmet":62,"react-responsive":79,"react-select":129}],346:[function(require,module,exports){
+},{"./store":354,"react":269,"react-helmet":62,"react-responsive":79,"react-router":109,"react-select":129}],347:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -42016,6 +42046,7 @@ var React = require('react');
 var MediaQuery = require('react-responsive');
 var ReactBGVideo = require('react-background-video');
 var Markdown = require('react-remarkable');
+var A = require('react-router').Link;
 
 
 var OwlCarousel = require('./components/OwlCarousel');
@@ -42196,8 +42227,8 @@ var Featured = React.createClass({
               'div',
               { className: 'title' },
               React.createElement(
-                'a',
-                { href: '/#/featured' },
+                A,
+                { to: '/featured' },
                 'Featured'
               )
             ),
@@ -42211,8 +42242,8 @@ var Featured = React.createClass({
                   MediaQuery,
                   { minDeviceWidth: 768 },
                   React.createElement(
-                    'a',
-                    { href: '/#/featured' },
+                    A,
+                    { to: '/featured' },
                     'All Properties ',
                     React.createElement('i', { className: 'fa fa-th' })
                   )
@@ -42239,8 +42270,8 @@ var Featured = React.createClass({
                     opacity: style.opacity
                   } },
                 React.createElement(
-                  'a',
-                  { href: '/#/featured/' + item.type + '/' + item.acf.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.acf.image + ')' } },
+                  A,
+                  { to: '/featured/' + item.type + '/' + item.acf.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.acf.image + ')' } },
                   item.acf.text !== '' ? React.createElement(
                     'div',
                     { className: 'specialText' },
@@ -42339,8 +42370,8 @@ var Ryan = React.createClass({
       ),
       React.createElement('div', { className: 'info', dangerouslySetInnerHTML: { __html: this.state.content } }),
       React.createElement(
-        'a',
-        { href: '/#/contact', className: 'more' },
+        A,
+        { to: '/contact', className: 'more' },
         React.createElement(
           'div',
           { className: 'linkName' },
@@ -42377,22 +42408,22 @@ var Ryan = React.createClass({
           { className: 'socialMedia' },
           React.createElement(
             'a',
-            { href: 'mailto:' + this.state.email },
+            { target: '_blank', href: 'mailto:' + this.state.email },
             React.createElement('i', { className: 'fa fa-envelope' })
           ),
           React.createElement(
             'a',
-            { href: this.state.facebook },
+            { target: '_blank', href: this.state.facebook },
             React.createElement('i', { className: 'fa fa-facebook-f' })
           ),
           React.createElement(
             'a',
-            { href: this.state.twitter },
+            { target: '_blank', href: this.state.twitter },
             React.createElement('i', { className: 'fa fa-twitter' })
           ),
           React.createElement(
             'a',
-            { href: this.state.instagram },
+            { target: '_blank', href: this.state.instagram },
             React.createElement('i', { className: 'fa fa-instagram' })
           )
         ),
@@ -42401,8 +42432,8 @@ var Ryan = React.createClass({
           'div',
           { className: 'more' },
           React.createElement(
-            'a',
-            { href: '/#/contact' },
+            A,
+            { to: '/contact' },
             'More ',
             React.createElement('i', { className: 'fa fa-chevron-right' })
           )
@@ -42437,22 +42468,22 @@ var Ryan = React.createClass({
           { className: 'socialMedia' },
           React.createElement(
             'a',
-            { href: 'mailto:' + this.state.email },
+            { target: '_blank', href: 'mailto:' + this.state.email },
             React.createElement('i', { className: 'fa fa-envelope' })
           ),
           React.createElement(
             'a',
-            { href: this.state.facebook },
+            { target: '_blank', href: this.state.facebook },
             React.createElement('i', { className: 'fa fa-facebook-f' })
           ),
           React.createElement(
             'a',
-            { href: this.state.twitter },
+            { target: '_blank', href: this.state.twitter },
             React.createElement('i', { className: 'fa fa-twitter' })
           ),
           React.createElement(
             'a',
-            { href: this.state.instagram },
+            { target: '_blank', href: this.state.instagram },
             React.createElement('i', { className: 'fa fa-instagram' })
           )
         ),
@@ -42461,8 +42492,8 @@ var Ryan = React.createClass({
           'div',
           { className: 'more' },
           React.createElement(
-            'a',
-            { href: '/#/contact' },
+            A,
+            { to: '/contact' },
             'More ',
             React.createElement('i', { className: 'fa fa-chevron-right' })
           )
@@ -42533,172 +42564,7 @@ var Explore = React.createClass({
 
 module.exports = Home;
 
-},{"./components/OwlCarousel":352,"./store":353,"react":269,"react-background-video":60,"react-helmet":62,"react-motion":72,"react-remarkable":78,"react-responsive":79,"react-scroll":119}],347:[function(require,module,exports){
-'use strict';
-
-var _reactRouter = require('react-router');
-
-var ReactDom = require('react-dom');
-var React = require('react');
-
-
-var store = require('./store');
-
-var App = require('./App');
-var Home = require('./Home');
-var FeaturedProperties = require('./Featured');
-var Property = require('./Property');
-var Building = require('./Building');
-var Contact = require('./Contact');
-
-var renderDom = function renderDom() {
-  ReactDom.render(React.createElement(
-    _reactRouter.Router,
-    { history: _reactRouter.hashHistory },
-    React.createElement(
-      _reactRouter.Route,
-      { path: '/', component: App },
-      React.createElement(_reactRouter.IndexRoute, { component: Home }),
-      React.createElement(_reactRouter.Route, { path: 'index', component: Home }),
-      React.createElement(_reactRouter.Route, { path: '/featured', component: Featured }),
-      React.createElement(_reactRouter.Route, { path: '/Azzurra', component: Azzurra }),
-      React.createElement(_reactRouter.Route, { path: '/featured/Azzurra', component: FeaturedAzzurra }),
-      React.createElement(_reactRouter.Route, { path: '/Regatta', component: Regatta }),
-      React.createElement(_reactRouter.Route, { path: '/featured/Regatta', component: FeaturedRegatta }),
-      React.createElement(_reactRouter.Route, { path: '/Cove', component: Cove }),
-      React.createElement(_reactRouter.Route, { path: '/featured/Cove', component: FeaturedCove }),
-      React.createElement(_reactRouter.Route, { path: '/featured/:building/:name/:id', component: Property }),
-      React.createElement(_reactRouter.Route, { path: '/forSale', component: ForSale }),
-      React.createElement(_reactRouter.Route, { path: '/lease', component: ForLease }),
-      React.createElement(_reactRouter.Route, { path: '/sold', component: Sold }),
-      React.createElement(_reactRouter.Route, { path: '/contact', component: Contact })
-    )
-  ), document.getElementById('Main'));
-};
-
-var Featured = React.createClass({
-  displayName: 'Featured',
-  componentDidMount: function componentDidMount() {
-    store.dispatch({
-      type: 'FeaturedProperties_INIT',
-      saleType: 'all',
-      building: 'all'
-    });
-  },
-  render: function render() {
-    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
-  }
-});
-
-var ForSale = React.createClass({
-  displayName: 'ForSale',
-  componentDidMount: function componentDidMount() {
-    store.dispatch({
-      type: 'FeaturedProperties_INIT',
-      saleType: 'sale',
-      building: 'all'
-    });
-  },
-  render: function render() {
-    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
-  }
-});
-
-var ForLease = React.createClass({
-  displayName: 'ForLease',
-  componentDidMount: function componentDidMount() {
-    store.dispatch({
-      type: 'FeaturedProperties_INIT',
-      saleType: 'lease',
-      building: 'all'
-    });
-  },
-  render: function render() {
-    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
-  }
-});
-
-var Sold = React.createClass({
-  displayName: 'Sold',
-  componentDidMount: function componentDidMount() {
-    store.dispatch({
-      type: 'FeaturedProperties_INIT',
-      saleType: 'sold',
-      building: 'all'
-    });
-  },
-  render: function render() {
-    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
-  }
-});
-
-var Azzurra = React.createClass({
-  displayName: 'Azzurra',
-  render: function render() {
-    return React.createElement(Building, { buildingName: '13700marinapointedr' });
-  }
-});
-
-var Regatta = React.createClass({
-  displayName: 'Regatta',
-  render: function render() {
-    return React.createElement(Building, { buildingName: '13750marinapointedr' });
-  }
-});
-
-var Cove = React.createClass({
-  displayName: 'Cove',
-  render: function render() {
-    return React.createElement(Building, { buildingName: '13800marinapointedr' });
-  }
-});
-
-var FeaturedAzzurra = React.createClass({
-  displayName: 'FeaturedAzzurra',
-  componentDidMount: function componentDidMount() {
-    store.dispatch({
-      type: 'FeaturedProperties_INIT',
-      saleType: 'all',
-      building: '13700marinapointedr'
-    });
-  },
-  render: function render() {
-    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
-  }
-});
-
-var FeaturedRegatta = React.createClass({
-  displayName: 'FeaturedRegatta',
-  componentDidMount: function componentDidMount() {
-    store.dispatch({
-      type: 'FeaturedProperties_INIT',
-      saleType: 'all',
-      building: '13750marinapointedr'
-    });
-  },
-  render: function render() {
-    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
-  }
-});
-
-var FeaturedCove = React.createClass({
-  displayName: 'FeaturedCove',
-  componentDidMount: function componentDidMount() {
-    store.dispatch({
-      type: 'FeaturedProperties_INIT',
-      saleType: 'all',
-      building: '13800marinapointedr'
-    });
-  },
-  render: function render() {
-    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
-  }
-});
-
-store.subscribe(renderDom);
-renderDom();
-
-},{"./App":342,"./Building":343,"./Contact":344,"./Featured":345,"./Home":346,"./Property":348,"./store":353,"react":269,"react-dom":61,"react-router":109}],348:[function(require,module,exports){
+},{"./components/OwlCarousel":353,"./store":354,"react":269,"react-background-video":60,"react-helmet":62,"react-motion":72,"react-remarkable":78,"react-responsive":79,"react-router":109,"react-scroll":119}],348:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -42706,6 +42572,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _reactHelmet = require('react-helmet');
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
+
+var _reactRouter = require('react-router');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43056,8 +42924,8 @@ var Featured = React.createClass({
             'div',
             { className: 'item', key: index },
             React.createElement(
-              'a',
-              { href: '/#/featured/' + _this3.props.building + '/' + item.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.image + ')' } },
+              _reactRouter.Link,
+              { to: '/featured/' + _this3.props.building + '/' + item.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.image + ')' } },
               item.text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },
@@ -43095,7 +42963,6 @@ var Facilities = React.createClass({
     };
   },
   render: function render() {
-    console.log(this.props.facilities);
     return React.createElement(
       'div',
       { className: 'Facilities' },
@@ -43164,7 +43031,200 @@ var Facilities = React.createClass({
 
 module.exports = Property;
 
-},{"./components/OwlCarousel":352,"./store":353,"react":269,"react-helmet":62,"react-remarkable":78,"react-responsive":79}],349:[function(require,module,exports){
+},{"./components/OwlCarousel":353,"./store":354,"react":269,"react-helmet":62,"react-remarkable":78,"react-responsive":79,"react-router":109}],349:[function(require,module,exports){
+'use strict';
+
+var _reactRouter = require('react-router');
+
+var React = require('react');
+
+
+var store = require('./store');
+
+var App = require('./App');
+var Home = require('./Home');
+var FeaturedProperties = require('./Featured');
+var Property = require('./Property');
+var Building = require('./Building');
+var Contact = require('./Contact');
+
+var Routes = React.createClass({
+  displayName: 'Routes',
+  render: function render() {
+    return React.createElement(
+      _reactRouter.Router,
+      { history: _reactRouter.browserHistory },
+      React.createElement(
+        _reactRouter.Route,
+        { path: '/', component: App },
+        React.createElement(_reactRouter.IndexRoute, { component: Home }),
+        React.createElement(_reactRouter.Route, { path: 'index', component: Home }),
+        React.createElement(_reactRouter.Route, { path: '/featured', component: Featured }),
+        React.createElement(_reactRouter.Route, { path: '/Azzurra', component: Azzurra }),
+        React.createElement(_reactRouter.Route, { path: '/featured/Azzurra', component: FeaturedAzzurra }),
+        React.createElement(_reactRouter.Route, { path: '/Regatta', component: Regatta }),
+        React.createElement(_reactRouter.Route, { path: '/featured/Regatta', component: FeaturedRegatta }),
+        React.createElement(_reactRouter.Route, { path: '/Cove', component: Cove }),
+        React.createElement(_reactRouter.Route, { path: '/featured/Cove', component: FeaturedCove }),
+        React.createElement(_reactRouter.Route, { path: '/featured/:building/:name/:id', component: Property }),
+        React.createElement(_reactRouter.Route, { path: '/forSale', component: ForSale }),
+        React.createElement(_reactRouter.Route, { path: '/lease', component: ForLease }),
+        React.createElement(_reactRouter.Route, { path: '/sold', component: Sold }),
+        React.createElement(_reactRouter.Route, { path: '/contact', component: Contact })
+      )
+    );
+  }
+});
+
+module.exports = Routes;
+
+// const renderDom = ()=>{
+//   ReactDom.render(
+//     <Router history={hashHistory}>
+//       <Route path='/' component={App}>
+//         <IndexRoute component={Home} />
+//         <Route path='index' component={Home} />
+//         <Route path='/featured' component={Featured}></Route>
+//         <Route path='/Azzurra' component={Azzurra} />
+//         <Route path='/featured/Azzurra' component={FeaturedAzzurra} />
+//         <Route path='/Regatta' component={Regatta} />
+//         <Route path='/featured/Regatta' component={FeaturedRegatta} />
+//         <Route path='/Cove' component={Cove} />
+//         <Route path='/featured/Cove' component={FeaturedCove} />
+//         <Route path='/featured/:building/:name/:id' component={Property} />
+//         <Route path='/forSale' component={ForSale} />
+//         <Route path='/lease' component={ForLease} />
+//         <Route path='/sold' component={Sold} />
+//         <Route path='/contact' component={Contact} />
+//       </Route>
+//     </Router>,
+//     document.getElementById('Main')
+//   );
+// }
+//
+// store.subscribe(renderDom);
+// renderDom();
+
+var Featured = React.createClass({
+  displayName: 'Featured',
+  componentDidMount: function componentDidMount() {
+    store.dispatch({
+      type: 'FeaturedProperties_INIT',
+      saleType: 'all',
+      building: 'all'
+    });
+  },
+  render: function render() {
+    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
+  }
+});
+
+var ForSale = React.createClass({
+  displayName: 'ForSale',
+  componentDidMount: function componentDidMount() {
+    store.dispatch({
+      type: 'FeaturedProperties_INIT',
+      saleType: 'sale',
+      building: 'all'
+    });
+  },
+  render: function render() {
+    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
+  }
+});
+
+var ForLease = React.createClass({
+  displayName: 'ForLease',
+  componentDidMount: function componentDidMount() {
+    store.dispatch({
+      type: 'FeaturedProperties_INIT',
+      saleType: 'lease',
+      building: 'all'
+    });
+  },
+  render: function render() {
+    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
+  }
+});
+
+var Sold = React.createClass({
+  displayName: 'Sold',
+  componentDidMount: function componentDidMount() {
+    store.dispatch({
+      type: 'FeaturedProperties_INIT',
+      saleType: 'sold',
+      building: 'all'
+    });
+  },
+  render: function render() {
+    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
+  }
+});
+
+var Azzurra = React.createClass({
+  displayName: 'Azzurra',
+  render: function render() {
+    return React.createElement(Building, { buildingName: '13700marinapointedr' });
+  }
+});
+
+var Regatta = React.createClass({
+  displayName: 'Regatta',
+  render: function render() {
+    return React.createElement(Building, { buildingName: '13750marinapointedr' });
+  }
+});
+
+var Cove = React.createClass({
+  displayName: 'Cove',
+  render: function render() {
+    return React.createElement(Building, { buildingName: '13800marinapointedr' });
+  }
+});
+
+var FeaturedAzzurra = React.createClass({
+  displayName: 'FeaturedAzzurra',
+  componentDidMount: function componentDidMount() {
+    store.dispatch({
+      type: 'FeaturedProperties_INIT',
+      saleType: 'all',
+      building: '13700marinapointedr'
+    });
+  },
+  render: function render() {
+    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
+  }
+});
+
+var FeaturedRegatta = React.createClass({
+  displayName: 'FeaturedRegatta',
+  componentDidMount: function componentDidMount() {
+    store.dispatch({
+      type: 'FeaturedProperties_INIT',
+      saleType: 'all',
+      building: '13750marinapointedr'
+    });
+  },
+  render: function render() {
+    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
+  }
+});
+
+var FeaturedCove = React.createClass({
+  displayName: 'FeaturedCove',
+  componentDidMount: function componentDidMount() {
+    store.dispatch({
+      type: 'FeaturedProperties_INIT',
+      saleType: 'all',
+      building: '13800marinapointedr'
+    });
+  },
+  render: function render() {
+    return React.createElement(FeaturedProperties, store.getState().FeaturedProperties);
+  }
+});
+
+},{"./App":343,"./Building":344,"./Contact":345,"./Featured":346,"./Home":347,"./Property":348,"./store":354,"react":269,"react-router":109}],350:[function(require,module,exports){
 'use strict';
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -43349,11 +43409,16 @@ var Tablet = React.createClass({
 
 module.exports = Foot;
 
-},{"../store":353,"react":269,"react-remarkable":78,"react-responsive":79}],350:[function(require,module,exports){
+},{"../store":354,"react":269,"react-remarkable":78,"react-responsive":79}],351:[function(require,module,exports){
 'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _reactRouter = require('react-router');
 
 var React = require('react');
 var MediaQuery = require('react-responsive');
+
 
 var store = require('../store');
 
@@ -43382,6 +43447,12 @@ var Menu = React.createClass({
 
 var Mobile = React.createClass({
   displayName: 'Mobile',
+  getInitialState: function getInitialState() {
+    return {
+      properties: false,
+      buildings: false
+    };
+  },
   onClickHandler: function onClickHandler(event) {
     store.dispatch({ type: 'MENU_TOGGLE' });
     switch (this.props.menuLogo) {
@@ -43403,6 +43474,10 @@ var Mobile = React.createClass({
   render: function render() {
     var _this = this;
 
+    var _state = this.state;
+    var properties = _state.properties;
+    var buildings = _state.buildings;
+
     return React.createElement(
       'div',
       { className: 'View Mobile' },
@@ -43416,47 +43491,122 @@ var Mobile = React.createClass({
             'div',
             { className: 'categoryName' },
             React.createElement(
-              'a',
-              { href: 'http://coastalluxeliving.com/#/', onClick: this.onClickHandler },
+              _reactRouter.Link,
+              { to: '/', onClick: this.onClickHandler },
               'HOME'
             )
           )
         ),
-        this.props.list.map(function (_ref, index) {
-          var category = _ref.category;
-          var submenu = _ref.submenu;
-          var show = _ref.show;
-
-          return React.createElement(
+        React.createElement(
+          'div',
+          { className: 'category' },
+          React.createElement('div', { className: 'menuBorder' }),
+          React.createElement(
             'div',
-            { className: 'category', key: index },
-            React.createElement('div', { className: 'menuBorder' }),
+            {
+              onClick: function onClick() {
+                return _this.setState(_extends({}, _this.state, { properties: !properties }));
+              },
+              className: 'categoryName' },
+            'PROPERTIES',
+            React.createElement('i', { className: 'fa fa-chevron-' + (properties ? 'up' : 'down') })
+          ),
+          properties ? React.createElement(
+            'div',
+            null,
             React.createElement(
               'div',
-              {
-                onClick: function onClick() {
-                  return store.dispatch({ type: 'MENU_LIST_TOGGLE', index: index });
-                },
-                className: 'categoryName' },
-              category,
-              React.createElement('i', { className: 'fa fa-chevron-' + (show ? 'up' : 'down') })
+              { className: 'submenu' },
+              React.createElement(
+                _reactRouter.Link,
+                { to: '/forSale', onClick: this.onClickHandler },
+                'FOR SALE'
+              )
             ),
-            show ? submenu.map(function (_ref2, index) {
-              var link = _ref2.link;
-              var name = _ref2.name;
-
-              return React.createElement(
-                'div',
-                { className: 'submenu', key: index },
-                React.createElement(
-                  'a',
-                  { href: link, onClick: _this.onClickHandler },
-                  name
-                )
-              );
-            }) : React.createElement('div', null)
-          );
-        }),
+            React.createElement(
+              'div',
+              { className: 'submenu' },
+              React.createElement(
+                _reactRouter.Link,
+                { to: '/lease', onClick: this.onClickHandler },
+                'FOR LEASE'
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'submenu' },
+              React.createElement(
+                _reactRouter.Link,
+                { to: '/sold', onClick: this.onClickHandler },
+                'SOLD'
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'submenu' },
+              React.createElement(
+                'a',
+                { target: '_blank', href: 'http://idx.coastalluxeliving.com/homesearch/89398', onClick: this.onClickHandler },
+                'SEARCH'
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'submenu' },
+              React.createElement(
+                'a',
+                { target: '_blank', href: 'http://idx.coastalluxeliving.com/openhomes/89398', onClick: this.onClickHandler },
+                'OPEN HOMES'
+              )
+            )
+          ) : React.createElement('div', null)
+        ),
+        React.createElement(
+          'div',
+          { className: 'category' },
+          React.createElement('div', { className: 'menuBorder' }),
+          React.createElement(
+            'div',
+            {
+              onClick: function onClick() {
+                return _this.setState(_extends({}, _this.state, { buildings: !buildings }));
+              },
+              className: 'categoryName' },
+            'BUILDINGS',
+            React.createElement('i', { className: 'fa fa-chevron-' + (buildings ? 'up' : 'down') })
+          ),
+          buildings ? React.createElement(
+            'div',
+            null,
+            React.createElement(
+              'div',
+              { className: 'submenu' },
+              React.createElement(
+                _reactRouter.Link,
+                { to: '/Azzurra', onClick: this.onClickHandler },
+                'AZZURRA'
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'submenu' },
+              React.createElement(
+                _reactRouter.Link,
+                { to: '/Regatta', onClick: this.onClickHandler },
+                'REGATTA'
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'submenu' },
+              React.createElement(
+                _reactRouter.Link,
+                { to: '/Cove', onClick: this.onClickHandler },
+                'COVE'
+              )
+            )
+          ) : React.createElement('div', null)
+        ),
         React.createElement(
           'div',
           { className: 'category' },
@@ -43465,8 +43615,8 @@ var Mobile = React.createClass({
             'div',
             { className: 'categoryName' },
             React.createElement(
-              'a',
-              { href: 'http://coastalluxeliving.com/#/contact', onClick: this.onClickHandler },
+              _reactRouter.Link,
+              { to: '/contact', onClick: this.onClickHandler },
               'CONTACT'
             )
           )
@@ -43486,8 +43636,6 @@ var Tablet = React.createClass({
     store.dispatch({ type: 'MENU_TOGGLE' });
   },
   render: function render() {
-    var _this2 = this;
-
     return React.createElement(
       'div',
       { className: 'View Tablet' },
@@ -43506,41 +43654,104 @@ var Tablet = React.createClass({
             'div',
             { className: 'categoryName' },
             React.createElement(
-              'a',
-              { href: 'http://coastalluxeliving.com/#/', onClick: this.onClickHandler },
+              _reactRouter.Link,
+              { to: '/', onClick: this.onClickHandler },
               'HOME'
             )
           )
         ),
-        this.props.list.map(function (_ref3, index) {
-          var category = _ref3.category;
-          var submenu = _ref3.submenu;
-
-          return React.createElement(
+        React.createElement(
+          'div',
+          { className: 'category' },
+          React.createElement('div', { className: 'menuBorder' }),
+          React.createElement(
             'div',
-            { className: 'category', key: index },
-            React.createElement('div', { className: 'menuBorder' }),
+            { className: 'categoryName' },
+            'PROPERTIES'
+          ),
+          React.createElement(
+            'div',
+            { className: 'submenu' },
             React.createElement(
-              'div',
-              { className: 'categoryName' },
-              category
-            ),
-            submenu.map(function (_ref4, index) {
-              var link = _ref4.link;
-              var name = _ref4.name;
-
-              return React.createElement(
-                'div',
-                { className: 'submenu', key: index },
-                React.createElement(
-                  'a',
-                  { href: link, onClick: _this2.onClickHandler },
-                  name
-                )
-              );
-            })
-          );
-        }),
+              _reactRouter.Link,
+              { to: '/forSale', onClick: this.onClickHandler },
+              'FOR SALE'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'submenu' },
+            React.createElement(
+              _reactRouter.Link,
+              { to: '/lease', onClick: this.onClickHandler },
+              'FOR LEASE'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'submenu' },
+            React.createElement(
+              _reactRouter.Link,
+              { to: '/sold', onClick: this.onClickHandler },
+              'SOLD'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'submenu' },
+            React.createElement(
+              'a',
+              { target: '_blank', href: 'http://idx.coastalluxeliving.com/homesearch/89398', onClick: this.onClickHandler },
+              'SEARCH'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'submenu' },
+            React.createElement(
+              'a',
+              { target: '_blank', href: 'http://idx.coastalluxeliving.com/openhomes/89398', onClick: this.onClickHandler },
+              'OPEN HOMES'
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'category' },
+          React.createElement('div', { className: 'menuBorder' }),
+          React.createElement(
+            'div',
+            { className: 'categoryName' },
+            'BUILDINGS'
+          ),
+          React.createElement(
+            'div',
+            { className: 'submenu' },
+            React.createElement(
+              _reactRouter.Link,
+              { to: '/Azzurra', onClick: this.onClickHandler },
+              'AZZURRA'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'submenu' },
+            React.createElement(
+              _reactRouter.Link,
+              { to: '/Regatta', onClick: this.onClickHandler },
+              'REGATTA'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'submenu' },
+            React.createElement(
+              _reactRouter.Link,
+              { to: '/Cove', onClick: this.onClickHandler },
+              'COVE'
+            )
+          )
+        ),
         React.createElement(
           'div',
           { className: 'category' },
@@ -43549,8 +43760,8 @@ var Tablet = React.createClass({
             'div',
             { className: 'categoryName' },
             React.createElement(
-              'a',
-              { href: 'http://coastalluxeliving.com/#/contact', onClick: this.onClickHandler },
+              _reactRouter.Link,
+              { to: '/contact', onClick: this.onClickHandler },
               'CONTACT'
             )
           )
@@ -43562,14 +43773,17 @@ var Tablet = React.createClass({
 
 module.exports = Menu;
 
-},{"../store":353,"react":269,"react-responsive":79}],351:[function(require,module,exports){
+},{"../store":354,"react":269,"react-responsive":79,"react-router":109}],352:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _reactRouter = require('react-router');
+
 var React = require('react');
 var MediaQuery = require('react-responsive');
 var CSSTransition = require('react-addons-css-transition-group');
+
 
 var store = require('../store');
 
@@ -43629,8 +43843,8 @@ var Mobile = React.createClass({
         'div',
         { className: 'col logo' },
         React.createElement(
-          'a',
-          { href: 'http://coastalluxeliving.com/#/' },
+          _reactRouter.Link,
+          { to: '/' },
           React.createElement('img', { src: this.props.logo })
         )
       )
@@ -43643,21 +43857,6 @@ var Tablet = React.createClass({
   clickHandler: function clickHandler(event) {
     event.preventDefault();
     store.dispatch({ type: 'MENU_TOGGLE' });
-    // switch (this.props.menuLogo) {
-    //   case 'fa-bars':
-    //     return store.dispatch({
-    //       type: 'NAV_MENU',
-    //       logo: 'fa-times'
-    //     });
-    //   case 'fa-times':
-    //     return store.dispatch({
-    //       type: 'NAV_MENU',
-    //       logo: 'fa-bars'
-    //     });
-    //   default:
-    //     console.log('Mobile nav: clickHandler default case');
-    //     console.log(this.props.menuLogo);
-    // }
   },
   render: function render() {
     return React.createElement(
@@ -43672,8 +43871,8 @@ var Tablet = React.createClass({
         'div',
         { className: 'col logo' },
         React.createElement(
-          'a',
-          { href: 'http://coastalluxeliving.com/#/' },
+          _reactRouter.Link,
+          { to: '/' },
           React.createElement('img', { src: this.props.logo })
         )
       )
@@ -43686,21 +43885,6 @@ var Desktop = React.createClass({
   clickHandler: function clickHandler(event) {
     event.preventDefault();
     store.dispatch({ type: 'MENU_TOGGLE' });
-    // switch (this.props.menuLogo) {
-    //   case 'fa-bars':
-    //     return store.dispatch({
-    //       type: 'NAV_MENU',
-    //       logo: 'fa-times'
-    //     });
-    //   case 'fa-times':
-    //     return store.dispatch({
-    //       type: 'NAV_MENU',
-    //       logo: 'fa-bars'
-    //     });
-    //   default:
-    //     console.log('Mobile nav: clickHandler default case');
-    //     console.log(this.props.menuLogo);
-    // }
   },
   render: function render() {
     return React.createElement(
@@ -43710,8 +43894,8 @@ var Desktop = React.createClass({
         'div',
         { className: 'col contact' },
         React.createElement(
-          'a',
-          { href: 'http://coastalluxeliving.com/#/contact' },
+          _reactRouter.Link,
+          { to: '/contact' },
           React.createElement('i', { className: 'fa ' + this.props.contactLogo }),
           React.createElement(
             'div',
@@ -43724,8 +43908,8 @@ var Desktop = React.createClass({
         'div',
         { className: 'col logo' },
         React.createElement(
-          'a',
-          { href: 'http://coastalluxeliving.com/#/' },
+          _reactRouter.Link,
+          { to: '/' },
           React.createElement('img', { src: this.props.desktopLogo })
         )
       ),
@@ -43749,7 +43933,7 @@ var Desktop = React.createClass({
 
 module.exports = Nav;
 
-},{"../store":353,"react":269,"react-addons-css-transition-group":59,"react-responsive":79}],352:[function(require,module,exports){
+},{"../store":354,"react":269,"react-addons-css-transition-group":59,"react-responsive":79,"react-router":109}],353:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -43956,7 +44140,7 @@ var OwlCarousel = _react2.default.createClass({
 
 module.exports = OwlCarousel;
 
-},{"react":269}],353:[function(require,module,exports){
+},{"react":269}],354:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -44069,7 +44253,6 @@ var reducer = function reducer(state, action) {
         })
       });
     case 'FeaturedProperties_BUILDING':
-      console.log('store: ' + action.building);
       return _extends({}, state, {
         FeaturedProperties: _extends({}, state.FeaturedProperties, {
           building: action.building
@@ -44147,7 +44330,7 @@ $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/38').then(function 
 
 module.exports = store;
 
-},{"redux":275}]},{},[347])
+},{"redux":275}]},{},[342])
 
 
 //# sourceMappingURL=bundle.js.map

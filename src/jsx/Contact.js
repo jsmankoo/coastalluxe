@@ -3,6 +3,7 @@ var MediaQuery = require('react-responsive');
 var ReactBGVideo = require('react-background-video');
 var Markdown = require('react-remarkable');
 import Helmet from 'react-helmet';
+import {Link} from 'react-router';
 
 var store = require('./store');
 
@@ -98,7 +99,7 @@ const Top = React.createClass({
         <div className="infoWrapper">
           <div className="info">
             <div className="mobile col">
-              <a href='tel:310-344-0898' className="wrapper">
+              <a target='_blank' href='tel:310-344-0898' className="wrapper">
                 <div className="icon">
                   <i className='fa fa-mobile' />
                 </div>
@@ -108,7 +109,7 @@ const Top = React.createClass({
               </a>
             </div>
             <div className="office col">
-              <a href={this.props.url} className="wrapper">
+              <a target='_blank' href={this.props.url} className="wrapper">
                 <div className="icon">
                   <i className='fa fa-map-marker' />
                 </div>
@@ -118,7 +119,7 @@ const Top = React.createClass({
               </a>
             </div>
             <div className="email col">
-              <a href={`mailto:${this.props.email}`} className="wrapper">
+              <a target='_blank' href={`mailto:${this.props.email}`} className="wrapper">
                 <div className="icon">
                   <i className='fa fa-paper-plane' />
                 </div>
@@ -156,7 +157,7 @@ const Top = React.createClass({
         <div className="infoWrapper">
           <div className="info">
             <div className="mobile col">
-              <a href='tel:310-344-0898' className="wrapper">
+              <a target='_blank' href='tel:310-344-0898' className="wrapper">
                 <div className="icon">
                   <i className='fa fa-mobile' />
                 </div>
@@ -166,7 +167,7 @@ const Top = React.createClass({
               </a>
             </div>
             <div className="office col">
-              <a href={this.props.url} className="wrapper">
+              <a target='_blank' href={this.props.url} className="wrapper">
                 <div className="icon">
                   <i className='fa fa-map-marker' />
                 </div>
@@ -176,7 +177,7 @@ const Top = React.createClass({
               </a>
             </div>
             <div className="email col">
-              <a href={`mailto:${this.props.email}`} className="wrapper">
+              <a target='_blank' href={`mailto:${this.props.email}`} className="wrapper">
                 <div className="icon">
                   <i className='fa fa-paper-plane' />
                 </div>
@@ -213,7 +214,7 @@ const Top = React.createClass({
         </div>
         <div className="info-wrapper">
           <div className="info">
-            <a href='tel:310-344-0898' className="mobile wrapper">
+            <a target='_blank' href='tel:310-344-0898' className="mobile wrapper">
               <div className="icon">
                 <i className='fa fa-mobile' />
               </div>
@@ -224,7 +225,7 @@ const Top = React.createClass({
               </div>
             </a>
             <div className="border" />
-            <a href={this.props.url} className="office wrapper">
+            <a target='_blank' href={this.props.url} className="office wrapper">
               <div className="icon">
                 <i className='fa fa-map-marker' />
               </div>
@@ -235,7 +236,7 @@ const Top = React.createClass({
               </div>
             </a>
             <div className="border" />
-            <a href={`mailto:${this.props.email}`} className="email wrapper">
+            <a target='_blank' href={`mailto:${this.props.email}`} className="email wrapper">
               <div className="icon">
                 <i className='fa fa-paper-plane' />
               </div>

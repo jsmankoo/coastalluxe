@@ -2,6 +2,7 @@ var React = require('react');
 var MediaQuery = require('react-responsive');
 var Select = require('react-select');
 import Helmet from 'react-helmet';
+import {Link} from 'react-router';
 
 var store = require('./store');
 
@@ -327,7 +328,7 @@ const Properties = React.createClass({
             this.pickProperty().map( ({building, id, name, image, forSale, lease, text}, index)=>{
               return (
                 <div className="property" key={index}>
-                  <a href={`/#/featured/${building}/${name}/${id}`} className="img-wrapper" style={{backgroundImage: `url(${image})`}}>
+                  <Link to={`/featured/${building}/${name}/${id}`} className="img-wrapper" style={{backgroundImage: `url(${image})`}}>
                     {
                       text !== '' ?
                       <div className="specialText">
@@ -335,7 +336,7 @@ const Properties = React.createClass({
                       </div> :
                       <div />
                     }
-                  </a>
+                  </Link>
                   <div className="info">
                     <div className="name">
                       {name}
