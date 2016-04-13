@@ -11,7 +11,7 @@ const Property = React.createClass({
   getInitialState(){
     return {
       building: {
-        "name": "Loading ...",
+        "name": "",
         "content": "",
         "image": "",
         "moreContent": "",
@@ -19,7 +19,7 @@ const Property = React.createClass({
         "facilities": []
       },
       property: {
-        "name": "Loading ...",
+        "name": "",
         "number": "",
         "streetname": "",
         "city": "",
@@ -150,12 +150,12 @@ const Property = React.createClass({
       <div className="Property">
         <Helmet
             title={`Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.property.name}`}
-            script={[
-                  {"src": "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57056071f6b81438", "type": "text/javascript"}
-                ]}
           />
         <Jumbotron {...this.state} />
         <Details {...this.state.property} options={this.state.options} />
+        <div className="Share">
+
+        </div>
         {
           this.state.building.facilities.length === 0 ?
           <div /> :
@@ -259,6 +259,7 @@ const Details = React.createClass({
               })
             }
           </OwlCarousel>
+          <div id='ShareButton' className="addthis_sharing_toolbox"></div>
         </div>
         <div className="info">
           <div className="info-wrapper">

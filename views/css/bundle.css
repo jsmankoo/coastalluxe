@@ -1028,6 +1028,7 @@ th {
   text-decoration: none;
   margin-top: 20px;
   margin-bottom: 20px;
+  z-index: 1000;
 }
 .Home .Featured .Heading .Row .all:before,
 .Home .Featured .Heading .Row .all:after {
@@ -1071,7 +1072,7 @@ th {
 .Home .Featured #featuredSlide .owl-controls {
   position: absolute;
   top: -50px;
-  width: 210px;
+  width: 300px;
   position: absolute;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
@@ -3104,6 +3105,24 @@ th {
 }
 .Property .Details .slideShow {
   padding: 60px 0px 0px;
+  position: relative;
+}
+.Property .Details .slideShow #ShareButton {
+  z-index: 10000;
+}
+@media only screen and (max-width: 1024px) {
+  .Property .Details .slideShow #ShareButton {
+    display: block;
+    margin: 20px auto 0px;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .Property .Details .slideShow #ShareButton {
+    position: absolute;
+    bottom: -7px;
+    left: 20px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .Property .Details .slideShow {

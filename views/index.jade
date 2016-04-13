@@ -3,7 +3,7 @@ html( class="no-js" lang="")
     head
         meta( charset="utf-8")
         meta( http-equiv="x-ua-compatible" content="ie=edge")
-        title Coastal Luxe
+        title Coastal Luxe Living - Specializing in Luxury Coastal Properties
         meta( name="description" content="")
         meta( name="viewport" content="width=device-width, initial-scale=1")
           
@@ -36,8 +36,9 @@ html( class="no-js" lang="")
         link(rel='stylesheet' href='/css/react-select.min.css')
         link(rel="stylesheet", type="text/css", href="/css/bundle.css")
 
-        <!-- Place favicon.ico in the root directory -->
+        //- <!-- Place favicon.ico in the root directory -->
         script(src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js")
+        //- <!-- Go to www.addthis.com/dashboard to customize your tools -->
         script(src="https://use.typekit.net/azq2lsi.js")
         script try{Typekit.load({ async: true });}catch(e){}
 
@@ -47,6 +48,15 @@ html( class="no-js" lang="")
         | <![endif]-->
         #loader
         #Main!= content
+        #fb-root
+        script.
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
         
         script(src="/js/vendor/jquery.min.js")
         //script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
@@ -57,8 +67,8 @@ html( class="no-js" lang="")
             $('#loader').fadeOut();
           }, 2000);
         script(src="/js/bundle.js")
-        //- addthis buttons
-        //- script( type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57056071f6b81438")
+          //- <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        script( type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57056071f6b81438")
 
                   
         // Google Analytics: change UA-XXXXX-X to be your site's ID.

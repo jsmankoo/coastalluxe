@@ -23,7 +23,7 @@ var Property = React.createClass({
   getInitialState: function getInitialState() {
     return {
       building: {
-        "name": "Loading ...",
+        "name": "",
         "content": "",
         "image": "",
         "moreContent": "",
@@ -31,7 +31,7 @@ var Property = React.createClass({
         "facilities": []
       },
       property: {
-        "name": "Loading ...",
+        "name": "",
         "number": "",
         "streetname": "",
         "city": "",
@@ -179,11 +179,11 @@ var Property = React.createClass({
       'div',
       { className: 'Property' },
       React.createElement(_reactHelmet2.default, {
-        title: 'Coastal Luxe Living - Specializing in luxury Coastal properties - ' + this.state.property.name,
-        script: [{ "src": "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57056071f6b81438", "type": "text/javascript" }]
+        title: 'Coastal Luxe Living - Specializing in luxury Coastal properties - ' + this.state.property.name
       }),
       React.createElement(Jumbotron, this.state),
       React.createElement(Details, _extends({}, this.state.property, { options: this.state.options })),
+      React.createElement('div', { className: 'Share' }),
       this.state.building.facilities.length === 0 ? React.createElement('div', null) : React.createElement(Facilities, this.state.building),
       this.state.property.facilities.length ? React.createElement(Facilities, { facilities: this.state.property.facilities }) : React.createElement('div', null)
     );
@@ -304,7 +304,8 @@ var Details = React.createClass({
               )
             );
           })
-        )
+        ),
+        React.createElement('div', { id: 'ShareButton', className: 'addthis_sharing_toolbox' })
       ),
       React.createElement(
         'div',
