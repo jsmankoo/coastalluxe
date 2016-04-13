@@ -235,7 +235,21 @@ const Featured = React.createClass({
             .map((item, index)=>{
               return (
                 <div className="item" key={index}>
-                  <Link to={`/featured/${this.props.building}/${item.name}/${item.id}`} className="img-wrapper" style={{backgroundImage: `url(${item.image})`}}>
+                  <Link className="img-wrapper" style={{backgroundImage: `url(${item.image})`}}
+                    to={
+                      (()=>{
+                        switch (this.props.building) {
+                          case '13700marinapointedr':
+                            return `/featured/Azzurra/${item.name.split(' ').join('-')}/${item.id}`;
+                          case '13750marinapointedr':
+                            return `/featured/Regatta/${item.name.split(' ').join('-')}/${item.id}`;
+                          case '13800marinapointedr':
+                            return `/featured/Cove/${item.name.split(' ').join('-')}/${item.id}`;
+                          default:
+                            return `/featured/featured/${item.name.split(' ').join('-')}/${item.id}`;
+                        }
+                      })()
+                    }>
                     {
                       item.text !== '' ?
                       <div className="specialText">

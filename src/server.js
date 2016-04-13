@@ -1,13 +1,6 @@
 import express from "express";
 import morgan from "morgan";
 
-import React from 'react';
-import { match, RouterContext } from 'react-router'
-import ReactDOMServer from 'react-dom/server';
-
-import ReactApp from './jsx/App';
-import Home from './jsx/Home';
-
 const app = express();
 
 app.set('port', process.env.PORT||8000);

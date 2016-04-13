@@ -418,7 +418,19 @@ var Properties = React.createClass({
             { className: 'property', key: index },
             React.createElement(
               _reactRouter.Link,
-              { to: '/featured/' + building + '/' + name + '/' + id, className: 'img-wrapper', style: { backgroundImage: 'url(' + image + ')' } },
+              { className: 'img-wrapper', style: { backgroundImage: 'url(' + image + ')' },
+                to: function () {
+                  switch (building) {
+                    case '13700marinapointedr':
+                      return '/featured/Azzurra/' + name.split(' ').join('-') + '/' + id;
+                    case '13750marinapointedr':
+                      return '/featured/Regatta/' + name.split(' ').join('-') + '/' + id;
+                    case '13800marinapointedr':
+                      return '/featured/Cove/' + name.split(' ').join('-') + '/' + id;
+                    default:
+                      return '/featured/featured/' + name.split(' ').join('-') + '/' + id;
+                  }
+                }() },
               text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },

@@ -328,7 +328,21 @@ const Properties = React.createClass({
             this.pickProperty().map( ({building, id, name, image, forSale, lease, text}, index)=>{
               return (
                 <div className="property" key={index}>
-                  <Link to={`/featured/${building}/${name}/${id}`} className="img-wrapper" style={{backgroundImage: `url(${image})`}}>
+                  <Link className="img-wrapper" style={{backgroundImage: `url(${image})`}}
+                    to={
+                      (()=>{
+                        switch (building) {
+                          case '13700marinapointedr':
+                            return `/featured/Azzurra/${name.split(' ').join('-')}/${id}`;
+                          case '13750marinapointedr':
+                            return `/featured/Regatta/${name.split(' ').join('-')}/${id}`;
+                          case '13800marinapointedr':
+                            return `/featured/Cove/${name.split(' ').join('-')}/${id}`;
+                          default:
+                            return `/featured/featured/${name.split(' ').join('-')}/${id}`;
+                        }
+                      })()
+                    }>
                     {
                       text !== '' ?
                       <div className="specialText">

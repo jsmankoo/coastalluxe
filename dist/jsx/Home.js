@@ -243,7 +243,19 @@ var Featured = React.createClass({
                   } },
                 React.createElement(
                   A,
-                  { to: '/featured/' + item.type + '/' + item.acf.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.acf.image + ')' } },
+                  { className: 'img-wrapper', style: { backgroundImage: 'url(' + item.acf.image + ')' },
+                    to: function () {
+                      switch (item.type) {
+                        case '13700marinapointedr':
+                          return '/featured/Azzurra/' + item.acf.name.split(' ').join('-') + '/' + item.id;
+                        case '13750marinapointedr':
+                          return '/featured/Regatta/' + item.acf.name.split(' ').join('-') + '/' + item.id;
+                        case '13800marinapointedr':
+                          return '/featured/Cove/' + item.acf.name.split(' ').join('-') + '/' + item.id;
+                        default:
+                          return '/featured/featured/' + item.acf.name.split(' ').join('-') + '/' + item.id;
+                      }
+                    }() },
                   item.acf.text !== '' ? React.createElement(
                     'div',
                     { className: 'specialText' },

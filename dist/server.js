@@ -8,24 +8,6 @@ var _morgan = require("morgan");
 
 var _morgan2 = _interopRequireDefault(_morgan);
 
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouter = require("react-router");
-
-var _server = require("react-dom/server");
-
-var _server2 = _interopRequireDefault(_server);
-
-var _App = require("./jsx/App");
-
-var _App2 = _interopRequireDefault(_App);
-
-var _Home = require("./jsx/Home");
-
-var _Home2 = _interopRequireDefault(_Home);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();

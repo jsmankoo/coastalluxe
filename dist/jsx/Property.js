@@ -62,10 +62,10 @@ var Property = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
-    console.log($('#at4-share').removeClass('at4-show'));
     $(window).scrollTop(0);
+    console.log(this.props.params.building);
     switch (this.props.params.building) {
-      case '13700marinapointedr':
+      case 'Azzurra':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137').then(function (_ref) {
           var acf = _ref.acf;
 
@@ -75,10 +75,28 @@ var Property = React.createClass({
             })
           }));
         });
-        break;
-      case '13750marinapointedr':
-        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/139').then(function (_ref2) {
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr/' + this.props.params.id).then(function (_ref2) {
           var acf = _ref2.acf;
+
+          _this.setState(_extends({}, _this.state, {
+            property: _extends({}, _this.state.property, acf),
+            building: _extends({}, _this.state.building, { jumbotron: acf.image })
+          }));
+        });
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr').then(function (data) {
+          _this.setState(_extends({}, _this.state, {
+            featured: data.map(function (_ref3) {
+              var id = _ref3.id;
+              var acf = _ref3.acf;
+
+              return _extends({}, acf, { id: id });
+            })
+          }));
+        });
+        break;
+      case 'Regatta':
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/139').then(function (_ref4) {
+          var acf = _ref4.acf;
 
           _this.setState(_extends({}, _this.state, {
             building: _extends({}, _this.state.building, {
@@ -86,39 +104,75 @@ var Property = React.createClass({
             })
           }));
         });
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr/' + this.props.params.id).then(function (_ref5) {
+          var acf = _ref5.acf;
+
+          _this.setState(_extends({}, _this.state, {
+            property: _extends({}, _this.state.property, acf),
+            building: _extends({}, _this.state.building, { jumbotron: acf.image })
+          }));
+        });
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr').then(function (data) {
+          _this.setState(_extends({}, _this.state, {
+            featured: data.map(function (_ref6) {
+              var id = _ref6.id;
+              var acf = _ref6.acf;
+
+              return _extends({}, acf, { id: id });
+            })
+          }));
+        });
         break;
-      case '13800marinapointedr':
-        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/140').then(function (_ref3) {
-          var acf = _ref3.acf;
+      case 'Cove':
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/140').then(function (_ref7) {
+          var acf = _ref7.acf;
 
           _this.setState(_extends({}, _this.state, {
             building: _extends({}, _this.state.building, {
               facilities: acf.facilities
+            })
+          }));
+        });
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr/' + this.props.params.id).then(function (_ref8) {
+          var acf = _ref8.acf;
+
+          _this.setState(_extends({}, _this.state, {
+            property: _extends({}, _this.state.property, acf),
+            building: _extends({}, _this.state.building, { jumbotron: acf.image })
+          }));
+        });
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr').then(function (data) {
+          _this.setState(_extends({}, _this.state, {
+            featured: data.map(function (_ref9) {
+              var id = _ref9.id;
+              var acf = _ref9.acf;
+
+              return _extends({}, acf, { id: id });
             })
           }));
         });
         break;
       default:
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured/' + this.props.params.id).then(function (_ref10) {
+          var acf = _ref10.acf;
+
+          _this.setState(_extends({}, _this.state, {
+            property: _extends({}, _this.state.property, acf),
+            building: _extends({}, _this.state.building, { jumbotron: acf.image })
+          }));
+        });
+        $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured').then(function (data) {
+          _this.setState(_extends({}, _this.state, {
+            featured: data.map(function (_ref11) {
+              var id = _ref11.id;
+              var acf = _ref11.acf;
+
+              return _extends({}, acf, { id: id });
+            })
+          }));
+        });
         break;
     }
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/' + this.props.params.building + '/' + this.props.params.id).then(function (_ref4) {
-      var acf = _ref4.acf;
-
-      _this.setState(_extends({}, _this.state, {
-        property: _extends({}, _this.state.property, acf),
-        building: _extends({}, _this.state.building, { jumbotron: acf.image })
-      }));
-    });
-    $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/' + this.props.params.building).then(function (data) {
-      _this.setState(_extends({}, _this.state, {
-        featured: data.map(function (_ref5) {
-          var id = _ref5.id;
-          var acf = _ref5.acf;
-
-          return _extends({}, acf, { id: id });
-        })
-      }));
-    });
   },
   render: function render() {
     return React.createElement(
@@ -237,8 +291,8 @@ var Details = React.createClass({
         React.createElement(
           OwlCarousel,
           { id: 'slideShow', options: this.props.options },
-          this.props.slide_show.map(function (_ref6, index) {
-            var img = _ref6.img;
+          this.props.slide_show.map(function (_ref12, index) {
+            var img = _ref12.img;
 
             return React.createElement(
               'div',

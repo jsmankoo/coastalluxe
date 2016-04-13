@@ -296,7 +296,19 @@ var Featured = React.createClass({
             { className: 'item', key: index },
             React.createElement(
               _reactRouter.Link,
-              { to: '/featured/' + _this2.props.building + '/' + item.name + '/' + item.id, className: 'img-wrapper', style: { backgroundImage: 'url(' + item.image + ')' } },
+              { className: 'img-wrapper', style: { backgroundImage: 'url(' + item.image + ')' },
+                to: function () {
+                  switch (_this2.props.building) {
+                    case '13700marinapointedr':
+                      return '/featured/Azzurra/' + item.name.split(' ').join('-') + '/' + item.id;
+                    case '13750marinapointedr':
+                      return '/featured/Regatta/' + item.name.split(' ').join('-') + '/' + item.id;
+                    case '13800marinapointedr':
+                      return '/featured/Cove/' + item.name.split(' ').join('-') + '/' + item.id;
+                    default:
+                      return '/featured/featured/' + item.name.split(' ').join('-') + '/' + item.id;
+                  }
+                }() },
               item.text !== '' ? React.createElement(
                 'div',
                 { className: 'specialText' },

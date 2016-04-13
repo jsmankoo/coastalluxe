@@ -48,12 +48,10 @@ const Property = React.createClass({
     };
   },
   componentDidMount(){
-    console.log(
-      $('#at4-share').removeClass('at4-show')
-    );
     $(window).scrollTop(0);
+    console.log(this.props.params.building);
     switch (this.props.params.building) {
-      case '13700marinapointedr':
+      case 'Azzurra':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137')
           .then(({acf})=>{
             this.setState({...this.state,
@@ -62,8 +60,23 @@ const Property = React.createClass({
               }
             });
           });
+          $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr/${this.props.params.id}`)
+            .then(({acf})=>{
+              this.setState({...this.state,
+                property: {...this.state.property, ...acf},
+                building: {...this.state.building, jumbotron: acf.image}
+              });
+            });
+            $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr`)
+              .then((data)=>{
+                this.setState({...this.state,
+                  featured: data.map(({id, acf})=>{
+                    return {...acf, id: id};
+                  })
+                });
+              });
         break;
-      case '13750marinapointedr':
+      case 'Regatta':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/139')
           .then(({acf})=>{
             this.setState({...this.state,
@@ -72,8 +85,23 @@ const Property = React.createClass({
               }
             });
           });
+          $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr/${this.props.params.id}`)
+            .then(({acf})=>{
+              this.setState({...this.state,
+                property: {...this.state.property, ...acf},
+                building: {...this.state.building, jumbotron: acf.image}
+              });
+            });
+            $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr`)
+              .then((data)=>{
+                this.setState({...this.state,
+                  featured: data.map(({id, acf})=>{
+                    return {...acf, id: id};
+                  })
+                });
+              });
         break;
-      case '13800marinapointedr':
+      case 'Cove':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/140')
           .then(({acf})=>{
             this.setState({...this.state,
@@ -82,25 +110,40 @@ const Property = React.createClass({
               }
             });
           });
+          $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr/${this.props.params.id}`)
+            .then(({acf})=>{
+              this.setState({...this.state,
+                property: {...this.state.property, ...acf},
+                building: {...this.state.building, jumbotron: acf.image}
+              });
+            });
+            $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr`)
+              .then((data)=>{
+                this.setState({...this.state,
+                  featured: data.map(({id, acf})=>{
+                    return {...acf, id: id};
+                  })
+                });
+              });
         break ;
       default:
+        $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured/${this.props.params.id}`)
+          .then(({acf})=>{
+            this.setState({...this.state,
+              property: {...this.state.property, ...acf},
+              building: {...this.state.building, jumbotron: acf.image}
+            });
+          });
+          $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured`)
+            .then((data)=>{
+              this.setState({...this.state,
+                featured: data.map(({id, acf})=>{
+                  return {...acf, id: id};
+                })
+              });
+            });
         break;
     }
-    $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/${this.props.params.building}/${this.props.params.id}`)
-      .then(({acf})=>{
-        this.setState({...this.state,
-          property: {...this.state.property, ...acf},
-          building: {...this.state.building, jumbotron: acf.image}
-        });
-      });
-    $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/${this.props.params.building}`)
-      .then((data)=>{
-        this.setState({...this.state,
-          featured: data.map(({id, acf})=>{
-            return {...acf, id: id};
-          })
-        });
-      });
   },
   render(){
     return (
