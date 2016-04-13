@@ -18,7 +18,7 @@
     "CIStylus": "stylus -u axis -u rupture -u jeet -u autoprefixer-stylus ./src/stylus/ihomefinder.styl -o ./views/css/ihomefinder.css",
     "CStylus:W": "stylus -u axis -u rupture -u jeet -u autoprefixer-stylus -w ./src/stylus/bundle.styl -o ./views/css/bundle.css",
     "CIStylus:W": "stylus -u axis -u rupture -u jeet -u autoprefixer-stylus -w ./src/stylus/ihomefinder.styl -o ./views/css/ihomefinder.css",
-    "FStart": "forever start server.js",
+    "FStart": "forever start ./dist/server.js",
     "FList": "forever list",
     "FStop": "forever stop"
   },
