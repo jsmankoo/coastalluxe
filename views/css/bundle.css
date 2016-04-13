@@ -3105,7 +3105,24 @@ th {
 }
 .Property .Details .slideShow {
   padding: 60px 0px 0px;
+  *zoom: 1;
+  width: auto;
+  max-width: 1280px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
   position: relative;
+}
+.Property .Details .slideShow:before,
+.Property .Details .slideShow:after {
+  content: '';
+  display: table;
+}
+.Property .Details .slideShow:after {
+  clear: both;
 }
 .Property .Details .slideShow #ShareButton {
   z-index: 10000;

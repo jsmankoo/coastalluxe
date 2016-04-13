@@ -42782,7 +42782,11 @@ var Property = React.createClass({
       'div',
       { className: 'Property' },
       React.createElement(_reactHelmet2.default, {
-        title: 'Coastal Luxe Living - Specializing in luxury Coastal properties - ' + this.state.property.name
+        title: 'Coastal Luxe Living - Specializing in luxury Coastal properties - ' + this.state.property.name,
+        script: [{
+          type: "text/javascript",
+          src: "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57056071f6b81438"
+        }]
       }),
       React.createElement(Jumbotron, this.state),
       React.createElement(Details, _extends({}, this.state.property, { options: this.state.options })),
