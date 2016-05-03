@@ -187,7 +187,7 @@ const FeaturedProperties = React.createClass({
             title={`Coastal Luxe Living - Specializing in luxury Coastal properties - Featured Properties`}
             meta={[
               {"name": "description", "content": `Featured Listings`},
-              {"property": "og:type", "content": "website"},
+              {"property": "og:type", "content": "article"},
               {"property": "og:title", "content": `Coastal Luxe Living - Specializing in luxury Coastal properties - Featured Properties`},
               {"property": "og:url", "content": `http://coastalluxeliving.com/featured`},
               {"property": "og:description", "content": `Featured Listings`},

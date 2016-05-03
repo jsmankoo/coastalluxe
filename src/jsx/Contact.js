@@ -42,7 +42,7 @@ const Contact = React.createClass({
             title={`Ryan Sokolowski - Coastal luxe living`}
             meta={[
               {"name": "description", "content": fromString(this.state.content)},
-              {"property": "og:type", "content": "website"},
+              {"property": "og:type", "content": "article"},
               {"property": "og:title", "content": `Ryan Sokolowski - Coastal luxe living`},
               {"property": "og:url", "content": `http://coastalluxeliving.com/contact`},
               {"property": "og:description", "content": fromString(this.state.content)},

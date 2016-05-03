@@ -156,10 +156,10 @@ const Property = React.createClass({
     return (
       <div className="Property">
         <Helmet
-            title={`Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.property.name}`}
+            title={`${this.state.property.name} - Coastal Luxe Living - Specializing in luxury Coastal properties`}
             meta={[
               {"name": "description", "content": fromString(this.state.property.paragraph)},
-              {"property": "og:type", "content": "website"},
+              {"property": "og:type", "content": "article"},
               {"property": "og:title", "content": `${this.state.property.name} - Coastal Luxe Living - Specializing in luxury Coastal properties`},
               {"property": "og:url", "content": `http://coastalluxeliving.com/featured/${this.props.routeParams.building}/${this.props.routeParams.name}/${this.props.routeParams.id}`},
               {"property": "og:description", "content": fromString(this.state.property.paragraph)},

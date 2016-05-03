@@ -73,7 +73,7 @@ const Property = React.createClass({
             title={`Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.building.name}`}
             meta={[
               {"name": "description", "content": fromString(this.state.building.content)},
-              {"property": "og:type", "content": "website"},
+              {"property": "og:type", "content": "article"},
               {"property": "og:title", "content": `Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.building.name}`},
               {"property": "og:url", "content": `http://coastalluxeliving.com/${this.state.building.name}`},
               {"property": "og:description", "content": fromString(this.state.building.content)},
