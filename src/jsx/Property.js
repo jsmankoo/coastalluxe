@@ -147,6 +147,7 @@ const Property = React.createClass({
     }
   },
   render(){
+    console.log(this.state);
     return (
       <div className="Property">
         <Helmet
@@ -157,7 +158,7 @@ const Property = React.createClass({
               {"property": "og:title", "content": `${this.state.property.name} - Coastal Luxe Living - Specializing in luxury Coastal properties`},
               {"property": "og:url", "content": `http://coastalluxeliving.com/featured/${this.props.routeParams.building}/${this.props.routeParams.name}/${this.props.routeParams.id}`},
               {"property": "og:description", "content": fromString(this.state.property.paragraph)},
-              {"property": "og:image", "content": this.state.property.slide_show[0] ? this.state.property.slide_show[0].img : ''}
+              {"property": "og:image", "content": this.state.property.image }
             ]}
             script={[
               {
