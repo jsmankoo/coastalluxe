@@ -50,7 +50,7 @@ const Property = React.createClass({
   },
   componentDidMount(){
     $(window).scrollTop(0);
-    console.log(this.props.params.building);
+    console.log(this.props.params);
     switch (this.props.params.building) {
       case 'Azzurra':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137')
@@ -157,7 +157,7 @@ const Property = React.createClass({
               {"property": "og:title", "content": `Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.property.name}`},
               {"property": "og:url", "content": `http://coastalluxeliving.com/featured/${this.props.routeParams.building}/${this.props.routeParams.name}/${this.props.routeParams.id}`},
               {"property": "og:description", "content": fromString(this.state.property.paragraph)},
-              {"property": "og:image", "content": this.state.property.slide_show[0].img}
+              {"property": "og:image", "content": this.state.property.slide_show[0] ? this.state.property.slide_show[0].img : ''}
             ]}
             script={[
               {
@@ -181,10 +181,6 @@ const Property = React.createClass({
           <Facilities facilities={this.state.property.facilities} /> :
           <div />
         }
-        {/*<Featured
-          building={this.props.params.building}
-          featured={this.state.featured}
-          options={this.state.options} />*/}
       </div>
     );
   }
