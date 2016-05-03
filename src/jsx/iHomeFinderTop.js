@@ -4,6 +4,8 @@ import {Router, Route, hashHistory, IndexRoute } from "react-router";
 
 var store = require('./store');
 
+var Styles = require('../stylus/ihomefinder.styl');
+
 var Home = require('./Home');
 var FeaturedProperties = require('./Featured');
 var Property = require('./Property');

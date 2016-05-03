@@ -34,7 +34,6 @@ html( class="no-js" lang="")
         link(rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css')
         link(rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css')
         link(rel='stylesheet' href='/css/react-select.min.css')
-        link(rel="stylesheet", type="text/css", href="/css/bundle.css")
 
         //- <!-- Place favicon.ico in the root directory -->
         script(src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js")
@@ -48,15 +47,6 @@ html( class="no-js" lang="")
         | <![endif]-->
         #loader
         #Main!= content
-        #fb-root
-        script.
-          (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));
         
         script(src="/js/vendor/jquery.min.js")
         //script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
@@ -66,13 +56,7 @@ html( class="no-js" lang="")
           setTimeout(function(){
             $('#loader').fadeOut();
           }, 2000);
-        script(src="/js/bundle.js")
-        script.
-          window.intercomSettings = {
-              app_id: 'wbm44045'
-          };
-          (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/wbm44045';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
-                  
+        script(src="/js/Client.bundle.js")
         // Google Analytics: change UA-XXXXX-X to be your site's ID.
         script.
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

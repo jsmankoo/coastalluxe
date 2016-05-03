@@ -3,6 +3,7 @@ var MediaQuery = require('react-responsive');
 var Markdown = require('react-remarkable');
 import Helmet from 'react-helmet';
 import {Link} from 'react-router';
+import {fromString} from 'html-to-text';
 
 var OwlCarousel = require('./components/OwlCarousel');
 var store = require('./store');
@@ -150,6 +151,14 @@ const Property = React.createClass({
       <div className="Property">
         <Helmet
             title={`Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.property.name}`}
+            meta={[
+              {"name": "description", "content": fromString(this.state.property.paragraph)},
+              {"property": "og:type", "content": "website"},
+              {"property": "og:title", "content": `Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.property.name}`},
+              {"property": "og:url", "content": `http://coastalluxeliving.com/featured/${this.props.routeParams.building}/${this.props.routeParams.name}/${this.props.routeParams.id}`},
+              {"property": "og:description", "content": fromString(this.state.property.paragraph)},
+              {"property": "og:image", "content": this.state.property.slide_show[0].img}
+            ]}
             script={[
               {
                 type:"text/javascript",

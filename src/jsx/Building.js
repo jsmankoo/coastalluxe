@@ -3,6 +3,7 @@ var MediaQuery = require('react-responsive');
 var Markdown = require('react-remarkable');
 import Helmet from 'react-helmet';
 import {Link} from 'react-router';
+import {fromString} from 'html-to-text';
 
 var OwlCarousel = require('./components/OwlCarousel');
 var store = require('./store');
@@ -69,6 +70,14 @@ const Property = React.createClass({
       <div className="Building">
         <Helmet
             title={`Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.building.name}`}
+            meta={[
+              {"name": "description", "content": fromString(this.state.building.content)},
+              {"property": "og:type", "content": "website"},
+              {"property": "og:title", "content": `Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.building.name}`},
+              {"property": "og:url", "content": `http://coastalluxeliving.com/${this.state.building.name}`},
+              {"property": "og:description", "content": fromString(this.state.building.content)},
+              {"property": "og:image", "content": this.state.building.image}
+            ]}
           />
         <Jumbotron {...this.state} />
         <Featured

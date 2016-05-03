@@ -53,6 +53,14 @@ const Home = React.createClass({
       <div className="Home">
         <Helmet
             title="Coastal Luxe Living - Specializing in luxury Coastal properties - Home Page"
+            meta={[
+              {"name": "description", "content": "A Westside Coastal Real Estate Expert.  Specializing in Luxury High Rise Condominiums in Marina del Rey."},
+              {"property": "og:type", "content": "website"},
+              {"property": "og:title", "content": "Coastal Luxe Living - Specializing in luxury Coastal properties - Home Pag"},
+              {"property": "og:url", "content": "http://coastalluxeliving.com/"},
+              {"property": "og:description", "content": "A Westside Coastal Real Estate Expert.  Specializing in Luxury High Rise Condominiums in Marina del Rey."},
+              {"property": "og:image", "content": "http://coastalluxeliving.com/img/home-mobile-photo.jpg"}
+            ]}
           />
         <Top
           headline={store.getState().Home.headline}
@@ -191,6 +199,7 @@ const Featured = React.createClass({
             this.props.items.map((item, index)=>{
               return (
                 <Motion defaultStyle={{opacity:0}}
+                  key={index}
                   style={{
                     opacity:spring(1, {stiffness:150, damping: 40})
                   }}>

@@ -4,6 +4,7 @@ var ReactBGVideo = require('react-background-video');
 var Markdown = require('react-remarkable');
 import Helmet from 'react-helmet';
 import {Link} from 'react-router';
+import {fromString} from 'html-to-text';
 
 var store = require('./store');
 
@@ -37,7 +38,15 @@ const Contact = React.createClass({
     return (
       <div className="Contact">
         <Helmet
-            title={`Coastal Luxe Living - Specializing in luxury Coastal properties - ${this.state.name}`}
+            title={`Ryan Sokolowski - Coastal luxe living`}
+            meta={[
+              {"name": "description", "content": fromString(this.state.content)},
+              {"property": "og:type", "content": "website"},
+              {"property": "og:title", "content": `Ryan Sokolowski - Coastal luxe living`},
+              {"property": "og:url", "content": `http://coastalluxeliving.com/contact`},
+              {"property": "og:description", "content": fromString(this.state.content)},
+              {"property": "og:image", "content": this.state.image}
+            ]}
           />
         <Top
           name={this.state.name}

@@ -184,6 +184,14 @@ const FeaturedProperties = React.createClass({
       <div className="FeaturedProperties">
         <Helmet
             title={`Coastal Luxe Living - Specializing in luxury Coastal properties - Featured Properties`}
+            meta={[
+              {"name": "description", "content": `Featured Listings`},
+              {"property": "og:type", "content": "website"},
+              {"property": "og:title", "content": `Coastal Luxe Living - Specializing in luxury Coastal properties - Featured Properties`},
+              {"property": "og:url", "content": `http://coastalluxeliving.com/featured`},
+              {"property": "og:description", "content": `Featured Listings`},
+              {"property": "og:image", "content": this.state.index.jumbotron}
+            ]}
           />
         <Jumbotron {...this.state.index} saleType={this.props.saleType} building={this.props.building} />
         <Properties
