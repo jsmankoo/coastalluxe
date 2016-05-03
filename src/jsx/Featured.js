@@ -31,6 +31,7 @@ const FeaturedProperties = React.createClass({
         this.setState({...this.state,
           index: acf
         });
+        window.prerenderReady = true;
       });
     const featured = $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured')
       .then((data)=>{

@@ -45,7 +45,7 @@ const Home = React.createClass({
             });
           });
         });
-
+        window.prerenderReady = true;
       });
   },
   render(){

@@ -32,6 +32,7 @@ const Contact = React.createClass({
     $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/28')
       .then(({acf})=>{
         this.setState(acf);
+        window.prerenderReady = true;
       });
   },
   render(){

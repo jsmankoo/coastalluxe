@@ -8,7 +8,7 @@ app.set('port', process.env.PORT||8000);
 app.set('views', "./views");
 app.set('view engine', "jade");
 
-app.use(prerender.set('prerenderToken', 'HarDEccFIGyTSz8bQpCp'));
+app.use(prerender.set('prerenderToken', 'CoDAzfhZxUpKBnS0cHwi'));
 app.use(morgan('dev'));
 app.use(express.static("./dist"));
 

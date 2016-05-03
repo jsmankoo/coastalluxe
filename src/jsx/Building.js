@@ -63,6 +63,7 @@ const Property = React.createClass({
             return {...acf, id: id};
           })
         });
+        window.prerenderReady = true;
       });
   },
   render(){

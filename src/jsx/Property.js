@@ -67,6 +67,7 @@ const Property = React.createClass({
                 property: {...this.state.property, ...acf},
                 building: {...this.state.building, jumbotron: acf.image}
               });
+              window.prerenderReady = true;
             });
             $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr`)
               .then((data)=>{
@@ -92,6 +93,7 @@ const Property = React.createClass({
                 property: {...this.state.property, ...acf},
                 building: {...this.state.building, jumbotron: acf.image}
               });
+              window.prerenderReady = true;
             });
             $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr`)
               .then((data)=>{
@@ -117,6 +119,7 @@ const Property = React.createClass({
                 property: {...this.state.property, ...acf},
                 building: {...this.state.building, jumbotron: acf.image}
               });
+              window.prerenderReady = true;
             });
             $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr`)
               .then((data)=>{
@@ -134,6 +137,7 @@ const Property = React.createClass({
               property: {...this.state.property, ...acf},
               building: {...this.state.building, jumbotron: acf.image}
             });
+            window.prerenderReady = true;
           });
           $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured`)
             .then((data)=>{
@@ -148,6 +152,7 @@ const Property = React.createClass({
   },
   render(){
     console.log(this.state);
+    console.log(window.prerenderReady);
     return (
       <div className="Property">
         <Helmet
