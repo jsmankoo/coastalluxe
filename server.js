@@ -1,5 +1,6 @@
 var express = require('express');
 var morgan = require('morgan');
+var prerender = require('prerender-node');
 
 const app = express();
 
@@ -7,6 +8,7 @@ app.set('port', process.env.PORT||8000);
 app.set('views', "./views");
 app.set('view engine', "jade");
 
+app.use(prerender.set('prerenderToken', 'HarDEccFIGyTSz8bQpCp'));
 app.use(morgan('dev'));
 app.use(express.static("./dist"));
 
