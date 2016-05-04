@@ -80,10 +80,10 @@ const Mobile = React.createClass({
                     <Link to='/sold' onClick={this.onClickHandler}>SOLD</Link>
                   </div>
                   <div className="submenu">
-                    <a target='_blank' href='http://idx.coastalluxeliving.com/homesearch/89398' onClick={this.onClickHandler}>SEARCH</a>
+                    <a href='http://idx.coastalluxeliving.com/homesearch/89398' onClick={this.onClickHandler}>SEARCH</a>
                   </div>
                   <div className="submenu">
-                    <a target='_blank' href='http://idx.coastalluxeliving.com/openhomes/89398' onClick={this.onClickHandler}>OPEN HOMES</a>
+                    <a href='http://idx.coastalluxeliving.com/openhomes/89398' onClick={this.onClickHandler}>OPEN HOMES</a>
                   </div>
                 </div>
               ) : <div />
@@ -158,10 +158,10 @@ const Tablet = React.createClass({
               <Link to='/sold' onClick={this.onClickHandler}>SOLD</Link>
             </div>
             <div className="submenu">
-              <a target='_blank' href='http://idx.coastalluxeliving.com/homesearch/89398' onClick={this.onClickHandler}>SEARCH</a>
+              <a href='http://idx.coastalluxeliving.com/homesearch/89398' onClick={this.onClickHandler}>SEARCH</a>
             </div>
             <div className="submenu">
-              <a target='_blank' href='http://idx.coastalluxeliving.com/openhomes/89398' onClick={this.onClickHandler}>OPEN HOMES</a>
+              <a href='http://idx.coastalluxeliving.com/openhomes/89398' onClick={this.onClickHandler}>OPEN HOMES</a>
             </div>
           </div>
           <div className="category">
