@@ -151,8 +151,14 @@ const Property = React.createClass({
     }
   },
   render(){
-    console.log(this.state);
-    console.log(window.prerenderReady);
+    // console.log(this.state);
+    // console.log(window.prerenderReady);
+    // script={[
+    //   {
+    //     type:"text/javascript",
+    //     src:"//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57056071f6b81438"
+    //   }
+    // ]}
     return (
       <div className="Property">
         <Helmet
@@ -165,15 +171,9 @@ const Property = React.createClass({
               {"property": "og:description", "content": fromString(this.state.property.paragraph)},
               {"property": "og:image", "content": this.state.property.image }
             ]}
-            script={[
-              {
-                type:"text/javascript",
-                src:"//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57056071f6b81438"
-              }
-            ]}
           />
         <Jumbotron {...this.state} />
-        <Details {...this.state.property} options={this.state.options} />
+        <Details routeParams={this.props.routeParams} {...this.state.property} options={this.state.options} />
         <div className="Share">
 
         </div>
@@ -258,6 +258,7 @@ const Details = React.createClass({
     }
   },
   render(){
+    const {routeParams, image, name} = this.props;
     return (
       <div className="Details">
         <div className="slideShow">
@@ -276,7 +277,17 @@ const Details = React.createClass({
               })
             }
           </OwlCarousel>
-          <div id='ShareButton' className="addthis_sharing_toolbox"></div>
+          <div id='ShareButton' className="addthis_sharing_toolbox">
+            <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`http://coastalluxeliving.com/featured/${routeParams.building}/${routeParams.name}/${routeParams.id}`)}`} target="_blank">
+              <i className="fa fa-facebook-square" aria-hidden="true"></i>
+            </a>
+            <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`http://coastalluxeliving.com/featured/${routeParams.building}/${routeParams.name}/${routeParams.id}`)}`} target="_blank">
+              <i className="fa fa-twitter-square" aria-hidden="true"></i>
+            </a>
+            {/*<a data-pin-do="buttonBookmark" href="https://www.pinterest.com/pin/create/button/">
+              <i className="fa fa-pinterest-square" aria-hidden="true"></i>
+            </a>*/}
+          </div>
         </div>
         <div className="info">
           <div className="info-wrapper">
