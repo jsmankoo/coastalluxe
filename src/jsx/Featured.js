@@ -15,6 +15,10 @@ const FeaturedProperties = React.createClass({
       },
       buildings: {
         done: false,
+        featuredDone: false,
+        building13700Done: false,
+        building13750Done: false,
+        building13800Done: false,
         page: 2,
         all: [],
         properties: [],
@@ -112,6 +116,13 @@ const FeaturedProperties = React.createClass({
             })]
           }
         });
+        if(data.length < 10){
+          this.setState({...this.state,
+            buildings: {...this.state.buildings,
+              featuredDone: true
+            }
+          });
+        }
         return data.length;
       });
     const building13700 = $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr?page=${this.state.buildings.page}`)
@@ -129,6 +140,13 @@ const FeaturedProperties = React.createClass({
             })]
           }
         });
+        if(data.length < 10){
+          this.setState({...this.state,
+            buildings: {...this.state.buildings,
+              building13700Done: true
+            }
+          });
+        }
         return data.length;
       });
     const building13750 = $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr?page=${this.state.buildings.page}`)
@@ -146,6 +164,13 @@ const FeaturedProperties = React.createClass({
             })]
           }
         });
+        if(data.length < 10){
+          this.setState({...this.state,
+            buildings: {...this.state.buildings,
+              building13750Done: true
+            }
+          });
+        }
         return data.length;
       });
     const building13800 = $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr?page=${this.state.buildings.page}`)
@@ -163,10 +188,17 @@ const FeaturedProperties = React.createClass({
             })]
           }
         });
+        if(data.length < 10){
+          this.setState({...this.state,
+            buildings: {...this.state.buildings,
+              building13800Done: true
+            }
+          });
+        }
         return data.length;
       });
     $.when(featured, building13700, building13750, building13800).done((v1, v2, v3, v4)=>{
-      if(v1 === 0 && v2 === 0 && v3 === 0 && v4 === 0){
+      if(v1 < 10 && v2 < 10 && v3 < 10 && v4 < 10){
         this.setState({...this.state,
           buildings: {...this.state.buildings,
             done: true
@@ -292,7 +324,11 @@ const Properties = React.createClass({
   filterProperty(list){
     switch (this.props.saleType) {
       case 'all':
-        return list;
+        return list.sort(({forSale: aforSale, lease: aLease}, {forSale: bforSale, lease: bLease})=>{
+          const a = (aforSale === "" ? 0 : parseInt(aforSale.split(",").join(""))) + (aLease === "" ? 0 : parseInt(aLease.split(",").join("")));
+          const b = (bforSale === "" ? 0 : parseInt(bforSale.split(",").join(""))) + (bLease === "" ? 0 : parseInt(bLease.split(",").join("")));
+          return (b - a);
+        });
       case 'sale':
         return list.filter(({forSale, lease, status})=>{
           return forSale !== '' && status !== 'sold';
@@ -372,13 +408,73 @@ const Properties = React.createClass({
           }
         </div>
         {
-          this.props.done ?
-          <div /> :
-          <div className="moreProperties">
-            <a onClick={this.props.loadProperties}>
-              Load more
-            </a>
-          </div>
+          (()=>{
+            switch (this.props.building) {
+              case 'all':
+                if(this.props.done){
+                  return <div />;
+                } else {
+                  return (
+                    <div className="moreProperties">
+                      <a onClick={this.props.loadProperties}>
+                        Load more
+                      </a>
+                    </div>
+                  );
+                }
+              case '13700marinapointedr':
+                if(this.props.building13700Done){
+                  return <div />;
+                } else {
+                  return (
+                    <div className="moreProperties">
+                      <a onClick={this.props.loadProperties}>
+                        Load more
+                      </a>
+                    </div>
+                  );
+                }
+              case '13750marinapointedr':
+                if(this.props.building13750Done){
+                  return <div />;
+                } else {
+                  return (
+                    <div className="moreProperties">
+                      <a onClick={this.props.loadProperties}>
+                        Load more
+                      </a>
+                    </div>
+                  );
+                }
+              case '13800marinapointedr':
+                if(this.props.building13800Done){
+                  return <div />;
+                } else {
+                  return (
+                    <div className="moreProperties">
+                      <a onClick={this.props.loadProperties}>
+                        Load more
+                      </a>
+                    </div>
+                  );
+                }
+              case 'featured':
+                if(this.props.featuredDone){
+                  return <div />;
+                } else {
+                  return (
+                    <div className="moreProperties">
+                      <a onClick={this.props.loadProperties}>
+                        Load more
+                      </a>
+                    </div>
+                  );
+                }
+              default:
+                console.log(`Error: filterType undefined: ${this.props.building}`)
+                return <div />;
+            }
+          })()
         }
       </div>
     );
