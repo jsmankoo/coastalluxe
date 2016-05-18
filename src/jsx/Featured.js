@@ -332,17 +332,33 @@ const Properties = React.createClass({
       case 'sale':
         return list.filter(({forSale, lease, status})=>{
           return forSale !== '' && status !== 'sold';
+        }).sort(({forSale: aforSale, lease: aLease}, {forSale: bforSale, lease: bLease})=>{
+          const a = (aforSale === "" ? 0 : parseInt(aforSale.split(",").join(""))) + (aLease === "" ? 0 : parseInt(aLease.split(",").join("")));
+          const b = (bforSale === "" ? 0 : parseInt(bforSale.split(",").join(""))) + (bLease === "" ? 0 : parseInt(bLease.split(",").join("")));
+          return (b - a);
         });
       case 'lease':
         return list.filter(({forSale, lease, status})=>{
           return lease !== '' && status !== 'sold';
+        }).sort(({forSale: aforSale, lease: aLease}, {forSale: bforSale, lease: bLease})=>{
+          const a = (aforSale === "" ? 0 : parseInt(aforSale.split(",").join(""))) + (aLease === "" ? 0 : parseInt(aLease.split(",").join("")));
+          const b = (bforSale === "" ? 0 : parseInt(bforSale.split(",").join(""))) + (bLease === "" ? 0 : parseInt(bLease.split(",").join("")));
+          return (b - a);
         });
       case 'sold':
         return list.filter(({status})=>{
           return status === 'sold';
+        }).sort(({forSale: aforSale, lease: aLease}, {forSale: bforSale, lease: bLease})=>{
+          const a = (aforSale === "" ? 0 : parseInt(aforSale.split(",").join(""))) + (aLease === "" ? 0 : parseInt(aLease.split(",").join("")));
+          const b = (bforSale === "" ? 0 : parseInt(bforSale.split(",").join(""))) + (bLease === "" ? 0 : parseInt(bLease.split(",").join("")));
+          return (b - a);
         });
       default:
-        return list;
+        return list.sort(({forSale: aforSale, lease: aLease}, {forSale: bforSale, lease: bLease})=>{
+          const a = (aforSale === "" ? 0 : parseInt(aforSale.split(",").join(""))) + (aLease === "" ? 0 : parseInt(aLease.split(",").join("")));
+          const b = (bforSale === "" ? 0 : parseInt(bforSale.split(",").join(""))) + (bLease === "" ? 0 : parseInt(bLease.split(",").join("")));
+          return (b - a);
+        });
     }
   },
   handleSale(forSale, lease){

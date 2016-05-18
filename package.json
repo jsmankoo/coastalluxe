@@ -69,5 +69,11 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0",
     "webpack": "^1.13.0"
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.4",
+    "react-hot-loader": "^1.3.0",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.10.0"
   }
 }

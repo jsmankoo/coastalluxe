@@ -2,6 +2,25 @@ var express = require('express');
 var morgan = require('morgan');
 var prerender = require('prerender-node');
 
+// const webpack = require(`webpack`);
+// const WebpackDevServer = require(`webpack-dev-server`);
+// const config = require(`./webpack.dev`);
+//
+// // Webpack Dev Server for Hot module reloading
+// // Comment it out during production
+// new WebpackDevServer(webpack(config), {
+//   publicPath: config.output.publicPath,
+//   hot: true,
+//   historyApiFallback: true,
+//   stats: {colors: true}
+// }).listen(3001, `localhost`, function (err, result) {
+//   if (err) {
+//     return console.log(err);
+//   }
+//
+//   console.log(`Listening at http://localhost:3001/`);
+// });
+
 const app = express();
 
 app.set('port', process.env.PORT||8000);
