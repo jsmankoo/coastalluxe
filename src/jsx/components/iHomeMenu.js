@@ -54,9 +54,9 @@ const Mobile = React.createClass({
         <div className="wrap">
           <div className="category">
             <div className="categoryName">
-              <Link to='/' onClick={this.onClickHandler}>
+              <a href='http://coastalluxeliving.com/'>
                 HOME
-              </Link>
+              </a>
             </div>
           </div>
           <div className="category">
@@ -71,19 +71,19 @@ const Mobile = React.createClass({
               properties ? (
                 <div>
                   <div className="submenu">
-                    <Link to='/forSale' onClick={this.onClickHandler}>FOR SALE</Link>
+                    <a href='http://coastalluxeliving.com/forSale'>FOR SALE</a>
                   </div>
                   <div className="submenu">
-                    <Link to='/lease' onClick={this.onClickHandler}>FOR LEASE</Link>
+                    <a href='http://coastalluxeliving.com/lease'>FOR LEASE</a>
                   </div>
                   <div className="submenu">
-                    <Link to='/sold' onClick={this.onClickHandler}>SOLD</Link>
+                    <a href='http://coastalluxeliving.com/sold'>SOLD</a>
                   </div>
                   <div className="submenu">
-                    <a href='http://idx.coastalluxeliving.com/homesearch/89398' onClick={this.onClickHandler}>SEARCH</a>
+                    <a href='http://idx.coastalluxeliving.com/homesearch/89398'>SEARCH</a>
                   </div>
                   <div className="submenu">
-                    <a href='http://idx.coastalluxeliving.com/openhomes/89398' onClick={this.onClickHandler}>OPEN HOMES</a>
+                    <a href='http://idx.coastalluxeliving.com/openhomes/89398'>OPEN HOMES</a>
                   </div>
                 </div>
               ) : <div />
@@ -101,13 +101,13 @@ const Mobile = React.createClass({
               buildings ? (
                 <div>
                   <div className="submenu">
-                    <Link to='/Azzurra' onClick={this.onClickHandler}>AZZURRA</Link>
+                    <a href='http://coastalluxeliving.com/Azzurra'>AZZURRA</a>
                   </div>
                   <div className="submenu">
-                    <Link to='/Regatta' onClick={this.onClickHandler}>REGATTA</Link>
+                    <a href='http://coastalluxeliving.com/Regatta'>REGATTA</a>
                   </div>
                   <div className="submenu">
-                    <Link to='/Cove' onClick={this.onClickHandler}>COVE</Link>
+                    <a href='http://coastalluxeliving.com/Cove'>COVE</a>
                   </div>
                 </div>
               ) : <div />
@@ -116,7 +116,7 @@ const Mobile = React.createClass({
           <div className="category">
             <div className="menuBorder"/>
             <div className="categoryName">
-              <Link to='/contact' onClick={this.onClickHandler}>CONTACT</Link>
+              <a href='http://coastalluxeliving.com/contact'>CONTACT</a>
             </div>
           </div>
           <div className="category">
@@ -148,20 +148,20 @@ const Tablet = React.createClass({
           </div>
           <div className="category" style={{paddingBottom: 0}}>
             <div className="categoryName">
-              <Link to='/' onClick={this.onClickHandler}>HOME</Link>
+              <a href='http://coastalluxeliving.com/'>HOME</a>
             </div>
           </div>
           <div className="category">
             <div className="menuBorder"/>
             <div className="categoryName">PROPERTIES</div>
             <div className="submenu">
-              <Link to='/forSale' onClick={this.onClickHandler}>FOR SALE</Link>
+              <a href='http://coastalluxeliving.com/forSale'>FOR SALE</a>
             </div>
             <div className="submenu">
-              <Link to='/lease' onClick={this.onClickHandler}>FOR LEASE</Link>
+              <a href='http://coastalluxeliving.com/lease'>FOR LEASE</a>
             </div>
             <div className="submenu">
-              <Link to='/sold' onClick={this.onClickHandler}>SOLD</Link>
+              <a href='http://coastalluxeliving.com/sold'>SOLD</a>
             </div>
             <div className="submenu">
               <a href='http://idx.coastalluxeliving.com/homesearch/89398' onClick={this.onClickHandler}>SEARCH</a>
@@ -174,19 +174,19 @@ const Tablet = React.createClass({
             <div className="menuBorder"/>
             <div className="categoryName">BUILDINGS</div>
             <div className="submenu">
-              <Link to='/Azzurra' onClick={this.onClickHandler}>AZZURRA</Link>
+              <a href='http://coastalluxeliving.com/Azzurra'>AZZURRA</a>
             </div>
             <div className="submenu">
-              <Link to='/Regatta' onClick={this.onClickHandler}>REGATTA</Link>
+              <a href='http://coastalluxeliving.com/Regatta'>REGATTA</a>
             </div>
             <div className="submenu">
-              <Link to='/Cove' onClick={this.onClickHandler}>COVE</Link>
+              <a href='http://coastalluxeliving.com/Cove'>COVE</a>
             </div>
           </div>
           <div className="category">
             <div className="menuBorder"/>
             <div className="categoryName">
-              <Link to='/contact' onClick={this.onClickHandler}>CONTACT</Link>
+              <a href='http://coastalluxeliving.com/contact'>CONTACT</a>
             </div>
           </div>
           <div className="LeaseApplication">

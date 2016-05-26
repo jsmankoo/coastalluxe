@@ -229,7 +229,24 @@
     #facilitiesSlide
       center(1280px)
       .owl-controls
-        margin-top 30px
+        margin-top 50px
+        .owl-prev
+          absolute bottom -40px left 125px
+        .owl-next
+          absolute bottom -40px right 125px
+        .owl-prev
+        .owl-next
+          absolute()
+          background: none
+          opacity: 1
+          +below(1024px)
+            display: none
+          i
+            color darkBlue
+            font-size: 100px
+            &:hover
+            &:focus
+              color lightBlue
       .item
         .img-wrapper
           background-repeat: no-repeat
@@ -299,7 +316,24 @@
           margin auto
     #featuredSlide
       center(1280px)
-      // .owl-controls
+      .owl-controls
+        .owl-prev
+          absolute bottom -95px left 100px
+        .owl-next
+          absolute bottom -95px right 100px
+        .owl-prev
+        .owl-next
+          absolute()
+          background: none
+          opacity: 1
+          +below(1024px)
+            display: none
+          i
+            color darkBlue
+            font-size: 100px
+            &:hover
+            &:focus
+              color lightBlue
       .item
         .img-wrapper
           background-repeat: no-repeat

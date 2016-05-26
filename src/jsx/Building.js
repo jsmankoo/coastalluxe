@@ -176,13 +176,15 @@ const Featured = React.createClass({
   getInitialState(){
     return {
       options: {
-        navigation : false, // Show next and prev buttons
         slideSpeed : 300,
         paginationSpeed : 400,
         items : 2,
         itemsDesktop : [1200,2],
+        itemsTablet: [1024,2],
         itemsMobile : [767,1],
-        autoPlay : true
+        autoPlay : true,
+        navigation: true,
+        navigationText: ['<i class="fa fa-angle-left" />', '<i class="fa fa-angle-right" />'],
       }
     };
   },
@@ -291,11 +293,12 @@ const Facilities = React.createClass({
   getInitialState(){
     return {
       options: {
-				navigation : false, // Show next and prev buttons
 				slideSpeed : 300,
 				paginationSpeed : 400,
 				singleItem : true,
 				autoPlay : true,
+        navigation: true,
+        navigationText: ['<i class="fa fa-angle-left" />', '<i class="fa fa-angle-right" />'],
 			}
     };
   },

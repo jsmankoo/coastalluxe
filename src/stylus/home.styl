@@ -116,13 +116,31 @@
       z-index 1000
       margin-top 60px
       .owl-controls
-        absolute top -50px
-        width 300px
-        align(h)
-        .owl-page
-          span
-            size 8px 8px
-            background darkBlue
+        .owl-prev
+          absolute top 180px left -60px
+        .owl-next
+          absolute top 180px right -60px
+        .owl-prev
+        .owl-next
+          absolute()
+          background: none
+          opacity: 1
+          +below(1199px)
+            display: none
+          i
+            color darkBlue
+            font-size: 100px
+            &:hover
+            &:focus
+              color lightBlue
+        .owl-pagination
+          absolute top -40px
+          width 300px
+          align(h)
+          .owl-page
+            span
+              size 8px 8px
+              background darkBlue
       .item
         size 100% auto
         display block

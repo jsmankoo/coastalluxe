@@ -28,7 +28,7 @@ const Mobile = React.createClass({
       <div className="Mobile View">
         <div className="col">
           <div className="brandLogo">
-            <a href='/'>
+            <a href='http://coastalluxeliving.com/'>
               <img src={this.props.footerLogo} />
             </a>
           </div>
@@ -75,7 +75,7 @@ const Tablet = React.createClass({
     return (
       <div className="Tablet View">
         <div className="brandLogo">
-          <a href='/'>
+          <a href='http://coastalluxeliving.com/'>
             <img src={this.props.footerLogo} />
           </a>
         </div>

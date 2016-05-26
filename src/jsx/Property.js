@@ -40,7 +40,8 @@ const Property = React.createClass({
       },
       featured: [],
       options : {
-				navigation : false, // Show next and prev buttons
+        navigation: true,
+        navigationText: ['<i class="fa fa-angle-left" />', '<i class="fa fa-angle-right" />'],
 				slideSpeed : 300,
 				paginationSpeed : 400,
 				singleItem : true,
@@ -324,7 +325,8 @@ const Featured = React.createClass({
   getInitialState(){
     return {
       options: {
-        navigation : false, // Show next and prev buttons
+        navigation: true,
+        navigationText: ['<i class="fa fa-angle-left" />', '<i class="fa fa-angle-right" />'],
         slideSpeed : 300,
         paginationSpeed : 400,
         items : 2,
@@ -394,7 +396,8 @@ const Facilities = React.createClass({
   getInitialState(){
     return {
       options: {
-				navigation : false, // Show next and prev buttons
+        navigation: true,
+        navigationText: ['<i class="fa fa-angle-left" />', '<i class="fa fa-angle-right" />'],
 				slideSpeed : 300,
 				paginationSpeed : 400,
 				singleItem : true,

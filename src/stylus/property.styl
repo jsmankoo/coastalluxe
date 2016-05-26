@@ -1,8 +1,11 @@
 .Property
   transform translate(0px, 2px)
-  .owl-theme .owl-controls .owl-page span
-    size 8px 8px
-    background: darkBlue
+  .owl-theme
+    .owl-controls
+      .owl-page
+        span
+          size 8px 8px
+          background: darkBlue
   .Jumbotron
     background-repeat: no-repeat
     background-size: cover
@@ -55,6 +58,24 @@
       padding 60px 0px 0px
       center(1280px)
       relative()
+      .owl-controls
+        .owl-prev
+          absolute bottom -40px left 125px
+        .owl-next
+          absolute bottom -40px right 125px
+        .owl-prev
+        .owl-next
+          absolute()
+          background: none
+          opacity: 1
+          +below(1024px)
+            display: none
+          i
+            color darkBlue
+            font-size: 100px
+            &:hover
+            &:focus
+              color lightBlue
       #ShareButton
         z-index: 10000
         +below(1024px)
@@ -259,7 +280,24 @@
     #facilitiesSlide
       center(1280px)
       .owl-controls
-        margin-top 30px
+        margin-top 50px
+        .owl-prev
+          absolute bottom -40px left 125px
+        .owl-next
+          absolute bottom -40px right 125px
+        .owl-prev
+        .owl-next
+          absolute()
+          background: none
+          opacity: 1
+          +below(1024px)
+            display: none
+          i
+            color darkBlue
+            font-size: 100px
+            &:hover
+            &:focus
+              color lightBlue
       .item
         .img-wrapper
           background-repeat: no-repeat
