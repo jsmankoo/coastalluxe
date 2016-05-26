@@ -20,7 +20,7 @@ const Home = React.createClass({
         singleItem : true,
         autoPlay : true,
         navigation: true,
-        navigationText: ['<i class="fa fa-angle-left" />', '<i class="fa fa-angle-right" />'],
+        navigationText: ['<img src="/img/ArrowLeft.svg" />', '<img src="/img/ArrowRight.svg" />'],
       },
     };
   },

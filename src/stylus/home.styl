@@ -117,22 +117,21 @@
       margin-top 60px
       .owl-controls
         .owl-prev
-          absolute top 180px left -60px
+          absolute top 180px left -20px
         .owl-next
-          absolute top 180px right -60px
+          absolute top 180px right -20px
         .owl-prev
         .owl-next
           absolute()
           background: none
           opacity: 1
-          +below(1199px)
+          +below(1024px)
             display: none
-          i
-            color darkBlue
-            font-size: 100px
+          img
+            size 100px auto
             &:hover
             &:focus
-              color lightBlue
+              opacity: 0.5
         .owl-pagination
           absolute top -40px
           width 300px

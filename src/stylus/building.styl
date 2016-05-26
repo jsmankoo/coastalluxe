@@ -231,9 +231,9 @@
       .owl-controls
         margin-top 50px
         .owl-prev
-          absolute bottom -40px left 125px
+          absolute top 235px left -20px
         .owl-next
-          absolute bottom -40px right 125px
+          absolute top 235px right -20px
         .owl-prev
         .owl-next
           absolute()
@@ -241,12 +241,11 @@
           opacity: 1
           +below(1024px)
             display: none
-          i
-            color darkBlue
-            font-size: 100px
+          img
+            size 100px auto
             &:hover
             &:focus
-              color lightBlue
+              opacity: 0.5
       .item
         .img-wrapper
           background-repeat: no-repeat
@@ -318,9 +317,9 @@
       center(1280px)
       .owl-controls
         .owl-prev
-          absolute bottom -95px left 100px
+          absolute top 100px left 20px
         .owl-next
-          absolute bottom -95px right 100px
+          absolute top 100px right 20px
         .owl-prev
         .owl-next
           absolute()
@@ -328,12 +327,11 @@
           opacity: 1
           +below(1024px)
             display: none
-          i
-            color darkBlue
-            font-size: 100px
+          img
+            size 100px auto
             &:hover
             &:focus
-              color lightBlue
+              opacity: 0.5
       .item
         .img-wrapper
           background-repeat: no-repeat

@@ -41,7 +41,7 @@ const Property = React.createClass({
       featured: [],
       options : {
         navigation: true,
-        navigationText: ['<i class="fa fa-angle-left" />', '<i class="fa fa-angle-right" />'],
+        navigationText: ['<img src="/img/ArrowLeft.svg" />', '<img src="/img/ArrowRight.svg" />'],
 				slideSpeed : 300,
 				paginationSpeed : 400,
 				singleItem : true,
@@ -51,7 +51,6 @@ const Property = React.createClass({
   },
   componentDidMount(){
     $(window).scrollTop(0);
-    console.log(this.props.params);
     switch (this.props.params.building) {
       case 'Azzurra':
         $.get('http://luxe.uptowncreativeinc.com/wp-json/wp/v2/pages/137')
@@ -326,11 +325,12 @@ const Featured = React.createClass({
     return {
       options: {
         navigation: true,
-        navigationText: ['<i class="fa fa-angle-left" />', '<i class="fa fa-angle-right" />'],
+        navigationText: ['<img src="/img/ArrowLeft.svg" />', '<img src="/img/ArrowRight.svg" />'],
         slideSpeed : 300,
         paginationSpeed : 400,
         items : 2,
         itemsDesktop : [1280,2],
+        itemsTablet : [1024,2],
         itemsMobile : [767,1],
         autoPlay : true
       }
@@ -397,7 +397,7 @@ const Facilities = React.createClass({
     return {
       options: {
         navigation: true,
-        navigationText: ['<i class="fa fa-angle-left" />', '<i class="fa fa-angle-right" />'],
+        navigationText: ['<img src="/img/ArrowLeft.svg" />', '<img src="/img/ArrowRight.svg" />'],
 				slideSpeed : 300,
 				paginationSpeed : 400,
 				singleItem : true,

@@ -24,7 +24,8 @@ const Property = React.createClass({
       },
       featured: [],
       options : {
-				navigation : false, // Show next and prev buttons
+        navigation: true,
+        navigationText: ['<img src="/img/ArrowLeft.svg" />', '<img src="/img/ArrowRight.svg" />'],
 				slideSpeed : 300,
 				paginationSpeed : 400,
 				singleItem : true,
@@ -184,7 +185,7 @@ const Featured = React.createClass({
         itemsMobile : [767,1],
         autoPlay : true,
         navigation: true,
-        navigationText: ['<i class="fa fa-angle-left" />', '<i class="fa fa-angle-right" />'],
+        navigationText: ['<img src="/img/ArrowLeft.svg" />', '<img src="/img/ArrowRight.svg" />'],
       }
     };
   },
@@ -298,7 +299,7 @@ const Facilities = React.createClass({
 				singleItem : true,
 				autoPlay : true,
         navigation: true,
-        navigationText: ['<i class="fa fa-angle-left" />', '<i class="fa fa-angle-right" />'],
+        navigationText: ['<img src="/img/ArrowLeft.svg" />', '<img src="/img/ArrowRight.svg" />'],
 			}
     };
   },
@@ -334,7 +335,6 @@ const Facilities = React.createClass({
 
 const Floorplans = React.createClass({
   render(){
-    console.log(this.props.floor_plans);
     return (
       <div className="Floorplans">
         <div className="Title">
