@@ -21,7 +21,7 @@ var prerender = require('prerender-node');
 //   console.log(`Listening at http://localhost:3001/`);
 // });
 
-const app = express();
+var app = express();
 
 app.set('port', process.env.PORT||8000);
 app.set('views', "./views");
