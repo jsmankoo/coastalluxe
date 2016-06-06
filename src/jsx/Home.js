@@ -32,20 +32,59 @@ const Home = React.createClass({
           type: 'HOME_INIT',
           data: acf
         });
-        const links = [
-          `${acf.featured !== '0' ? `http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured?per_page=${acf.featured}` : ''}`,
-          `${acf.azzurraa !== '0' ? `http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr?per_page=${acf.azzurraa}` : ''}`,
-          `${acf.regatta !== '0' ? `http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr?per_page=${acf.regatta}` : ''}`,
-          `${acf.cove !== '0' ? `http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr?per_page=${acf.cove}` : ''}`,
-        ];
-        links.map((link)=>{
-          if(link === '') return;
-          $.get(link).then((properties)=>{
-            this.setState({...this.state,
-              items: [...this.state.items, ...properties]
-            });
-          });
+        acf.featuredProperties.map(({Link}) => {
+          const linkSplit = Link.split('/');
+          switch (linkSplit[4]) {
+            case 'featured':
+              $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured/${linkSplit[6]}`)
+                .then((data)=>{
+                  this.setState({...this.state,
+                    items: [...this.state.items, data]
+                  });
+                });
+              break;
+            case 'Azzurra':
+              $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr/${linkSplit[6]}`)
+                .then((data)=>{
+                  this.setState({...this.state,
+                    items: [...this.state.items, data]
+                  });
+                });
+              break;
+            case 'Regatta':
+              $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr/${linkSplit[6]}`)
+                .then((data)=>{
+                  this.setState({...this.state,
+                    items: [...this.state.items, data]
+                  });
+                });
+              break;
+            case 'Cove':
+              $.get(`http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr/${linkSplit[6]}`)
+                .then((data)=>{
+                  this.setState({...this.state,
+                    items: [...this.state.items, data]
+                  });
+                });
+              break;
+            default:
+
+          }
         });
+        // const links = [
+        //   `${acf.featured !== '0' ? `http://luxe.uptowncreativeinc.com/wp-json/wp/v2/featured?per_page=${acf.featured}` : ''}`,
+        //   `${acf.azzurraa !== '0' ? `http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13700marinapointedr?per_page=${acf.azzurraa}` : ''}`,
+        //   `${acf.regatta !== '0' ? `http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13750marinapointedr?per_page=${acf.regatta}` : ''}`,
+        //   `${acf.cove !== '0' ? `http://luxe.uptowncreativeinc.com/wp-json/wp/v2/13800marinapointedr?per_page=${acf.cove}` : ''}`,
+        // ];
+        // links.map((link)=>{
+        //   if(link === '') return;
+        //   $.get(link).then((properties)=>{
+        //     this.setState({...this.state,
+        //       items: [...this.state.items, ...properties]
+        //     });
+        //   });
+        // });
         window.prerenderReady = true;
       });
   },
@@ -69,7 +108,7 @@ const Home = React.createClass({
         <Element name='featured'>
           <Featured
             items={this.state.items}
-            options={this.state.options}/>
+            options={this.state.options} />
         </Element>
         <Ryan />
         <Explore

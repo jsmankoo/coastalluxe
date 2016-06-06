@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import {findDOMNode} from 'react-dom';
 /**
 * http://owlgraphic.com/owlcarousel/demos/one.html
 *
@@ -156,19 +157,19 @@ const OwlCarousel = React.createClass({
 	},
 
 	componentDidMount() {
-		$(React.findDOMNode(this)).owlCarousel(this.props.options);
+		$(findDOMNode(this)).owlCarousel(this.props.options);
 	},
 
 	componentWillReceiveProps(nextProps) {
-		$(React.findDOMNode(this)).data('owlCarousel').destroy();
+		$(findDOMNode(this)).data('owlCarousel').destroy();
 	},
 
 	componentDidUpdate(prevProps, prevState) {
-		$(React.findDOMNode(this)).owlCarousel(this.props.options);
+		$(findDOMNode(this)).owlCarousel(this.props.options);
 	},
 
 	componentWillUnmount() {
-		$(React.findDOMNode(this)).data('owlCarousel').destroy();
+		$(findDOMNode(this)).data('owlCarousel').destroy();
 	},
 
 	render() {
@@ -185,29 +186,29 @@ const OwlCarousel = React.createClass({
 	},
 
 	next() {
-		$(React.findDOMNode(this)).data('owlCarousel').next();
+		$(findDOMNode(this)).data('owlCarousel').next();
 	},
 
 	prev() {
-		$(React.findDOMNode(this)).data('owlCarousel').prev();
+		$(findDOMNode(this)).data('owlCarousel').prev();
 	},
 
 	// Go to x slide
 	goTo(x) {
-		$(React.findDOMNode(this)).data('owlCarousel').goTo(x);
+		$(findDOMNode(this)).data('owlCarousel').goTo(x);
 	},
 
 	// Go to x slide without slide animation
 	jumpTo(x) {
-		$(React.findDOMNode(this)).data('owlCarousel').jumpTo(x);
+		$(findDOMNode(this)).data('owlCarousel').jumpTo(x);
 	},
 
 	play() {
-		$(React.findDOMNode(this)).data('owlCarousel').play();
+		$(findDOMNode(this)).data('owlCarousel').play();
 	},
 
 	stop() {
-		$(React.findDOMNode(this)).data('owlCarousel').stop();
+		$(findDOMNode(this)).data('owlCarousel').stop();
 	},
 
 });

@@ -2,10 +2,10 @@ var express = require('express');
 var morgan = require('morgan');
 var prerender = require('prerender-node');
 
-// var webpack = require(`webpack`);
-// var WebpackDevServer = require(`webpack-dev-server`);
-// var config = require(`./webpack.dev`);
-//
+var webpack = require(`webpack`);
+var WebpackDevServer = require(`webpack-dev-server`);
+var config = require(`./webpack.dev`);
+
 // // Webpack Dev Server for Hot module reloading
 // // Comment it out during production
 // new WebpackDevServer(webpack(config), {
