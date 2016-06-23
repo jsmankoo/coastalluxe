@@ -238,13 +238,13 @@ const FeaturedProperties = React.createClass({
 });
 
 const Jumbotron = React.createClass({
-  saleOnChange({value}){
+  saleOnChange(value){
     store.dispatch({
       type: 'FeaturedProperties_SALETYPE',
       saleType: value
     });
   },
-  buildingOnChange({value}){
+  buildingOnChange(value){
     store.dispatch({
       type: 'FeaturedProperties_BUILDING',
       building: value
