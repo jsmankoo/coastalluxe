@@ -1,0 +1,52 @@
+@import 'rupture'
+@import 'axis'
+@import 'jeet'
+
+@import './imports/flexiblegs-stylus'
+@import './imports/variables'
+
+normalize-css()
+
+@import './imports/nav'
+@import './imports/menu'
+@import './imports/foot'
+
+@import './home'
+@import './contact'
+@import './featured'
+@import './property'
+@import './building'
+
+a
+  color darkBlue
+  text-decoration: none
+  hover-color lightBlue true
+  cursor pointer
+  &:hover
+  &:focus
+    opacity: 0.9
+
+#loader
+  fixed top 0px left 0px
+  size 100% 100%
+  background-image: url('/img/loader.gif')
+  background-position: center;
+  background-repeat: no-repeat
+  background-color white
+  z-index 20000
+
+html #Main
+  // debug()
+  font-family: mainFont
+  .App
+    margin auto
+    +below(767px)
+      p
+        padding 0px 20px
+      h1
+      h2
+      h3
+      h4
+      h5
+      h6
+        padding 0px 20px

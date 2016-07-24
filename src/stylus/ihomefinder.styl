@@ -1,0 +1,101 @@
+@import 'axis'
+@import 'rupture'
+@import 'jeet'
+
+@import './imports/flexiblegs-stylus'
+@import './imports/variables'
+
+normalize-css()
+
+@import './imports/nav'
+@import './imports/menu'
+@import './imports/foot'
+
+#loader
+  fixed top 0px left 0px
+  size 100% 100%
+  background-image: url('http://coastalluxeliving.com/img/loader.gif')
+  background-position: center;
+  background-repeat: no-repeat
+  background-color white
+  z-index 20000
+
+html body
+  font-family: mainFont
+  a
+    color darkBlue
+    text-decoration: none
+    hover-color lightBlue true
+    cursor pointer
+  #Head
+    .Nav
+      position relative
+  .container
+    center(1280px)
+    #ihf-main-container
+      a
+        color darkBlue
+        text-decoration: none
+        hover-color lightBlue true
+        cursor pointer
+      .title-bar-1
+        background-color darkBlue
+        color white
+        border none
+        border-radius: 0px
+        a
+          color white
+          text-decoration: none
+          hover-color black true
+          cursor pointer
+      #areaPickerContainer
+        .input-text
+        input[type="text"]
+        input[type="input"]
+          padding 0px !important
+      .input-group-addon
+        border 1px solid transparent
+        background-color darkBlue
+        color white
+      .page-header
+        h1
+          h1()
+          text-align: center
+          color: darkBlue
+          font-family: otherFont
+          font-weight: 600
+          +below(767px)
+            font-size 30px
+      #ihf-sidebar-container
+        display: none
+        size 0px 0px
+      .btn
+      .btn-primary
+        color white
+        background-color darkBlue
+        border none
+        border-radius: 0px
+        text-decoration: none
+        hover-color lightBlue true
+        cursor pointer
+      h1
+        color darkBlue
+        h1()
+      h2
+        color darkBlue
+        h2()
+      h3
+        color darkBlue
+        h3()
+      h4
+        color darkBlue
+        h4()
+      h5
+        color darkBlue
+        h5()
+      h6
+        color darkBlue
+        h6()
+
+  #Foot
+    margin 100px auto auto

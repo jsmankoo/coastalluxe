@@ -1,0 +1,95 @@
+.Nav
+  // realtive top 0px
+  width 100%
+  z-index 1000
+  background-color navbarColor
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.35);
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.35);
+  .wrap
+    center(1280px)
+    cf()
+    &.Mobile
+      height 50px
+      .col.logo
+        column(0.75)
+        a
+          size auto 30px
+          &:hover
+          &:focus
+            opacity: 0.8
+          img
+            size auto 30px
+      .menuScroll
+        fixed top 0px right 0px
+        font-size 25px
+        background-color menuScrollColor
+        color white
+        z-index 9999
+        padding 13px
+        &.fa-times
+          width 100%
+          text-align: right
+    &.Tablet
+      height 50px
+      .col.logo
+        column(1)
+        a
+          size auto 30px
+          &:hover
+          &:focus
+            opacity: 0.8
+          img
+            size auto 30px
+    &.Desktop
+      height 160px
+      .col.logo
+        column(0.5)
+        a
+          size auto 109px
+          &:hover
+          &:focus
+            opacity: 0.8
+          img
+            size auto 109px
+    .menuScroll
+      fixed top 0px right 0px
+      font-size 25px
+      background-color menuScrollColor
+      color white
+      z-index 9999
+      padding 13px
+    .col
+      height 100%
+      position relative
+      a
+        align('both')
+        font-size 20px
+        font-weight: 700
+      &.contact
+        column(0.25)
+        a
+          size 140px auto
+          i.fa
+            padding 5px
+            float left
+          .linkName
+            font-family: otherFont
+            padding 4px 12px
+            float right
+            font-weight: 600
+            font-size 15px
+      &.menu
+        column(0.25)
+        a
+          i.fa
+            padding 5px
+            float right
+            +below(767px)
+              font-size 25px
+          .linkName
+            font-family: otherFont
+            padding 4px 12px
+            float left
+            font-weight: 600
+            font-size 15px

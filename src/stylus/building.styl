@@ -1,0 +1,477 @@
+.Building
+  transform translate(0px, 2px)
+  .owl-theme .owl-controls .owl-page span
+    background: darkBlue
+    size 8px 8px
+  .Jumbotron
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    position relative
+    size 100% 300px
+    .bgTint
+      background-color overJumboTronTint
+      size 100% 300px
+      .jumbotron-wrapper
+        align(b)
+        width 100%
+        .title
+          color darkBlue
+          font-family: otherFont
+          font-weight: 600
+          font-size 44px
+          text-align: center
+          +below(767px)
+            font-size 30px
+        .border
+          border-top 1px solid infoBorder
+          +below(767px)
+            margin 10px auto
+            size 200px auto
+          +above(768px)
+            margin 20px auto
+            size 340px auto
+        .info
+          color darkBlue
+          text-align: center
+          font-family: otherFont
+          font-weight: 600
+          .address
+            font-size: 15px
+            line-height: 25px
+            +below(767px)
+              font-size: 14px
+          i.fa
+            font-size 25px
+            +below(767px)
+              margin 20px auto 0px
+            +above(768px)
+              margin 20px auto 0px
+  .Details
+    margin 90px auto 0px
+    +below(767px)
+      margin 60px auto 0px
+    .intro
+      center(900px)
+      .img-wrapper
+        column(2/7, gutter: 7px)
+        height 375px
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+        display: block
+        +below(767px)
+          center(250px)
+      .paragraph
+        column(5/7, gutter: 7px)
+        text-align: left
+        font-family: mainFont
+        color darkBlue
+        relative top -5px
+        h1
+          h1()
+        h2
+          h2()
+        h3
+          h3()
+        h4
+          h4()
+        h5
+          h5()
+        h6
+          h6()
+        +below(767px)
+          column(1)
+          margin-top 50px
+          h1
+            font-weight: 300
+            font-family: mainFont
+            text-align: center
+            line-height: 40px
+            margin-top 0px
+            font-size: 30px
+          h2
+          h3
+          h4
+          h5
+          h6
+            font-weight: 300
+            font-family: mainFont
+            text-align: center
+            // margin-top 0px
+          p
+            font-size 14px
+            line-height: 27px
+            font-weight: 500
+            margin-top 0px
+            text-align: center
+        +above(768px)
+          h1
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            line-height: 40px
+            margin-top 0px
+          h2
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            line-height: 35px
+            margin-top 0px
+          h3
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            line-height: 35px
+            margin-top 0px
+          h4
+          h5
+          h6
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            // margin-top 0px
+          p
+            font-size 17px
+            line-height: 27px
+            font-weight: 500
+            margin-top 0px
+    .rest
+      center(900px)
+      text-align: left
+      font-family: mainFont
+      color darkBlue
+      margin auto
+      i.fa
+        padding 0px 5px
+      h1
+        h1()
+      h2
+        h2()
+      h3
+        h3()
+      h4
+        h4()
+      h5
+        h5()
+      h6
+        h6()
+      +below(767px)
+        margin-top 50px
+        h1
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          line-height: 40px
+          margin-top 0px
+          font-size: 30px
+        h2
+        h3
+        h4
+        h5
+        h6
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          // margin-top 0px
+        p
+          font-size 14px
+          line-height: 27px
+          font-weight: 500
+          margin-bottom 0px
+          text-align: center
+      +above(768px)
+        h1
+          font-weight: 300
+          font-family: mainFont
+          text-align: left
+          line-height: 40px
+        h2
+          font-weight: 300
+          font-family: mainFont
+          text-align: left
+          line-height: 35px
+        h3
+          font-weight: 300
+          font-family: mainFont
+          text-align: left
+          line-height: 35px
+        h4
+        h5
+        h6
+          font-weight: 300
+          font-family: mainFont
+          text-align: left
+          // margin-top 0px
+        p
+          font-size 17px
+          line-height: 27px
+          font-weight: 500
+          margin-bottom 0px
+    .arrow
+      width 100%
+      i.fa
+        display: block
+        margin 20px auto
+        size 30px 30px
+        color darkBlue
+        font-size 25px
+  .Facilities
+    padding 20px 0px
+    .title
+      text-align: center
+      h1()
+      color: darkBlue
+      font-family: otherFont
+      font-weight: 500
+      +below(767px)
+        font-size 30px
+    #facilitiesSlide
+      center(1280px)
+      .owl-controls
+        margin-top 50px
+        .owl-prev
+          absolute top 235px left -20px
+        .owl-next
+          absolute top 235px right -20px
+        .owl-prev
+        .owl-next
+          absolute()
+          background: none
+          opacity: 1
+          +below(1024px)
+            display: none
+          img
+            size 100px auto
+            &:hover
+            &:focus
+              opacity: 0.5
+      .item
+        .img-wrapper
+          background-repeat: no-repeat
+          background-size: cover
+          background-position: center
+          display: block
+          margin auto
+          position relative
+          +below(1024px)
+            size 100% 300px
+          +above(1025px)
+            size 100% 600px
+          .specialText
+            absolute bottom 0px
+            background-color rgba(lightBlue, 0.50)
+            size 100% auto
+            color white
+            font-size 30px
+            font-family: mainFont
+            font-weight: 500
+            text-align: center
+            padding 12px 0px
+            +below(767px)
+              text-align: center
+              display: block
+              font-size 25px
+              padding 6px 0px
+  .Featured
+    center(1280px)
+    padding-top 100px
+    border-bottom 1px solid infoBorder
+    +below(767px)
+      padding-top 25px
+    .title
+      text-align: center
+      h1()
+      color: darkBlue
+      font-family: otherFont
+      font-weight: 500
+      +below(767px)
+        font-size 30px
+    .more
+      display: flex
+      +below(767px)
+        .More
+          display: block
+          margin auto
+          a
+            margin 25px auto
+      +above(768px)
+        margin auto 30px 50px
+        .More
+          display: flex
+          margin auto
+      a
+        display: block
+        size 300px auto
+        background-color darkBlue
+        text-align: center
+        color: white
+        font-family: otherFont
+        font-weight: 600
+        padding 5px 0px
+        font-size 18px
+        margin 20px
+        +below(767px)
+          margin auto
+    #featuredSlide
+      center(1280px)
+      .owl-controls
+        .owl-prev
+          absolute top 100px left 20px
+        .owl-next
+          absolute top 100px right 20px
+        .owl-prev
+        .owl-next
+          absolute()
+          background: none
+          opacity: 1
+          +below(1024px)
+            display: none
+          img
+            size 100px auto
+            &:hover
+            &:focus
+              opacity: 0.5
+      .item
+        .img-wrapper
+          background-repeat: no-repeat
+          background-size: cover
+          background-position: center
+          position: relative;
+          display: block
+          margin auto
+          size 530px 300px
+          max-width: 100%
+          overflow hidden
+          .specialText
+            absolute bottom 0px
+            background-color rgba(lightBlue, 0.50)
+            size 100% auto
+            color white
+            font-size 30px
+            font-family: mainFont
+            font-weight: 500
+            text-align: center
+            padding 12px 0px
+            +below(767px)
+              text-align: center
+              display: block
+              font-size 25px
+              padding 6px 0px
+        .info
+          margin auto
+          size 530px auto
+          max-width: 100%
+          .name
+            color darkBlue
+            font-family: otherFont
+            font-weight: 600
+            +below(767px)
+              font-size: 18px
+              text-align: center
+              margin 15px auto 0px
+            +above(768px)
+              font-size: 20px
+              text-align: center
+              margin 20px auto 0px
+          .price
+            color darkBlue
+            +below(767px)
+              margin 15px auto 0px
+              font-size 16px
+              text-align: center
+            +above(768px)
+              margin 5px auto 0px
+              font-size 18px
+              text-align: center
+  .Floorplans
+    +above(768px)
+      margin 150px auto
+    +below(767px)
+      margin 50px auto
+    .Title
+      text-align: center
+      h1()
+      color: darkBlue
+      font-family: otherFont
+      font-weight: 500
+      +below(767px)
+        font-size 30px
+    .Mobile
+      center(768px)
+      .FloorPlan
+        size 80% auto
+        display: block
+        margin: auto
+        a
+          display: block
+          size 100% 75px
+          .icon
+            column(1/6)
+            position: relative
+            height 100%
+            i.fa
+              align(b)
+              font-size 30px
+              line-height: 30px
+          .text-wrapper
+            column(5/6)
+            position: relative
+            height 100%
+            .text
+              align(v)
+              width 100%
+              font-size 15px
+              font-weight: 600
+              font-family: otherFont
+    .Tablet
+      center(768px)
+      .FloorPlan
+        column(1/2, cycle: 2)
+        a
+          display: block
+          size 100% 75px
+          .icon
+            column(1/6)
+            position: relative
+            height 100%
+            i.fa
+              align(b)
+              font-size 30px
+              line-height: 30px
+          .text-wrapper
+            column(5/6)
+            position: relative
+            height 100%
+            .text
+              align(v)
+              width 100%
+              font-size 15px
+              font-weight: 600
+              font-family: otherFont
+
+    .Desktop
+      center(1024px)
+      .FloorPlan
+        column(1/3, cycle: 3)
+        a
+          display: block
+          size 100% 75px
+          .icon
+            column(1/6)
+            position: relative
+            height 100%
+            i.fa
+              align(b)
+              font-size 30px
+              line-height: 30px
+          .text-wrapper
+            column(5/6)
+            position: relative
+            height 100%
+            .text
+              align(v)
+              width 100%
+              font-size 15px
+              font-weight: 600
+              font-family: otherFont

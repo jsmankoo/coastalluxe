@@ -1,0 +1,90 @@
+.Menu
+  z-index 9999
+  +below(767px)
+    fixed top 50px
+    size 100% 80%
+    overflow scroll
+  +above(768px)
+    fixed top 0px right 0px
+    size 390px 100%
+  .Mobile
+    .wrap
+      center(767px)
+      background-color menuColor
+      .category
+        column(1)
+        .categoryName
+          padding 15px 20px
+          color white
+          font-size 20px
+          font-weight: 600
+          font-family: otherFont
+          a
+            color white
+            font-size 20px
+            font-weight: 600
+            font-family: otherFont
+          i.fa
+            font-size: 22px
+            float: right
+            color white
+        .submenu
+          padding 0px 40px 18px
+          a
+            font-weight: 500
+            font-size 16px
+            font-family: mainFont
+            color white
+      .menuBorder
+        border-top: 1px solid white
+
+  .Tablet
+    height 100%
+    .wrap
+      background-color menuColor
+      size 390px 100%
+      .menuClose
+        padding 10px 20px
+        margin-bottom: 40px
+        i.fa
+          cursor pointer
+          font-size 30px
+          color white
+          float right
+          margin auto
+      .LeaseApplication
+        absolute bottom 34px left 35px
+        a
+          padding 15px 15px
+          background-color white
+          color menuColor
+          font-family: otherFont
+          font-weight: 600
+          font-size: 16px
+      .category
+        padding-left 35px
+        padding-bottom 12px
+        .menuBorder
+          border-top 1px solid white
+          margin 15px auto 25px 0px
+          width 160px
+        .categoryName
+          color white
+          font-size 25px
+          font-weight: 500
+          font-family: otherFont
+          padding 0px 0px 10px
+          relative left -3px
+          a
+            color white
+            font-size 25px
+            font-weight: 500
+            font-family: otherFont
+        .submenu
+          margin-bottom 8px
+          a
+            padding 0px
+            font-weight: 700
+            font-size: 16px
+            font-family: mainFont
+            color white

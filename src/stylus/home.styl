@@ -1,0 +1,457 @@
+.Home
+  .Top
+    // background-color rgba(darkBlue, 0.5)
+    overflow hidden
+    position relative
+    +below(767px)
+      size 100% 470px
+    +between(768px, 1280px)
+      size 100% 570px
+    +above(1281px)
+      size 100% 675px
+    .BGVideo
+      .video-background
+        z-index -10000
+        align(both)
+        min-width: 100%
+        min-height: 100%
+        size auto auto
+    .BGContent
+      align(both)
+      width 100%
+      z-index 100
+      +below(767px)
+        padding 0px 20px
+      +between(768px, 1280px)
+        padding 0px 100px
+      +above(1281px)
+        padding 0px 200px
+      .headline
+        text-align: center
+        font-family: otherFont
+        color white
+        +below(767px)
+          font-size 35px
+        +between(768px, 1280px)
+          font-size 62px
+        +above(1281px)
+          font-size 90px
+      .bgBorder
+        border-bottom 1px solid white
+        display: block;
+        margin: auto;
+        +below(767px)
+          width 200px
+        +between(768px, 1280px)
+          width 500px
+        +above(1281px)
+          width 700px
+      .subheadline
+        text-align: center;
+        color white
+        +below(767px)
+          font-size 25px
+        +between(768px, 1280px)
+          font-size: 32px
+        +above(1281px)
+          font-size: 40px
+      .scrollDown
+        size 100% auto
+        +below(767px)
+          relative top 150px
+        +between(768px, 1280px)
+          relative top 200px
+        +above(1281px)
+          relative top 200px
+        .button
+          display: block
+          margin auto
+          text-align: center
+          color white
+          font-size 40px
+          &:hover
+          &:focus
+            i.fa
+              color lightBlue
+          i.fa
+            color white
+            font-size 40px
+  .Featured
+    center(1280px)
+    background: white
+    .Heading
+      .title
+        text-align: center
+        color darkBlue
+        font-family otherFont
+        font-weight 600
+        text-decoration none
+        hover-color(lightBlue, true)
+        +below(767px)
+          font-size 30px
+          margin 70px auto 20px
+        +above(768px)
+          font-size 44px
+          margin 95px auto 0px
+      .Row
+        .all
+          column(1/3)
+          float right
+          letter-spacing: 1px
+          text-align: center
+          font-family otherFont
+          font-weight 600
+          font-size 16px
+          color darkBlue
+          text-decoration none
+          margin-top 20px
+          margin-bottom 20px
+          hover-color(lightBlue, true)
+          z-index 1000
+          i.fa
+            font-size 20px
+            padding 0px 10px
+    #featuredSlide
+      center(1100px)
+      z-index 1000
+      margin-top 60px
+      .owl-controls
+        .owl-prev
+          absolute top 180px left -20px
+        .owl-next
+          absolute top 180px right -20px
+        .owl-prev
+        .owl-next
+          absolute()
+          background: none
+          opacity: 1
+          +below(1024px)
+            display: none
+          img
+            size 100px auto
+            &:hover
+            &:focus
+              opacity: 0.5
+        .owl-pagination
+          absolute top -40px
+          width 300px
+          align(h)
+          .owl-page
+            span
+              size 8px 8px
+              background darkBlue
+      .item
+        size 100% auto
+        display block
+        margin auto
+        z-index 9000
+        .img-wrapper
+          background-repeat: no-repeat
+          background-size: cover
+          background-position: center
+          position relative
+          display block
+          &:hover
+          &:focus
+            opacity: 0.9
+            cursor: pointer
+          +below(767px)
+            size 100% 215px
+          +above(768px)
+            size 100% 475px
+          .specialText
+            absolute bottom 0px
+            background-color rgba(lightBlue, 0.50)
+            size 100% auto
+            color white
+            font-size 30px
+            font-family: mainFont
+            font-weight: 500
+            text-align: left
+            padding 12px 40px
+            +below(767px)
+              text-align: center
+              display: block
+              font-size 25px
+              padding 6px 0px
+        .info
+          margin 30px auto 70px
+          .name
+            color darkBlue
+            font-family: otherFont
+            font-weight: 600
+            +below(767px)
+              font-size: 18px
+              text-align: center
+              margin 15px auto 0px
+            +above(768px)
+              font-size: 20px
+              text-align: left
+              padding-left 40px
+              margin 20px auto 0px
+          .price
+            color darkBlue
+            +below(767px)
+              margin 15px auto 35px
+              font-size 16px
+              text-align: center
+            +above(768px)
+              margin 5px auto 75px
+              font-size 18px
+              text-align: left
+              padding-left 40px
+  .Ryan
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    .bgTint
+      background-color RyanTint
+    .wrap
+      center(1280px)
+      margin auto
+    .name
+      text-align center
+      color darkBlue
+      font-family otherFont
+      font-weight 600
+    .paragraph
+      text-align center
+      color darkBlue
+    .Mobile
+      .name
+        margin 50px auto 25px
+        font-size 30px
+      .image
+        img
+          display: block
+          margin auto
+          size 170px auto
+      .info
+        text-align: center
+        font-family: mainFont
+        color darkBlue
+        i.fa
+          padding 0px 5px
+        h1
+          h1()
+        h2
+          h2()
+        h3
+          h3()
+        h4
+          h4()
+        h5
+          h5()
+        h6
+          h6()
+        h1
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          line-height: 35px
+          // margin-top 0px
+        h2
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          line-height: 35px
+        h3
+        h4
+        h5
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+        h6
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          font-size 12px
+        p
+          font-size 14px
+          line-height: 27px
+          font-weight: 500
+          margin-bottom 0px
+      .more
+        center(90px)
+        margin 40px auto 50px
+        .linkName
+          font-size 20px
+          margin auto
+          float left
+          font-family: otherFont
+        i.fa
+          font-size 18px
+          margin auto
+          float right
+          padding 8px 5px 0px
+    // above Tablet and Desktop
+    +above(768px)
+      .name
+        margin 80px auto 50px
+        font-size 44px
+      .Row
+        center(768px)
+        .image
+          column(1/3, gutter: 7px)
+          img
+            size 100% auto
+            max-width: 250px
+            max-height: 380px
+        .info
+          column(2/3, gutter: 7px)
+          text-align: left
+          font-family: mainFont
+          color darkBlue
+          margin auto
+          relative top -10px
+          h1
+            h1()
+          h2
+            h2()
+          h3
+            h3()
+          h4
+            h4()
+          h5
+            h5()
+          h6
+            h6()
+          h1
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            line-height: 40px
+            margin-top 0px
+          h2
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            line-height: 40px
+            margin-top 0px
+          h3
+          h4
+          h5
+          h6
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            // margin-top 0px
+          p
+            font-size 17px
+            line-height: 27px
+            font-weight: 500
+            margin-bottom 0px
+        .socialMedia
+          column(1/3, gutter: 7px)
+          margin 30px auto 90px
+          text-align: center
+          a
+            margin auto 8px
+            i.fa
+              font-size 16px
+        .more
+          span(1/3, offset: 3/8)
+          margin-top 30px
+          margin-bottom 90px
+          text-align: center
+          a
+            font-family: otherFont
+            font-weight: 600
+            font-size 15px
+            i.fa
+              margin auto 5px
+
+  .Explore
+    background: white
+    +below(767px)
+      padding-bottom 60px
+    +above(768px)
+      padding-bottom 155px
+    .wrap
+      center(1280px)
+      .title
+        text-align center
+        color darkBlue
+        font-family otherFont
+        font-weight 600
+        +below(767px)
+          margin 50px auto 30px
+          font-size 30px
+        +above(768px)
+          font-size 44px
+          margin 135px auto 10px
+      .exploreBorder
+        display block
+        margin auto auto 75px
+        size 340px auto
+        border 1px solid darkBlue
+        +below(767px)
+          display: none
+      .subtitle
+        h1()
+        font-weight: 300
+        font-family: mainFont
+        margin-top 40px
+        line-height: 40px
+        text-align: center
+        color darkBlue
+        margin 20px auto 50px
+        +below(767px)
+          display: none
+      .links
+        wrap()
+        wrap('center')
+        +above(768px)
+          wrap('gutter', 40)
+          wrap('outside', 40)
+        .link-wrap
+          col()
+          +below(767px)
+            col(1,1)
+          +above(768px)
+            col(1,3)
+          &:hover
+          &:hover
+            opacity: 0.90
+          .exploreTint
+            background-color exploreTint
+            +below(767px)
+              size 300px 175px
+            +above(768px)
+              size 100% 250px
+          .link
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center
+            display: block
+            position relative
+            +below(767px)
+              margin 20px auto
+              size 300px 175px
+            +above(768px)
+              size 100% 250px
+            .titleWrapper
+              align(b)
+              size 100% auto
+              .linkTitle
+                color white
+                text-align: center
+                font-family otherFont
+                font-weight 600
+                width 100%
+                +below(767px)
+                  font-size 30px
+                +between(768px, 1280px)
+                  font-size 40px
+                +above(1281px)
+                  font-size 40px
+              .linkSubtitle
+                color white
+                text-align: center
+                width 100%
+                +below(767px)
+                  font-size 25px
+                +between(768px, 1280px)
+                  font-size 25px
+                +above(1281px)
+                  font-size 30px

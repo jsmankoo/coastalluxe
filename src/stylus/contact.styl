@@ -1,0 +1,323 @@
+.Contact
+  .Top
+    +below(767px)
+      size 100% 470px
+    +above(768px)
+      size 100% 525px
+    position relative
+    // overflow hidden
+    // background-color rgba(darkBlue, 0.5)
+    .BGVideo
+      overflow hidden
+      position relative
+      // background-color rgba(darkBlue, 0.5)
+      +below(767px)
+        size 100% 470px
+      +above(768px)
+        size 100% 525px
+      .video-background
+        z-index -10000
+        align(b)
+        min-width: 100%
+        min-height: 100%
+        size auto auto
+    .BGContent
+      align(b)
+      size 100% auto
+    .Mobile
+      .BGContent
+        .name
+          color white
+          font-family: otherFont
+          font-weight: 700
+          font-size: 30px
+          text-align: center
+          size 100% 470px
+          position: relative
+          .text
+            align(b)
+            width 100%
+      .info-wrapper
+        center()
+        absolute top 470px
+        background-color ContactInfoTint
+        size 100% 170px
+        color darkBlue
+        font-family: otherFont
+        font-weight: 500;
+        font-size 20px
+        position relative
+        .info
+          size 275px auto
+          align(b)
+          .border
+            center()
+            border-bottom 1px solid darkBlue
+            size 100% auto
+          .wrapper
+            column(1)
+            color darkBlue
+            height 56px
+            .icon
+              column(1/10)
+              text-align: center
+              color darkBlue
+              hover-color lightBlue true
+              position: relative
+              height 100%
+              i.fa.fa-mobile
+                absolute left 0px
+                font-size: 30px
+                text-align: left
+                width 100%
+                align(v)
+              i.fa.fa-map-marker
+                absolute left 0px
+                font-size: 25px
+                text-align: left
+                width 100%
+                align(v)
+              i.fa.fa-paper-plane
+                absolute left 0px
+                font-size: 19px
+                text-align: left
+                width 100%
+                align(v)
+            .content
+              column(9/10)
+              font-size 12px
+              font-weight: 600
+              text-align: left
+              height 100%
+              relative left -5px
+              .text
+                align(v)
+                padding-left 10px
+                width 100%
+
+    .Tablet
+      .BGContent
+        .name
+          position: relative
+          size 100% 375px
+          color white
+          font-family: otherFont
+          font-weight: 600
+          font-size: 44px
+          text-align: center
+          padding 0px
+          .text
+            align(b)
+            width: 100%
+      .infoWrapper
+        background-color: ContactInfoTint
+        size 100% 150px
+        absolute bottom -150px
+        .info
+          center(1280px)
+          text-align: center
+          font-family: otherFont
+          font-weight: 500;
+          font-size 30px
+          .col
+            span(1/3)
+            height 100%
+            position: relative
+            color darkBlue
+            .wrapper
+              // align(v)
+              width 100%
+              .icon
+                color darkBlue
+                hover-color lightBlue true
+                i.fa.fa-mobile
+                  font-size: 40px
+                  padding-bottom 5px
+                  padding-top 35px
+                i.fa.fa-map-marker
+                  font-size: 35px
+                  padding-bottom 10px
+                  padding-top 35px
+                i.fa.fa-paper-plane
+                  font-size: 27px
+                  padding-bottom 18px
+                  padding-top 35px
+              .content
+                text-align: center
+                font-weight: 600
+                +below(1024px)
+                  font-size: 13px
+                +above(1025px)
+                  font-size: 15px
+  .Ryan
+    .Mobile
+      padding 200px 0px 60px
+      .image
+        img
+          display: block
+          margin auto
+          size 170px auto
+      .content
+      .details
+        text-align: center
+        font-family: mainFont
+        font-size 17px
+        color darkBlue
+        i.fa
+          padding 0px 5px
+        h1
+          h1()
+        h2
+          h2()
+        h3
+          h3()
+        h4
+          h4()
+        h5
+          h5()
+        h6
+          h6()
+        h1
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          line-height: 40px
+          font-size: 30px
+          // margin-top 0px
+        h2
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          line-height: 35px
+          font-size: 30px
+        h3
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          line-height: 40px
+        h4
+        h5
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+        h6
+          font-weight: 300
+          font-family: mainFont
+          text-align: center
+          font-size 12px
+        p
+          font-size 14px
+          line-height: 27px
+          font-weight: 500
+          margin-bottom 0px
+    .Tablet
+      padding 200px 0px 160px
+      center(1280px)
+      .wrap
+        center(768px)
+        .image
+          column(1/3, gutter: 7.5px)
+          img
+            size 100% auto
+            max-width: 250px
+            max-height: 380px
+        .content
+          column(2/3, gutter: 7.5px)
+          text-align: left
+          font-family: mainFont
+          color darkBlue
+          margin auto
+          relative top -28px
+          h1
+            h1()
+          h2
+            h2()
+          h3
+            h3()
+          h4
+            h4()
+          h5
+            h5()
+          h6
+            h6()
+          h1
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            line-height: 40px
+          h2
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            line-height: 35px
+          h3
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            line-height: 35px
+          h4
+          h5
+          h6
+            font-weight: 300
+            font-family: mainFont
+            text-align: left
+            // margin-top 0px
+          p
+            font-size 17px
+            line-height: 27px
+            font-weight: 500
+            margin-bottom 0px
+
+      .details
+        center(768px)
+        text-align: left
+        font-family: mainFont
+        color darkBlue
+        margin auto
+        i.fa
+          padding 0px 5px
+        h1
+          h1()
+        h2
+          h2()
+        h3
+          h3()
+        h4
+          h4()
+        h5
+          h5()
+        h6
+          h6()
+        h1
+          font-weight: 300
+          font-family: mainFont
+          text-align: left
+          line-height: 40px
+        h2
+          font-weight: 300
+          font-family: mainFont
+          text-align: left
+          line-height: 35px
+        h3
+          font-weight: 300
+          font-family: mainFont
+          text-align: left
+          line-height: 35px
+        h4
+        h5
+          font-weight: 300
+          font-family: mainFont
+          text-align: left
+        h6
+          font-weight: 300
+          font-family: mainFont
+          text-align: left
+          font-size 10px
+          color lightBlue
+          // margin-top 0px
+        p
+          font-size 17px
+          line-height: 27px
+          font-weight: 500
+          margin-bottom 0px
+          margin-top 0px
