@@ -43,34 +43,38 @@ html( class="no-js" lang="")
         script try{Typekit.load({ async: true });}catch(e){}
 
     body
-        | <!--[if lt IE 8]>
-        |     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        | <![endif]-->
+        <!--[if IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->    
         #loader
         #Main!= content
 
-        script(src="/js/vendor/jquery.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js")
+        
         //script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
         //script(src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js")
+        
         script(src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js")
+        
         script(type="application/javascript").
           setTimeout(function(){
             $('#loader').fadeOut();
           }, 2000);
 
-        script(src="/js/Client.bundle.js")
+        script(src="http://coastalluxeliving.com/js/Client.bundle.js")
+        
         //- script(src="http://localhost:3001/js/Client.bundle.js")
 
         // Google Analytics: change UA-XXXXX-X to be your site's ID.
+        
         script.
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='https://www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-78611044-1','auto');ga('send','pageview');
+            ga('create','UA-78839867-1','auto');ga('send','pageview');
 
         script window.prerenderReady = false;
+        
         // Chat thingy
         script.
           window.intercomSettings = { app_id: 'wbm44045' };
@@ -78,4 +82,5 @@ html( class="no-js" lang="")
 
         //Pinterest
         script(async defer src="//assets.pinterest.com/js/pinit.js")
+        
         //Facebook
